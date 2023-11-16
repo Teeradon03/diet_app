@@ -1,28 +1,35 @@
 import React from 'react'
-import './Login.css'
+import '../login/Login.css'
 import { useNavigate } from "react-router-dom";
-function Login() {
 
+function Register() {
     const navigate = useNavigate();
 
-    return (
-
+  return (
     <div className="Auth-form-container">
     <form className="Auth-form">
       <div className="Auth-form-content">
         <h3 className="Auth-form-title">Sign In</h3>
         <div className="text-center">
-          Not registered yet?{" "}
-          <span className="link-primary" onClick={() => navigate("/register")}>
-            Sign Up
+          Already registered?{" "}
+          <span className="link-primary" onClick={() => navigate('/login')}>
+            Sign In
           </span>
+        </div>
+        <div className="form-group mt-3">
+          <label>Full Name</label>
+          <input
+            type="email"
+            className="form-control mt-1"
+            placeholder="e.g Jane Doe"
+          />
         </div>
         <div className="form-group mt-3">
           <label>Email address</label>
           <input
             type="email"
             className="form-control mt-1"
-            placeholder="Enter email"
+            placeholder="Email Address"
           />
         </div>
         <div className="form-group mt-3">
@@ -30,7 +37,7 @@ function Login() {
           <input
             type="password"
             className="form-control mt-1"
-            placeholder="Enter password"
+            placeholder="Password"
           />
         </div>
         <div className="d-grid gap-2 mt-3">
@@ -47,4 +54,4 @@ function Login() {
   )
 }
 
-export default Login
+export default Register

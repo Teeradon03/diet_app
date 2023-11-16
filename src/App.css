@@ -1,4 +1,4 @@
-body {
+/* body {
   background-color: #c28989;
   margin: 0;
   padding: 0;
@@ -6,4 +6,8 @@ body {
   justify-content: center;
   padding-top: 200px;
   
+} */
+* {
+  margin: 0;
+  padding: 0;
 }
