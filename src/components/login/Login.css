@@ -1,53 +1,42 @@
-.App {
-  background-color: white;
-}
+/* RangeSlider.css */
 
-.Auth-form-container {
-  display: grid;
-  justify-content: center;
-  align-items: center;
-  width: 100vw;
-  height: 100vh;
-}
-
-.Auth-form {
-  width: 430px;
-  box-shadow: rgb(0 0 0 / 16%) 1px 1px 10px;
-  padding-top: 50px;
-  padding-bottom: 50px;
-  border-radius: 8px;
-  background-color: white;
-  
-}
-
-.Auth-form-content {
-  padding-left: 12%;
-  padding-right: 12%;
-}
-
-.Auth-form-title {
+.iphone-slider-container {
   text-align: center;
-  margin-bottom: 1em;
-  font-size: 24px;
-  color: rgb(34, 34, 34);
-  font-weight: 800;
+  margin: 20px;
+}
+
+.iphone-slider-track {
+  position: relative;
+  width: 300px;
+  height: 20px;
+  background-color: #e5e5e5;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.iphone-slider-thumb {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 30px;
+  height: 30px;
+  background-color: #4a90e2;
+  border-radius: 50%;
+  transform: translateX(-50%);
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.iphone-slider-thumb:hover {
+  background-color: #366db3;
 }
 
 label {
-  font-size: 14px;
-  font-weight: 600;
-  color: rgb(34, 34, 34);
-}
-
-.card-image {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.line-button {
+  font-size: 18px;
   display: block;
-  justify-self: center;
-  align-items: center;
-  
+  margin-bottom: 10px;
+}
+
+p {
+  margin-top: 10px;
 }
