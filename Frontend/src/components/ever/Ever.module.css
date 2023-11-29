@@ -1,0 +1,30 @@
+.everButton {
+    /* display: block; */
+    width: 70%;
+    /* height: 20%; */
+    padding: 10px;
+    margin-bottom: 17px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 5px;
+    box-shadow: 3px 3px 2px 1px #b2b2b2;
+    font-size: larger;
+    cursor: pointer;
+    text-align: center;
+    /* justify-content: center; */
+    /* Add this line to align text to the left */
+    position: relative;
+  }
+  
+  .everButton:active {
+    background-color: #757575;
+    color: rgb(255, 255, 255);
+    transform: translateY(5px);
+    outline: none;
+  }
+  
+  .everButton::selection {
+    background-color: #ffffff;
+  }
+  
