@@ -1,3 +1,25 @@
+<<<<<<< HEAD
+// db.js
+require('dotenv').config();
+const mongoose = require('mongoose');
+
+const uri = process.env.MONGO_URI;
+
+mongoose.connect(uri, {
+  useNewUrlParser: true,
+  useUnifiedTopology: true,
+});
+
+const db = mongoose.connection;
+
+db.on('error', console.error.bind(console, 'MongoDB connection error:'));
+db.once('open', () => {
+  console.log('Connected to the MongoDB database.');
+});
+
+module.exports = db;
+
+=======
 
 const { MongoClient, ServerApiVersion } = require('mongodb');
 const uri = "mongodb+srv://mymongodb:mymongodbPass@cluster0.gjk2dcl.mongodb.net/?retryWrites=true&w=majority";
@@ -24,3 +46,4 @@ async function run() {
   }
 }
 run().catch(console.dir);
+>>>>>>> 049280923d1931d43c0afcd830bdc71e768fc87b
