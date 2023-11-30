@@ -17,15 +17,12 @@ app.use(bodyParser.urlencoded({extended: true}))
 app.use(bodyParser.json()); 
 
 app.use(connection(mysql, {
-  host: '147.50.231.17',
-  user: 'nano_admin',
-  database: 'nano_diet',
-  password: 'nano_pass',
+  host: '127.0.0.1',
+  user: 'diet_nano',
+  database: 'mydb',
+  password: 'diet_nano@pass',
   port:3306,
 }, 'single')) 
-
-
-
 
 app.use('/', form_info_route)
 
