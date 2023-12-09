@@ -44,7 +44,6 @@ const formSchema = mongoose.Schema({
     you_have_leg_pain : String,
     you_have_backache : String,
     you_have_joint_pain: String,
-    date_of_birth : Date,
 
 }, {Timestamp : true})
 
