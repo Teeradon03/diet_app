@@ -1,5 +1,5 @@
 
-const { Timestamp, BSON, Double } = require('mongodb')
+
 const mongoose = require('mongoose')
 
 const formSchema = mongoose.Schema({
@@ -12,12 +12,8 @@ const formSchema = mongoose.Schema({
     sleeping_time : String,
     weight_control : String,
     goal_lose_weight : String,
-    dietary_restriction : {
-        type : [String]
-    },
-    chronic_disease : {
-        type : [String]
-    },
+    dietary_restriction : [String],
+    chronic_disease : [String],
     your_goal_lose_weight : String,
     your_goal_lose_fat : String,
     your_goal_is_heathy : String,
@@ -49,9 +45,7 @@ const formSchema = mongoose.Schema({
     you_have_backache : String,
     you_have_joint_pain: String,
     date_of_birth : Date,
-    weight : Number,
-    height: Number
-    
+
 }, {Timestamp : true})
 
 module.exports = mongoose.model('Form', formSchema)
