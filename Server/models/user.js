@@ -7,16 +7,16 @@ const userSchema = mongoose.Schema({
     phone: Number,
     height: Number,
     weight: Number,
-    age: Number,
     bmi: Number,
     bmi_index: String,
     calories: Number,
-    
+    email: String,
+
+    ///// user data from line 
     user_id : String,
     username: String,
     image_url: String,
 
-    email: String,
 })
 
 module.exports = mongoose.model('User', userSchema)
