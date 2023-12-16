@@ -119,3 +119,45 @@ exports.getQuestionnaire = async (req, res) => {
         });
     }
 };
+
+exports.getQuestionnaireByUserId = async (req, res) => {
+    try{
+        const { userId }  = req.params;
+        console.log("userId", userId)
+        // Check if ID is a number but in string format
+        if (!/^\d+$/.test(userId)) {
+            res.json({
+                message: "ID must be a number in string format",
+            });
+            return;
+        }
+        if (!userId) {
+            res.status(400).json({
+                error: "User ID is missing in the request.",
+            });
+            return;
+        }
+
+        // Find questionnaires by user ID
+        const getQuestionnaire = await Questionnaire.find({ userId });
+        // console.log("getQuestionnaire", getQuestionnaire)
+
+        // Check if questionnaires are found
+        if (getQuestionnaire.length > 0) {
+            console.log("Here's your Questionnaire for user ID:", userId, getQuestionnaire);
+            res.json(getQuestionnaire);
+        } else {
+            console.log("No Questionnaire found for user ID:", userId);
+            res.json({
+                message: "No Questionnaire found for the specified user ID.",
+            });
+        }
+    }
+    catch (error) {
+        console.log("Error: " + error);
+        res.status(500).json({
+            error: error.message,
+        });
+    }
+
+}
