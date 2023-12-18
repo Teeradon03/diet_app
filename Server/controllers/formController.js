@@ -96,9 +96,27 @@ exports.createQuestionnaires = async (req, res) => {
     const data = req.body;
     console.log(data);
     try {
-        const createForm = await new Questionnaire(data).save();
-        console.log("Created Questoinnaires Successfully");
-        res.json(createForm);
+        console.log('qeustionId', data.questionId);
+        const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
+        console.log('questionIdAlreadyExists', questionIdAlreadyExists)
+        if (!questionIdAlreadyExists){
+
+            const dataTime = new Date()
+            const newQuestionnaires = new Questionnaire({
+                ...data,
+                dataTime: dataTime
+            })
+            console.log('newQuestion', newQuestionnaires)
+            await newQuestionnaires.save()
+            console.log("Created Questoinnaires Successfully");
+            res.json(newQuestionnaires);
+        }else{
+            console.log('This questionId already exists')
+            res.json({
+                message: "This Questionnaire already exist",
+            })
+        }
+        
     } catch (error) {
         console.log("Error: " + error);
         res.status(500).json({
