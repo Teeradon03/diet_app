@@ -7,9 +7,9 @@ function Login() {
 
   return (
     <>
-      <div className='container text-center mt-5'>
+      <div className='container text-center mt-3'>
         <div className='row '>
-          <div className='col-12 mt-5 pt-5'>
+          <div className='col-12 mt-5 '>
             
             <NanoLogo  />
           </div>
