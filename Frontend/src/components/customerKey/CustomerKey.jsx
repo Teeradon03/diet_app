@@ -38,14 +38,14 @@ export default function CustomerKey() {
   };
 
   return (
-    <div className="container text-center pt-3">
+    <div className="container text-center pt-3 col-sm-10 col-lg-8 col-md-8 col-xl-6">
       < GoBack />
       <div className="row justify-content-center mt-5">
-        <div className="col-sm-8 col-12">
+        <div className=" col-12">
           <h2>INPUT THE SHIT KEY HERE!!! </h2>
         </div>
         <div className="row justify-content-center">
-          <div className="col-sm-4  col-8 text-start mt-4">
+          <div className="col-8 text-start mt-4">
             <div className="mb-3">
               <label htmlFor="key" className="form-label">Please input the correct key here</label>
               <input type="text" className="form-control" id="key" aria-describedby="helpId" placeholder="nanoX12345" onChange={handleChange} />
