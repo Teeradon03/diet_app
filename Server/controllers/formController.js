@@ -43,7 +43,7 @@ exports.getQuestionById = async (req, res) => {
         });
     }
 };
-exports.create_question = async (req, res) => {
+exports.createQuestion = async (req, res) => {
     const data = req.body;
     //   console.log("the data from create question", data);
     //   console.log('data contenttttttttttt',data.content)
@@ -96,9 +96,27 @@ exports.createQuestionnaires = async (req, res) => {
     const data = req.body;
     console.log(data);
     try {
-        const createForm = await new Questionnaire(data).save();
-        console.log("Created Questoinnaires Successfully");
-        res.json(createForm);
+        console.log('qeustionId', data.questionId);
+        const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
+        console.log('questionIdAlreadyExists', questionIdAlreadyExists)
+        if (!questionIdAlreadyExists){
+
+            const dataTime = new Date()
+            const newQuestionnaires = new Questionnaire({
+                ...data,
+                dataTime: dataTime
+            })
+            console.log('newQuestion', newQuestionnaires)
+            await newQuestionnaires.save()
+            console.log("Created Questoinnaires Successfully");
+            res.json(newQuestionnaires);
+        }else{
+            console.log('This questionId already exists')
+            res.json({
+                message: "This Questionnaire already exist",
+            })
+        }
+        
     } catch (error) {
         console.log("Error: " + error);
         res.status(500).json({
@@ -142,7 +160,7 @@ exports.getQuestionnaireByUserId = async (req, res) => {
         const getQuestionnaire = await Questionnaire.find({ userId });
         // console.log("getQuestionnaire", getQuestionnaire)
 
-        // Check if questionnaires are found
+        // Check if questionnaires already exist
         if (getQuestionnaire.length > 0) {
             console.log("Here's your Questionnaire for user ID:", userId, getQuestionnaire);
             res.json(getQuestionnaire);

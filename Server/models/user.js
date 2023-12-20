@@ -1,24 +1,29 @@
 const mongoose = require('mongoose')
 
 const userSchema = mongoose.Schema({
-    first_name: String,
-    last_name: String,
-    data_of_birth : Date,
+    firstName: String,
+    lastName: String,
+    dataOfBirth : Date,
     phone: Number,
     height: Number,
     weight: Number,
     bmi: Number,
-    bmi_index: String,
+    bmiIndex: String,
     calories: Number,
-    user_id : {
+    userId : {
         type : Number,
         required: false,
     },
+    createdAt: { type: Date, default: Date.now },
+    updatedAt: { type: Date, default: Date.now },
     ///// user data from line 
-    line_user_id : String,
+    line_user_id : { type: String, required: true},
     line_username: String,
     line_picture_url: String,
     line_email: String,
 })  
 
-module.exports = mongoose.model('User', userSchema)
+const User = mongoose.model('User', userSchema)
+module.exports = {
+    User
+} 
