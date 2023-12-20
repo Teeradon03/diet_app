@@ -43,7 +43,7 @@ exports.getQuestionById = async (req, res) => {
         });
     }
 };
-exports.create_question = async (req, res) => {
+exports.createQuestion = async (req, res) => {
     const data = req.body;
     //   console.log("the data from create question", data);
     //   console.log('data contenttttttttttt',data.content)
@@ -160,7 +160,7 @@ exports.getQuestionnaireByUserId = async (req, res) => {
         const getQuestionnaire = await Questionnaire.find({ userId });
         // console.log("getQuestionnaire", getQuestionnaire)
 
-        // Check if questionnaires are found
+        // Check if questionnaires already exist
         if (getQuestionnaire.length > 0) {
             console.log("Here's your Questionnaire for user ID:", userId, getQuestionnaire);
             res.json(getQuestionnaire);
