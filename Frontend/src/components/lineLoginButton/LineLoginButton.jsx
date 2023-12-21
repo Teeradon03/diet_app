@@ -34,7 +34,6 @@ const LineLoginButton = () => {
     try{
       await axios.post("http://localhost:9999/api/user-login", idToken)
       console.log("data",idToken)
-      
     }
     catch(error) {
       console.error(error);
