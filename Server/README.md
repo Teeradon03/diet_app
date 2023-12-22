@@ -1,3 +1,7 @@
+  
+  Before you run app 
+  - create .env file in root folder 
+  - MONGO_URL="your_mongodb_url" 
     ===== How to run server for api =====
     - cd server
     - npm run dev
