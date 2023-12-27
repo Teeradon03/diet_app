@@ -1,133 +1,115 @@
-// import questions from '../../choice.js';
-import { questions } from "../../assets/choice";
+import React, { useState } from 'react'
+import { Row, Col, Card } from 'antd'
 
 const Question = () => {
-    console.log(questions)
+    const [currentQuestion, setcurrentQuestion] = useState(0)
+    const nextQuestion = currentQuestion + 1
+    const [score, setScore] = useState(0) /* เก็บคะแนนของผู้ใช้ */
+    const [showScore, setShowScore] = useState(false)
+    const [nextForm, setNextForm] = useState(0)
 
-    const [currentQuestion, setCurrentQuestion] = useState(0);
-    const [selectedOption, setSelectedOption] = useState('');
-    const [score, setScore] = useState(0);
-    const [showScore, setShowScore] = useState(false);
-    const [valueSelected, setValueSelected] = useState({})
+    const questions = [
+        {
+            questionText: 'อายุของคุณอยู่ช่วงไหน',
+            answerOptions: [
+                { answerText: 'อายุ 20-29 ปี', isCorrect: true },
+                { answerText: 'อายุ 30-39 ปี', isCorrect: true },
+                { answerText: 'อายุ 40-49 ปี', isCorrect: true },
+                { answerText: 'อายุ 50+ ปี', isCorrect: true },
+            ],
+        },
+        {
+            questionText: 'เป้าหมายของคุณ',
+            answerOptions: [
+                { answerText: 'ลดน้ำหนัก', isCorrect: true },
+                { answerText: 'ลดไขมัน', isCorrect: true },
+                { answerText: 'สุขภาพดี', isCorrect: true },
+                { answerText: 'เสริมสร้างกล้ามเนื้อ', isCorrect: true },
+            ],
+        },
+        {
+            questionText: 'รูปร่างของคุณ',
+            answerOptions: [
+                { answerText: 'ผอมเพรียว', isCorrect: true },
+                { answerText: 'สมส่วน', isCorrect: true },
+                { answerText: 'อวบ', isCorrect: true },
+                { answerText: 'อ้วน', isCorrect: true },
+            ],
+        },
+        {
+            questionText: 'ส่วนไหนในร่างกายของคุณที่ต้องกสนลดมากที่สุด',
+            answerOptions: [
+                { answerText: 'ก้น', isCorrect: true },
+                { answerText: 'ต้นขา', isCorrect: true },
+                { answerText: 'หน้าอก', isCorrect: true },
+                { answerText: 'หน้าท้อง', isCorrect: true },
+            ],
+        },
+        {
+            questionText: 'ความรู้เกี่ยวกับ IF ของคุณ',
+            answerOptions: [
+                { answerText: 'ไม่รู้อะไรเลย', isCorrect: true },
+                { answerText: 'พอรู้บ้าง', isCorrect: true },
+                { answerText: 'มีความรู้', isCorrect: true },
+            ],
+        },
+    ];
 
-    const handleOptionSelect = (event, option) => {
-        setSelectedOption(option);
-        highlightButton(event.target);
-        setValueSelected(option)
-    };
-    console.log(selectedOption)
-    // console.log(valueSelected)
-
-    function removeHighlight() {
-        const buttons = document.getElementsByTagName('button');
-        for (let i = 0; i < buttons.length; i++) {
-            buttons[i].classList.remove('highlight');
-        }
-    }
-
-    const handleNextQuestion = () => {
-        const isCorrect = selectedOption === questions[currentQuestion].answer;
+    const handleAnswer = (isCorrect) => {
         if (isCorrect) {
-            setScore(score + 1);
+            setScore(score + 1)
         }
-
-        const nextQuestion = currentQuestion + 1;
+        const nextQuestion = currentQuestion + 1
         if (nextQuestion < questions.length) {
-            setCurrentQuestion(nextQuestion);
-            setSelectedOption('');
-            removeHighlight();
+            setcurrentQuestion(nextQuestion)
         } else {
-            setShowScore(true);
+            setShowScore(true)
         }
     };
 
-    function highlightButton(button) {
-        const buttons = document.getElementsByTagName('button');
-        for (let i = 0; i < buttons.length; i++) {
-            if (buttons[i] === button) {
-                buttons[i].classList.add('highlight');
-            } else {
-                buttons[i].classList.remove('highlight');
-            }
-        }
+    const handleRe = () => {
+        setShowScore(false)
+        setScore(0)
+        setcurrentQuestion(0)
     }
 
-    const handlePreviousQuestion = () => { /*ทำปุ่มย้อนกลับคำถาม */
-        const prevQuestion = currentQuestion - 1;
-        if (prevQuestion >= 0) {
-            setCurrentQuestion(prevQuestion);
-            setSelectedOption('');
-            removeHighlight();
-            setShowScore(false); // Set to false to show questions again if navigating back
-        }
-    };
-
+    const handlePage = () => {
+        
+    }
 
     return (
-        <>
-            <div className='container'>
-			<div className='row justify-content-center'>
-				<div className='col-12 '>
-					<div className='col-8'>
-						{currentQuestion > 0 && (
-							<button
-								className='circular-button' // Apply circular button styles
-								onClick={handlePreviousQuestion}
-							>
-								&lt;
-							</button>
-						)}
-					</div>
-					{showScore ? (
-						<div className='row justify-content-center'>
-							<div className='col-8'>
-								<div className='question'>
-									Some...
-								</div>
-							</div>
-						</div>
-					) : (
-						<div className='row justify-content-center'>
-							<div className='col-8'>
-								<div className='question'>
-									<h2>Question {currentQuestion + 1}</h2>
-									<p>{questions[currentQuestion].question}</p>
-								</div>
-							</div>
-							<div className='col-10'>
-								<div className='answer'>
-									{questions[currentQuestion].options.map((option, index) => (
-										<div key={index} >
-											<button
-												type="button"
-												className='answer-button'
-												id={questions.id}
-												value={questions.option}
-												onClick={(event) => { handleOptionSelect(event, option); }}
-												style={{ margin: '5px' }}
-											>
-												{option}
-											</button>
-										</div>
-									))}
-								</div>
-								<div className='col-10'>
-									<button className='next-button'
-										onClick={handleNextQuestion}
-										disabled={!selectedOption}
-									>
-										หน้าถัดไป
-									</button>
-								</div>
-							</div>
-						</div>
-					)}
-				</div>
-			</div>
-		</div>
-        </>
+        
+        <Col span={24} style={{ textAlign: 'center' }}>
+            <Card className="quiz-card ">
+                {showScore
+                    ? (
+                        <Row>
+                            <Col span={24}>
+                                <span className="questions">
+                                    Your score : {score} / {questions.length}
+                                </span>
+                            </Col>
+                        </Row>
+                    )
+                    : (
+                        <Row>
+                            <Col span={24}>
+                                <div className="questions" >{questions[currentQuestion].questionText} </div>
+                            </Col>
+                            <Col span={12} offset={6}>
+                                <div className="answer"> {questions[currentQuestion].answerOptions.map((Item, index) =>
+                                    <button className="answer-button"
+                                        key={index}
+                                        onClick={() => handleAnswer(Item.isCorrect)}>{Item.answerText}
+                                    </button>)}
+                                </div>
+                            </Col>
+                        </Row>
+                    )
+                }
 
-
+            </Card>
+        </Col>
     )
 }
 export default Question;

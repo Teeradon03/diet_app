@@ -22,14 +22,13 @@ function HomePage() {
                     <div className='col-12 mt-5 pt-5' style={{ width: '300px' }}>
                     <SlideButton
                             mainText="เข้าสู่ระบบ"
-                            overlayText="F U C K"
+                            overlayText="N O N E"
                             classList="my-class"
                             caretClassList="my-caret-class"
                             overlayClassList="my-overlay-class"
                             onSlideDone={() => linkTo('/login')}
                         />
                     </div>
-
                 </div>
             </div>
         </>
