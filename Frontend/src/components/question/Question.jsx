@@ -100,7 +100,7 @@ const Question = () => {
 	const handleOptionSelect = (event, option) => {
 		setSelectedOption(option);
 		highlightButton(event.target);
-	};
+	  };
 
 	function removeHighlight() {
 		const buttons = document.getElementsByTagName('button');
@@ -119,6 +119,9 @@ const Question = () => {
 		const nextQuestion = currentQuestion + 1;
 
 		if (questions[currentQuestion].id === 11) {
+		  setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
+		  // Redirect to YesNo component when reaching ID 11
+		  // You can use react-router-dom or any navigation method here
 			setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
 			// Redirect to YesNo component when reaching ID 11
 			// You can use react-router-dom or any navigation method here
@@ -139,6 +142,16 @@ const Question = () => {
 			console.log('Answer:', selectedOption);
 		}
 
+		  
+		const handleNextQuestion = (value) => {
+			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
+			  console.log('Choice Selected:', value);
+			  console.log('Answer:', value);
+			}
+		  };
+	  };
+	  
+
 		const handleNextQuestion = (value) => {
 			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
 				console.log('Choice Selected:', value);
@@ -146,7 +159,6 @@ const Question = () => {
 			}
 		};
 	};
-
 
 	function highlightButton(button) {
 		const buttons = document.getElementsByTagName('button');
@@ -177,6 +189,48 @@ const Question = () => {
 	return (
 		<div className='wrapper'>
 			<Content style={{ padding: '0 50px' }}>
+			  <Col span={12} offset={6}>
+				<Col span={24} style={{ textAlign: 'center' }}>
+				  <Col >
+					{currentQuestion > 0 && (
+					  <button
+						className='circular-button' // ปุ่มย้อนกลับ
+						style={buttonStyle}
+						onClick={handlePreviousQuestion}
+					  >
+						&lt;
+					  </button>
+					)}
+				  </Col>
+				  {showScore ? (
+					<Row>
+					  <Col>
+					  
+					  </Col>
+					</Row>
+				  ) : (
+					<div>
+					  <div>
+						<div className='question'>
+						<div className='font-family'>
+						  <h1>Question {currentQuestion + 1} </h1>
+						  <p>{questions[currentQuestion].question}</p>
+						</div>
+						</div>
+					  </div>
+					  <Col span={24}>
+						<div className='answer'>
+						<div className='font-family'>
+						  {questions[currentQuestion].options.map((option, index) => (
+							<div key={index}>
+							  <button
+								type="button"
+								className={`answer-button ${selectedOption === option ? 'highlight' : ''}`}
+								onClick={(event) => handleOptionSelect(event, option)}
+								style={{ margin: '45px', fontWeight: 900}}
+							  >
+								{option}
+							  </button>
 				<Col span={12} offset={6}>
 					<Col span={24} style={{ textAlign: 'center' }}>
 						<Col >
