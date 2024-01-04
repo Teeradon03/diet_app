@@ -100,7 +100,7 @@ const Question = () => {
 	const handleOptionSelect = (event, option) => {
 		setSelectedOption(option);
 		highlightButton(event.target);
-	};
+	  };
 
 	function removeHighlight() {
 		const buttons = document.getElementsByTagName('button');
@@ -122,7 +122,6 @@ const Question = () => {
 		  setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
 		  // Redirect to YesNo component when reaching ID 11
 		  // You can use react-router-dom or any navigation method here
-		 
 			window.location.href = '/Yesno'; // Assuming 'history' is available in your component
 		
 		} else if (nextQuestion < questions.length) {
@@ -133,6 +132,19 @@ const Question = () => {
 		} else {
 		  setShowScore(true);
 		}
+
+		if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
+			console.log('Question ID:', questions[currentQuestion].id);
+			console.log('Question:', questions[currentQuestion].question);
+			console.log('Answer:', selectedOption);
+		}
+		  
+		const handleNextQuestion = (value) => {
+			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
+			  console.log('Choice Selected:', value);
+			  console.log('Answer:', value);
+			}
+		  };
 	  };
 	  
 
@@ -189,7 +201,7 @@ const Question = () => {
 					  <div>
 						<div className='question'>
 						<div className='font-family'>
-						  <h1>Question {currentQuestion + 1}</h1>
+						  <h1>Question {currentQuestion + 1} </h1>
 						  <p>{questions[currentQuestion].question}</p>
 						</div>
 						</div>

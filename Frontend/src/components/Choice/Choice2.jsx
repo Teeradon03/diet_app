@@ -12,7 +12,7 @@ const options  = [
                 (ทานอาหารคาร์โบไฮเดรตตํ่า รับประทานเนื้อสัตว์เป็นหลัก)
                 </span>
           </span>),
-          value: '1'
+          value: 'โลว์คาร์บหรือคีโต'
       },
       {
         label: (
@@ -23,7 +23,7 @@ const options  = [
                 (ไม่รับประทานเนื้อสัตว์)
                 </span>
           </span>),
-          value: '2'
+          value: 'มังสวิรัติ'
       },
       {
         label: (
@@ -34,7 +34,7 @@ const options  = [
                 (ไม่รับประทานอาหารผลิตภัณฑ์จากสัตว์)
                 </span>
           </span>),
-          value: '3'
+          value: 'วีแกน'
       },
       {
         label: (
@@ -45,7 +45,7 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีแลคโตส)
                 </span>
           </span>),
-          value: '4'
+          value: 'ไม่มีแลคโตส'
       },
       {
         label: (
@@ -56,7 +56,7 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีส่วนประกอบของกลูเตน)
                 </span>
           </span>),
-          value: '5'
+          value: 'ไม่มีกลูเตน'
       },{
         label: (
           <span>
@@ -66,7 +66,7 @@ const options  = [
                 (ไม่รับประทานเนื้อสัตว์ แต่รับประทานปลาหรือหอย)
                 </span>
           </span>),
-          value: '6'
+          value: 'อาหารเพสคาทาเรียน'
       },{
         label: (
           <span>
@@ -76,7 +76,7 @@ const options  = [
                 (ทานอาหารแบบคาร์โบไฮเดรตตํ๋า ไม่ทานขนมหวาน)
                 </span>
           </span>),
-          value: '7'
+          value: 'พาเลโอไดเอท'
       },{
         label: (
           <span>
@@ -86,7 +86,7 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีไข่ หรือส่วนประกอบของไข่)
                 </span>
           </span>),
-          value: '8'
+          value: 'ไม่มีไข่'
       },
       {
         label: (
@@ -97,7 +97,7 @@ const options  = [
                 (รับประทานอาหารที่ไม่มีส่วนประกอบของอาหารทะเล)
                 </span>
           </span>),
-          value: '9'
+          value: 'ไม่รับประทานอาหารทะเล'
       },
       {
         label: (
@@ -108,24 +108,32 @@ const options  = [
                 
                 </span>
           </span>),
-          value: '10'
+          value: 'รับประทานอาหารได้แทบทุกชนิด'
       },
   ];
 
-const handleChange = () => {
-  console.log('selected ${value}');
-};
-
-const Choice2 = () => (
+  const handleChange = (value) => {
+    console.log('Choice Selected:10', value);
+    // เรียกใช้ฟังก์ชัน handleNextQuestion และส่งค่า value ไปด้วย
+    handleNextQuestion(value);
+  };
+  
+  const handleNextQuestion = (value) => {
+    // ในฟังก์ชันนี้คุณสามารถใช้ค่า value ที่ส่งมาได้
+    console.log('Answer:10', value);
+    // ทำสิ่งที่ต้องการต่อไป...
+  };
+  
+  const Choice2 = () => (
     <Select
-    mode="multiple"
-    style={{ width: '100%' }}
-    placeholder="กรุณาเลือกคำตอบต่อไปนี้"
-
-    onChange={handleChange}
-    optionLabelProp="label"
-    options={options}    
-  />
-);
-
-export default Choice2;
+      mode="multiple"
+      style={{ width: '100%' }}
+      placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+      onChange={handleChange}
+      optionLabelProp="label"
+      options={options}    
+    />
+  );
+  
+  export default Choice2;
+  
