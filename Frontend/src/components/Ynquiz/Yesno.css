@@ -13,8 +13,8 @@
   background-color: #FFFF;
   border: 1px solid hsl(0, 0%, 80%);
   color: rgb(13, 13, 13);
-  border-radius: 5px;
-  box-shadow: 6px 6px 4px 2px #b2b2b2;
+  border-radius: 35px;
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
   cursor: pointer;
   text-align :center;
 }
@@ -29,8 +29,8 @@
   background-color: #FFFF;
   border: 1px solid #ccc;
   color: rgb(13, 13, 13);
-  border-radius: 5px;
-  box-shadow: 6px 6px 4px 2px #b2b2b2;
+  border-radius: 35px;
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
   cursor: pointer;
   text-align :center;
 }
@@ -44,7 +44,7 @@
 .no-button:hover{
   background-color: #757575;
   color: #FFFF;
-  box-shadow: 0 4px 0 0 #b2b2b2;
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
 }
 
 .no-button:active{
@@ -55,7 +55,7 @@
 .yes-button:hover{
   background-color: #757575;
   color: #FFFF;
-  box-shadow: 0 4px 0 0 #b2b2b2;
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
 }
 
 .yes-button:active{
@@ -118,7 +118,6 @@
 
 @media screen and (max-width: 1600px) {
   .Ynquiztion {
-    display: flex;
     font-size: 2.2rem;
     flex-direction: column;
     align-items: center;
@@ -138,11 +137,14 @@
     width: 50px;
     height: 50px;
   }
+  .no-button,
+  .yes-button {
+   width: 10vw ;
+  }
 }
 
 @media screen and (max-width: 1400px) {
   .Ynquiztion {
-    display: flex;
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -162,12 +164,15 @@
     width: 60px;
     height: 60px;
   }
+  .no-button,
+  .yes-button {
+   width: 10vw;
+  }
 }
 
 
 @media screen and (max-width: 1200px) {
   .Ynquiztion {
-    display: flex;
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -187,13 +192,15 @@
     width: 60px;
     height: 60px;
   }
+  .no-button,
+  .yes-button {
+   width: 12vw;
+  }
 }
 
 
 @media screen and (max-width: 992px) {
-
   .Ynquiztion {
-    display: flex;
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -213,13 +220,15 @@
     width: 45px;
     height: 45px;
   }
+  .no-button,
+  .yes-button {
+   width: 14.5vw;
+  }
 }
-
 
 @media screen and (max-width: 768px) {
 
   .Ynquiztion {
-    display: flex;
     font-size: 1.4rem;
     flex-direction: column;
     align-items: center;
@@ -240,6 +249,10 @@
     height: 45px;
     transform: translateX(-200px);
   }
+  .no-button,
+  .yes-button {
+   width: 18vw;
+  }
 }
 
 @media screen and (max-width: 576px) {
@@ -248,7 +261,6 @@
     left: 10px;
   }
   .Ynquiztion {
-    display: flex;
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -261,6 +273,8 @@
     height: auto;
     display: block;
     margin: 0 auto; 
+    position: relative;
+    left: -50px;
   }
   .chevron-icon {
     font-size: 30px;
@@ -286,7 +300,6 @@
     left: 50px;
   }
   .Ynquiztion {
-    display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -299,7 +312,7 @@
     display: block;
     margin: 0 auto; 
     position: relative;
-    left: 65px;
+    left: -15px;
   }
   .chevron-icon {
     font-size: 30px;
@@ -308,7 +321,7 @@
   }
   .no-button,
   .yes-button {
-   width: 30vw;
+   width: 39vw;
    position: relative;
    left: 60px;
   }

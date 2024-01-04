@@ -152,10 +152,10 @@ const yesno = () => {
       setCurrentImageIndex(images.length - 1);
       setCurrentQuestionIndex(images.length - 1);
     
-      /*if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
         window.location.href = '/Calendar_1';
         return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
-      }*/
+      }
     }
   
     if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
@@ -175,10 +175,10 @@ const yesno = () => {
       setCurrentImageIndex(images.length - 1);
       setCurrentQuestionIndex(images.length - 1);
     
-      /*if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
         window.location.href = '/Calendar_1';
         return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
-      }*/
+      }
     }
   
     if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {

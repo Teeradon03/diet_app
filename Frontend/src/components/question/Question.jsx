@@ -215,7 +215,7 @@ const Question = () => {
 								type="button"
 								className={`answer-button ${selectedOption === option ? 'highlight' : ''}`}
 								onClick={(event) => handleOptionSelect(event, option)}
-								style={{ margin: '35px', fontWeight: 900}}
+								style={{ margin: '45px', fontWeight: 900}}
 							  >
 								{option}
 							  </button>
