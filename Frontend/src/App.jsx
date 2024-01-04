@@ -11,6 +11,7 @@ import HomePage from './pages/home/HomePage';
 import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
+import Yesno from './components/Ynquiz/Yesno'
 
 function App() {
   return (
@@ -25,6 +26,8 @@ function App() {
         <Route path="/ever" element={<Ever />} />
         <Route path="/never" element={<Never />} />
         <Route path="/customerkey" element={<CustomerKey />} />
+        <Route path="/yesno" element={<Yesno />} />
+        
       </Routes>
     </BrowserRouter>
   )
