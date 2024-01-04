@@ -1,5 +1,10 @@
-import React, { useState } from 'react'
-import { Row, Col, Card } from 'antd'
+import { useState } from 'react';
+import { Row, Col } from 'antd';
+import { Content } from 'antd/es/layout/layout';
+import Choice from '../Choice/Choice';
+import './Question.css';
+import Choice2 from '../Choice/Choice2';
+
 
 const Question = () => {
     const [currentQuestion, setcurrentQuestion] = useState(0)
@@ -73,40 +78,77 @@ const Question = () => {
         setcurrentQuestion(0)
     }
 
-
-    return (
+    const handlePage = () => {
         
-        <Col span={24} style={{ textAlign: 'center' }}>
-            <Card className="quiz-card ">
-                {showScore
-                    ? (
-                        <Row>
-                            <Col span={24}>
-                                <span className="questions">
-                                    Your score : {score} / {questions.length}
-                                </span>
-                            </Col>
-                        </Row>
-                    )
-                    : (
-                        <Row>
-                            <Col span={24}>
-                                <div className="questions" >{questions[currentQuestion].questionText} </div>
-                            </Col>
-                            <Col span={12} offset={6}>
-                                <div className="answer"> {questions[currentQuestion].answerOptions.map((Item, index) =>
-                                    <button className="answer-button"
-                                        key={index}
-                                        onClick={() => handleAnswer(Item.isCorrect)}>{Item.answerText}
-                                    </button>)}
-                                </div>
-                            </Col>
-                        </Row>
-                    )
-                }
+    }
 
-            </Card>
-        </Col>
-    )
-}
+	return (
+		<div className='wrapper'>
+			<Content style={{ padding: '0 50px' }}>
+				<Col span={12} offset={6}>
+					<Col span={24} style={{ textAlign: 'center' }}>
+						<Col >
+							{currentQuestion > 0 && (
+								<button
+									className='circular-button' // ปุ่มย้อนกลับ
+									style={buttonStyle}
+									onClick={handlePreviousQuestion}
+								>
+									&lt;
+								</button>
+							)}
+						</Col>
+						{showScore ? (
+							<Row>
+								<Col>
+
+								</Col>
+							</Row>
+						) : (
+							<div>
+								<div>
+									<div className='question'>
+										<div className='font-family'>
+											<h1>Question {currentQuestion + 1} </h1>
+											<p>{questions[currentQuestion].question}</p>
+										</div>
+									</div>
+								</div>
+								<Col span={24}>
+									<div className='answer'>
+										<div className='font-family'>
+											{questions[currentQuestion].options.map((option, index) => (
+												<div key={index}>
+													<button
+														type="button"
+														className={`answer-button ${selectedOption === option ? 'highlight' : ''}`}
+														onClick={(event) => handleOptionSelect(event, option)}
+														style={{ margin: '35px', fontWeight: 900 }}
+													>
+														{option}
+													</button>
+												</div>
+											))}
+										</div>
+									</div>
+									<div className='font-family'>
+										<button
+											className='next'
+											onClick={handleNextQuestion}
+											disabled={!selectedOption}
+											style={{ fontWeight: 900 }}
+										>
+											หน้าถัดไป
+										</button>
+									</div>
+								</Col>
+							</div>
+						)}
+					</Col>
+				</Col>
+			</Content>
+		</div>
+	);
+};
+
 export default Question;

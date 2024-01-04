@@ -1,9 +1,9 @@
 
-  .font-family {
-    font-family: 'Noto Sans Thai', sans-serif;
-    /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-  
-  }
+.font-family {
+  font-family: 'Noto Sans Thai', sans-serif;
+  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+
+}
 
   .quiz-card {
     padding: 100px;
