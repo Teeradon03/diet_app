@@ -4,7 +4,7 @@ import { Content } from 'antd/es/layout/layout';
 import Choice from '../Choice/Choice';
 import './Question.css';
 import Choice2 from '../Choice/Choice2';
-import Yesno from '../Ynquiz/Yesno';
+
 
 
 
