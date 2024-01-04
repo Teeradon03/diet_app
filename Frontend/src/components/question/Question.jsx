@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col} from 'antd';
+import { Row, Col } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import Choice from '../Choice/Choice';
 import './Question.css';
@@ -111,26 +111,29 @@ const Question = () => {
 
 	const handleNextQuestion = () => {
 		const isCorrect = selectedOption === questions[currentQuestion].answer;
-		
+
 		if (isCorrect) {
-		  setScore(score + 1);
+			setScore(score + 1);
 		}
-		
+
 		const nextQuestion = currentQuestion + 1;
-		
+
 		if (questions[currentQuestion].id === 11) {
 		  setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
 		  // Redirect to YesNo component when reaching ID 11
 		  // You can use react-router-dom or any navigation method here
+			setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
+			// Redirect to YesNo component when reaching ID 11
+			// You can use react-router-dom or any navigation method here
 			window.location.href = '/Yesno'; // Assuming 'history' is available in your component
-		
+
 		} else if (nextQuestion < questions.length) {
-		  setCurrentQuestion(nextQuestion);
-		  setSelectedOption('');
-		  removeHighlight();
-		  setShowScore(false); // Set to false to show questions again if navigating back
+			setCurrentQuestion(nextQuestion);
+			setSelectedOption('');
+			removeHighlight();
+			setShowScore(false); // Set to false to show questions again if navigating back
 		} else {
-		  setShowScore(true);
+			setShowScore(true);
 		}
 
 		if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
@@ -138,6 +141,7 @@ const Question = () => {
 			console.log('Question:', questions[currentQuestion].question);
 			console.log('Answer:', selectedOption);
 		}
+
 		  
 		const handleNextQuestion = (value) => {
 			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
@@ -147,6 +151,14 @@ const Question = () => {
 		  };
 	  };
 	  
+
+		const handleNextQuestion = (value) => {
+			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
+				console.log('Choice Selected:', value);
+				console.log('Answer:', value);
+			}
+		};
+	};
 
 	function highlightButton(button) {
 		const buttons = document.getElementsByTagName('button');
@@ -172,10 +184,10 @@ const Question = () => {
 	const buttonStyle = {
 		fontWeight: 900, // แก้ตามที่ต้องการ
 		// เพิ่มสไตล์อื่นๆ ตามต้องการ
-	  };
+	};
 
 	return (
-		  <div className='wrapper'> 
+		<div className='wrapper'>
 			<Content style={{ padding: '0 50px' }}>
 			  <Col span={12} offset={6}>
 				<Col span={24} style={{ textAlign: 'center' }}>
@@ -219,28 +231,70 @@ const Question = () => {
 							  >
 								{option}
 							  </button>
+				<Col span={12} offset={6}>
+					<Col span={24} style={{ textAlign: 'center' }}>
+						<Col >
+							{currentQuestion > 0 && (
+								<button
+									className='circular-button' // ปุ่มย้อนกลับ
+									style={buttonStyle}
+									onClick={handlePreviousQuestion}
+								>
+									&lt;
+								</button>
+							)}
+						</Col>
+						{showScore ? (
+							<Row>
+								<Col>
+
+								</Col>
+							</Row>
+						) : (
+							<div>
+								<div>
+									<div className='question'>
+										<div className='font-family'>
+											<h1>Question {currentQuestion + 1} </h1>
+											<p>{questions[currentQuestion].question}</p>
+										</div>
+									</div>
+								</div>
+								<Col span={24}>
+									<div className='answer'>
+										<div className='font-family'>
+											{questions[currentQuestion].options.map((option, index) => (
+												<div key={index}>
+													<button
+														type="button"
+														className={`answer-button ${selectedOption === option ? 'highlight' : ''}`}
+														onClick={(event) => handleOptionSelect(event, option)}
+														style={{ margin: '35px', fontWeight: 900 }}
+													>
+														{option}
+													</button>
+												</div>
+											))}
+										</div>
+									</div>
+									<div className='font-family'>
+										<button
+											className='next'
+											onClick={handleNextQuestion}
+											disabled={!selectedOption}
+											style={{ fontWeight: 900 }}
+										>
+											หน้าถัดไป
+										</button>
+									</div>
+								</Col>
 							</div>
-						  ))}
-						  </div>
-						</div>
-						<div className='font-family'> 
-						  <button 
-							className='next'
-							onClick={handleNextQuestion}
-							disabled={!selectedOption}
-							style={{ fontWeight: 900 }}
-						  >
-							หน้าถัดไป
-						  </button>
-						</div>
-					  </Col>
-					</div>
-				  )}
+						)}
+					</Col>
 				</Col>
-			  </Col>
 			</Content>
-		  </div>
-	  );	  
+		</div>
+	);
 };
 
 export default Question;
