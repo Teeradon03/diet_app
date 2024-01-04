@@ -6,8 +6,6 @@ import './Question.css';
 import Choice2 from '../Choice/Choice2';
 
 
-
-
 const Question = () => {
 	const questions = [
 		{
