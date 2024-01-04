@@ -15,14 +15,14 @@ export default function Form() {
 				<div className="row row-centered">
 					<div className="col-lg-12 mt-5 ">
 						<Link to='/ever'>
-						<button className={styles.answerButton}>เคยกรอกแล้ว</button>
+							<button className={styles.answerButton}>เคยกรอกแล้ว</button>
 						</Link>
 					</div>
 				</div>
 				<div className="row">
 					<div className="col-lg-12 mb-5 mt-5">
 						<Link to='/never'>
-						<button className={styles.answerButton}>ยังไม่เคยหรอก</button>
+							<button className={styles.answerButton}>ยังไม่เคยหรอก</button>
 						</Link>
 					</div>
 				</div>

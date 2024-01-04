@@ -1,4 +1,5 @@
 
+<<<<<<< HEAD
 .font-family {
   font-family: 'Noto Sans Thai', sans-serif;
   /* ส่วนอื่น ๆ ของ CSS ของคุณ */
@@ -284,3 +285,293 @@
     height: 45px;
   }
 } 
+=======
+  .font-family {
+    font-family: 'Noto Sans Thai', sans-serif;
+    /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+  
+  }
+
+  .quiz-card {
+    padding: 100px;
+    background-color: #BCCEFB;
+  
+    border-radius: 5px;  
+  }
+  .wrap {
+    align-items: normal!important;
+    box-sizing: border-box;
+    display: flex;
+    flex-wrap: wrap!important
+  }
+  .question {
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .question-text {
+    margin-bottom: 20px;
+    font-size: larger;
+  }
+  
+  .answer {
+    font-size: larger;
+    font-weight: bold;
+    margin-bottom: 10px;
+  }
+  
+  .answer-button {
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 17px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 5px;
+    box-shadow: 6px 6px 4px 2px #b2b2b2;
+    font-size: larger;
+    cursor: pointer;
+    text-align :center;
+    
+  }
+  
+  .answer-button:active{
+    background-color: #757575;
+    color: rgb(255, 255, 255);
+    transform: translateY(5px);
+    outline: none;
+  }
+  
+  .answer-button::selection{
+    background-color: #ffffff;
+  }
+  
+  .highlight {
+    background-color: #757575;
+    color: rgb(255, 255, 255);
+    box-shadow: 6px 6px 4px 2px #696969;
+  }
+  
+  .next{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 5px;
+    box-shadow: 8px 8px 6px 4px #b2b2b2;
+    font-size: larger;
+    cursor: pointer;
+    text-align :center; 
+  }
+  
+  .next:hover{
+    background-color: #dcdcdc;
+    color: #000000;
+    box-shadow: 8px 8px 6px 4px #696969;
+  }
+  
+  .next:active {
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  
+  .circular-button {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff; 
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: -70px;
+    top: 30px;
+  }
+  
+  @media screen and (max-width: 1600px) {
+    .question {
+      padding-top: 30px;
+      font-size: 2rem;
+    }
+    .answer-button{
+      width: 50vw;
+      font-size: 1.8rem;
+      position: relative;
+      left: 25px;
+      width: 40vw !important;
+    }
+    .next{
+      font-size: 1.5rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 135px;
+    }
+    .chevron-icon {
+      font-size: 40vw;
+      width: 60vw;
+      height: 60vw;
+    }
+  }
+  
+  @media screen and (max-width: 1400px) {
+    .question {
+      padding-top: 30px;
+      font-size: 2rem;
+    }
+    .answer-button{
+      width: 50vw;
+      font-size: 1.8rem;
+      position: relative;
+      left: -155px;
+      width: 65vw !important;
+    }
+    .next{
+      font-size: 1.6rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 105px;
+    }
+    .chevron-icon {
+      font-size: 40vw;
+      width: 60vw;
+      height: 60vw;
+    }
+  }
+  
+  @media screen and (max-width: 1200px) {
+    .question {
+      padding-top: 30px;
+      font-size: 2rem;
+    }
+    .answer-button{
+      width: 50vw;
+      font-size: 1.8rem;
+      position: relative;
+      left: -145px;
+      width: 65vw !important;
+    }
+    .next{
+      font-size: 1.5rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 85px;
+    }
+    .chevron-icon {
+      font-size: 40vw;
+      width: 60vw;
+      height: 60vw;
+    }
+  }
+  
+  
+  @media screen and (max-width: 992px) {
+    .question {
+      padding-top: 30px;
+      font-size: 1.6rem;
+    }
+    .answer-button {
+      width: 50vw;
+      font-size: 1.5rem;
+      position: relative;
+      left: -125px;
+      width: 65vw !important;
+    }
+    .next {
+      font-size: 1.4rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 65px;
+    }
+    .chevron-icon {
+      font-size: 30vw;
+      width: 45vw;
+      height: 45vw;
+    }
+  }
+  
+  
+  @media screen and (max-width: 768px) {
+    .question {
+      padding-top: 30px;
+      font-size: 1.5rem;
+    }
+    .answer-button {
+      width: 40vw;
+      font-size: 1.5rem;
+      position: relative;
+      left: -100px;
+      width: 65vw !important;
+    }
+    .next {
+      font-size: 1.4rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 55px;
+    }
+    .chevron-icon {
+      font-size: 30vw;
+      width: 45vw;
+      height: 45vw;
+    }
+  }
+  
+  @media screen and (max-width: 576px) {
+    .question {
+      padding-top: 30px;
+      font-size: 1.4rem;
+    }
+    .answer-button {
+      font-size: 1.2rem;
+      width: 40vw;
+      position: relative;
+      left: -95px;
+      width: 65vw !important;
+    }
+    .next {
+      font-size: 1.2rem;
+      width: 30vw !important;
+      position: absolute;
+      left: 20px;
+    }
+    .chevron-icon {
+      font-size: 30vw;
+      width: 40vw;
+      height: 40vw;
+    }
+  } 
+  
+  @media screen and (max-width: 450px) {
+    .question {
+      padding-top: 30px;
+      font-size: 1.4rem;
+    }
+    .answer-button {
+      font-size: 1.1rem;
+      width: 40vw;
+      position: relative;
+      left: -90px;
+      width: 65vw !important;
+    }
+    .next {
+      font-size: 1.1rem;
+      width: 30vw !important;
+    }
+    .chevron-icon {
+      font-size: 30vw;
+      width: 45vw;
+      height: 45px;
+    }
+  } 
+  
+  
+  
+>>>>>>> a87635520f5d90232a7f8635b03e82d5acc82889
