@@ -73,9 +73,6 @@ const Question = () => {
         setcurrentQuestion(0)
     }
 
-    const handlePage = () => {
-        
-    }
 
     return (
         
