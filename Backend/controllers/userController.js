@@ -41,12 +41,12 @@ exports.loginLine = async (req, res) => {
     );
     console.log('decode verify', decode.data)
     
-
     var userLineData = {
       line_user_id: decode.data.sub,
       line_username: decode.data.name,
       line_picture_url: decode.data.picture,
     };
+    
     console.log('userline data', userLineData)
 
     var user = await User.findOneAndUpdate(
