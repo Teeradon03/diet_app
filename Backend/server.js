@@ -26,8 +26,6 @@ app.use(session({
     saveUninitialized: true
 }))
 
-
-
 connectDB()
 
 readdirSync('./routes').map((r) => app.use('/api', require('./routes/' + r)))
