@@ -7,14 +7,22 @@
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 30px;
   display: block;
+<<<<<<< HEAD
   width: 30%; 
+=======
+  width: 100%; 
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   padding: 30px; 
   margin-bottom: 25px;
   background-color: #FFFF;
   border: 1px solid hsl(0, 0%, 80%);
   color: rgb(13, 13, 13);
   border-radius: 35px;
+<<<<<<< HEAD
   box-shadow: 12px 12px 8px 4px #b2b2b2;
+=======
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   cursor: pointer;
   text-align :center;
 }
@@ -23,14 +31,22 @@
   font-family: 'Noto Sans Thai', sans-serif;
   font-size: 30px;
   display: block;
+<<<<<<< HEAD
   width: 30%;
+=======
+  width: 100%;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   padding: 30px;
   margin-bottom: 25px;
   background-color: #FFFF;
   border: 1px solid #ccc;
   color: rgb(13, 13, 13);
   border-radius: 35px;
+<<<<<<< HEAD
   box-shadow: 12px 12px 8px 4px #b2b2b2;
+=======
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   cursor: pointer;
   text-align :center;
 }
@@ -44,7 +60,11 @@
 .no-button:hover{
   background-color: #757575;
   color: #FFFF;
+<<<<<<< HEAD
   box-shadow: 0 4px 0 0 #b2b2b2;
+=======
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 }
 
 .no-button:active{
@@ -55,7 +75,11 @@
 .yes-button:hover{
   background-color: #757575;
   color: #FFFF;
+<<<<<<< HEAD
   box-shadow: 0 4px 0 0 #b2b2b2;
+=======
+  box-shadow: 10px 10px 3px 3px #b2b2b2;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 }
 
 .yes-button:active{
@@ -116,10 +140,15 @@
   height: 500%;
 }
 
+<<<<<<< HEAD
 
 @media screen and (max-width: 1600px) {
   .Ynquiztion {
     display: flex;
+=======
+@media screen and (max-width: 1600px) {
+  .Ynquiztion {
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     font-size: 2.2rem;
     flex-direction: column;
     align-items: center;
@@ -139,11 +168,21 @@
     width: 50px;
     height: 50px;
   }
+<<<<<<< HEAD
+=======
+  .no-button,
+  .yes-button {
+   width: 10vw ;
+  }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 }
 
 @media screen and (max-width: 1400px) {
   .Ynquiztion {
+<<<<<<< HEAD
     display: flex;
+=======
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -163,12 +202,22 @@
     width: 60px;
     height: 60px;
   }
+<<<<<<< HEAD
+=======
+  .no-button,
+  .yes-button {
+   width: 10vw;
+  }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 }
 
 
 @media screen and (max-width: 1200px) {
   .Ynquiztion {
+<<<<<<< HEAD
     display: flex;
+=======
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -188,13 +237,24 @@
     width: 60px;
     height: 60px;
   }
+<<<<<<< HEAD
+=======
+  .no-button,
+  .yes-button {
+   width: 12vw;
+  }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 }
 
 
 @media screen and (max-width: 992px) {
+<<<<<<< HEAD
 
   .Ynquiztion {
     display: flex;
+=======
+  .Ynquiztion {
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
@@ -214,6 +274,7 @@
     width: 45px;
     height: 45px;
   }
+<<<<<<< HEAD
 }
 
 
@@ -221,6 +282,17 @@
 
   .Ynquiztion {
     display: flex;
+=======
+  .no-button,
+  .yes-button {
+   width: 14.5vw;
+  }
+}
+
+@media screen and (max-width: 768px) {
+
+  .Ynquiztion {
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     font-size: 1.4rem;
     flex-direction: column;
     align-items: center;
@@ -241,6 +313,7 @@
     height: 45px;
     transform: translateX(-200px);
   }
+<<<<<<< HEAD
 }
 
 @media screen and (max-width: 576px) {
@@ -269,6 +342,41 @@
     height: 40px;
     transform: translateX(-270px);
   }
+=======
+  .no-button,
+  .yes-button {
+   width: 18vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .and {
+    position: relative;
+    left: 10px;
+  }
+  .Ynquiztion {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 40px;
+  }
+  .imgmedia {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    left: -50px;
+  }
+  .chevron-icon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-270px);
+  }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   .no-button,
   .yes-button {
    width: 25vw;
@@ -287,7 +395,10 @@
     left: 50px;
   }
   .Ynquiztion {
+<<<<<<< HEAD
     display: flex;
+=======
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
     flex-direction: column;
     align-items: center;
     text-align: center;
@@ -300,7 +411,11 @@
     display: block;
     margin: 0 auto; 
     position: relative;
+<<<<<<< HEAD
     left: 65px;
+=======
+    left: -15px;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   }
   .chevron-icon {
     font-size: 30px;
@@ -309,7 +424,11 @@
   }
   .no-button,
   .yes-button {
+<<<<<<< HEAD
    width: 30vw;
+=======
+   width: 39vw;
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
    position: relative;
    left: 60px;
   }

@@ -171,6 +171,7 @@ const yesno = () => {
     } else {
       setCurrentImageIndex(images.length - 1);
       setCurrentQuestionIndex(images.length - 1);
+<<<<<<< HEAD
 
       /*if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
         window.location.href = '/Calendar_1';
@@ -185,9 +186,26 @@ const yesno = () => {
     ) {
       console.log("Question ID:", questions[currentImageIndex].id);
       console.log("Yes:", newIndex);
+=======
+    
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
+      }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
+    }
+  
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('Yes:', newIndex);
     }
   };
+<<<<<<< HEAD
 
+=======
+            
+  
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
   const handleNoClick = () => {
     const newIndex = currentImageIndex + 1;
 
@@ -197,6 +215,7 @@ const yesno = () => {
     } else {
       setCurrentImageIndex(images.length - 1);
       setCurrentQuestionIndex(images.length - 1);
+<<<<<<< HEAD
 
       /*if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
         window.location.href = '/Calendar_1';
@@ -211,8 +230,26 @@ const yesno = () => {
     ) {
       console.log("Question ID:", questions[currentImageIndex].id);
       console.log("No:", newIndex);
+=======
+    
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
+      }
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
+    }
+  
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('No:', newIndex);
     }
   };
+<<<<<<< HEAD
+=======
+  
+  
+            
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 
   const handlePreviousClick = () => {
     // ตรวจสอบว่าเป็น ID 11 หรือไม่
@@ -243,6 +280,10 @@ const yesno = () => {
       }
     }
   };
+<<<<<<< HEAD
+=======
+  
+>>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 
   const buttonStyle = {
     fontWeight: 900, // แก้ตามที่ต้องการ
