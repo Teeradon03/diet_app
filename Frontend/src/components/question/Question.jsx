@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Row, Col} from 'antd';
+import { Row, Col } from 'antd';
 import { Content } from 'antd/es/layout/layout';
 import Choice from '../Choice/Choice';
 import './Question.css';
@@ -114,14 +114,8 @@ const Question = () => {
 	const [score, setScore] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 
-<<<<<<< HEAD
-	const handleOptionSelect = (option) => {
-		setSelectedOption(option.value);
-		console.log('Selected Value:', option.value);
-=======
 	const handleOptionSelect = (event, option) => {
 		setSelectedOption(option.value);
->>>>>>> 2db3d3fbde69a42ece11f0e129971d16c38dc3bf
 	};
 
 	function removeHighlight() {
@@ -133,25 +127,14 @@ const Question = () => {
 
 	const handleNextQuestion = () => {
 		const isCorrect = selectedOption === questions[currentQuestion].answer;
-		
+
 		if (isCorrect) {
-		  setScore(score + 1);
+			setScore(score + 1);
 		}
-		
+
 		const nextQuestion = currentQuestion + 1;
-		
+
 		if (questions[currentQuestion].id === 11) {
-<<<<<<< HEAD
-		  setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
-		  // Redirect to YesNo component when reaching ID 11
-		  // You can use react-router-dom or any navigation method here
-			window.location.href = '/Yesno'; // Assuming 'history' is available in your component
-		} else if (nextQuestion < questions.length) {
-		  setCurrentQuestion(nextQuestion);
-		  setSelectedOption('');
-		  removeHighlight();
-		  setShowScore(false); // Set to false to show questions again if navigating back
-=======
 			setShowScore(true); // Stop showing questions when reaching ID 11
 			// Redirect to YesNo component when reaching ID 11
 			// You can use react-router-dom or any navigation method here
@@ -160,9 +143,8 @@ const Question = () => {
 			setCurrentQuestion(nextQuestion);
 			setSelectedOption('');
 			setShowScore(false); // Set to false to show questions again if navigating back
->>>>>>> 2db3d3fbde69a42ece11f0e129971d16c38dc3bf
 		} else {
-		  setShowScore(true);
+			setShowScore(true);
 		}
 
 
@@ -171,20 +153,14 @@ const Question = () => {
 			console.log('Question:', questions[currentQuestion].question);
 			console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
 		}
-		  
+
 		const handleNextQuestion = (value) => {
 			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
-			  console.log('Choice Selected:', value);
-			  console.log('Answer:', value);
+				console.log('Choice Selected:', value);
+				console.log('Answer:', value);
 			}
-<<<<<<< HEAD
-		  };
-	  };
-	  
-=======
 		};
 	};
->>>>>>> 2db3d3fbde69a42ece11f0e129971d16c38dc3bf
 
 	function highlightButton(button) {
 		const buttons = document.getElementsByTagName('button');
@@ -209,10 +185,10 @@ const Question = () => {
 	const buttonStyle = {
 		fontWeight: 900, // แก้ตามที่ต้องการ
 		// เพิ่มสไตล์อื่นๆ ตามต้องการ
-	  };
+	};
 
 	return (
-		  <div className='wrapper'> 
+		<div className='wrapper'>
 			<Content style={{ padding: '0 50px' }}>
 				<Col span={12} offset={6}>
 					<Col span={24} style={{ textAlign: 'center' }}>
@@ -251,11 +227,7 @@ const Question = () => {
 													<button
 														type="button"
 														className={`answer-button ${selectedOption === option.value ? 'highlight' : ''}`}
-<<<<<<< HEAD
-														onClick={() => handleOptionSelect(option)}
-=======
 														onClick={(event) => handleOptionSelect(event, option)}
->>>>>>> 2db3d3fbde69a42ece11f0e129971d16c38dc3bf
 														style={{ margin: '45px', fontWeight: 900 }}
 													>
 														{option.label} {/* เปลี่ยนจาก option เป็น option.label */}
@@ -281,8 +253,8 @@ const Question = () => {
 					</Col>
 				</Col>
 			</Content>
-		  </div>
-	  );	  
+		</div>
+	);
 };
 
 export default Question;
