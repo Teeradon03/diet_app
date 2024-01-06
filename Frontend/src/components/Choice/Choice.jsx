@@ -53,20 +53,28 @@ const options  = [
     },
   ];
 
-const handleChange = () => {
-  console.log('selected ${value}');
-};
-
-const Choice = () => (
+  const handleChange = (value) => {
+    console.log('Choice Selected:11', value);
+    // เรียกใช้ฟังก์ชัน handleNextQuestion และส่งค่า value ไปด้วย
+    handleNextQuestion(value);
+  };
+  
+  const handleNextQuestion = (value) => {
+    // ในฟังก์ชันนี้คุณสามารถใช้ค่า value ที่ส่งมาได้
+    console.log('Answer:11', value);
+    // ทำสิ่งที่ต้องการต่อไป...
+  };
+  
+  const Choice = () => (
     <Select
-    mode="multiple"
-    style={{ width: '100%' }}
-    placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
-
-    onChange={handleChange}
-    optionLabelProp="label"
-    options={options}    
-  />
-);
-
+      mode="multiple"
+      style={{ width: '100%' }}
+      placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+      onChange={handleChange}
+      optionLabelProp="label"
+      options={options}    
+    />
+    
+  );
+  
 export default Choice;
