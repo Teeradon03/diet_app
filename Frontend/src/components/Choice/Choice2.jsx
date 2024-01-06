@@ -112,11 +112,19 @@ const options  = [
       },
   ];
 
-const handleChange = () => {
-  console.log('selected ${value}');
-};
-
-const Choice2 = () => (
+  const handleChange = (value) => {
+    console.log('Choice Selected:10', value);
+    // เรียกใช้ฟังก์ชัน handleNextQuestion และส่งค่า value ไปด้วย
+    handleNextQuestion(value);
+  };
+  
+  const handleNextQuestion = (value) => {
+    // ในฟังก์ชันนี้คุณสามารถใช้ค่า value ที่ส่งมาได้
+    console.log('Answer:10', value);
+    // ทำสิ่งที่ต้องการต่อไป...
+  };
+  
+  const Choice2 = () => (
     <Select
     mode="multiple"
     style={{ width: '100%' }}
