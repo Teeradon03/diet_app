@@ -11,11 +11,6 @@ import HomePage from './pages/home/HomePage';
 import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
-<<<<<<< HEAD
-import Yesno from './components/Ynquiz/Yesno'
-=======
-import Yesno from './components/Ynquiz/Yesno.jsx'
->>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
 
 function App() {
   return (
@@ -30,12 +25,6 @@ function App() {
         <Route path="/ever" element={<Ever />} />
         <Route path="/never" element={<Never />} />
         <Route path="/customerkey" element={<CustomerKey />} />
-<<<<<<< HEAD
-        <Route path="/yesno" element={<Yesno />} />
-        
-=======
-        <Route path="/Yesno" element={<Yesno />} />
->>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
       </Routes>
     </BrowserRouter>
   )

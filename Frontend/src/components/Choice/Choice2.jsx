@@ -126,19 +126,14 @@ const options  = [
   
   const Choice2 = () => (
     <Select
-      mode="multiple"
-      style={{ width: '100%' }}
-      placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
-      onChange={handleChange}
-      optionLabelProp="label"
-      options={options}    
-    />
-  );
-<<<<<<< HEAD
+    mode="multiple"
+    style={{ width: '100%' }}
+    placeholder="กรุณาเลือกคำตอบต่อไปนี้"
+
+    onChange={handleChange}
+    optionLabelProp="label"
+    options={options}    
+  />
+);
 
 export default Choice2;
-=======
-  
-  export default Choice2;
-  
->>>>>>> 397a097450a71faad5f5edfc30e9423cea6e3e45
