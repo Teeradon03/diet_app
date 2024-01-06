@@ -1,6 +1,6 @@
 /// model
 const { Question, Questionnaire } = require("../models/form");
-
+const { User } = require('../models/user')
 /// controller
 
 ////////// Question
@@ -96,14 +96,26 @@ exports.createQuestionnaires = async (req, res) => {
     const data = req.body;
     console.log(data);
     try {
+        const generateUserId = () => {
+            const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
+            const timestamp = new Date().getTime();
+            // Convert random number and timestamp to base 36
+            const randomBase36 = randomNumber.toString(36);
+            const timestampBase36 = timestamp.toString(36);
+            // Concatenate the base36 representations
+            const userId = `${randomBase36}${timestampBase36}`;
+        
+            return userId;
+        };
         console.log('qeustionId', data.questionId);
         const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
+
         console.log('questionIdAlreadyExists', questionIdAlreadyExists)
         if (!questionIdAlreadyExists){
-
             const dataTime = new Date()
             const newQuestionnaires = new Questionnaire({
                 ...data,
+                userId: generateUserId(),
                 dataTime: dataTime
             })
             console.log('newQuestion', newQuestionnaires)
