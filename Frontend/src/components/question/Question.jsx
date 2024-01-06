@@ -83,20 +83,19 @@ const Question = () => {
 			id: 8,
 			question: 'คุณเคยควบคุมน้ำหนักหรือไม่',
 			options: [
-				{ value: 'yes', label: 'เคย' },
-				{ value: 'no', label: 'ไม่เคย' }
+				{ value: 1, label: 'เคย' },
+				{ value: 2, label: 'ไม่เคย' }
 			]
 		},
 		{
 			id: 9,
 			question: 'เป้าหมายในการลดน้ำหนัก',
 			options: [
-				{ value: 'slowSteady', label: 'ช้าเเต่มั่นคง' },
-				{ value: 'moderate', label: 'ปานกลาง' },
-				{ value: 'fastest', label: 'เร็วที่สุด' }
+				{ value: 1, label: 'ช้าเเต่มั่นคง' },
+				{ value: 2, label: 'ปานกลาง' },
+				{ value: 3, label: 'เร็วที่สุด' }
 			]
-		}
-		,
+		},
 		{
 			id: 10,
 			question: 'ข้อจำกัดด้านการทานอาหาร',
@@ -115,9 +114,8 @@ const Question = () => {
 	const [score, setScore] = useState(0);
 	const [showScore, setShowScore] = useState(false);
 
-	const handleOptionSelect = (option) => {
+	const handleOptionSelect = (event, option) => {
 		setSelectedOption(option.value);
-		console.log('Selected Value:', option.value);
 	};
 
 	function removeHighlight() {
@@ -137,24 +135,23 @@ const Question = () => {
 		const nextQuestion = currentQuestion + 1;
 
 		if (questions[currentQuestion].id === 11) {
-			setShowScore(true); // หยุดแสดงคำถามเมื่อถึง ID 11
+			setShowScore(true); // Stop showing questions when reaching ID 11
 			// Redirect to YesNo component when reaching ID 11
 			// You can use react-router-dom or any navigation method here
 			window.location.href = '/Yesno'; // Assuming 'history' is available in your component
-
 		} else if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 			setSelectedOption('');
-			removeHighlight();
 			setShowScore(false); // Set to false to show questions again if navigating back
 		} else {
 			setShowScore(true);
 		}
 
-		if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 12) { // เพิ่มเงื่อนไขในการตรวจสอบ ID ของคำถามที่เพิ่มมาใหม่
-			console.log('Question ID:', questions[currentQuestion].id);
+
+		if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 12) {
+			console.log('ID:', questions[currentQuestion].id);
 			console.log('Question:', questions[currentQuestion].question);
-			console.log('Selected Value:', option.value);
+			console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
 		}
 
 		const handleNextQuestion = (value) => {
@@ -162,109 +159,102 @@ const Question = () => {
 				console.log('Choice Selected:', value);
 				console.log('Answer:', value);
 			}
-
-			const handleNextQuestion = (value) => {
-				if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
-					console.log('Choice Selected:', value);
-					console.log('Answer:', value);
-				}
-			};
 		};
+	};
 
-		function highlightButton(button) {
-			const buttons = document.getElementsByTagName('button');
-			for (let i = 0; i < buttons.length; i++) {
-				if (buttons[i] === button) {
-					buttons[i].classList.add('highlight');
-				} else {
-					buttons[i].classList.remove('highlight');
-				}
+	function highlightButton(button) {
+		const buttons = document.getElementsByTagName('button');
+		for (let i = 0; i < buttons.length; i++) {
+			if (buttons[i] === button) {
+				buttons[i].classList.add('highlight');
+			} else {
+				buttons[i].classList.remove('highlight');
 			}
 		}
+	}
 
-		const handlePreviousQuestion = () => { /*ทำปุ่มย้อนกลับคำถาม */
-			const prevQuestion = currentQuestion - 1;
-			if (prevQuestion >= 0) {
-				setCurrentQuestion(prevQuestion);
-				setSelectedOption('');
-				removeHighlight();
-				setShowScore(false); // Set to false to show questions again if navigating back
-			}
-		};
+	const handlePreviousQuestion = () => {
+		const prevQuestion = currentQuestion - 1;
+		if (prevQuestion >= 0) {
+			setCurrentQuestion(prevQuestion);
+			setSelectedOption('');
+			setShowScore(false);
+		}
+	};
 
-		const buttonStyle = {
-			fontWeight: 900, // แก้ตามที่ต้องการ
-			// เพิ่มสไตล์อื่นๆ ตามต้องการ
-		};
+	const buttonStyle = {
+		fontWeight: 900, // แก้ตามที่ต้องการ
+		// เพิ่มสไตล์อื่นๆ ตามต้องการ
+	};
 
-		return (
-			<div className='wrapper'>
-				<Content style={{ padding: '0 50px' }}>
-					<Col span={12} offset={6}>
-						<Col span={24} style={{ textAlign: 'center' }}>
-							<Col >
-								{currentQuestion > 0 && (
-									<button
-										className='circular-button' // ปุ่มย้อนกลับ
-										style={buttonStyle}
-										onClick={handlePreviousQuestion}
-									>
-										&lt;
-									</button>
-								)}
-							</Col>
-							{showScore ? (
-								<Row>
-									<Col>
-
-									</Col>
-								</Row>
-							) : (
-								<div>
-									<div>
-										<div className='question'>
-											<div className='font-family'>
-												<h1>Question {currentQuestion + 1} </h1>
-												<p>{questions[currentQuestion].question}</p>
-											</div>
-										</div>
-									</div>
-									<Col span={24}>
-										<div className='answer'>
-											<div className='font-family'>
-												{questions[currentQuestion].options.map((option, index) => (
-													<div key={index}>
-														<button
-															type="button"
-															className={`answer-button ${selectedOption === option ? 'highlight' : ''}`}
-															onClick={(event) => handleOptionSelect(event, option)}
-															style={{ margin: '45px', fontWeight: 900 }}
-														>
-															{option}
-														</button>
-													</div>
-												))}
-											</div>
-										</div>
-										<div className='font-family'>
-											<button
-												className='next'
-												onClick={handleNextQuestion}
-												disabled={!selectedOption}
-												style={{ fontWeight: 900 }}
-											>
-												หน้าถัดไป
-											</button>
-										</div>
-									</Col>
-								</div>
+	return (
+		<div className='wrapper'>
+			<Content style={{ padding: '0 50px' }}>
+				<Col span={12} offset={6}>
+					<Col span={24} style={{ textAlign: 'center' }}>
+						<Col >
+							{currentQuestion > 0 && (
+								<button
+									className='circular-button' // Back button
+									style={buttonStyle}
+									onClick={handlePreviousQuestion}
+								>
+									&lt;
+								</button>
 							)}
 						</Col>
+						{showScore ? (
+							<Row>
+								<Col>
+
+								</Col>
+							</Row>
+						) : (
+							<div>
+								<div>
+									<div className='question'>
+										<div className='font-family'>
+											<h1>Question {currentQuestion + 1} </h1>
+											<p>{questions[currentQuestion].question}</p>
+										</div>
+									</div>
+								</div>
+								<Col span={24}>
+									<div className='answer'>
+										<div className='font-family'>
+											{questions[currentQuestion].options.map((option, index) => (
+												<div key={index}>
+													<button
+														type="button"
+														className={`answer-button ${selectedOption === option.value ? 'highlight' : ''}`}
+														onClick={(event) => handleOptionSelect(event, option)}
+														style={{ margin: '45px', fontWeight: 900 }}
+													>
+														{option.label} {/* เปลี่ยนจาก option เป็น option.label */}
+													</button>
+												</div>
+											))}
+
+										</div>
+									</div>
+									<div className='font-family'>
+										<button
+											className='next'
+											onClick={handleNextQuestion}
+											disabled={!selectedOption}
+											style={{ fontWeight: 900 }}
+										>
+											หน้าถัดไป
+										</button>
+									</div>
+								</Col>
+							</div>
+						)}
 					</Col>
-				</Content>
-			</div>
-		);
-	};
+				</Col>
+			</Content>
+		</div>
+	);
 };
 
 export default Question;
