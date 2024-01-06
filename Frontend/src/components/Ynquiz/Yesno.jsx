@@ -151,16 +151,20 @@ const yesno = () => {
     } else {
       // Reached the last image, perform necessary actions
       setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1); // Align the question index with the last image index
-  
-      // Check if the current question ID is 30
-      if (questions[newIndex].id === 30) {
-        // Redirect to the Calendar page or perform any necessary navigation here
-        window.location.href = '/Calendar_1'; // Change this to your Calendar page URL
+      setCurrentQuestionIndex(images.length - 1);
+
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
       }
     }
+
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('Yes:', newIndex);
+    }
   };
-            
+
 
   const handleNoClick = () => {
     const newIndex = currentImageIndex + 1;
@@ -171,16 +175,22 @@ const yesno = () => {
     } else {
       // Reached the last image, perform necessary actions
       setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1); // Align the question index with the last image index
-  
-      // Check if the current question ID is 30
-      if (questions[newIndex].id === 30) {
-        // Redirect to the Calendar page or perform any necessary navigation here
-        window.location.href = '/Calendar_1'; // Change this to your Calendar page URL
+      setCurrentQuestionIndex(images.length - 1);
+
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
       }
     }
+
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('No:', newIndex);
+    }
   };
-            
+
+
+
 
   const handlePreviousClick = () => {
     // ตรวจสอบว่าเป็น ID 11 หรือไม่
@@ -208,8 +218,7 @@ const yesno = () => {
       }
     }
   };
-  
-  
+
 
   const buttonStyle = {
     fontWeight: 900, // แก้ตามที่ต้องการ
