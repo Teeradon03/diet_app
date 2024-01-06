@@ -12,8 +12,7 @@
     font-size: larger;
     cursor: pointer;
     text-align: center;
-    /* justify-content: center; */
-    /* Add this line to align text to the left */
+
     position: relative;
   }
   

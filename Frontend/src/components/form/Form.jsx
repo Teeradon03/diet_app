@@ -21,7 +21,7 @@ export default function Form() {
 				</div>
 				<div className="row">
 					<div className="col-lg-12 mb-5 mt-5">
-						<Link to='/never'>
+						<Link to='/question'>
 							<button className={styles.answerButton}>ยังไม่เคยหรอก</button>
 						</Link>
 					</div>

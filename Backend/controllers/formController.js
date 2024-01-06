@@ -1,6 +1,6 @@
 /// model
 const { Question, Questionnaire } = require("../models/form");
-
+const { User } = require('../models/user')
 /// controller
 
 ////////// Question
@@ -43,7 +43,7 @@ exports.getQuestionById = async (req, res) => {
         });
     }
 };
-exports.create_question = async (req, res) => {
+exports.createQuestion = async (req, res) => {
     const data = req.body;
     //   console.log("the data from create question", data);
     //   console.log('data contenttttttttttt',data.content)
@@ -96,9 +96,39 @@ exports.createQuestionnaires = async (req, res) => {
     const data = req.body;
     console.log(data);
     try {
-        const createForm = await new Questionnaire(data).save();
-        console.log("Created Questoinnaires Successfully");
-        res.json(createForm);
+        const generateUserId = () => {
+            const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
+            const timestamp = new Date().getTime();
+            // Convert random number and timestamp to base 36
+            const randomBase36 = randomNumber.toString(36);
+            const timestampBase36 = timestamp.toString(36);
+            // Concatenate the base36 representations
+            const userId = `${randomBase36}${timestampBase36}`;
+        
+            return userId;
+        };
+        console.log('qeustionId', data.questionId);
+        const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
+
+        console.log('questionIdAlreadyExists', questionIdAlreadyExists)
+        if (!questionIdAlreadyExists){
+            const dataTime = new Date()
+            const newQuestionnaires = new Questionnaire({
+                ...data,
+                userId: generateUserId(),
+                dataTime: dataTime
+            })
+            console.log('newQuestion', newQuestionnaires)
+            await newQuestionnaires.save()
+            console.log("Created Questoinnaires Successfully");
+            res.json(newQuestionnaires);
+        }else{
+            console.log('This questionId already exists')
+            res.json({
+                message: "This Questionnaire already exist",
+            })
+        }
+        
     } catch (error) {
         console.log("Error: " + error);
         res.status(500).json({
@@ -142,7 +172,7 @@ exports.getQuestionnaireByUserId = async (req, res) => {
         const getQuestionnaire = await Questionnaire.find({ userId });
         // console.log("getQuestionnaire", getQuestionnaire)
 
-        // Check if questionnaires are found
+        // Check if questionnaires already exist
         if (getQuestionnaire.length > 0) {
             console.log("Here's your Questionnaire for user ID:", userId, getQuestionnaire);
             res.json(getQuestionnaire);
