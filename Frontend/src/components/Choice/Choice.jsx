@@ -6,62 +6,62 @@ const options  = [
     {
       id: 1,
       label: 'ไม่มีโรคประจำตัว',
-      value: '1'
+      value: 1
     },
     {
       id: 2,
       label: 'โรคความดันโลหิตสูง',
-      value: '2'
+      value: 2
     },
     {
       id: 3,
       label: 'โรคท้องผูก',
-      value: '3'
+      value: 3
     },
     {
       id: 4,
       label: 'โรคมะเร็งลำไส้',
-      value: '4' 
+      value: 4 
     },
     {
       id: 5,
       label: 'โรคริดสีดวงทวาร',
-      value: '5'  
+      value: 5  
     },
     {
       id: 6,
       label: 'โรคหัวใจและหลอดเลือด',
-      value: '6'  
+      value: 6  
     },
     {
       id: 7,
       label: 'โรคลำไส้อุดตัน',
-      value: '7'  
+      value: 7  
     },
     {
       id: 8,
       label: 'โรคกล้ามเนื้อเชิงอุ้งกรานอ่อนเเรง',
-      value: '8'  
+      value: 8  
     },
     {
       id: 9,
       label: 'โรคเบาหวาน',
-      value: '9'  
+      value: 9  
     },
     {
       id: 10,
       label: 'โรคความดันตํ่า',
-      value: '10'  
+      value: 10  
     },
     {
       id: 11,
       label: 'โรคไขมันในเลือด',
-      value: '11'  
+      value: 11 
     },
     {
       id: 12,
       label: 'โรคกระเพาะ/กรดไหลย้อน',
-      value: '12'  
+      value: 12  
     },
   ];
 
