@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Yesno.css";
 import { VscChevronLeft } from "react-icons/vsc";
+import axios from "axios";
+
 
 const yesno = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -140,6 +142,24 @@ const yesno = () => {
                 },
             ]);
 
+
+            const sendToAPI = async () => {
+              try {
+                const data = {
+                  questionId: questions[currentQuestionIndex].id,
+                  question: questions[currentQuestionIndex].question,
+                  answer: 5,
+                  userId: 1
+                };
+              
+                const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+                console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+              } catch (error) {
+                console.error('Error:', error);
+              }
+            };
+            
+            
   const handleYesClick = () => {
     const newIndex = currentImageIndex + 1;
 
@@ -159,6 +179,11 @@ const yesno = () => {
     if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('Yes:', newIndex);
+
+
+      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+      sendToAPI();
+
     }
   };
 
@@ -182,6 +207,12 @@ const yesno = () => {
     if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('No:', newIndex);
+
+
+      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+      sendToAPI();
+
+
     }
   };
 
@@ -190,7 +221,7 @@ const yesno = () => {
 
   const handlePreviousClick = () => {
     // ตรวจสอบว่าเป็น ID 11 หรือไม่
-    const targetQuestionId = 11; // ID ของคำถามที่ต้องการ
+    const targetQuestionId = 30; // ID ของคำถามที่ต้องการ
 
     if (currentQuestionIndex === 0) {
       // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง

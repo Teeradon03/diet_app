@@ -4,8 +4,7 @@ import { Content } from 'antd/es/layout/layout';
 import './Question.css';
 import Choice from '../Choice/Choice';
 import Choice2 from '../Choice/Choice2';
-
-
+import axios from 'axios';
 
 
 const Question = () => {
@@ -125,6 +124,23 @@ const Question = () => {
 		}
 	}
 
+    const sendToAPI = async () => {
+        try {
+          const data = {
+            questionId: questions[currentQuestion].id,
+            question: questions[currentQuestion].question,
+            answer: 5,
+            userId: 1
+          };
+        
+          const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+          console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
+    
+
 	const handleNextQuestion = () => {
 		const isCorrect = selectedOption === questions[currentQuestion].answer;
 
@@ -152,14 +168,17 @@ const Question = () => {
 			console.log('ID:', questions[currentQuestion].id);
 			console.log('Question:', questions[currentQuestion].question);
 			console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
+
+            // เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
+            sendToAPI();
 		}
 
-		const handleNextQuestion = (value) => {
-			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
-				console.log('Choice Selected:', value);
-				console.log('Answer:', value);
-			}
-		};
+		function handleNextQuestion(value) {
+            if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
+                console.log('Choice Selected:', value);
+                console.log('Answer:', value);
+            }
+        }
 	};
 
 	function highlightButton(button) {
@@ -172,6 +191,8 @@ const Question = () => {
 			}
 		}
 	}
+
+
 
 	const handlePreviousQuestion = () => {
 		const prevQuestion = currentQuestion - 1;

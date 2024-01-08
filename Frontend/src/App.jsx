@@ -11,6 +11,10 @@ import HomePage from './pages/home/HomePage';
 import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
+
+import Yesno from './components/Ynquiz/Yesno'
+import Choice from './components/Choice/Choice';
+
 import Calendar_1 from './components/Calendar/Calendar_1';
 import Target from './pages/target/Target';
 import Name from './components/Name/Name';
@@ -29,6 +33,7 @@ import Bmi_obesitylevel2 from './components/Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from './components/Bmi/Bmi_obesitylevel3';
 
 
+
 function App() {
   return (
     <BrowserRouter>
@@ -42,6 +47,10 @@ function App() {
         <Route path="/ever" element={<Ever />} />
         <Route path="/never" element={<Never />} />
         <Route path="/customerkey" element={<CustomerKey />} />
+
+        <Route path="/yesno" element={<Yesno />} />
+        <Route path="/choice" element={<Choice />} />
+
 
         <Route path='/calendar_1' element={<Calendar_1 />}/>
        
@@ -65,6 +74,7 @@ function App() {
 
 
         <Route path='/Name' element={<Name/>}/>
+
 
 
 
