@@ -196,7 +196,6 @@ const Question = () => {
 						{showScore ? (
 							<Row>
 								<Col>
-
 								</Col>
 							</Row>
 						) : (
@@ -205,7 +204,9 @@ const Question = () => {
 									<div className='question'>
 										<div className='font-family'>
 											<h1>Question {currentQuestion + 1} </h1>
-											<p>{questions[currentQuestion].question}</p>
+											<div className='ques'>
+												<p style={{ width: '800px' }}>{questions[currentQuestion].question}</p>
+											</div>
 										</div>
 									</div>
 								</div>
