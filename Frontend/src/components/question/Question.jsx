@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
 import { Row, Col } from 'antd';
 import { Content } from 'antd/es/layout/layout';
-import Choice from '../Choice/Choice';
 import './Question.css';
-import Choice2 from '../Choice/Choice2';
+import axios from 'axios';
 
 
 
@@ -148,9 +147,26 @@ const Question = () => {
 			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
 				console.log('Choice Selected:', value);
 				console.log('Answer:', value);
+				sendToAPI();  // เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
 			}
 		};
 	};
+
+	const sendToAPI = async () => {
+        try {
+          const data = {
+            questionId: questions[currentQuestion].id,
+            question: questions[currentQuestion].question,
+            answer: 5,
+            userId: 1
+          };
+
+          const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+          console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+        } catch (error) {
+          console.error('Error:', error);
+        }
+      };
 
 	function highlightButton(button) {
 		const buttons = document.getElementsByTagName('button');
@@ -196,6 +212,7 @@ const Question = () => {
 						{showScore ? (
 							<Row>
 								<Col>
+
 								</Col>
 							</Row>
 						) : (
@@ -204,9 +221,7 @@ const Question = () => {
 									<div className='question'>
 										<div className='font-family'>
 											<h1>Question {currentQuestion + 1} </h1>
-											<div className='ques'>
-												<p style={{ width: '800px' }}>{questions[currentQuestion].question}</p>
-											</div>
+											<p>{questions[currentQuestion].question}</p>
 										</div>
 									</div>
 								</div>
