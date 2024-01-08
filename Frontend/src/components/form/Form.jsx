@@ -7,7 +7,7 @@ export default function Form() {
 			<div className="container text-center mt-5 pt-5">
 				<div className="row">
 					<div className="answer mt-5 mb-5">
-						<h2>
+						<h2 style={{ fontWeight: 'bold' }}>
 							คุณเคยกรอกแบบสอบถามหรือยัง
 						</h2>
 					</div>

@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import "./Yesno.css";
 import { VscChevronLeft } from "react-icons/vsc";
+import axios from "axios";
+
 
 const yesno = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -140,6 +142,24 @@ const yesno = () => {
                 },
             ]);
 
+
+            const sendToAPI = async () => {
+              try {
+                const data = {
+                  questionId: questions[currentQuestionIndex].id,
+                  question: questions[currentQuestionIndex].question,
+                  answer: 5,
+                  userId: 1
+                };
+              
+                const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+                console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+              } catch (error) {
+                console.error('Error:', error);
+              }
+            };
+            
+            
   const handleYesClick = () => {
     const newIndex = currentImageIndex + 1;
 
@@ -148,16 +168,23 @@ const yesno = () => {
       setCurrentQuestionIndex(newIndex);
     } else {
       setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1); // Align the question index with the last image index
-  
-      // Check if the current question ID is 30
-      if (questions[newIndex].id === 30) {
-        // Redirect to the Calendar page or perform any necessary navigation here
-        window.location.href = '/Calendar_1'; // Change this to your Calendar page URL
+      setCurrentQuestionIndex(images.length - 1);
+
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
       }
     }
+
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('Yes:', newIndex);
+
+      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+      sendToAPI();
+    }
   };
-            
+
 
   const handleNoClick = () => {
     const newIndex = currentImageIndex + 1;
@@ -167,20 +194,29 @@ const yesno = () => {
       setCurrentQuestionIndex(newIndex);
     } else {
       setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1); // Align the question index with the last image index
-  
-      // Check if the current question ID is 30
-      if (questions[newIndex].id === 30) {
-        // Redirect to the Calendar page or perform any necessary navigation here
-        window.location.href = '/Calendar_1'; // Change this to your Calendar page URL
+      setCurrentQuestionIndex(images.length - 1);
+
+      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+        window.location.href = '/Calendar_1';
+        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
       }
     }
+
+    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+      console.log('Question ID:', questions[currentImageIndex].id);
+      console.log('No:', newIndex);
+
+      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+      sendToAPI();
+    }
   };
-            
+
+
+
 
   const handlePreviousClick = () => {
     // ตรวจสอบว่าเป็น ID 11 หรือไม่
-    const targetQuestionId = 11; // ID ของคำถามที่ต้องการ
+    const targetQuestionId = 30; // ID ของคำถามที่ต้องการ
 
     if (currentQuestionIndex === 0) {
       // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง
@@ -207,8 +243,7 @@ const yesno = () => {
       }
     }
   };
-  
-  
+
 
   const buttonStyle = {
     fontWeight: 900, // แก้ตามที่ต้องการ
