@@ -11,8 +11,8 @@ const userSchema = mongoose.Schema({
     bmiIndex: String,
     calories: Number,
     userId : {
-        type : Number,
-        required: false,
+        type : String,
+        required: true,
     },
     createdAt: { type: Date, default: Date.now },
     updatedAt: { type: Date, default: Date.now },
