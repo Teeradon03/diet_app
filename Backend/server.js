@@ -1,35 +1,37 @@
-
-const express = require('express');
+const express = require("express");
 const app = express();
 // middleware
-const cors = require('cors');
-const bodyParser = require('body-parser');
+const cors = require("cors");
+const bodyParser = require("body-parser");
 /// ENV
-require('dotenv').config();
+require("dotenv").config();
 
 // sessio
-const session = require('express-session')
+const session = require("express-session");
 
 // mongodb
-const connectDB = require('./db/db')
+const connectDB = require("./db/db");
 
 // route
-const {readdirSync} = require('fs')
+const { readdirSync } = require("fs");
 
-app.use(express.json())
+app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json({ limit: "10mb" }))
-app.use(cors())
-app.use(session({
-    secret: 'something that very secret',
-    resave: false,
-    saveUninitialized: true
-}))
+app.use(bodyParser.json({ limit: "10mb" }));
+app.use(cors());
+// app.use(session({
+//     secret: 'something that very secret',
+//     resave: false,
+//     saveUninitialized: true
+// }))
 
-connectDB()
+const authSession = require("./middleware/auth");
+app.use(authSession);
 
-readdirSync('./routes').map((r) => app.use('/api', require('./routes/' + r)))
+connectDB();
 
-app.listen(process.env.PORT || 3000, (req,res)  => {
-    console.log(`app listening on port ${process.env.PORT}`)
-})
+readdirSync("./routes").map((r) => app.use("/api", require("./routes/" + r)));
+
+app.listen(process.env.PORT || 3000, (req, res) => {
+  console.log(`app listening on port ${process.env.PORT}`);
+});

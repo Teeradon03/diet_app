@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const authSession = require('../middleware/auth');
 /// controller
 const {
   getQuestions,
@@ -9,6 +10,8 @@ const {
   getQuestionnaire,
   getQuestionnaireByUserId,
 } = require("../controllers/formController");
+
+router.use(authSession)
 
 /// question
 router.get("/get-questions", getQuestions);

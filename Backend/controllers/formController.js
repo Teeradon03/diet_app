@@ -1,4 +1,4 @@
-/// model
+   /// model
 const { Question, Questionnaire } = require("../models/form");
 const { User } = require('../models/user')
 /// controller
@@ -93,7 +93,8 @@ exports.createQuestion = async (req, res) => {
 
 /// Questionnnaires
 exports.createQuestionnaires = async (req, res) => {
-    console.log("lineUserId", req.session.userId);
+    console.log("UserId Session", req.session.userId);
+
     const data = req.body;
     console.log(data);
 
@@ -102,7 +103,7 @@ exports.createQuestionnaires = async (req, res) => {
         const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
 
         console.log('questionIdAlreadyExists', questionIdAlreadyExists)
-        
+          
         if (!questionIdAlreadyExists){
             const dataTime = new Date()
             const newQuestionnaires = new Questionnaire({
