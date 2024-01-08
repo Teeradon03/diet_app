@@ -180,8 +180,10 @@ const yesno = () => {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('Yes:', newIndex);
 
+
       // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
       sendToAPI();
+
     }
   };
 
@@ -206,8 +208,11 @@ const yesno = () => {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('No:', newIndex);
 
+
       // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
       sendToAPI();
+
+
     }
   };
 
