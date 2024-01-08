@@ -278,8 +278,7 @@
   .next {
     font-size: 1.1rem;
     width: 30vw !important;
-    position: absolute;
-    position: absolute;
+    position: relative;
     left: -2px;
   }
   .chevron-icon {
@@ -288,5 +287,4 @@
     height: 45px;
   }
 } 
-
 

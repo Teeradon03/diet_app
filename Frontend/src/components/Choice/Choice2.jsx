@@ -1,6 +1,7 @@
 import {Select} from 'antd';
 import React from 'react';
-
+import { VscChevronLeft } from 'react-icons/vsc';
+import './Choice.css';
 
 const options  = [
     {
@@ -112,28 +113,54 @@ const options  = [
       },
   ];
 
-  const handleChange = (value) => {
-    console.log('Choice Selected:10', value);
-    // เรียกใช้ฟังก์ชัน handleNextQuestion และส่งค่า value ไปด้วย
-    handleNextQuestion(value);
-  };
+  const Choice2 = () => {
+    const handleChange = (value) => {
+      const selectedOptions = options.filter(option => value.includes(option.value));
+      const selectedLabels = selectedOptions.map(option => option.label);
+      console.log('ข้อจำกัดด้านการทานอาหาร :', value);
+    };
+
+
+    const handleNext = () => {
+      // เมื่อคลิกปุ่ม "Next" ให้เปลี่ยนไปยังหน้า '/Choice'
+      window.location.href = '/Choice'; // ต้องการ URL ของหน้า Choice ที่คุณกำหนด
+    };
+
+    const buttonStyle = {
+      fontWeight: 900,
+      // สไตล์เพิ่มเติมตามต้องการ
+    };
+
   
-  const handleNextQuestion = (value) => {
-    // ในฟังก์ชันนี้คุณสามารถใช้ค่า value ที่ส่งมาได้
-    console.log('Answer:10', value);
-    // ทำสิ่งที่ต้องการต่อไป...
-  };
-  
-  const Choice2 = () => (
-    <Select
-      mode="multiple"
-      style={{ width: '100%' }}
-      placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
-      onChange={handleChange}
-      optionLabelProp="label"
-      options={options}    
-    />
+  return (
+    <div>
+<div className='text'>
+<h1 style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+</div>
+      <br /><br />
+      <Select
+        mode="multiple"
+        style={{ width: '60%' }}
+        placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+        onChange={handleChange}
+        optionLabelProp="label"
+        options={options}    
+      />
+      <br /><br /><br />
+      <div className='font-family'>
+        <button className='next-list' onClick={handleNext} style={buttonStyle}>
+        หน้าถัดไป
+        </button>
+      </div>
+      <div>
+          <button className='chevron-list' style={buttonStyle}>
+            <VscChevronLeft />{/* ไอคอนย้อนกลับ */}
+          </button>
+        </div>
+    </div>
   );
-  
+};
+
+
   export default Choice2;
   

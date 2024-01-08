@@ -96,16 +96,6 @@ const Question = () => {
 				{ value: 3, label: 'เร็วที่สุด' }
 			]
 		},
-		{
-			id: 10,
-			question: 'ข้อจำกัดด้านการทานอาหาร',
-			options: [<Choice2 />],
-		},
-		{
-			id: 11,
-			question: 'โรคประจำตัวของคุณ (เลือกได้มากกว่า 1 ข้อ)',
-			options: [<Choice />],
-		},
 
 	];
 
@@ -134,11 +124,11 @@ const Question = () => {
 
 		const nextQuestion = currentQuestion + 1;
 
-		if (questions[currentQuestion].id === 11) {
+		if (questions[currentQuestion].id === 9) {
 			setShowScore(true); // Stop showing questions when reaching ID 11
 			// Redirect to YesNo component when reaching ID 11
 			// You can use react-router-dom or any navigation method here
-			window.location.href = '/Yesno'; // Assuming 'history' is available in your component
+			window.location.href = '/Choice2'; // Assuming 'history' is available in your component
 		} else if (nextQuestion < questions.length) {
 			setCurrentQuestion(nextQuestion);
 			setSelectedOption('');
