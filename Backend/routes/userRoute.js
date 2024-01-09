@@ -3,12 +3,14 @@ const router = express.Router();
 
 //// Controller
 const { loginLine, getUserData, updateUser } = require('../controllers/userController');
-const authSession = require('../middleware/auth');
 
-router.use(authSession)
+/// middleware
+const {isLoggedIn}  = require('../middleware/isLoggedIn')
+
+
 
 router.post('/user-login', loginLine)
-// router.post('/user-update', updateUser)
-router.get('/get-users', getUserData)
+router.get('/get-users',isLoggedIn , getUserData)
 
+// router.post('/user-update', updateUser)
 module.exports = router

@@ -1,6 +1,6 @@
 const express = require("express");
 const router = express.Router();
-const authSession = require('../middleware/auth');
+
 /// controller
 const {
   getQuestions,
@@ -11,7 +11,10 @@ const {
   getQuestionnaireByUserId,
 } = require("../controllers/formController");
 
-router.use(authSession)
+/// middlware
+
+const { isLoggedIn } = require('../middleware/isLoggedIn');
+
 
 /// question
 router.get("/get-questions", getQuestions);
@@ -21,6 +24,6 @@ router.post("/create-question", createQuestion);
 /// questionnaires
 router.get("/get-questionnaires", getQuestionnaire);
 router.get("/get-questionnaire/:userId", getQuestionnaireByUserId);
-router.post("/create-questionnaires", createQuestionnaires);
+router.post("/create-questionnaires",isLoggedIn ,createQuestionnaires);
 
 module.exports = router;

@@ -133,7 +133,7 @@ const Question = () => {
             userId: 1
           };
         
-          const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+          const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
           console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
         } catch (error) {
           console.error('Error:', error);

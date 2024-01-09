@@ -32,7 +32,7 @@ const LineLoginButton = () => {
 
   const lineSend = async(idToken) => {
     try{
-      await axios.post("http://localhost:9999/api/user-login", idToken)
+      await axios.post("http://localhost:9999/api/user/user-login",idToken)
       console.log("data",idToken)
     }
     catch(error) {

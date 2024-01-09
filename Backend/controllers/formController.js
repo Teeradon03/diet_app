@@ -44,6 +44,8 @@ exports.getQuestionById = async (req, res) => {
     }
 };
 exports.createQuestion = async (req, res) => {
+
+    console.log("req.session.userId in questionnnnn", req.session.userId)
     const data = req.body;
     //   console.log("the data from create question", data);
     //   console.log('data contenttttttttttt',data.content)
@@ -93,7 +95,7 @@ exports.createQuestion = async (req, res) => {
 
 /// Questionnnaires
 exports.createQuestionnaires = async (req, res) => {
-    console.log("UserId Session", req.session.userId);
+    console.log("UserId Session in form", req.session.userId);
 
     const data = req.body;
     console.log(data);
