@@ -1,9 +1,12 @@
 import {Select} from 'antd';
 import React from 'react';
-
+import { VscChevronLeft } from 'react-icons/vsc';
+import './Choice.css';
+import axios from 'axios';
 
 const options  = [
     {
+      id: 1,
         label: (
           <span>
             โลว์คาร์บหรือคีโต
@@ -12,9 +15,10 @@ const options  = [
                 (ทานอาหารคาร์โบไฮเดรตตํ่า รับประทานเนื้อสัตว์เป็นหลัก)
                 </span>
           </span>),
-          value: 'โลว์คาร์บหรือคีโต'
+          value: '1'
       },
       {
+        id: 2,
         label: (
           <span>
             มังสวิรัติ
@@ -23,9 +27,10 @@ const options  = [
                 (ไม่รับประทานเนื้อสัตว์)
                 </span>
           </span>),
-          value: 'มังสวิรัติ'
+          value: '2'
       },
       {
+        id: 3,
         label: (
           <span>
             วีแกน
@@ -34,9 +39,10 @@ const options  = [
                 (ไม่รับประทานอาหารผลิตภัณฑ์จากสัตว์)
                 </span>
           </span>),
-          value: 'วีแกน'
+          value: '3'
       },
       {
+        id: 4,
         label: (
           <span>
             ไม่มีแลคโตส
@@ -45,9 +51,10 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีแลคโตส)
                 </span>
           </span>),
-          value: 'ไม่มีแลคโตส'
+          value: '4'
       },
       {
+        id: 5,
         label: (
           <span>
             ไม่มีกลูเตน
@@ -56,8 +63,9 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีส่วนประกอบของกลูเตน)
                 </span>
           </span>),
-          value: 'ไม่มีกลูเตน'
+          value: '5'
       },{
+        id: 6,
         label: (
           <span>
             อาหารเพสคาทาเรียน
@@ -66,8 +74,9 @@ const options  = [
                 (ไม่รับประทานเนื้อสัตว์ แต่รับประทานปลาหรือหอย)
                 </span>
           </span>),
-          value: 'อาหารเพสคาทาเรียน'
+          value: '6'
       },{
+        id: 7,
         label: (
           <span>
             พาเลโอไดเอท
@@ -76,8 +85,9 @@ const options  = [
                 (ทานอาหารแบบคาร์โบไฮเดรตตํ๋า ไม่ทานขนมหวาน)
                 </span>
           </span>),
-          value: 'พาเลโอไดเอท'
+          value: '7'
       },{
+        id: 8,
         label: (
           <span>
             ไม่มีไข่
@@ -86,9 +96,10 @@ const options  = [
                 (ไม่รับประทานอาหารที่มีไข่ หรือส่วนประกอบของไข่)
                 </span>
           </span>),
-          value: 'ไม่มีไข่'
+          value: '8'
       },
       {
+        id: 9,
         label: (
           <span>
             ไม่รับประทานอาหารทะเล
@@ -97,9 +108,10 @@ const options  = [
                 (รับประทานอาหารที่ไม่มีส่วนประกอบของอาหารทะเล)
                 </span>
           </span>),
-          value: 'ไม่รับประทานอาหารทะเล'
+          value: '9'
       },
       {
+        id: 10,
         label: (
           <span>
             รับประทานอาหารได้แทบทุกชนิด
@@ -108,32 +120,77 @@ const options  = [
                 
                 </span>
           </span>),
-          value: 'รับประทานอาหารได้แทบทุกชนิด'
+          value: '10'
       },
   ];
 
-  const handleChange = (value) => {
-    console.log('Choice Selected:10', value);
-    // เรียกใช้ฟังก์ชัน handleNextQuestion และส่งค่า value ไปด้วย
-    handleNextQuestion(value);
-  };
-  
-  const handleNextQuestion = (value) => {
-    // ในฟังก์ชันนี้คุณสามารถใช้ค่า value ที่ส่งมาได้
-    console.log('Answer:10', value);
-    // ทำสิ่งที่ต้องการต่อไป...
-  };
-  
-  const Choice2 = () => (
-    <Select
-    mode="multiple"
-    style={{ width: '100%' }}
-    placeholder="กรุณาเลือกคำตอบต่อไปนี้"
+  const sendToAPI = async (selectedOptions, selectedLabels) => {
+    try {
+        const data = {
+            questionId: selectedOptions.map(option => option.id),
+            question: selectedLabels.map(option => option.label),
+            answer: 5,
+            userId: 1
+        };
 
-    onChange={handleChange}
-    optionLabelProp="label"
-    options={options}    
-  />
-);
+        const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+        console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+    } catch (error) {
+        console.error('Error:', error);
+    }
+};  
 
-export default Choice2;
+  const Choice2 = () => {
+    const handleChange = (value) => {
+      const selectedOptions = options.filter(option => value.includes(option.value));
+      const selectedLabels = selectedOptions.map(option => option.label);
+      console.log('ข้อจำกัดด้านการทานอาหาร :', value);
+
+      // เรียกใช้ sendToAPI พร้อมส่ง selectedOptions และ selectedLabels เพื่อใช้ในการส่งไปยัง API
+      sendToAPI(selectedOptions, selectedLabels); 
+    };
+
+
+    const handleNext = () => {
+      // เมื่อคลิกปุ่ม "Next" ให้เปลี่ยนไปยังหน้า '/Choice'
+      window.location.href = '/Choice'; // ต้องการ URL ของหน้า Choice ที่คุณกำหนด
+    };
+
+    const buttonStyle = {
+      fontWeight: 900,
+      // สไตล์เพิ่มเติมตามต้องการ
+    };
+
+  
+  return (
+    <div>
+<div className='text'>
+<h1 style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+</div>
+      <br /><br />
+      <Select
+        mode="multiple"
+        style={{ width: '60%' }}
+        placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+        onChange={handleChange}
+        optionLabelProp="label"
+        options={options}    
+      />
+      <br /><br /><br />
+      <div className='font-family'>
+        <button className='next-list' onClick={handleNext} style={buttonStyle}>
+        หน้าถัดไป
+        </button>
+      </div>
+      <div>
+          <button className='chevron-list' style={buttonStyle}>
+            <VscChevronLeft />{/* ไอคอนย้อนกลับ */}
+          </button>
+        </div>
+    </div>
+  );
+};
+
+
+  export default Choice2;
+  

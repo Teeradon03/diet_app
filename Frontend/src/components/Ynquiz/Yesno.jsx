@@ -9,15 +9,15 @@ const yesno = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const images = ['/img/yn1.jpg', '/img/yn2.jpg', '/img/yn3.jpg',
-                  '/img/yn4.jpg', '/img/yn5.jpg', '/img/yn6.jpg',
-                  '/img/yn7.jpg', '/img/yn8.jpg', '/img/yn9.jpg',
-                  '/img/yn10.jpg', '/img/yn11.jpg', '/img/yn12.jpg',
-                  '/img/yn13.jpg', '/img/yn14.jpg', '/img/yn15.jpg',
-                  '/img/yn16.jpg', '/img/yn17.jpg', '/img/yn18.jpg',
-                  '/img/yn19.jpg', '/img/yn20.jpg', '/img/yn21.jpg',
-                  '/img/cat.jpg', '/img/yn23.jpg', '/img/10.jpg',
-                  '/img/yn25.jpg', '/img/yn26.jpg', '/img/10.jpg',
-                  '/img/cat.jpg', '/img/10.jpg', '/img/cat2.jpg',]; // เพิ่ม URLs ของรูปภาพที่นี่
+  '/img/yn4.jpg', '/img/yn5.jpg', '/img/yn6.jpg',
+  '/img/yn7.jpg', '/img/yn8.jpg', '/img/yn9.jpg',
+  '/img/yn10.jpg', '/img/yn11.jpg', '/img/yn12.jpg',
+  '/img/yn13.jpg', '/img/yn14.jpg', '/img/yn15.jpg',
+  '/img/yn16.jpg', '/img/yn17.jpg', '/img/yn18.jpg',
+  '/img/yn19.jpg', '/img/yn20.jpg', '/img/yn21.jpg',
+  '/img/beer.jpg', '/img/yn23.jpg', '/img/tod.jpg',
+  '/img/yn25.jpg', '/img/yn26.jpg', '/img/kan.jpg',
+  '/img/leg.jpg', '/img/back.jpg', '/img/born.jpg',]; // เพิ่ม URLs ของรูปภาพที่นี่
 
   const [questions] = useState([
                 {
@@ -221,11 +221,11 @@ const yesno = () => {
 
   const handlePreviousClick = () => {
     // ตรวจสอบว่าเป็น ID 11 หรือไม่
-    const targetQuestionId = 30; // ID ของคำถามที่ต้องการ
+    const targetQuestionId = 11; // ID ของคำถามที่ต้องการ
 
     if (currentQuestionIndex === 0) {
       // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง
-      window.location.href = "Question"; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
+      window.location.href = 'Choice'; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
     } else {
       // หากไม่ใช่คำถามแรก ให้ย้อนกลับไปทีละขั้นตอน
       let newIndex = currentQuestionIndex - 1;

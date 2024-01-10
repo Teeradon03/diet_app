@@ -215,91 +215,105 @@
       height: 45px;
     }
   }
-  
-  
-  @media screen and (max-width: 768px) {
-  
-    .Ynquiztion {
-      display: flex;
-      font-size: 1.4rem;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin: 20px;
-      padding-top: 20px;
-    }
-    
-    .imgmedia {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto; 
-    }
-    .chevron-icon {
-      font-size: 30px;
-      width: 45px;
-      height: 45px;
-      transform: translateX(-200px);
-    }
+
+@media screen and (max-width: 768px) {
+
+  .Ynquiztion {
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 20px;
   }
   
-  @media screen and (max-width: 576px) {
-    .Ynquiztion {
-      display: flex;
-      font-size: 1.5rem;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin: 20px;
-      padding-top: 40px;
-    }
-    .imgmedia {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto; 
-    }
-    .chevron-icon {
-      font-size: 30px;
-      width: 40px;
-      height: 40px;
-      transform: translateX(-270px);
-    }
+  .imgmedia {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
   }
-  
-  @media screen and (max-width: 400px) {
-    .question {
-      position: relative;
-      left: 70px;
-    }
-    .and {
-      position: relative;
-      left: 70px;
-    }
-    .Ynquiztion {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      margin: 20px;
-      padding-top: 20px;
-    }
-    .imgmedia {
-      width: 100%;
-      height: auto;
-      display: block;
-      margin: 0 auto; 
-      
-    }
-    .chevron-icon {
-      font-size: 30px;
-      width: 45px;
-      height: 45px;
-    }
-    .no-button,
-    .yes-button {
-     position: relative;
-     left: 70px;
-    }
+  .chevron-icon {
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    transform: translateX(-200px);
   }
-  
+  .no-button,
+  .yes-button {
+   width: 18vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .and {
+    position: relative;
+    left: 10px;
+  }
+  .Ynquiztion {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 40px;
+  }
+  .imgmedia {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    left: -50px;
+  }
+  .chevron-icon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-270px);
+  }
+  .no-button,
+  .yes-button {
+   width: 25vw;
+   position: relative;
+   left: 5px;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .question {
+    position: relative;
+    left: 70px;
+    font-size: 2rem;
+  }
+  .and {
+    position: relative;
+    left: 50px;
+  }
+  .Ynquiztion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 20px;
+  }
+  .imgmedia {
+    width: 100%;
+    height: 300px;
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    left: -15px;
+  }
+  .chevron-icon {
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+  }
+  .no-button,
+  .yes-button {
+   width: 39vw;
+   position: relative;
+   left: 60px;
+  }
+}
