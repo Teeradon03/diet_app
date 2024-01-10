@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios  from 'axios'
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
@@ -13,9 +14,15 @@ function Weight_show(props) {
     setWeight(value);
   };
 
-  const handleSubmit = () => {
-    // You can perform any additional actions here before logging to the console
+  const handleSubmit = async () => {
     console.log('Weight:', weight);
+    await axios.post('http://localhost:9999/api/create-questionnaires', weight)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

@@ -27,6 +27,7 @@ import Bmi_normalweight from './components/Bmi/Bmi_normalweight';
 import Bmi_obesitylevel1 from './components/Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from './components/Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from './components/Bmi/Bmi_obesitylevel3';
+import BMR_calculator from './components/Bmr/BMR_calculator';
 
 
 function App() {
@@ -65,6 +66,10 @@ function App() {
 
 
         <Route path='/Name' element={<Name/>}/>
+
+        <Route path='/BMR_calculator' element={<BMR_calculator/>}/>
+
+        
 
 
 

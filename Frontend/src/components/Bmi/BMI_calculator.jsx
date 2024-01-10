@@ -71,14 +71,15 @@ function BMI_calculator(props) {
       return (
       
         <div>
-          
+          <br />
+            <h1>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
           <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
          
           <div className={styles.chevronicon}>
-          <Link to="/Target">
+          <Link to="/Weight_show">
             <Button
               shape="circle"
               style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
