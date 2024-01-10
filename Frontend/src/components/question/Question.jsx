@@ -208,6 +208,11 @@ const Question = () => {
 		// เพิ่มสไตล์อื่นๆ ตามต้องการ
 	};
 
+	const headingStyle = {
+		fontSize: '50px',
+		fontWeight: 'bold'
+	  }; 
+
 	return (
 		<div className='wrapper'>
 			<Content style={{ padding: '0 50px' }}>
@@ -235,8 +240,10 @@ const Question = () => {
 								<div>
 									<div className='question'>
 										<div className='font-family'>
-											<h1>Question {currentQuestion + 1} </h1>
-											<p>{questions[currentQuestion].question}</p>
+											<div style={headingStyle}>
+												<p>Question {currentQuestion + 1} </p>
+												<p>{questions[currentQuestion].question}</p>
+											</div>
 										</div>
 									</div>
 								</div>
