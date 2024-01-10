@@ -135,9 +135,7 @@ const Question = () => {
             setShowScore(true);
         }
 
-        // ตรวจสอบและเรียกใช้ handleNextQuestion สำหรับ ID 10 และ 11
-        handleNextQuestion(selectedOption);
-
+        
         if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
             console.log('ID:', questions[currentQuestion].id);
             console.log('Question:', questions[currentQuestion].question);

@@ -160,143 +160,143 @@ const yesno = () => {
             };
             
             
-  const handleYesClick = () => {
-    const newIndex = currentImageIndex + 1;
-
-    if (newIndex < images.length - 1) {
-      setCurrentImageIndex(newIndex);
-      setCurrentQuestionIndex(newIndex);
-    } else {
-      setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1);
-
-      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
-        window.location.href = '/Calendar_1';
-        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
-      }
-    }
-
-    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
-      console.log('Question ID:', questions[currentImageIndex].id);
-      console.log('Yes:', newIndex);
-
-
-      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
-      sendToAPI();
-
-    }
-  };
-
-
-  const handleNoClick = () => {
-    const newIndex = currentImageIndex + 1;
-
-    if (newIndex < images.length - 1) {
-      setCurrentImageIndex(newIndex);
-      setCurrentQuestionIndex(newIndex);
-    } else {
-      setCurrentImageIndex(images.length - 1);
-      setCurrentQuestionIndex(images.length - 1);
-
-      if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
-        window.location.href = '/Calendar_1';
-        return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
-      }
-    }
-
-    if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
-      console.log('Question ID:', questions[currentImageIndex].id);
-      console.log('No:', newIndex);
-
-
-      // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
-      sendToAPI();
-
-
-    }
-  };
-
-
-
-
-  const handlePreviousClick = () => {
-    // ตรวจสอบว่าเป็น ID 11 หรือไม่
-    const targetQuestionId = 11; // ID ของคำถามที่ต้องการ
-
-    if (currentQuestionIndex === 0) {
-      // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง
-      window.location.href = 'Choice'; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
-    } else {
-      // หากไม่ใช่คำถามแรก ให้ย้อนกลับไปทีละขั้นตอน
-      let newIndex = currentQuestionIndex - 1;
-
-      // ตรวจสอบว่า newIndex เป็น ID ของคำถามที่ต้องการหรือไม่
-      if (questions[newIndex].id === targetQuestionId) {
-        // ถ้าเป็น ID ที่ต้องการ ให้ทำการ set currentIndex และอื่นๆ ตามต้องการ
-        setCurrentQuestionIndex(newIndex);
-        setCurrentImageIndex(newIndex);
-        // อาจต้องเพิ่มการ set state ของ currentIndex และอื่นๆ ตามต้องการเพื่อให้แสดง ID 11 อย่างถูกต้อง
-      } else {
-        // หากไม่ใช่ ID ที่ต้องการ ให้ย้อนกลับไปขั้นตอนก่อนหน้านี้
-        newIndex =
-          currentQuestionIndex === 0
-            ? questions.length - 1
-            : currentQuestionIndex - 1;
-        setCurrentImageIndex(newIndex);
-        setCurrentQuestionIndex(newIndex);
-        // อาจต้องเพิ่มการ set state ของ currentIndex และอื่นๆ ตามต้องการเพื่อให้ย้อนกลับไปแสดงคำถามก่อนหน้า
-      }
-    }
-  };
-
-
-  const buttonStyle = {
-    fontWeight: 900, // แก้ตามที่ต้องการ
-    // เพิ่มสไตล์อื่นๆ ตามต้องการ
-  };
-
-    return (
-      <div className="Ynquiztion">
-      <div className='font-family'> 
-      <p className='question' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
-        <img
-          className="imgmedia"
-          src={images[currentImageIndex]}
-          alt={`Image ${currentImageIndex + 1}`}
-          style={{ width: "500px", height: "500px" }}
-        />
-        <div className="button-container">
-          <button
-            className="no-button"
-            style={buttonStyle}
-            onClick={handleNoClick}
-          >
-            ไม่
-          </button>
-          <h1 className="and" style={{ ...buttonStyle, margin: "0 60px" }}>
-            หรือ
-          </h1>
-          <button
-            className="yes-button"
-            style={buttonStyle}
-            onClick={handleYesClick}
-          >
-            ใช่
-          </button>
-        </div>
-        <div>
-          <button
-            className="chevron-icon"
-            style={buttonStyle}
-            onClick={handlePreviousClick}
-          >
-            <VscChevronLeft />
-            {/* ไอคอนย้อนกลับ */}
-          </button>
-        </div>
-      </div>
-    </div>
-  );
-};
-
-export default yesno;
+            const handleYesClick = () => {
+              const newIndex = currentImageIndex + 1;
+          
+              if (newIndex < images.length - 1) {
+                setCurrentImageIndex(newIndex);
+                setCurrentQuestionIndex(newIndex);
+              } else {
+                setCurrentImageIndex(images.length - 1);
+                setCurrentQuestionIndex(images.length - 1);
+          
+                if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+                  window.location.href = '/Calendar_1';
+                  return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
+                }
+              }
+          
+              if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+                console.log('Question ID:', questions[currentImageIndex].id);
+                console.log('Yes:', newIndex);
+          
+          
+                // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+                sendToAPI();
+          
+              }
+            };
+          
+          
+            const handleNoClick = () => {
+              const newIndex = currentImageIndex + 1;
+          
+              if (newIndex < images.length - 1) {
+                setCurrentImageIndex(newIndex);
+                setCurrentQuestionIndex(newIndex);
+              } else {
+                setCurrentImageIndex(images.length - 1);
+                setCurrentQuestionIndex(images.length - 1);
+          
+                if (questions && questions[currentImageIndex] && questions[currentImageIndex].id === 30) {
+                  window.location.href = '/Calendar_1';
+                  return; // ทำการ return เพื่อป้องกันการทำงานต่อที่อาจเกิดขึ้นหลังการเปลี่ยนหน้า
+                }
+              }
+          
+              if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
+                console.log('Question ID:', questions[currentImageIndex].id);
+                console.log('No:', newIndex);
+          
+          
+                // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
+                sendToAPI();
+          
+          
+              }
+            };
+          
+          
+          
+          
+            const handlePreviousClick = () => {
+              // ตรวจสอบว่าเป็น ID 11 หรือไม่
+              const targetQuestionId = 30; // ID ของคำถามที่ต้องการ
+          
+              if (currentQuestionIndex === 0) {
+                // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง
+                window.location.href = "Question"; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
+              } else {
+                // หากไม่ใช่คำถามแรก ให้ย้อนกลับไปทีละขั้นตอน
+                let newIndex = currentQuestionIndex - 1;
+          
+                // ตรวจสอบว่า newIndex เป็น ID ของคำถามที่ต้องการหรือไม่
+                if (questions[newIndex].id === targetQuestionId) {
+                  // ถ้าเป็น ID ที่ต้องการ ให้ทำการ set currentIndex และอื่นๆ ตามต้องการ
+                  setCurrentQuestionIndex(newIndex);
+                  setCurrentImageIndex(newIndex);
+                  // อาจต้องเพิ่มการ set state ของ currentIndex และอื่นๆ ตามต้องการเพื่อให้แสดง ID 11 อย่างถูกต้อง
+                } else {
+                  // หากไม่ใช่ ID ที่ต้องการ ให้ย้อนกลับไปขั้นตอนก่อนหน้านี้
+                  newIndex =
+                    currentQuestionIndex === 0
+                      ? questions.length - 1
+                      : currentQuestionIndex - 1;
+                  setCurrentImageIndex(newIndex);
+                  setCurrentQuestionIndex(newIndex);
+                  // อาจต้องเพิ่มการ set state ของ currentIndex และอื่นๆ ตามต้องการเพื่อให้ย้อนกลับไปแสดงคำถามก่อนหน้า
+                }
+              }
+            };
+          
+          
+            const buttonStyle = {
+              fontWeight: 900, // แก้ตามที่ต้องการ
+              // เพิ่มสไตล์อื่นๆ ตามต้องการ
+            };
+          
+              return (
+                <div className="Ynquiztion">
+                <div className='font-family'> 
+                <p className='questionyesno' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
+                  <img
+                    className="imgmedia"
+                    src={images[currentImageIndex]}
+                    alt={`Image ${currentImageIndex + 1}`}
+                    style={{ width: "500px", height: "500px" }}
+                  />
+                  <div className="button-container">
+                    <button
+                      className="no-button"
+                      style={buttonStyle}
+                      onClick={handleNoClick}
+                    >
+                      ไม่
+                    </button>
+                    <h1 className="and" style={{ ...buttonStyle, margin: "0 60px" }}>
+                      หรือ
+                    </h1>
+                    <button
+                      className="yes-button"
+                      style={buttonStyle}
+                      onClick={handleYesClick}
+                    >
+                      ใช่
+                    </button>
+                  </div>
+                  <div>
+                    <button
+                      className="chevron-icon"
+                      style={buttonStyle}
+                      onClick={handlePreviousClick}
+                    >
+                      <VscChevronLeft />
+                      {/* ไอคอนย้อนกลับ */}
+                    </button>
+                  </div>
+                </div>
+              </div>
+            );
+          };
+          
+          export default yesno;

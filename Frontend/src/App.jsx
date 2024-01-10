@@ -14,6 +14,7 @@ import CustomerKey from './components/customerKey/CustomerKey';
 import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
+import Calendar from './components/Calendar/Calendar_1.jsx'
 
 function App() {
   return (
@@ -31,6 +32,7 @@ function App() {
         <Route path="/Yesno" element={<Yesno />} />
         <Route path="/Choice" element={<Choice />} />
         <Route path="/Choice2" element={<Choice2 />} />
+        <Route path="/Calendar_1" element={<Calendar/>} />
       </Routes>
     </BrowserRouter>
   )
