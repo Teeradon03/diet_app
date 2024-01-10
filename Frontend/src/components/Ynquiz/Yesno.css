@@ -284,6 +284,7 @@
   .question {
     position: relative;
     left: 70px;
+    font-size: 2rem;
   }
   .and {
     position: relative;
@@ -298,7 +299,7 @@
   }
   .imgmedia {
     width: 100%;
-    height: auto;
+    height: 300px;
     display: block;
     margin: 0 auto; 
     position: relative;

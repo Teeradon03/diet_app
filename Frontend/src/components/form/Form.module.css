@@ -29,3 +29,79 @@
 .answerButton::selection {
   background-color: #ffffff;
 }
+
+@media screen and (max-width: 1600px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+  }
+}
+
+@media screen and (max-width: 1199px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+  }
+}
+
+@media screen and (max-width: 992px) {
+  .answerButton {
+    font-size: 2.2rem;
+    justify-content:center ;
+    width: 50vw;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .answerButton {
+    font-size: 2.2rem;
+    justify-content:center ;
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .answerButton {
+    font-size: 2.2rem;
+    justify-content:center ;
+    width: 65vw;
+  }
+}
+
+@media screen and (max-width: 476px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 452px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+    width: 75vw;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .answerButton {
+    font-size: 2rem;
+    justify-content:center ;
+    width: 75vw;
+  }
+}

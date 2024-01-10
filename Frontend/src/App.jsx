@@ -12,6 +12,8 @@ import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
 import Yesno from './components/Ynquiz/Yesno.jsx'
+import Choice from './components/Choice/Choice.jsx'
+import Choice2 from './components/Choice/Choice2.jsx'
 
 function App() {
   return (
@@ -27,6 +29,8 @@ function App() {
         <Route path="/never" element={<Never />} />
         <Route path="/customerkey" element={<CustomerKey />} />
         <Route path="/Yesno" element={<Yesno />} />
+        <Route path="/Choice" element={<Choice />} />
+        <Route path="/Choice2" element={<Choice2 />} />
       </Routes>
     </BrowserRouter>
   )
