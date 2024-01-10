@@ -4,18 +4,33 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function Height_show(props) {
   const [height, setHeight] = useState('');
+  const questionId = '33';
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setHeight(value);
   };
 
-  const handleSubmit = () => {
-    // You can perform any additional actions here before logging to the console
+  const handleSubmit = async () => {
     console.log('Height:', height);
+
+    const dataToSend = {
+      questionId: questionId,
+      height: height,
+      
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
   return (

@@ -8,6 +8,7 @@ import { useNavigate } from 'react-router-dom'
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
+import axios from 'axios';
 
 function Calendar_1() {
   const navi = useNavigate();
@@ -20,8 +21,26 @@ function Calendar_1() {
     }
   };
 
-  const handleNext = () => {
-    navi('/Weight_1');
+  const handleNext = async () => {
+    // Assuming you have an ID value you want to send (replace 'yourId' with the actual ID)
+    const  questionId = '31';
+
+    // Prepare the data to be sent
+    const dataToSend = {
+      questionId:  questionId,
+      selectedDate: date,
+    };
+
+    // Send the data to the server
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
+   
   };
 
   return (
@@ -37,9 +56,11 @@ function Calendar_1() {
         </p>
       </header>
       <br/>
-      <Link to="/Target"> {/* Changed the route for the "No" response */}
-            <button className={styles.nextbutton}>ถัดไป</button> 
-              </Link>
+      <Link to="/Target">
+        <button className={styles.nextbutton} onClick={handleNext}>
+          ถัดไป
+        </button>
+      </Link>
       <div className={styles.chevronicon}>
         <Link to="/yesno_30">
           <Button 
@@ -48,7 +69,6 @@ function Calendar_1() {
             icon={<VscChevronLeft />}
           />
         </Link>
-        
       </div>
     </div>
   );

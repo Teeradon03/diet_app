@@ -11,17 +11,32 @@ import Bmi_obesitylevel1 from '../Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from '../Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from '../Bmi/Bmi_obesitylevel3';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function BMI_calculator(props) {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
+  const [questionId, setUserId] = useState('35');
 
-  const calculateBmi = () => {
+  const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
     setBmi(calculatedBmi);
     determinePage(calculatedBmi);
+    console.log("BMI:", calculatedBmi);
+
+    const dataToSend = {
+      questionId: questionId,
+      bmi: calculatedBmi,
+    };
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
 
   const determinePage = (calculatedBmi) => {

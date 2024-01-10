@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import axios  from 'axios'
+import axios from 'axios';
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
+  const pageId = '34'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -16,7 +17,13 @@ function Weight_show(props) {
 
   const handleSubmit = async () => {
     console.log('Weight:', weight);
-    await axios.post('http://localhost:9999/api/create-questionnaires', weight)
+
+    const dataToSend = {
+      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
+      weight: weight
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
       .then(function (response) {
         console.log(response);
       })
@@ -26,7 +33,7 @@ function Weight_show(props) {
   };
 
   return (
-    <div className={styles.Bmi1}>
+    <div className={styles.Bmi1} id={pageId}>
       <h2>น้ำหนักของคุณเท่าไหร่</h2>
       <br />
       <div className={styles.inputlabel}>

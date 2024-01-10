@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from'../Bmi/Bmi.module.css'
 
 function Weight(props) {
-  const [weight, setWeight] = useState('');
+  const [weight, setWeight] = useState('0');
 
   const handleInputChange = (event) => {
     const value = event.target.value;

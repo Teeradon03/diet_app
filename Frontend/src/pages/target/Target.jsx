@@ -3,18 +3,34 @@ import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from './Target.module.css';
+import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
+  const questionId = '32';
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setTargetWeight(value);
   };
 
-  const handleSubmit = () => {
-    // You can perform any additional actions here before logging to the console
+  const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
+
+    const dataToSend = {
+      questionId: questionId,
+      targetWeight: targetWeight,
+      
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+
   };
 
   return (
