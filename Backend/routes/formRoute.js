@@ -24,6 +24,6 @@ router.post("/create-question", createQuestion);
 /// questionnaires
 router.get("/get-questionnaires", getQuestionnaire);
 router.get("/get-questionnaire/:userId", getQuestionnaireByUserId);
-router.post("/create-questionnaires",isLoggedIn ,createQuestionnaires);
+router.post("/create-questionnaires", isLoggedIn ,createQuestionnaires);
 
 module.exports = router;

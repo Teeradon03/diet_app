@@ -9,8 +9,10 @@ const {isLoggedIn}  = require('../middleware/isLoggedIn')
 
 
 
+
+
 router.post('/user-login', loginLine)
-router.get('/get-users',isLoggedIn , getUserData)
+router.get('/get-users', isLoggedIn , getUserData)
 
 // router.post('/user-update', updateUser)
 module.exports = router
