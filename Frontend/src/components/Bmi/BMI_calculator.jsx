@@ -11,17 +11,32 @@ import Bmi_obesitylevel1 from '../Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from '../Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from '../Bmi/Bmi_obesitylevel3';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function BMI_calculator(props) {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
+  const [questionId, setUserId] = useState('35');
 
-  const calculateBmi = () => {
+  const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
     setBmi(calculatedBmi);
     determinePage(calculatedBmi);
+    console.log("BMI:", calculatedBmi);
+
+    const dataToSend = {
+      questionId: questionId,
+      bmi: calculatedBmi,
+    };
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    .then(function (response) {
+      console.log(response);
+    })
+    .catch(function (error) {
+      console.log(error);
+    });
   };
 
   const determinePage = (calculatedBmi) => {
@@ -58,7 +73,7 @@ function BMI_calculator(props) {
             <Weight onWeightChange={(value) => setWeight(value)} />
             <br/>
             <Height onHeightChange={(value) => setHeight(value)} />
-            <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
+            <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
           </div>
         );
     }
@@ -71,14 +86,14 @@ function BMI_calculator(props) {
       return (
       
         <div>
-          
+          <br />
+            <h1 style={{ fontWeight: 'bold' }}>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
-          <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
-         
+          <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
           <div className={styles.chevronicon}>
-          <Link to="/Target">
+          <Link to="/Weight_show">
             <Button
               shape="circle"
               style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
@@ -105,16 +120,13 @@ function BMI_calculator(props) {
     if (bmiValue >= 29.9) return 'อยู่ในเกณฑ์อ้วนมาก / โรคอ้วนระดับ 3'
   };
 
-  
   const Page1 = () => <div>Content for BMI less than 18.5</div>;
   const Page2 = () => <div>Content for BMI between 18.5 and 22.9</div>;
   const Page3 = () => <div>Content for BMI between 23 and 24.9</div>;
   const Page4 = () => <div>Content for BMI between 25 and 29.9</div>;
   const Page5 = () => <div>Content for BMI greater than 30</div>;
-  
 
   return <div>{renderContent()}</div>;
-  
 }
 
 export default BMI_calculator;

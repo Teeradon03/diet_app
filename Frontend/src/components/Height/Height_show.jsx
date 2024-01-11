@@ -4,23 +4,41 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function Height_show(props) {
   const [height, setHeight] = useState('');
+  const questionId = '33';
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setHeight(value);
   };
 
-  const handleSubmit = () => {
-    // You can perform any additional actions here before logging to the console
+  const handleSubmit = async () => {
     console.log('Height:', height);
+
+    const dataToSend = {
+      questionId: questionId,
+      height: height,
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
+  const boldTextStyle = {
+    fontWeight: 'bold', // Set the fontWeight to 'bold'
   };
 
   return (
     <div className={styles.Bmi1}>
-      <h2>ส่วนสูงของคุณเท่าไหร่</h2>
+      <h1 style={boldTextStyle}>ส่วนสูงของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -28,10 +46,10 @@ function Height_show(props) {
           value={height}
           onChange={handleInputChange}
         />
-        <label htmlFor="height"> ซม.</label>
+        <label htmlFor="height" style={boldTextStyle}> ซม.</label>
       </div>
 
-      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
+      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
 
       <Image
         width={300}
@@ -40,7 +58,7 @@ function Height_show(props) {
       />
       <div>
         <Link to="/Weight_show">
-          <button className={styles.nextbutton} onClick={handleSubmit}>
+          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
             ถัดไป
           </button>
         </Link>
