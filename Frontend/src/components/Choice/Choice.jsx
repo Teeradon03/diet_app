@@ -2,96 +2,99 @@ import { Select } from 'antd';
 import React, { useState } from 'react';
 import { VscChevronLeft } from 'react-icons/vsc';
 import './Choice.css';
+import axios from 'axios';
 
-const options  = [
-    {
-      id: 1,
-      label: 'ไม่มีโรคประจำตัว',
-      value: '1'
-    },
-    {
-      id: 2,
-      label: 'โรคความดันโลหิตสูง',
-      value: '2'
-    },
-    {
-      id: 3,
-      label: 'โรคท้องผูก',
-      value: '3'
-    },
-    {
-      id: 4,
-      label: 'โรคมะเร็งลำไส้',
-      value: '4' 
-    },
-    {
-      id: 5,
-      label: 'โรคริดสีดวงทวาร',
-      value: '5'  
-    },
-    {
-      id: 6,
-      label: 'โรคหัวใจและหลอดเลือด',
-      value: '6'  
-    },
-    {
-      id: 7,
-      label: 'โรคลำไส้อุดตัน',
-      value: '7'  
-    },
-    {
-      id: 8,
-      label: 'โรคกล้ามเนื้อเชิงอุ้งกรานอ่อนเเรง',
-      value: '8'  
-    },
-    {
-      id: 9,
-      label: 'โรคเบาหวาน',
-      value: '9'  
-    },
-    {
-      id: 10,
-      label: 'โรคความดันตํ่า',
-      value: '10'  
-    },
-    {
-      id: 11,
-      label: 'โรคไขมันในเลือด',
-      value: '11'  
-    },
-    {
-      id: 12,
-      label: 'โรคกระเพาะ/กรดไหลย้อน',
-      value: '12'  
-    },
-  ];
 
-  
+const options = [
+  {
+    id: 1,
+    label: 'ไม่มีโรคประจำตัว',
+    value: '1'
+  },
+  {
+    id: 2,
+    label: 'โรคความดันโลหิตสูง',
+    value: '2'
+  },
+  {
+    id: 3,
+    label: 'โรคท้องผูก',
+    value: '3'
+  },
+  {
+    id: 4,
+    label: 'โรคมะเร็งลำไส้',
+    value: '4'
+  },
+  {
+    id: 5,
+    label: 'โรคริดสีดวงทวาร',
+    value: '5'
+  },
+  {
+    id: 6,
+    label: 'โรคหัวใจและหลอดเลือด',
+    value: '6'
+  },
+  {
+    id: 7,
+    label: 'โรคลำไส้อุดตัน',
+    value: '7'
+  },
+  {
+    id: 8,
+    label: 'โรคกล้ามเนื้อเชิงอุ้งกรานอ่อนเเรง',
+    value: '8'
+  },
+  {
+    id: 9,
+    label: 'โรคเบาหวาน',
+    value: '9'
+  },
+  {
+    id: 10,
+    label: 'โรคความดันตํ่า',
+    value: '10'
+  },
+  {
+    id: 11,
+    label: 'โรคไขมันในเลือด',
+    value: '11'
+  },
+  {
+    id: 12,
+    label: 'โรคกระเพาะ/กรดไหลย้อน',
+    value: '12'
+  },
+];
 
-  const sendToAPI = async (selectedOptions, selectedLabels) => {
-    try {
-        const data = {
-            questionId: selectedOptions.map(option => option.id),
-            question: selectedLabels.map(option => option.label),
-            answer: 5,
-            userId: 1
-        };
+const sendToAPI = async (selectedOptions, selectedLabels) => {
+  try {
+    const data = {
+      questionId: selectedOptions.map(option => option.id),
+      question: selectedLabels.map(option => option.label),
+      answer: 5,
+      userId: 1
+    };
 
-        const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
-        console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
-    } catch (error) {
-        console.error('Error:', error);
-    }
+    const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+    console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+  } catch (error) {
+    console.error('Error:', error);
+  }
 };
 
-
-  const Choice = () => {
+const Choice = () => {
   const [selectedLabels, setSelectedLabels] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
     const selectedLabels = selectedOptions.map(option => option.label);
-    console.log('โรคประจำตัวของคุณ:', value);
+    setSelectedLabels(selectedLabels);
+    console.log('โรคประจำตัวของคุณ:', selectedLabels);
+
+    // เรียกใช้ sendToAPI พร้อมส่ง selectedOptions และ selectedLabels เพื่อใช้ในการส่งไปยัง API
+    sendToAPI(selectedOptions, selectedLabels);
   };
 
   const handleNext = () => {
@@ -103,7 +106,7 @@ const options  = [
   };
 
   const handleBack = () => {
-    window.location.href =('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    window.location.href = ('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {

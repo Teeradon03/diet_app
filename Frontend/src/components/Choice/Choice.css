@@ -94,14 +94,14 @@
 
 @media screen and (max-width: 1600px) {
   .text {
-    padding-top: 70px;
+    padding-top: 100px;
   }
 
   .next-list{
     font-size: 1.5rem;
     width: 15vw !important;
     position: relative;
-    left: 470px
+    left: 510px
   }
 
   .chevron-list {
@@ -116,7 +116,7 @@
 
 @media screen and (max-width: 1400px) {
   .text {
-    padding-top: 70px;
+    padding-top: 100px;
   }
 
   .next-list {
@@ -137,7 +137,7 @@
 
 @media screen and (max-width: 1200px) {
   .text {
-    padding-top: 70px;
+    padding-top: 100px;
   }
   
   .next-list {
@@ -158,7 +158,7 @@
 
 @media screen and (max-width: 992px) {
   .text {
-    padding-top: 70px;
+    padding-top: 100px;
   }
   .next-list {
     font-size: 1.3rem;
@@ -179,7 +179,7 @@
 
 @media screen and (max-width: 768px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
   .next-list {
     font-size: 1.2rem;
@@ -198,7 +198,7 @@
 
 @media screen and (max-width: 576px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
   .next-list {
     font-size: 1rem;
@@ -218,7 +218,7 @@
 
 @media screen and (max-width: 450px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
   .next-list {
     font-size: 1rem;
@@ -235,4 +235,3 @@
     left: 30px;
   }
 } 
-
