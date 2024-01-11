@@ -15,15 +15,15 @@
   } */
 
 
-#root {
+  #root {
     height: 100%;
-    margin: 0;
+
     padding: 0;
     font-family: 'Noto Sans Thai', sans-serif;
 }
 
 * {
-    margin: 0;
+    
     padding: 0;
     color: black;
 
@@ -38,3 +38,4 @@ body {
     background-color: #dcdcdc;
     color: black;
     background-image: url(/public/CI-nanoverse.jpg);
+}
