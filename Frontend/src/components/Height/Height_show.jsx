@@ -21,7 +21,6 @@ function Height_show(props) {
     const dataToSend = {
       questionId: questionId,
       height: height,
-      
     };
 
     await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
@@ -33,9 +32,13 @@ function Height_show(props) {
       });
   };
 
+  const boldTextStyle = {
+    fontWeight: 'bold', // Set the fontWeight to 'bold'
+  };
+
   return (
     <div className={styles.Bmi1}>
-      <h2>ส่วนสูงของคุณเท่าไหร่</h2>
+      <h1 style={boldTextStyle}>ส่วนสูงของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -43,10 +46,10 @@ function Height_show(props) {
           value={height}
           onChange={handleInputChange}
         />
-        <label htmlFor="height"> ซม.</label>
+        <label htmlFor="height" style={boldTextStyle}> ซม.</label>
       </div>
 
-      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
+      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
 
       <Image
         width={300}
@@ -55,7 +58,7 @@ function Height_show(props) {
       />
       <div>
         <Link to="/Weight_show">
-          <button className={styles.nextbutton} onClick={handleSubmit}>
+          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
             ถัดไป
           </button>
         </Link>

@@ -15,7 +15,7 @@ function BMR_calculator(props) {
   const [gender, setGender] = useState('male');
   const [bmr, setBmr] = useState(null); 
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('36'); // แทนที่ 'yourId' ด้วย ID ที่ต้องการส่ง
+  const [questionId, setUserId] = useState('36'); // Replace 'yourId' with the desired ID
 
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
@@ -53,23 +53,25 @@ function BMR_calculator(props) {
   };
 
   const renderContent = () => {
+    const boldTextStyle = { fontWeight: 'bold' };
+
     return (
       <div>
-        <br/>
-        <h1>คำนวณแคลอรี่ (BMR)</h1>
-        
+        <br />
+        <h1 style={boldTextStyle}>คำนวณแคลอรี่ (BMR)</h1>
+
         <Weight onWeightChange={(value) => setWeight(value)} />
-        
+
         <Height onHeightChange={(value) => setHeight(value)} />
-        <br/>
-       
-        <h2>อายุ (ปี) </h2>
+        <br />
+
+        <h2 style={boldTextStyle}>อายุ (ปี)</h2>
         <div className={styles.inputbmr}>
           <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
         </div>
-       
-        <h2>เพศ  </h2>
-        <div className={styles.gender}>
+
+        <h2 style={boldTextStyle}>เพศ</h2>
+        <div className={styles.gender}style={boldTextStyle}>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
             <option value="male">ชาย</option>
             <option value="female">หญิง</option>
@@ -78,10 +80,10 @@ function BMR_calculator(props) {
         {bmr !== null && (
           <div>
             <br />
-            <p> ค่า BMR ของคุณคือ: {bmr.toFixed(2)} </p>
+            <p style={boldTextStyle}>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
           </div>
         )}
-        <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
+        <button className={styles.bmrbutton} style={boldTextStyle} onClick={calculateBmr}>คำนวณ BMR</button>
       </div>
     );
   };

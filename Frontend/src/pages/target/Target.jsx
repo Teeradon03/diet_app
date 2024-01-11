@@ -13,14 +13,13 @@ function Target() {
     const value = e.target.value;
     setTargetWeight(value);
   };
-
+  
   const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
 
     const dataToSend = {
       questionId: questionId,
       targetWeight: targetWeight,
-      
     };
 
     await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
@@ -30,12 +29,15 @@ function Target() {
       .catch(function (error) {
         console.log(error);
       });
+  };
 
+  const boldTextStyle = {
+    fontWeight: 'bold', // Set the fontWeight to 'bold'
   };
 
   return (
     <div className={styles.Bmi1}>
-      <h2>น้ำหนักเป้าหมายของคุณเท่าไหร่</h2>
+      <h1 style={boldTextStyle}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -43,10 +45,10 @@ function Target() {
           value={targetWeight}
           onChange={handleInputChange}
         />
-        <label htmlFor="target"> กก.</label>
+        <label htmlFor="target" style={boldTextStyle}> กก.</label>
       </div>
 
-      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
       <Image
         width={300}
@@ -55,7 +57,7 @@ function Target() {
       />
       <div>
         <Link to="/Height_show">
-          <button className={styles.nextbutton} onClick={handleSubmit}>
+          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
             ถัดไป
           </button>
         </Link>

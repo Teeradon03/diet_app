@@ -73,7 +73,7 @@ function BMI_calculator(props) {
             <Weight onWeightChange={(value) => setWeight(value)} />
             <br/>
             <Height onHeightChange={(value) => setHeight(value)} />
-            <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
+            <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
           </div>
         );
     }
@@ -87,11 +87,11 @@ function BMI_calculator(props) {
       
         <div>
           <br />
-            <h1>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
+            <h1 style={{ fontWeight: 'bold' }}>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
-          <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
+          <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
          
           <div className={styles.chevronicon}>
           <Link to="/Weight_show">
@@ -121,16 +121,13 @@ function BMI_calculator(props) {
     if (bmiValue >= 29.9) return 'อยู่ในเกณฑ์อ้วนมาก / โรคอ้วนระดับ 3'
   };
 
-  
   const Page1 = () => <div>Content for BMI less than 18.5</div>;
   const Page2 = () => <div>Content for BMI between 18.5 and 22.9</div>;
   const Page3 = () => <div>Content for BMI between 23 and 24.9</div>;
   const Page4 = () => <div>Content for BMI between 25 and 29.9</div>;
   const Page5 = () => <div>Content for BMI greater than 30</div>;
-  
 
   return <div>{renderContent()}</div>;
-  
 }
 
 export default BMI_calculator;

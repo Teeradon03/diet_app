@@ -32,9 +32,13 @@ function Weight_show(props) {
       });
   };
 
+  const boldTextStyle = {
+    fontWeight: 'bold', // Set the fontWeight to 'bold'
+  };
+
   return (
     <div className={styles.Bmi1} id={pageId}>
-      <h2>น้ำหนักของคุณเท่าไหร่</h2>
+      <h1 style={boldTextStyle}>น้ำหนักของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -42,10 +46,10 @@ function Weight_show(props) {
           value={weight}
           onChange={handleInputChange}
         />
-        <label htmlFor="weight"> กก.</label>
+        <label htmlFor="weight" style={boldTextStyle}> กก.</label>
       </div>
 
-      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
       <Image
         width={300}
@@ -54,7 +58,7 @@ function Weight_show(props) {
       />
       <div>
         <Link to="/BMI_calculator">
-          <button className={styles.nextbutton} onClick={handleSubmit}>
+          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
             ถัดไป
           </button>
         </Link>
