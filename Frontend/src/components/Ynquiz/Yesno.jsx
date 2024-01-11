@@ -217,15 +217,13 @@ const yesno = () => {
             };
           
           
-          
-          
             const handlePreviousClick = () => {
               // ตรวจสอบว่าเป็น ID 11 หรือไม่
               const targetQuestionId = 30; // ID ของคำถามที่ต้องการ
           
               if (currentQuestionIndex === 0) {
                 // หากเป็นคำถามแรก ให้ไปยังหน้า Question โดยตรง
-                window.location.href = "Question"; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
+                window.location.href = "Choice"; // อาจจะต้องเปลี่ยนหรือเพิ่ม path ตามโครงสร้างของเว็บไซต์
               } else {
                 // หากไม่ใช่คำถามแรก ให้ย้อนกลับไปทีละขั้นตอน
                 let newIndex = currentQuestionIndex - 1;

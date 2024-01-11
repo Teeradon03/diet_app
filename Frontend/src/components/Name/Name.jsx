@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Name() {
   const [formData, setFormData] = useState({
-    name: '',
+    firstname: '',
     lastName: '',
     age: '',
     gender: '',
@@ -41,7 +41,7 @@ function Name() {
             <input
               type="text"
               placeholder="ชื่อ"
-              onChange={(e) => handleInputChange('name', e.target.value)}
+              onChange={(e) => handleInputChange('firstname', e.target.value)}
             />
           </div>
 
@@ -77,11 +77,11 @@ function Name() {
             </button>
           </Link>
         </div>
-        <div className='chevron-icon'>
+        <div className={styles.chevronicon}>
           <Link to="/">
             <Button
               shape="circle"
-              style={{ right: 270, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
+              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
               icon={<VscChevronLeft />}
             />
           </Link>

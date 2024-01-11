@@ -13,9 +13,14 @@ function Height(props) {
     }
   };
 
+  const buttonStyle = {
+    fontWeight: 900, // แก้ตามที่ต้องการ
+    // เพิ่มสไตล์อื่นๆ ตามต้องการ
+  };
+
   return (
     <div className={styles.Bmi1}>
-      <h2>ส่วนสูง (ซม.)</h2>
+      <h2 style={buttonStyle}>ส่วนสูง (ซม.)</h2>
       <input
         type="number"
         value={height}

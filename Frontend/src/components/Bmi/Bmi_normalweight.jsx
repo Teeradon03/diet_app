@@ -24,7 +24,7 @@ function Bmi_normalweight() {
             </Link>
           
           
-          <Link to="/"> {/* Changed the route for the "No" response */}
+          <Link to="/BMR_calculator"> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
           </div>

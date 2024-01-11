@@ -18,11 +18,15 @@ function Weight(props) {
     console.log('น้ำหนักที่ผู้ใช้ป้อน:', weight);
   };
 
+  const buttonStyle = {
+    fontWeight: 900, // แก้ตามที่ต้องการ
+    // เพิ่มสไตล์อื่นๆ ตามต้องการ
+  };
+
   return (
     <div className={styles.Bmi1}>
-      <h2>คำนวณค่าดัชนีมวลกาย (BMI)</h2>
-      <br/><br/>
-      <h2>น้ำหนักตัว (กก.)</h2>
+      <br/>
+      <h2 style={buttonStyle}>น้ำหนักตัว (กก.)</h2>
       <input 
         type="number"
         value={weight}

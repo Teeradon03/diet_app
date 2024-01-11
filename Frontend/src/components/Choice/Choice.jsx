@@ -1,7 +1,8 @@
 import { Select } from 'antd';
-import React from 'react';
+import React, { useState } from 'react';
 import { VscChevronLeft } from 'react-icons/vsc';
 import './Choice.css';
+
 
 
 const options = [
@@ -68,28 +69,36 @@ const options = [
 ];
 
 
-const Choice = () => {
+  const Choice = () => {
+  const [selectedLabels, setSelectedLabels] = useState([]);
+
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
     const selectedLabels = selectedOptions.map(option => option.label);
-    console.log('โรคประจำตัวของคุณ:', value);
+    setSelectedLabels(selectedLabels);
+    console.log('โรคประจำตัวของคุณ:', selectedLabels);
   };
 
   const handleNext = () => {
-    // เมื่อคลิกปุ่ม "หน้าถัดไป" ให้เปลี่ยนไปยัง Choice2
-    window.location.href = '/Yesno'; // ต้องการ URL ของ Choice2 ที่คุณกำหนด
+    if (selectedLabels.length > 0) {
+      window.location.href = '/Yesno'; // เปลี่ยน URL ให้ตรงกับ URL ของ Yesno
+    } else {
+      alert("กรุณาเลือกโรคประจำตัวอย่างน้อย 1 ข้อ");
+    }
   };
 
+  const handleBack = () => {
+    window.location.href =('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+  };
 
   const buttonStyle = {
-    fontWeight: 900, // แก้ตามที่ต้องการ
-    // เพิ่มสไตล์อื่นๆ ตามต้องการ
+    fontWeight: 900,
   };
 
   return (
-    <div >
-      <div className='text'>
-        <h1 style={buttonStyle}>โรคประจำตัวของคุณ </h1>
+    <div>
+      <div>
+        <h1 className='text' style={buttonStyle}>โรคประจำตัวของคุณ</h1>
         <p>(เลือกได้มากกว่า 1 ข้อ)</p>
       </div>
       <br /><br />
@@ -103,16 +112,13 @@ const Choice = () => {
       />
       <br /><br /><br />
       <div className='font-family'>
-        <button className='next-list'
-          onClick={handleNext}
-          style={buttonStyle}
-        >
+        <button className='next-list' onClick={handleNext} style={buttonStyle}>
           หน้าถัดไป
         </button>
       </div>
       <div>
-        <button className='chevron-list' style={buttonStyle}>
-          <VscChevronLeft />{/* ไอคอนย้อนกลับ */}
+        <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
+          <VscChevronLeft />
         </button>
       </div>
     </div>

@@ -22,5 +22,8 @@
   },
   "devDependencies": {
     "nodemon": "^3.0.2"
+  },
+  "devDependencies": {
+    "pem": "^1.14.8"
   }
 }

@@ -48,18 +48,19 @@ function Calendar_1() {
           <span className="bold" style={buttonStyle}>{date.toDateString()}</span>
         </p>
       </header>
-      <br />
-      <button className={styles.nextbutton} onClick={handleNext} style={buttonStyle} >ถัดไป</button>
-        <div>
-        <button
-          className='chevronicon'
-          shape="circle"
-          style={{ left: 300, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-          onClick={handleBack}
-        >
-          <VscChevronLeft />
-          {/* ไอคอนย้อนกลับ */}
-        </button>
+      <br/>
+      <Link to="/Weight_show"> {/* Changed the route for the "No" response */}
+            <button className={styles.nextbutton}>ถัดไป</button> 
+              </Link>
+      <div className={styles.chevronicon}>
+        <Link to="/Yesno">
+          <Button 
+            shape="circle"
+            style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
+            icon={<VscChevronLeft />}
+          />
+        </Link>
+        
       </div>
     </div>
   );

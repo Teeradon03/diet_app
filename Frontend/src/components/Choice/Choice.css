@@ -4,6 +4,10 @@
   /* ส่วนอื่น ๆ ของ CSS ของคุณ */
 }
 
+.texe {
+  padding-top: 20px;
+}
+
 .question {
   font-size: 18px;
   font-weight: bold;
@@ -44,7 +48,6 @@
   transform: translateY(5px);
   outline: none;
 }
-
 
 .next-list{
   display: block;
@@ -90,8 +93,12 @@
 }
 
 @media screen and (max-width: 1600px) {
+  .text {
+    padding-top: 70px;
+  }
+
   .next-list{
-    font-size: 1rem;
+    font-size: 1.5rem;
     width: 15vw !important;
     position: relative;
     left: 470px
@@ -108,8 +115,12 @@
 
 
 @media screen and (max-width: 1400px) {
+  .text {
+    padding-top: 70px;
+  }
+
   .next-list {
-    font-size: 1rem;
+    font-size:  1.5rem;
     width: 15vw !important;
     position: relative;
     left: 490px
@@ -125,8 +136,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .text {
+    padding-top: 70px;
+  }
+  
   .next-list {
-    font-size: 1rem;
+    font-size:  1.5rem;
     width: 15vw !important;
     position: absolute;
     left: 450px
@@ -146,7 +161,7 @@
     padding-top: 70px;
   }
   .next-list {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 20vw !important;
     position: absolute;
     left: 370px
