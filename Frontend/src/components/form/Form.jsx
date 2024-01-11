@@ -2,12 +2,18 @@ import styles from './Form.module.css'
 
 import { Link } from 'react-router-dom'
 export default function Form() {
+
+	const headingStyle = {
+		fontSize: '50px',
+		fontWeight: 'bold'
+	  }; 
+
 	return (
 		<>
 			<div className="container text-center mt-5 pt-5">
 				<div className="row">
 					<div className="answer mt-5 mb-5">
-						<h2 style={{ fontWeight: 'bold' }}>
+						<h2 style={headingStyle}>
 							คุณเคยกรอกแบบสอบถามหรือยัง
 						</h2>
 					</div>

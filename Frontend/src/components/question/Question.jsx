@@ -135,7 +135,11 @@ const Question = () => {
             setShowScore(true);
         }
 
+<<<<<<< HEAD
         
+=======
+
+>>>>>>> b7dbaa6b2b36021f746fe0459fb7be32f3020f78
         if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
             console.log('ID:', questions[currentQuestion].id);
             console.log('Question:', questions[currentQuestion].question);
