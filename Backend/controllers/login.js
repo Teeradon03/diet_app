@@ -1,17 +1,15 @@
 
 
+exports.login = async (req, res) => {
+  const data = req.body;
+  console.log("login in login body data" ,data);
 
-exports.login = async (req,res) => {
-
-    try{
-        console.log('login in login')
-        const data = req.body;
-        // console.log(data);
-        req.session.userId = 'asdsdfsdfasf'
-        console.log("req.session.userId", req.session.userId);
-    }
-    catch(error){
-        res.status(500).send("Error" )
-    }
-
-}
+  if (data.username == 'admin' && data.password == 'admin') {
+    console.log("correct");
+    req.session.username = data.username;
+    console.log("req.session.username", req.session.username);
+    // res.send(JSON.stringify({ pass: true }));
+  }
+  // console.log("req.session.username", req.session.username);  
+  res.json('error something ')
+};
