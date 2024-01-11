@@ -6,16 +6,18 @@ import styles from '../Bmr/Bmr.module.css';
 import Weight from '../Weight/Weight';
 import Height from '../Height/Height';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios';
 
 function BMR_calculator(props) {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
-  const [age, setAge] = useState();
+  const [age, setAge] = useState(0);
   const [gender, setGender] = useState('male');
   const [bmr, setBmr] = useState(null); 
   const [currentPage, setCurrentPage] = useState(0);
+  const [questionId, setUserId] = useState('36'); // Replace 'yourId' with the desired ID
 
-  const calculateBmr = () => {
+  const calculateBmr = async () => {
     let bmrConstant, genderFactor;
 
     if (gender === 'male') {
@@ -29,12 +31,10 @@ function BMR_calculator(props) {
     const calculatedBmr = bmrConstant + (genderFactor * weight) + (4.799 * height) - (5.677 * age);
     setBmr(calculatedBmr);
     determinePage(calculatedBmr);
-    setButtonText('ไปหน้าถัดไป');
   };
 
   const determinePage = (calculatedBmr) => {
-   
-    setCurrentPage(1);  
+    setCurrentPage(1);
   };
 
   const buttonStyle = {
@@ -42,41 +42,38 @@ function BMR_calculator(props) {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const renderContent = () => {
-    const goToNextPage = () => {
-      setCurrentPage(1);
-    };
-
-
     return (
       <div>
         <br/>
-        <h1 style={buttonStyle}>คำนวณแคลอรี่ (BMR)</h1>
+        <h1>คำนวณแคลอรี่ (BMR)</h1>
         
         <Weight onWeightChange={(value) => setWeight(value)} />
-        
+
         <Height onHeightChange={(value) => setHeight(value)} />
         <br/>
        
-        <h2 style={buttonStyle}>อายุ (ปี) </h2>
+        <h2>อายุ (ปี) </h2>
         <div className={styles.inputbmr}>
-        < input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+          <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
         </div>
        
-        <h2 style={buttonStyle}>เพศ  </h2>
+        <h2>เพศ  </h2>
         <div className={styles.gender}>
         <select value={gender} onChange={(e) => setGender(e.target.value)}>
-          <option value="male" style={buttonStyle}>ชาย</option>
-          <option value="female" style={buttonStyle}>หญิง</option>
+          <option value="male">ชาย</option>
+          <option value="female">หญิง</option>
         </select>
         </div>
         {bmr !== null && (
           <div>
             <br />
-            <p style={buttonStyle}> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
+            <p> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
             
           </div>
         )}
-        <button className={styles.bmrbutton} onClick={calculateBmr} style={buttonStyle} >คำนวณค่า BMR</button>
+        <button className={styles.bmrbutton} onClick={calculateBmr}>Calculate BMR</button>
+        
+       
         
       </div>
     );

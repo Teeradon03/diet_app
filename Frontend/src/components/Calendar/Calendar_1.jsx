@@ -49,8 +49,8 @@ function Calendar_1() {
         </p>
       </header>
       <br/>
-      <Link to="/Weight_show"> {/* Changed the route for the "No" response */}
-            <button className={styles.nextbutton}>ถัดไป</button> 
+      <Link to="/Target"> {/* Changed the route for the "No" response */}
+            <button className={styles.nextbutton}style={buttonStyle}>ถัดไป</button> 
               </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
