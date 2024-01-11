@@ -45,29 +45,29 @@ function BMR_calculator(props) {
     return (
       <div>
         <br/>
-        <h1>คำนวณแคลอรี่ (BMR)</h1>
+        <h1 style={{ fontWeight: 'bold' }}>คำนวณแคลอรี่ (BMR)</h1>
         
         <Weight onWeightChange={(value) => setWeight(value)} />
 
         <Height onHeightChange={(value) => setHeight(value)} />
         <br/>
        
-        <h2>อายุ (ปี) </h2>
+        <h2 style={{ fontWeight: 'bold' }}>อายุ (ปี) </h2>
         <div className={styles.inputbmr}>
           <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
         </div>
        
-        <h2>เพศ  </h2>
+        <h2 style={{ fontWeight: 'bold' }}>เพศ  </h2>
         <div className={styles.gender}>
         <select value={gender} onChange={(e) => setGender(e.target.value)}>
-          <option value="male">ชาย</option>
-          <option value="female">หญิง</option>
+          <option value="male" style={{ fontWeight: 'bold' }}>ชาย</option>
+          <option value="female" style={{ fontWeight: 'bold' }}>หญิง</option>
         </select>
         </div>
         {bmr !== null && (
           <div>
             <br />
-            <p> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
+            <p style={{ fontWeight: 'bold' }}> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
             
           </div>
         )}

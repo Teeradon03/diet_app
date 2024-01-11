@@ -92,7 +92,6 @@ function BMI_calculator(props) {
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
           <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
-         
           <div className={styles.chevronicon}>
           <Link to="/Weight_show">
             <Button

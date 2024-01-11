@@ -23,7 +23,7 @@ function Bmi_obesitylevel1() {
             <button className={styles.advicebutton} style={boldTextStyle}>คำแนะนำ</button>
           </Link>
 
-          <Link to="/">
+          <Link to="/BMR_calculator">
             <button className={styles.nextbutton} style={boldTextStyle}>ถัดไป</button>
           </Link>
         </div>

@@ -23,7 +23,7 @@ function Bmi_lowweight() {
             <button className={styles.advicebutton}><strong>คำแนะนำ</strong></button>
           </Link>
 
-          <Link to="/">
+          <Link to="/BMR_calculator">
             <button className={styles.nextbutton}><strong>ถัดไป</strong></button>
           </Link>
         </div>
