@@ -21,10 +21,12 @@ const LineLoginButton = () => {
       // console.log('access token: ' + accessToken)
       console.log('idToken', idToken);
       console.log('user profile', userProfile);
-      const response = await axios.post("http://localhost:9999/api/user/user-login", idToken)
-      if (response.ok){
-        console.log('sosssssssssssss')
-      }
+      const response = await axios.post("http://localhost:9999/api/user/user-login",idToken,{
+        withCredentials: true
+      })
+      
+      console.log(response.data)
+
       if (liff.isLoggedIn()) {
         window.location.replace('/home')
       }
