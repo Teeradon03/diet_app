@@ -7,6 +7,7 @@ import axios from 'axios';
 
 const options = [
   {
+    id : 1,
     label: (
       <span>
         โลว์คาร์บหรือคีโต
@@ -164,7 +165,7 @@ const Choice2 = () => {
   return (
     <div>
       <div>
-        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+        <h1 className='text' style={buttonStyle}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
       <Select
