@@ -180,7 +180,6 @@ const yesno = () => {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('Yes:', newIndex);
 
-
       // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
       sendToAPI();
 
@@ -258,7 +257,7 @@ const yesno = () => {
     return (
       <div className="Ynquiztion">
       <div className='font-family'> 
-      <p className='question' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
+      <p className='questionyesno' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}

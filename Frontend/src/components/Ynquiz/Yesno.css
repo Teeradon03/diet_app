@@ -2,6 +2,10 @@
     font-family: 'Noto Sans Thai', sans-serif;
     /* ส่วนอื่น ๆ ของ CSS ของคุณ */
   }
+  .questionyesno{
+    font-size: 40px;
+    padding-top: 20px;
+  }
   
   .yes-button {
     font-family: 'Noto Sans Thai', sans-serif;
@@ -251,7 +255,7 @@
     left: 10px;
   }
   .Ynquiztion {
-    font-size: 1.5rem;
+    font-size: 2.5rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
