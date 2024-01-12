@@ -14,19 +14,16 @@ function Weight(props) {
     }
   };
 
-  const boldTextStyle = {
-    fontWeight: 'bold', // Set the fontWeight to 'bold'
-  };
 
   return (
     <div className={styles.Bmi1}>
       <br />
-      <h2 style={boldTextStyle}>น้ำหนักตัว (กก.)</h2>
+      <p>น้ำหนักตัว (กก.)</p>
       <input
         type="number"
         value={weight}
         onChange={handleInputChange}
-        style={boldTextStyle} // Apply boldTextStyle to the input as well
+        
       />
     </div>
   );

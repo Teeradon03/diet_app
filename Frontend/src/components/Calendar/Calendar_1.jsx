@@ -10,48 +10,55 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 
 function Calendar_1() {
-  const navi = useNavigate();
   const [date, setDate] = useState(new Date());
-
+ const [questionId, setUserId] = useState('42');
   const handleDateChange = (newDate) => {
     if (newDate !== null) {
       setDate(newDate);
-      console.log("Selected date:", newDate); // Log the selected date
+      console.log("Selected date:", newDate); // บันทึกวันที่ที่เลือกไว้
     }
+    
+  };
+  const handleSubmit = async () => {
+    console.log('Weight:', weight);
+
+    const dataToSend = {
+      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
+      weight: weight
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
-  const handleNext = () => {
-    navi('/Weight_1');
-  };
 
-  const handleBack = () => {
-    window.location.href = "Yesno"; // ทำการย้อนกลับไปที่หน้าที่แล้ว
-  };
-
-  const buttonStyle = {
-    fontWeight: 900, // แก้ตามที่ต้องการ
-    // เพิ่มสไตล์อื่นๆ ตามต้องการ
-  };
+  
 
   return (
     <div className="App">
       <header className="Calendar">
-        <h1 className={styles.Bmi1} style={buttonStyle} >วัน/เดือน/ปีเกิด</h1>
+        <h1 className={styles.Bmi1} >วัน/เดือน/ปีเกิด</h1>
         <br />
-        <div className='calendar-container'>
+        <div className='calendar-container' >
+          {/* Adjust the width and height as needed */}
           <Calendar onChange={handleDateChange} value={date} />
         </div>
-        <p className="text-center">
-        <br/><br/>
-          <span className="bold" style={buttonStyle}>กรุณาเลือกวันที่ </span>
+        <p className="text-center ">
+          <br/><br/>
+          <span >กรุณาเลือกวันที่ </span>
           &nbsp;&nbsp;&nbsp;
-          <span className="bold" style={buttonStyle}>{date.toDateString()}</span>
+          <span >{date.toDateString()}</span>
         </p>
       </header>
       <br/>
-      <Link to="/Target"> {/* Changed the route for the "No" response */}
-            <button className={styles.nextbutton}style={buttonStyle}>ถัดไป</button> 
-              </Link>
+      <Link to="/Target"className={styles.link}>
+        <button className={styles.nextbutton}>ถัดไป</button>
+      </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
           <Button 
@@ -60,7 +67,6 @@ function Calendar_1() {
             icon={<VscChevronLeft />}
           />
         </Link>
-        
       </div>
     </div>
   );

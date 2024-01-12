@@ -18,7 +18,7 @@ function BMI_calculator(props) {
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('35');
+  const [questionId, setUserId] = useState('46');
 
   const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
@@ -73,7 +73,7 @@ function BMI_calculator(props) {
             <Weight onWeightChange={(value) => setWeight(value)} />
             <br/>
             <Height onHeightChange={(value) => setHeight(value)} />
-            <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
+            <button className={styles.bmibutton} onClick={calculateBmi} >คำนวณ BMI</button>
           </div>
         );
     }
@@ -85,13 +85,13 @@ function BMI_calculator(props) {
     } else {
       return (
       
-        <div>
+        <div className={styles.Bmi1}>
           <br />
-            <h1 style={{ fontWeight: 'bold' }}>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
+            <p>คำนวณค่าดัชนีมวลกาย (BMI)</p>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
-          <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
+          <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
          
           <div className={styles.chevronicon}>
           <Link to="/Weight_show">

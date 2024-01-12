@@ -6,15 +6,15 @@ import styles from './Advice.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Advice_obesitylevel3() {
-  const boldTextStyle = { fontWeight: 'bold' };
+  
 
   return (
     <div>
       <div className={styles.Bmi1}>
-        <h1 style={boldTextStyle}>คำแนะนำค่าดัชนีมวลกาย (BMI)</h1>
+        <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
         <br />
-        <div className={styles.childadvice} style={boldTextStyle}>
+        <div className={styles.childadvice}>
           <p>1. รับประทานอาหารในปริมาณที่เหมาะสม และหลีกเลี่ยงการบริโภคอาหารใน ปริมาณมากเกินไป</p>
           <p>2. ลดการบริโภคอาหารที่มีความสูงใน โปรตีนที่ไม่ดีเช่นอาหารหมักหรืออาหาร จางๆ และหลีกเลี่ยงอาหารหรือเครื่องดื่ม ที่มีความสูงในน้ำตาลและไขมัน</p>
           <p>3. ระบุเป้าหมายการลดน้ำหนักหรือควบคุมน้ำหนัก เพื่อลดความเสี่ยงต่อโรคร้าย ต่างๆ ควรทำการลดน้ำหนักอย่าง ช้าๆ และด้วยวิธีที่ยั่งยืน</p>
@@ -23,8 +23,8 @@ function Advice_obesitylevel3() {
         <br />
 
         <div>
-          <Link to="/Bmi_obesitylevel3">
-            <button className={styles.backbutton} style={boldTextStyle}>ย้อนกลับ</button>
+          <Link to="/Bmi_obesitylevel3"className={styles.link}>
+            <button className={styles.backbutton}>ย้อนกลับ</button>
           </Link>
         </div>
       </div>

@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
-  const pageId = '34'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
+  const pageId = '45'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -32,13 +32,10 @@ function Weight_show(props) {
       });
   };
 
-  const boldTextStyle = {
-    fontWeight: 'bold', // Set the fontWeight to 'bold'
-  };
 
   return (
     <div className={styles.Bmi1} id={pageId}>
-      <h1 style={boldTextStyle}>น้ำหนักของคุณเท่าไหร่</h1>
+      <p >น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -46,10 +43,11 @@ function Weight_show(props) {
           value={weight}
           onChange={handleInputChange}
         />
-        <label htmlFor="weight" style={boldTextStyle}> กก.</label>
+        <label htmlFor="weight">&nbsp; กก.</label>
       </div>
+      <br />
 
-      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
       <Image
         width={300}
@@ -57,8 +55,8 @@ function Weight_show(props) {
         src="/public/w1.jpg"
       />
       <div>
-        <Link to="/BMI_calculator">
-          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
+        <Link to="/BMI_calculator"className={styles.link}>
+          <button className={styles.nextbutton} onClick={handleSubmit} >
             ถัดไป
           </button>
         </Link>

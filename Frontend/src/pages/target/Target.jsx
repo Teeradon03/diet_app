@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-  const questionId = '32';
+  const questionId = '43';
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -31,13 +31,11 @@ function Target() {
       });
   };
 
-  const boldTextStyle = {
-    fontWeight: 'bold', // Set the fontWeight to 'bold'
-  };
+  
 
   return (
     <div className={styles.Bmi1}>
-      <h1 style={boldTextStyle}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
+      <h1 className={styles.Bmi1}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -45,10 +43,12 @@ function Target() {
           value={targetWeight}
           onChange={handleInputChange}
         />
-        <label htmlFor="target" style={boldTextStyle}> กก.</label>
+        <label htmlFor="target">&nbsp; กก.</label>
       </div>
+      <br />
 
-      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <br />
 
       <Image
         width={300}
@@ -56,8 +56,8 @@ function Target() {
         src="/public/t1.jpg"
       />
       <div>
-        <Link to="/Height_show">
-          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
+        <Link to="/Height_show"className={styles.link}>
+          <button className={styles.nextbutton} onClick={handleSubmit}>
             ถัดไป
           </button>
         </Link>

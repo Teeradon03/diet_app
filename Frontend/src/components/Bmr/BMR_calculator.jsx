@@ -15,7 +15,7 @@ function BMR_calculator(props) {
   const [gender, setGender] = useState('male');
   const [bmr, setBmr] = useState(null); 
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('36'); // Replace 'yourId' with the desired ID
+  const [questionId, setUserId] = useState('47'); // Replace 'yourId' with the desired ID
 
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
@@ -53,25 +53,25 @@ function BMR_calculator(props) {
   };
 
   const renderContent = () => {
-    const boldTextStyle = { fontWeight: 'bold' };
+    
 
     return (
-      <div>
+      <div className={styles.Bmr1}>
         <br />
-        <h1 style={boldTextStyle}>คำนวณแคลอรี่ (BMR)</h1>
+        <p>คำนวณแคลอรี่ (BMR)</p>
 
         <Weight onWeightChange={(value) => setWeight(value)} />
 
         <Height onHeightChange={(value) => setHeight(value)} />
-        <br />
+        
 
-        <h2 style={boldTextStyle}>อายุ (ปี)</h2>
+        <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
           <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
         </div>
 
-        <h2 style={boldTextStyle}>เพศ</h2>
-        <div className={styles.gender}style={boldTextStyle}>
+        <p className={styles.genderv1}>เพศ</p>
+        <div className={styles.gender}>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
             <option value="male">ชาย</option>
             <option value="female">หญิง</option>
@@ -80,10 +80,10 @@ function BMR_calculator(props) {
         {bmr !== null && (
           <div>
             <br />
-            <p style={boldTextStyle}>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
+            <p>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
           </div>
         )}
-        <button className={styles.bmrbutton} style={boldTextStyle} onClick={calculateBmr}>คำนวณ BMR</button>
+        <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
       </div>
     );
   };

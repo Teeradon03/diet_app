@@ -27,7 +27,10 @@ import Bmi_normalweight from './components/Bmi/Bmi_normalweight';
 import Bmi_obesitylevel1 from './components/Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from './components/Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from './components/Bmi/Bmi_obesitylevel3';
-import BMR_calculator from './components/Bmr/BMR_calculator';
+import Yesno from './components/Ynquiz/Yesno.jsx'
+import Choice from './components/Choice/Choice.jsx'
+import Choice2 from './components/Choice/Choice2.jsx'
+import BMR_calculator from './components/Bmr/BMR_calculator'
 
 
 function App() {
@@ -63,15 +66,14 @@ function App() {
         <Route path='/Bmi_obesitylevel1' element={<Bmi_obesitylevel1 />}/>
         <Route path='/Bmi_obesitylevel2' element={<Bmi_obesitylevel2 />}/>
         <Route path='/Bmi_obesitylevel3' element={<Bmi_obesitylevel3 />}/>
+        <Route path='/BMR_calculator' element={<BMR_calculator />}/>
 
 
         <Route path='/Name' element={<Name/>}/>
 
-        <Route path='/BMR_calculator' element={<BMR_calculator/>}/>
-
-        
-
-
+        <Route path="/Yesno" element={<Yesno />} />
+        <Route path="/Choice" element={<Choice />} />
+        <Route path="/Choice2" element={<Choice2 />} />
 
       </Routes>
     </BrowserRouter>
