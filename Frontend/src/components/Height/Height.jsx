@@ -1,25 +1,30 @@
 import React, { useState } from 'react';
-import styles from'../Bmi/Bmi.module.css'
+import styles from '../Bmi/Bmi.module.css';
 
 function Height(props) {
-  const [height, setHeight] = useState('');
+  const [height, setHeight] = useState('0');
 
   const handleInputChange = (event) => {
     const value = event.target.value;
 
     if (value >= 0) {
-      setHeight(value); // เปลี่ยน setWeight เป็น setHeight
-      props.onHeightChange(value); // แก้ props.onWeightChange เป็น props.onHeightChange
+      setHeight(value);
+      props.onHeightChange(value);
     }
+  };
+
+  const boldTextStyle = {
+    fontWeight: 'bold', // Set the fontWeight to 'bold'
   };
 
   return (
     <div className={styles.Bmi1}>
-      <h2>ส่วนสูง (ซม.)</h2>
+      <h2 style={boldTextStyle}>ส่วนสูง (ซม.)</h2>
       <input
         type="number"
         value={height}
         onChange={handleInputChange}
+        style={boldTextStyle} // Apply boldTextStyle to the input as well
       />
     </div>
   );

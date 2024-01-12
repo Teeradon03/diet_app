@@ -10,8 +10,11 @@
   @media (prefers-reduced-motion: no-preference) {
     .App-logo {
       animation: App-logo-spin infinite 20s linear;
-      
     }
+  }
+
+  .bold {
+    font-size: 20px;
   }
   
   .react-calendar { 
@@ -124,20 +127,54 @@
     background: #6f48eb;
     color: white;
    }
-   .next-button {
-    display: block; 
-    margin: 0 auto; 
-  }
+
+   .nextbutton {
+  width: 50%; 
+  padding: 20px ;
+  margin-bottom: 17px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 8px 12px 3px 5px #b2b2b2;
+  font-size: larger;
+  font-weight: bolder;
+  cursor: pointer;
+  text-align: center;
+  position: relative;
+}
+
+.nextbutton:active {
+  background-color: #757575;
+  color: rgb(255, 255, 255);
+  transform: translateY(10px);
+  outline: none;
+}
+
+.nextbutton::selection {
+  background-color: #ffffff;
+}
   
-  .chevron-icon {
-    position: absolute;
-    left: 300px; 
-    top: 10px; 
-  }
-  
-  .chevron-icon button {
-    font-size: 22px;
-    width: 50px;
-    height: 50px;
-  }
+.chevronicon {
+width: 50px;
+height: 50px;
+border-radius: 50%;
+border: none;
+background-color: #ffffff; 
+color: #757575;
+display: flex;
+justify-content: center;
+align-items: center;
+cursor: pointer;
+outline: none;
+position: absolute;
+left: 300px;
+top: 30px;
+}
+
+.chevronicon button {
+  font-size: 22px;
+  width: 50px;
+  height: 50px;
+}
   

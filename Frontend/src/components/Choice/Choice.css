@@ -3,6 +3,10 @@
   /* ส่วนอื่น ๆ ของ CSS ของคุณ */
 }
 
+.texe {
+  padding-top: 20px;
+}
+
 .question {
   font-size: 18px;
   font-weight: bold;
@@ -44,7 +48,6 @@
   transform: translateY(5px);
   outline: none;
 }
-
 
 .next-list {
   display: block;
@@ -91,11 +94,11 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .next-list {
+  .next-list{
     font-size: 1rem;
     width: 15vw !important;
     position: relative;
-    left: 470px
+    left: 510px
   }
 
   .chevron-list {
@@ -109,8 +112,12 @@
 
 
 @media screen and (max-width: 1400px) {
+  .text {
+    padding-top: 100px;
+  }
+
   .next-list {
-    font-size: 1rem;
+    font-size:  1.5rem;
     width: 15vw !important;
     position: relative;
     left: 490px
@@ -126,8 +133,12 @@
 }
 
 @media screen and (max-width: 1200px) {
+  .text {
+    padding-top: 100px;
+  }
+  
   .next-list {
-    font-size: 1rem;
+    font-size:  1.5rem;
     width: 15vw !important;
     position: absolute;
     left: 450px
@@ -145,11 +156,11 @@
 
 @media screen and (max-width: 992px) {
   .text {
-    padding-top: 70px;
+    padding-top: 100px;
   }
 
   .next-list {
-    font-size: 1.2rem;
+    font-size: 1.3rem;
     width: 20vw !important;
     position: absolute;
     left: 370px
@@ -167,7 +178,7 @@
 
 @media screen and (max-width: 768px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .next-list {
@@ -188,7 +199,7 @@
 
 @media screen and (max-width: 576px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .next-list {
@@ -209,7 +220,7 @@
 
 @media screen and (max-width: 450px) {
   .text {
-    padding-top: 60px;
+    padding-top: 100px;
   }
 
   .next-list {
@@ -226,4 +237,5 @@
     position: absolute;
     left: 30px;
   }
-}
+} 
+

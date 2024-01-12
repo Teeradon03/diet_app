@@ -21,123 +21,123 @@ const yesno = () => {
 
   const [questions] = useState([
                 {
-                id: 1,
+                id: 12,
                 question: 'เป้าหมายที่คุณต้องการ ลดน้ำหนัก',
                 },
                 {
-                id: 2,
+                id: 13,
                 question: 'เป้าหมายที่คุณต้องการ ลดไขมัน',
                 },
                 {
-                id: 3,
+                id: 14,
                 question: 'เป้าหมายที่คุณต้องการ สุขภาพดี',
                 },
                 {
-                id: 4,
+                id: 15,
                 question: 'เป้าหมายที่คุณต้องการ เสริมสร้างกล้ามเนื้อ',
                 },
                 {
-                id: 5,
+                id: 16,
                 question: 'รูปร่างของคุณคือลักษณะ ผอมเพรียว',
                 },
                 {
-                id: 6,
+                id: 17,
                 question: 'รูปร่างของคุณคือลักษณะ สมส่วน',
                 },
                 {
-                id: 7,
+                id: 18,
                 question: 'รูปร่างของคุณคือลักษณะ อวบ',
                 },
                 {
-                id: 8,
+                id: 19,
                 question: 'รูปร่างของคุณคือลักษณะ อ้วน',
                 },
                 {
-                id: 9,
+                id: 20,
                 question: 'ในร่างกายของคุณที่ต้องการลดคือ ก้น',
                 },
                 {
-                id: 10,
+                id: 21,
                 question: 'ในร่างกายของคุณที่ต้องการลดคือ ต้นขา',
                 },
                 {
-                id: 11,
+                id: 22,
                 question: 'ในร่างกายของคุณที่ต้องการลดคือ หน้าอก',
                 },
                 {
-                id: 12,
+                id: 23,
                 question: 'ในร่างกายของคุณที่ต้องการลดคือ หน้าท้อง',
                 },
                 {
-                id: 13,
+                id: 24,
                 question: 'พฤติกรรมของคุณในช่วงระหว่างวันคือ นั่งเกือบทั้งวัน',
                 },
                 {
-                id: 14,
+                id: 25,
                 question: 'พฤติกรรมของคุณในช่วงระหว่างวันคือ ยืนเกือบทั้งวัน',
                 },
                 {
-                id: 15,
+                id: 26,
                 question: 'พฤติกรรมของคุณในช่วงระหว่างวันคือ เดินเกือบทั้งวัน',
                 },
                 {
-                id: 16,
+                id: 27,
                 question: 'ลุกหรือเดินเพื่อยืดเส้นสายเกือบทั้งวัน',
                 },
                 {
-                id: 17,
+                id: 28,
                 question: 'คุณดื่มน้ำเปล่าวันละ 2-3 แก้ว/วัน',
                 },
                 {
-                id: 18,
+                id: 29,
                 question: 'คุณดื่มน้ำเปล่าวันละ 4-5 แก้ว/วัน',
                 },
                 {
-                id: 19,
+                id: 30,
                 question: 'คุณดื่มน้ำเปล่าวันละ 6-7 แก้ว/วัน',
                 },
                 {
-                id: 20,
+                id: 31,
                 question: 'คุณดื่มน้ำเปล่าวันละมากกว่า 8 แก้ว/วัน',
                 },
                 {
-                id: 21,
+                id: 32,
                 question: 'นิสัยแย่ๆของคุณที่ชอบทำ คือ ชอบดื่มน้ำอัดลม',
                 },
                 {
-                id: 22,
+                id: 33,
                 question: 'นิสัยแย่ๆของคุณที่ชอบทำ คือ ชอบดื่มเบียร์',
                 },
                 {
-                id: 23,
+                id: 34,
                 question: 'นิสัยแย่ๆของคุณที่ชอบทำ คือ ชอบขนมหวาน',
                 },
                 {
-                id: 24,
+                id: 35,
                 question: 'นิสัยแย่ๆของคุณที่ชอบทำ คือ ชอบกินของทอด',
                 },
                 {
-                id: 25,
+                id: 36,
                 question: 'คุณมีประสบปัญหาปวดหลัง',
                 },
                 {
-                id: 26,
+                id: 37,
                 question: 'คุณมีประสบปัญหาปวดเข่า',
                 },
                 {
-                id: 27,
+                id: 38,
                 question: 'คุณมีประสบปัญหาปวดแขน',
                 },
                 {
-                id: 28,
+                id: 39,
                 question: 'คุณมีประสบปัญหาปวดขา',
                 },
                 {
-                id: 29,
+                id: 40,
                 question: 'คุณมีประสบปัญหาปวดเอว',
                 },
                 {
-                id: 30,
+                id: 41,
                 question: 'คุณมีประสบปัญหาปวดข้อกระดูก',
                 },
             ]);
@@ -152,7 +152,10 @@ const yesno = () => {
                   userId: 1
                 };
               
-                const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+                const response = await axios.post('http://localhost:9999/api/create-questionnaires', data,{
+                  withCredentials: true
+                });
+                
                 console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
               } catch (error) {
                 console.error('Error:', error);
@@ -179,6 +182,7 @@ const yesno = () => {
     if (questions && questions[currentImageIndex] && questions[currentImageIndex].id) {
       console.log('Question ID:', questions[currentImageIndex].id);
       console.log('Yes:', newIndex);
+
 
       // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API เมื่อตอบ "ใช่"
       sendToAPI();
@@ -257,7 +261,7 @@ const yesno = () => {
     return (
       <div className="Ynquiztion">
       <div className='font-family'> 
-      <p className='questionyesno' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
+      <p className='question' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}

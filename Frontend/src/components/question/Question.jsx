@@ -5,99 +5,100 @@ import "./Question.css";
 import axios from "axios";
 
 const Question = () => {
-  const questions = [
-    {
-      id: 1,
-      question: "อายุของคุณอยู่ช่วงไหน",
-      options: [
-        { value: 1, label: "อายุ 20 - 29 ปี" },
-        { value: 2, label: "อายุ 30 - 39 ปี" },
-        { value: 3, label: "อายุ 40 - 49 ปี" },
-        { value: 4, label: "อายุ 50+ ปี" },
-      ],
-    },
-    {
-      id: 2,
-      question: "ความรู้เกี่ยวกับ IF ของคุณ",
-      options: [
-        { value: 1, label: "ไม่รู้อะไรเลย" },
-        { value: 2, label: "พอรู้บ้าง" },
-        { value: 3, label: "มีความรู้" },
-      ],
-    },
-    {
-      id: 3,
-      question: "คุณทานอาหารเช้าช่วงเวลาไหน",
-      options: [
-        { value: 1, label: "ไม่รับประทานอาหารเช้า" },
-        { value: 2, label: "ระหว่าง 6.00 น. - 8.00 น." },
-        { value: 3, label: "ระหว่าง 8.00 น. - 10.00 น." },
-        { value: 4, label: "ระหว่าง 10.00 น. - 12.00 น." },
-      ],
-    },
-    {
-      id: 4,
-      question: "คุณทานอาหารกลางวันช่วงเวลาไหน",
-      options: [
-        { value: 1, label: "ไม่รับประทานอาหารกลางวัน" },
-        { value: 2, label: "ระหว่าง 10.00 น. - 12.00 น." },
-        { value: 3, label: "ระหว่าง 12.00 น. - 14.00 น." },
-        { value: 4, label: "ระหว่าง 14.00 น. - 16.00 น." },
-      ],
-    },
-    {
-      id: 5,
-      question: "คุณทานอาหารเย็นช่วงไหน",
-      options: [
-        { value: 1, label: "ไม่รับประทานอาหารเย็น" },
-        { value: 2, label: "ระหว่าง 16.00 น. - 18.00 น." },
-        { value: 3, label: "ระหว่าง 18.00 น. - 20.00 น." },
-        { value: 4, label: "ระหว่าง 20.00 น. - 22.00 น." },
-      ],
-    },
-    {
-      id: 6,
-      question: "คุณออกกำลังกายบ่อยแค่ไหน",
-      options: [
-        { value: 1, label: "ทุกวัน" },
-        { value: 2, label: "2 - 3 ครั้ง/สัปดาห์" },
-        { value: 3, label: "มากกว่าหนึ่งครั้ง/เดือน" },
-        { value: 4, label: "ไม่ออกกำลังกายเลย" },
-      ],
-    },
-    {
-      id: 7,
-      question: "คุณนอนวันละกี่ชั่วโมง",
-      options: [
-        { value: 1, label: "น้อยกว่า 5 ชั่วโมง" },
-        { value: 2, label: "5 - 6 ชั่วโมง" },
-        { value: 3, label: "7 - 8 ชั่วโมง" },
-        { value: 4, label: "มากกว่า 8 ชั่วโมง" },
-      ],
-    },
-    {
-      id: 8,
-      question: "คุณเคยควบคุมน้ำหนักหรือไม่",
-      options: [
-        { value: 1, label: "เคย" },
-        { value: 2, label: "ไม่เคย" },
-      ],
-    },
-    {
-      id: 9,
-      question: "เป้าหมายในการลดน้ำหนัก",
-      options: [
-        { value: 1, label: "ช้าเเต่มั่นคง" },
-        { value: 2, label: "ปานกลาง" },
-        { value: 3, label: "เร็วที่สุด" },
-      ],
-    },
-  ];
+    const questions = [
+        {
+            id: 1,
+            question: 'อายุของคุณอยู่ช่วงไหน',
+            options: [
+                { value: 1, label: 'อายุ 20 - 29 ปี' },
+                { value: 2, label: 'อายุ 30 - 39 ปี' },
+                { value: 3, label: 'อายุ 40 - 49 ปี' },
+                { value: 4, label: 'อายุ 50+ ปี' }
+            ]
+        },
+        {
+            id: 2,
+            question: 'ความรู้เกี่ยวกับ IF ของคุณ',
+            options: [
+                { value: 1, label: 'ไม่รู้อะไรเลย' },
+                { value: 2, label: 'พอรู้บ้าง' },
+                { value: 3, label: 'มีความรู้' }
+            ]
+        },
+        {
+            id: 3,
+            question: 'คุณทานอาหารเช้าช่วงเวลาไหน',
+            options: [
+                { value: 1, label: 'ไม่รับประทานอาหารเช้า' },
+                { value: 2, label: 'ระหว่าง 6.00 น. - 8.00 น.' },
+                { value: 3, label: 'ระหว่าง 8.00 น. - 10.00 น.' },
+                { value: 4, label: 'ระหว่าง 10.00 น. - 12.00 น.' }
+            ]
+        },
+        {
+            id: 4,
+            question: 'คุณทานอาหารกลางวันช่วงเวลาไหน',
+            options: [
+                { value: 1, label: 'ไม่รับประทานอาหารกลางวัน' },
+                { value: 2, label: 'ระหว่าง 10.00 น. - 12.00 น.' },
+                { value: 3, label: 'ระหว่าง 12.00 น. - 14.00 น.' },
+                { value: 4, label: 'ระหว่าง 14.00 น. - 16.00 น.' }
+            ]
+        },
+        {
+            id: 5,
+            question: 'คุณทานอาหารเย็นช่วงไหน',
+            options: [
+                { value: 1, label: 'ไม่รับประทานอาหารเย็น' },
+                { value: 2, label: 'ระหว่าง 16.00 น. - 18.00 น.' },
+                { value: 3, label: 'ระหว่าง 18.00 น. - 20.00 น.' },
+                { value: 4, label: 'ระหว่าง 20.00 น. - 22.00 น.' }
+            ]
+        },
+        {
+            id: 6,
+            question: 'คุณออกกำลังกายบ่อยแค่ไหน',
+            options: [
+                { value: 1, label: 'ทุกวัน' },
+                { value: 2, label: '2-3 ครั้ง/สัปดาห์' },
+                { value: 3, label: 'มากกว่าหนึ่งครั้ง/เดือน' },
+                { value: 4, label: 'ไม่ออกกำลังกายเลย' }
+            ]
+        },
+        {
+            id: 7,
+            question: 'คุณนอนวันละกี่ชั่วโมง',
+            options: [
+                { value: 1, label: 'น้อยกว่า 5 ชั่วโมง' },
+                { value: 2, label: '5 - 6 ชั่วโมง' },
+                { value: 3, label: '7 - 8 ชั่วโมง' },
+                { value: 4, label: 'มากกว่า 8 ชั่วโมง' }
+            ]
+        },
+        {
+            id: 8,
+            question: 'คุณเคยควบคุมน้ำหนักหรือไม่',
+            options: [
+                { value: 1, label: 'เคย' },
+                { value: 2, label: 'ไม่เคย' }
+            ]
+        },
+        {
+            id: 9,
+            question: 'เป้าหมายในการลดน้ำหนัก',
+            options: [
+                { value: 1, label: 'ช้าเเต่มั่นคง' },
+                { value: 2, label: 'ปานกลาง' },
+                { value: 3, label: 'เร็วที่สุด' }
+            ]
+        },
 
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-  const [selectedOption, setSelectedOption] = useState("");
-  const [score, setScore] = useState(0);
-  const [showScore, setShowScore] = useState(false);
+    ];
+
+    const [currentQuestion, setCurrentQuestion] = useState(0);
+    const [selectedOption, setSelectedOption] = useState('');
+    const [score, setScore] = useState(0);
+    const [showScore, setShowScore] = useState(false);
 
   const handleOptionSelect = (event, option) => {
     setSelectedOption(option.value);
@@ -131,26 +132,22 @@ const Question = () => {
       setShowScore(true);
     }
 
-    if (
-      questions[currentQuestion].id >= 1 &&
-      questions[currentQuestion].id <= 9
-    ) {
-      console.log("ID:", questions[currentQuestion].id);
-      console.log("Question:", questions[currentQuestion].question);
-      console.log("Answer:", selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
-      sendToAPI(); // เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
-    }
 
-    const handleNextQuestion = (value) => {
-      if (
-        questions[currentQuestion].id === 10 ||
-        questions[currentQuestion].id === 11
-      ) {
-        console.log("Choice Selected:", value);
-        console.log("Answer:", value);
-      }
+        if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
+            console.log('ID:', questions[currentQuestion].id);
+            console.log('Question:', questions[currentQuestion].question);
+            console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
+            sendToAPI();  // เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
+        }
+
+        const handleNextQuestion = (value) => {
+            if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
+                console.log('Choice Selected:', value);
+                console.log('Answer:', value);
+
+            }
+        };
     };
-  };
 
   const sendToAPI = async () => {
     try {
@@ -161,9 +158,9 @@ const Question = () => {
         userId: 1,
       };
 
-      const response = await axios.post(
-        "http://localhost:9999/api/create-questionnaires",
-        data
+      const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data,{
+          withCredentials: true
+        }
       );
       console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
     } catch (error) {

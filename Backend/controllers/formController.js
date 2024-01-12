@@ -1,4 +1,4 @@
-/// model
+   /// model
 const { Question, Questionnaire } = require("../models/form");
 const { User } = require('../models/user')
 /// controller
@@ -44,6 +44,8 @@ exports.getQuestionById = async (req, res) => {
     }
 };
 exports.createQuestion = async (req, res) => {
+
+    console.log("req.session.userId in questionnnnn", req.session.userId)
     const data = req.body;
     //   console.log("the data from create question", data);
     //   console.log('data contenttttttttttt',data.content)
@@ -93,7 +95,8 @@ exports.createQuestion = async (req, res) => {
 
 /// Questionnnaires
 exports.createQuestionnaires = async (req, res) => {
-    console.log("lineUserId", req.session.userId);
+    console.log("UserId Session in form", req.session.userId);
+
     const data = req.body;
     console.log(data);
 
@@ -102,7 +105,7 @@ exports.createQuestionnaires = async (req, res) => {
         const questionIdAlreadyExists = await Questionnaire.findOne({questionId: data.questionId});
 
         console.log('questionIdAlreadyExists', questionIdAlreadyExists)
-        
+          
         if (!questionIdAlreadyExists){
             const dataTime = new Date()
             const newQuestionnaires = new Questionnaire({
