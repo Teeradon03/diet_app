@@ -121,7 +121,6 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
       questionId: selectedOptions.map(option => option.id),
       question: selectedLabels.map(option => option.label),
       answer: 5,
-      userId: 1
     };
 
     const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);

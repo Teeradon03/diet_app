@@ -17,7 +17,7 @@
   box-shadow: 8px 12px 3px 5px #b2b2b2;
   cursor: pointer;
   text-align :center;
-
+  font-weight: bold;
 }
 
 .no-button {
@@ -34,17 +34,21 @@
   box-shadow: 8px 12px 3px 5px #b2b2b2;
   cursor: pointer;
   text-align :center;
+  font-weight: bold;
 }
 
 .questionyesno {
   font-size: 40px;
   padding-top: 20px;
+  font-weight: bold;
+  padding-top: 50px;
 }
 
 .button-container {
   display: flex;
   padding: 20px;
   justify-content: center; 
+  font-weight: bold;
 }
 
 .no-button:hover{
@@ -80,6 +84,7 @@
   padding-top: 10px;
   flex-direction: column;
   align-items: center;
+  font-weight: bold;
 }
 
 .custom-bold {
@@ -131,6 +136,7 @@
     text-align: center;
     margin: 20px;
     padding-top: 20px;
+    font-weight: bold;
   }
   
   .imgmedia {
@@ -155,6 +161,7 @@
     text-align: center;
     margin: 20px;
     padding-top: 20px;
+    font-weight: bold;
     
   }
   .imgmedia {
@@ -180,6 +187,7 @@
     text-align: center;
     margin: 20px;
     padding-top: 20px;
+    font-weight: bold;
   }
   
   .imgmedia {
@@ -218,6 +226,7 @@
     font-size: 30px;
     width: 45px;
     height: 45px;
+    font-weight: bold;
   }
 }
 
@@ -230,10 +239,11 @@
   text-align: center;
   margin: 20px;
   padding-top: 20px;
+  font-weight: bold;
 }
 
 .imgmedia {
-  width: 100%;
+  width: 80%;
   height: auto;
   display: block;
   margin: 0 auto; 
@@ -262,14 +272,13 @@
   text-align: center;
   margin: 20px;
   padding-top: 40px;
+  font-weight: bold;
 }
 .imgmedia {
-  width: 100%;
-  height: auto;
+  width: 80%;
+  height: 80%;
   display: block;
   margin: 0 auto; 
-  position: relative;
-  left: -50px;
 }
 .chevron-icon {
   font-size: 30px;
@@ -285,11 +294,48 @@
 }
 }
 
+@media screen and (max-width: 450px) {
+  .questionyesno {
+    position: relative;
+    left: 70px;
+    font-size: 1.5rem;
+  }
+  .and {
+    position: relative;
+    left: 50px;
+  }
+  .Ynquiztion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+  .imgmedia {
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin: 0 auto; 
+  }
+  .chevron-icon {
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+  }
+  .no-button,
+  .yes-button {
+   width: 39vw;
+   position: relative;
+   left: 60px;
+  }
+  }
+
 @media screen and (max-width: 400px) {
-.question {
+.questionyesno {
   position: relative;
   left: 70px;
-  font-size: 2rem;
+  font-size: 1.5rem;
 }
 .and {
   position: relative;
@@ -301,14 +347,13 @@
   text-align: center;
   margin: 20px;
   padding-top: 20px;
+  font-weight: bold;
 }
 .imgmedia {
-  width: 100%;
-  height: 300px;
+  width: 80%;
+  height: 80%;
   display: block;
   margin: 0 auto; 
-  position: relative;
-  left: -15px;
 }
 .chevron-icon {
   font-size: 30px;

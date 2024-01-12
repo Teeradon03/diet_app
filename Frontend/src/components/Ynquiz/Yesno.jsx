@@ -256,7 +256,7 @@ const yesno = () => {
               return (
                 <div className="Ynquiztion">
                 <div className='font-family'> 
-                <p className='questionyesno' style={buttonStyle}>{questions[currentQuestionIndex].question}</p>
+                <p className='questionyesno'>{questions[currentQuestionIndex].question}</p>
                   <img
                     className="imgmedia"
                     src={images[currentImageIndex]}
