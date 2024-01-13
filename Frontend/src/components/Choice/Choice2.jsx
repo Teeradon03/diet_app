@@ -132,18 +132,21 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 };
 
 const Choice2 = () => {
-  const [selectedOptions, setSelectedOptions] = useState([]);
+  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
     setSelectedOptions(value);
-    console.log('AnswerId:', value);
+    const questionId = 10;
+
+    console.log('QuestionId :',questionId)
+    console.log('AnswerId :', value);
   };
 
   const handleNext = async () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
-      await sendToAPI(selectedOptions, 10); // 10 คือ questionId ที่คุณกำหนด
+      await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
