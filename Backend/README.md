@@ -22,3 +22,11 @@
               not requires
     - get method (get questionnaires by userId) --> localhost:9999/api/form/get-questionnaire/:id | 
               required userId(Number)
+-------------------------------------------
+
+    ----- User API
+    - post method (login line ) --> http://localhost:9999/api/user/user-login | 
+              required -token
+    - post method (update user data ) --> http://localhost:9999/api/user/update-user-data | 
+              required - data ***********
+    - get method (get users data )  http://localhost:9999/api/user/get-users | required nothing
