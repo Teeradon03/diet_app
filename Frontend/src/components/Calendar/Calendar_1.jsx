@@ -27,20 +27,21 @@ function Calendar_1() {
   };
 
   const handleSubmit = async () => {
-    generateQuestionId(20);  // Generate the question ID before making the request
-
+    generateQuestionId();  // Generate the question ID before making the request
+  
     const dataToSend = {
-      questionId: questionId,
       calendar: date,
     };
-
+  
     try {
-      const response = await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, { withCredentials: true });
+      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
       console.log(response.data);
+      // Add your logic for navigating to the next page here if needed
     } catch (error) {
       console.error('Error:', error);
     }
   };
+  
 
   return (
     <div className="App">
