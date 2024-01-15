@@ -67,7 +67,7 @@ function BMR_calculator(props) {
         {bmr !== null && (
           <div>
             <br />
-            <p style={{ fontWeight: 'bold' }}> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
+            <p style={{ fontWeight: 'bold'}}> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
             
           </div>
         )}
