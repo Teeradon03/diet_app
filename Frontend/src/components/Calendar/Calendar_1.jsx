@@ -1,69 +1,74 @@
-import React from 'react';
+import React, { useState } from 'react';
 import Calendar from 'react-calendar';
-import { useState } from 'react';
-import './calendar.css'
-import styles from '../Bmi/Bmi.module.css';
 import 'react-calendar/dist/Calendar.css';
-import { useNavigate } from 'react-router-dom'
-import { Button } from 'antd';
 import { Link } from 'react-router-dom';
-import { VscChevronLeft } from "react-icons/vsc";
+import { Button } from 'antd';
+import { VscChevronLeft } from 'react-icons/vsc';
+import axios from 'axios';
+
+import styles from '../Bmi/Bmi.module.css';
+import './calendar.css';
 
 function Calendar_1() {
   const [date, setDate] = useState(new Date());
- const [questionId, setUserId] = useState('42');
+  const [questionId, setQuestionId] = useState('');  // State to hold the question ID
+
+  const generateQuestionId = () => {
+    // You can use any logic to generate a unique ID, for example, a timestamp
+    const newQuestionId = Date.now().toString();
+    setQuestionId(newQuestionId);
+  };
+
   const handleDateChange = (newDate) => {
     if (newDate !== null) {
       setDate(newDate);
-      console.log("Selected date:", newDate); // บันทึกวันที่ที่เลือกไว้
+      console.log('Selected date:', newDate);
     }
-    
   };
+
   const handleSubmit = async () => {
-    console.log('Weight:', weight);
+    generateQuestionId(20);  // Generate the question ID before making the request
 
     const dataToSend = {
-      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
-      weight: weight
+      questionId: questionId,
+      calendar: date,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    try {
+      const response = await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, { withCredentials: true });
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
   };
-
-
-  
 
   return (
     <div className="App">
       <header className="Calendar">
-        <h1 className={styles.Bmi1} >วัน/เดือน/ปีเกิด</h1>
+        <h1 className={styles.Bmi1}>วัน/เดือน/ปีเกิด</h1>
         <br />
-        <div className='calendar-container' >
-          {/* Adjust the width and height as needed */}
+        <div className="calendar-container">
           <Calendar onChange={handleDateChange} value={date} />
         </div>
-        <p className="text-center ">
-          <br/><br/>
-          <span >กรุณาเลือกวันที่ </span>
+        <p className="text-center">
+          <br />
+          <br />
+          <span>กรุณาเลือกวันที่ </span>
           &nbsp;&nbsp;&nbsp;
-          <span >{date.toDateString()}</span>
+          <span>{date.toDateString()}</span>
         </p>
       </header>
-      <br/>
-      <Link to="/Target"className={styles.link}>
-        <button className={styles.nextbutton}>ถัดไป</button>
+      <br />
+      <Link to="/Target" className={styles.link}>
+        <button className={styles.nextbutton} onClick={handleSubmit}>
+          ถัดไป
+        </button>
       </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
-          <Button 
+          <Button
             shape="circle"
-            style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
+            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
         </Link>

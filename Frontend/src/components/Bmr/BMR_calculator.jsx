@@ -39,7 +39,7 @@ function BMR_calculator(props) {
       bmr: calculatedBmr,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
       .then(function (response) {
         console.log(response);
       })

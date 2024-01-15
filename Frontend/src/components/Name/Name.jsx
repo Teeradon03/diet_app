@@ -34,7 +34,7 @@ function Name() {
   return (
     <div className=''>
       <div className={styles.Bmi1} >
-        <h2>กรุณากรอกข้อมูลดังนี้</h2>
+        <p>กรุณากรอกข้อมูลดังนี้</p>
         <br />
         <div className='body '>
           <div className={styles.inputv1}>
@@ -71,7 +71,7 @@ function Name() {
         </div>
 
         <div>
-          <Link to="/Question">
+          <Link to="/Question"className={styles.link}>
             <button className={styles.nextbutton} onClick={handleNextClick}>
               ถัดไป
             </button>

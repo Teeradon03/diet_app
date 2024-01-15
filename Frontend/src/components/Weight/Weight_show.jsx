@@ -23,7 +23,7 @@ function Weight_show(props) {
       weight: weight
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
       .then(function (response) {
         console.log(response);
       })

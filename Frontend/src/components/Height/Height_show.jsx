@@ -23,7 +23,7 @@ function Height_show(props) {
       height: height,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
       .then(function (response) {
         console.log(response);
       })
