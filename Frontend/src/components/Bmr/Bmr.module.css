@@ -92,6 +92,64 @@
     transform: translateY(5px);
 
   }
+  
+
+  .nextbutton {
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    padding: 15px;
+    position: relative; 
+    top: 50px; 
+    margin-bottom: 55px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
+  }
+  .nextbutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 0 4px 0 0 #b2b2b2;
+  }
+  
+  .nextbutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .chevronicon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 300px;
+    top: 30px;
+  }
 
   @media screen and (max-width: 1600px) {
     .Bmr1 {

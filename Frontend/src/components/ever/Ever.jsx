@@ -22,7 +22,7 @@ export default function Ever() {
 				< GoBack />
 			<div className="row justify-content-center mt-5">
 				<div className="answer mt-5 ">
-					<h1 style={{ margin: '10px', fontWeight: 900 }}
+					<h1 
 						>
 						รหัสลูกค้า
 					</h1>
@@ -31,7 +31,7 @@ export default function Ever() {
 			<div className="row justify-content-center">
 				<div className="mt-5 col-8">
 						<button className={selectedOption === 'มีรหัสลูกค้า' ? `${styles.everButton} ${styles.highlightever}` : styles.everButton}
-						style={{ margin: '25px', fontWeight: 900 }}
+						
 						onClick={() => handleOptionSelect('มีรหัสลูกค้า')}
 					>
 					มีรหัสลูกค้า</button>
@@ -40,7 +40,7 @@ export default function Ever() {
 			<div className="row justify-content-center">
 				<div className="mb-5 col-8">
 					<button className={selectedOption === 'ไม่มีรหัสลูกค้า' ? `${styles.everButton} ${styles.highlightever}` : styles.everButton}
-							style={{ margin: '25px', fontWeight: 900 }}
+							
 							onClick={() => handleOptionSelect('ไม่มีรหัสลูกค้า')}
 						>
 						ไม่มีรหัสลูกค้า
@@ -50,7 +50,7 @@ export default function Ever() {
 			<div className="row mt-5 justify-content-center">
 				<div className="mt-5 col-sm-8 col-8">
 					<button className={styles.everNext}
-							style={{fontWeight: 900 }}
+
 							onClick={handleNext}
 						>
 						ดำเนินการต่อ</button>

@@ -84,7 +84,21 @@ function BMR_calculator(props) {
           </div>
         )}
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
+        
+        <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
+          <button className={styles.nextbutton}>ถัดไป</button> 
+            </Link>
+             <div className={styles.chevronicon}>
+          <Link to="/BMI_calculator">
+            <Button
+              shape="circle"
+              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
+              icon={<VscChevronLeft />}
+            />
+          </Link>
+          </div>
       </div>
+      
     );
   };
 

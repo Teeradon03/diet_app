@@ -1,86 +1,78 @@
-import React, { useState } from "react";
-import axios from "axios";
+import React, { useState } from 'react';
+import { Button } from 'antd';
+import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
-import styles from "./CustomerKey.module.css";
+import styles from '../customerKey/CustomerKey.module.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
-export default function CustomerKey() {
-  const [isLoading, setIsLoading] = useState(false);
-  const [message, setMessage] = useState('');
+const CustomerKey = () => {
+  const [formData, setFormData] = useState({
+    firstname: '',
+    productType: 'product',
+  });
 
-  const handleChange = (event) => {
-    setMessage(event.target.value);
+  const handleInputChange = (field, value) => {
+    setFormData({
+      ...formData,
+      [field]: value,
+    });
   };
 
-  const handlePreviousClick = () => {
-    window.location.href = '/ever';
+  const handleSelectChange = (e) => {
+    setFormData({
+      ...formData,
+      productType: e.target.value,
+    });
   };
 
-  const handleClick = async (event) => {
-    event.preventDefault();
-    setIsLoading(true);
-
-    console.log(message);
-    console.log(message.length);
-
-    if (message.length > 0) {
-      try {
-        const response = await axios.post('http://localhost:9999/api/cusKey', { message });
-        console.log(response);
-
-        if (response.data) {
-          console.log('Customer key submitted successfully!');
-        } else {
-          console.error('Error submitting customer key:', response.data.error);
-        }
-      } catch (error) {
-        console.error('Error sending data to backend:', error.message);
-      }
-    } else {
-      alert("กรุณากรอกข้อมูลให้ถูกต้อง");
-    }
-
-    setIsLoading(false);
+  const handleNextClick = () => {
+    // เพิ่มโค้ดที่ต้องการทำหลังจากคลิกปุ่ม "ถัดไป" ที่นี่
   };
 
   return (
-    <div className="container text-center pt-3 col-sm-10 col-lg-8 col-md-8 col-xl-6">
-      <div className="col-2">
-        <button
-          className="chevron-icon"
-          onClick={handlePreviousClick}
-        >
-          <VscChevronLeft />
-          {/* ไอคอนย้อนกลับ */}
-        </button>
-      </div>
-      <div className="row justify-content-center mt-5">
-        <div className=" col-12">
-          <h2 className="name text-center" style={{ fontWeight: 900 }}> 
-            กรอกรหัสลูกค้า
-          </h2>
-        </div>
-        <div className="row justify-content-center">
-          <div className="col-8 text-start mt-4">
-            <div className="mb-3">
-              <label htmlFor="key" className="form-label">โปรดระบุรหัสที่ถูกต้อง</label>
-              <input type="text" className="form-control" id="key" aria-describedby="helpId" placeholder="nanoX12345" onChange={handleChange} />
-            </div>
+    <div className='Bmi1'>
+      <div className={styles.Bmi1}>
+        <p>กรอกรหัสลูกค้า</p>
+        <br />
+        <div className='Bmi1 '>
+        <p>โปรดระบุรหัสที่ถูกต้อง</p>
+          <div className={styles.inputv1}>
+            <input
+              type="text"
+              placeholder="nanoX123456"
+              value={formData.firstname}
+              onChange={(e) => handleInputChange('firstname', e.target.value)}
+            />
+          </div>
+
+          <div className={styles.productType}>
+            <select value={formData.productType} onChange={handleSelectChange}>
+              <option value="product">ผลิตภัณฑ์ที่คุณได้รับ</option>
+              <option value="nanoVA">nanoVA</option>
+              <option value="nanoX2">nanoX2</option>
+            </select>
           </div>
         </div>
-        <div className="row justify-content-center fixed-bottom mb-5 pb-5">
-          <div className="col-12 mb-5">
-            <button
-              type='button'
-              className={styles.btn}
-              style={{ fontWeight: 900 }}
-              onClick={handleClick}
-              disabled={isLoading}
-            >
-              {isLoading ? 'Submitting...' : 'ดำเนินการต่อ'}
+
+        <div>
+          <Link to="/Question" className={styles.link}>
+            <button className={styles.performbutton} onClick={handleNextClick}>
+            ดำเนินการต่อ
             </button>
-          </div>
+          </Link>
+        </div>
+        <div className={styles.chevronicon}>
+          <Link to="/BMR_calculator">
+            <Button
+              shape="circle"
+              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
+              icon={<VscChevronLeft />}
+            />
+          </Link>
         </div>
       </div>
     </div>
   );
-}
+};
+
+export default CustomerKey;
