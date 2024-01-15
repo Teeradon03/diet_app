@@ -60,7 +60,7 @@ const loginLine = async (req, res) => {
 
     res.send(`logged in as ${req.session.userId}`);
   } catch (error) {
-    res.json({ error: errro.message });
+    res.json({ error: error.message });
   }
 };
 
