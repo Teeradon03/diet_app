@@ -110,7 +110,9 @@ exports.createQuestionnaires = async (req, res) => {
             const dataTime = new Date()
             const newQuestionnaires = new Questionnaire({
                 ...data,
-                dataTime: dataTime
+                dataTime: dataTime,
+                userId : req.session.userId
+                
             })
             console.log('newQuestion', newQuestionnaires)
             await newQuestionnaires.save()
