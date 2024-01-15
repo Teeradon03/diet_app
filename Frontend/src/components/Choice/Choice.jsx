@@ -77,7 +77,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
     };
 
     const response = await axios.post(
-      "http://localhost:9999/api/create-questionnaires",data,
+      "http://localhost:9999/api/form/create-questionnaires",data,
       {
         withCredentials: true,
       }

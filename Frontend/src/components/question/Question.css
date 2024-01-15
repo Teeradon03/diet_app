@@ -282,10 +282,10 @@
   }
 } 
 
-@media screen and (max-width: 400px) {
+@media screen and (max-width: 300px) {
   .ques{
     position: relative;
-    left: -190px;
+    left: -180px;
     font-size: 1.8rem;
   }
   .question {
