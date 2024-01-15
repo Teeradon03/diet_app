@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Name() {
   const [formData, setFormData] = useState({
-    firstname: '',
+    firstName: '',
     lastName: '',
     age: '',
     gender: '',
