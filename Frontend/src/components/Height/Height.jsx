@@ -13,18 +13,15 @@ function Height(props) {
     }
   };
 
-  const boldTextStyle = {
-    fontWeight: 'bold', // Set the fontWeight to 'bold'
-  };
+ 
 
   return (
     <div className={styles.Bmi1}>
-      <h2 style={boldTextStyle}>ส่วนสูง (ซม.)</h2>
+      <p>ส่วนสูง (ซม.)</p>
       <input
         type="number"
         value={height}
         onChange={handleInputChange}
-        style={boldTextStyle} // Apply boldTextStyle to the input as well
       />
     </div>
   );

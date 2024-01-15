@@ -1,190 +1,56 @@
+.link {
+  text-decoration: none;
+}
 
 .advicebutton {
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 65px;
-  line-height: 1.5;
-  display: block;
-  width: 100%;
-  max-width: 210px;
-  padding: 15px;
-  position: relative;
-  background-color: #FFFF;
-  border: 1px solid hsl(0, 0%, 80%);
-  color: rgb(13, 13, 13);
-  border-radius: 35px;
-  box-shadow: 10px 10px 8px 6px #b2b2b2;
-  font-size: 40PX;
-  text-align :center;
-}
-
-.nextbutton {
-  
-  margin: 0 auto;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  line-height: 1.5;
-  display: block;
-  width: 250px;
-  max-width: 210px;
-  padding: 1px;
-  position: relative; 
-  top: 25px; 
-  margin-bottom: 55px;
-  background-color: #FFFF;
-  border: 1px solid #ccc;
-  color: rgb(13, 13, 13);
-  border-radius: 35px;
-  box-shadow: 10px 10px 8px 6px #b2b2b2;
-  font-size: 40px;
-  cursor: pointer;
-  text-align :center;
-}
-
-.backbutton{
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
-  line-height: 1.5;
-  display: block;
-  width: 100%;
-  max-width: 210px;
-  padding: 1px;
-  margin-bottom: 25px;
-  background-color: #FFFF;
-  border: 1px solid #ccc;
-  color: rgb(13, 13, 13);
-  border-radius: 35px;
-  box-shadow: 10px 10px 8px 6px #b2b2b2;
-  font-size: larger;
-  cursor: pointer;
-  text-align :center;
-}
-
-
-.nextbutton:hover{
-  background-color: #757575;
-  color: #FFFF;
-  box-shadow: 0 4px 0 0 #b2b2b2;
-}
-
-.nextbutton:active{
-  box-shadow: none;
-  transform: translateY(5px);
-}
-
-
-.backbutton:hover{
-  background-color: #757575;
-  color: #FFFF;
-  box-shadow: 0 4px 0 0 #b2b2b2;
-}
-
-.backbutton:active{
-  box-shadow: none;
-  transform: translateY(5px);
-}
-
-.advicebutton:hover{
-  background-color: #757575;
-  color: #FFFF;
-  box-shadow: 0 4px 0 0 #b2b2b2;
-}
-
-.advicebutton:active{
-  box-shadow: none;
-  transform: translateY(5px);
-}
-
-
-
-.Bmi1 {
-  
-  padding: 30px;
-  display: flex;
-  margin: 20px;
-  flex-direction: column;
-  align-items: center;
-  margin: 0 auto;
-}
-
-.highlight {
-  background-color: #757575;
-  color: rgb(255, 255, 255);
-}
-
-.antimageimg {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto;
-}
-
-.chevronicon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    
-    color: #757575;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    left: 300px;
-    top: 30px;
-  }
-
-
-
-
-.childbmi
-   {
-
-    display: inline-block;
-    border: 2px solid white;
+    height: 65px;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    padding: 15px;
+    position: relative;
     background-color: #FFFF;
+    border: 1px solid hsl(0, 0%, 80%);
     color: rgb(13, 13, 13);
     border-radius: 35px;
     box-shadow: 10px 10px 8px 6px #b2b2b2;
-    padding: 10px;
-    margin: 15px auto; 
-    width: 60%; 
-    text-align: center; 
+    font-size: 40PX;
+    text-align :center;
+    font-weight: bold;
   }
-
-  .childadvice
-   {
-
-    display: inline-block;
-    border: 2px solid white;
+  
+  .nextbutton {
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    display: block;
+    width: 250px;
+    max-width: 210px;
+    padding: 1px;
+    position: relative; 
+    top: 50px; 
+    margin-bottom: 55px;
     background-color: #FFFF;
+    border: 1px solid #ccc;
     color: rgb(13, 13, 13);
     border-radius: 35px;
-    box-shadow: 1px 1px 1px 1px #b2b2b2;
-    padding: 10px;
-    margin: 5px auto; 
-    width: 60%; 
-    text-align: left; 
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 40px;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
   }
   
-  .label {
-    display: inline-block;
-   
-
-  }
-  
-
-  .bmibutton {
-   
-    margin: 0 auto;
+  .backbutton{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -193,103 +59,199 @@
     display: block;
     width: 100%;
     max-width: 210px;
-    padding: 15px;
-    position: relative; 
-    top: 100px; 
-    margin-bottom: 55px;
+    padding: 1px;
+    margin-bottom: 25px;
     background-color: #FFFF;
     border: 1px solid #ccc;
     color: rgb(13, 13, 13);
     border-radius: 35px;
     box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 35px;
+    font-size: larger;
     cursor: pointer;
     text-align :center;
   }
-
-  .bmibutton:hover{
+  
+  
+  .nextbutton:hover{
     background-color: #757575;
     color: #FFFF;
     box-shadow: 0 4px 0 0 #b2b2b2;
   }
   
-  .bmibutton:active{
+  .nextbutton:active{
     box-shadow: none;
     transform: translateY(5px);
-
   }
-  input {
-   
-    justify-content: center;
+  
+  
+  .backbutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 0 4px 0 0 #b2b2b2;
+  }
+  
+  .backbutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  
+  .advicebutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 0 4px 0 0 #b2b2b2;
+  }
+  
+  .advicebutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+  
+  
+  
+  .Bmi1 {
+    
+    padding: 30px;
+    display: flex;
+    margin: 20px;
+    flex-direction: column;
     align-items: center;
-    padding: 10px;
-    width: calc(100% );
-    max-width: 200px;
-    box-sizing: border-box;
-    border-radius: 35px;
-    margin-bottom: 1em;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #111;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-
-
+    font-weight: bold;
+    margin: 0 auto;
   }
-
-  @media screen and (max-width: 1600px) {
-    .Bmi1 {
-      font-size: 2.5rem;
+  
+  .highlight {
+    background-color: #757575;
+    color: rgb(255, 255, 255);
+  }
+  
+  .antimageimg {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .chevronicon {
+      width: 50px;
+      height: 50px;
+      border-radius: 50%;
+      border: none;
+      
+      color: #757575;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      cursor: pointer;
+      outline: none;
+      position: absolute;
+      left: 300px;
+      top: 30px;
     }
-    .advicebutton,
-    .nextbutton,
-    .backbutton,
+  
+  
+  
+  
+  .childbmi
+     {
+  
+      display: inline-block;
+      border: 2px solid white;
+      background-color: #FFFF;
+      color: rgb(13, 13, 13);
+      border-radius: 35px;
+      box-shadow: 10px 10px 8px 6px #b2b2b2;
+      padding: 10px;
+      margin: 15px auto; 
+      width: 60%; 
+      text-align: center; 
+    }
+  
+    .childadvice
+     {
+  
+      display: inline-block;
+      border: 2px solid white;
+      background-color: #FFFF;
+      color: rgb(13, 13, 13);
+      border-radius: 35px;
+      box-shadow: 1px 1px 1px 1px #b2b2b2;
+      padding: 10px;
+      margin: 5px auto; 
+      width: 60%; 
+      text-align: left; 
+    }
+    
+    .label {
+      display: inline-block;
+     
+  
+    }
+    
+  
     .bmibutton {
-      width: 50vw;
+     
       margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 1em;
-      
+      height: 100%;
+      line-height: 1.5;
+      display: block;
+      width: 100%;
+      max-width: 210px;
+      padding: 15px;
+      position: relative; 
+      top: 100px; 
+      margin-bottom: 55px;
+      background-color: #FFFF;
+      border: 1px solid #ccc;
+      color: rgb(13, 13, 13);
+      border-radius: 35px;
+      box-shadow: 10px 10px 8px 6px #b2b2b2;
+      font-size: 35px;
+      cursor: pointer;
+      text-align :center;
+      font-weight: bold;
     }
-    .chevronicon {
-      transform: translateX(-1000%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+  
+    .bmibutton:hover{
+      background-color: #757575;
+      color: #FFFF;
+      box-shadow: 0 4px 0 0 #b2b2b2;
     }
-  }
-
-  @media screen and (max-width: 1400px) {
-    .Bmi1 {
-      font-size: 2.5rem;
+    
+    .bmibutton:active{
+      box-shadow: none;
+      transform: translateY(5px);
+  
     }
-    .advicebutton,
-    .nextbutton,
-    .backbutton,
-    .bmibutton {
-      width: 50vw;
-      margin: 0 auto;
+    .inputlabel {
       display: flex;
-      justify-content: center;
       align-items: center;
-      margin-bottom: 1em;
-      
     }
-    .chevronicon {
-      transform: translateX(-1000%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+    
+    input {
+      padding: 10px;
+      width: calc(100%);
+      max-width: 220px; /* Adjust the max-width as needed */
+      box-sizing: border-box;
+      border-radius: 35px;
+      margin-right: 5px; /* Add some margin between input and label */
+      font-size: 1rem;
+      font-weight: bold;
+      background-color: #fff;
+      color: #111;
+      box-shadow: 10px 10px 8px 6px #b2b2b2;
     }
-  }
+    
+    label {
+      font-size: 2.5rem;
+      margin-bottom: 0;
+    }
   
-
-  
-       
-    @media screen and (max-width: 1200px) {
+    @media screen and (max-width: 1600px) {
       .Bmi1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
       .advicebutton,
       .nextbutton,
@@ -311,98 +273,90 @@
       }
     }
 
-    
-    @media screen and (max-width: 992px) {
+    @media screen and (max-width: 1400px) {
       .Bmi1 {
-        font-size: 2rem;
+        font-size: 2.5rem;
       }
-      .childbmi,
-      .childadvice
-       {
+      .advicebutton,
+      .nextbutton,
+      .backbutton,
+      .bmibutton {
         width: 50vw;
-      }
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton{
-        width: 70vw;
         margin: 0 auto;
         display: flex;
         justify-content: center;
         align-items: center;
         margin-bottom: 1em;
+        
       }
       .chevronicon {
-        transform: translateX(-2000%);
+        transform: translateX(-1000%);
         font-size: 16px;
         width: 10px;
         height: 10px;
       }
     }
-
     
-    @media screen and (max-width: 768px) {
-      .Bmi1 {
-        font-size: 1.7rem;
-      }
-      .childbmi,
-      .childadvice
-       {
-        width: 60vw;
-      }
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton {
-        width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-      }
-      .chevronicon {
-        transform: translateX(-2500%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-    }
-
+  
     
-    @media screen and (max-width: 576px) {
-      .Bmi1 {
-        font-size: 1.7rem;
+         
+      @media screen and (max-width: 1200px) {
+        .Bmi1 {
+          font-size: 2rem;
+        }
+        .advicebutton,
+        .nextbutton,
+        .backbutton,
+        .bmibutton {
+          width: 50vw;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em;
+          
+        }
+        .chevronicon {
+          transform: translateX(-1000%);
+          font-size: 16px;
+          width: 10px;
+          height: 10px;
+        }
       }
-      .childbmi,
-      .childadvice
-      {
-        width: 70vw;
+  
+      
+      @media screen and (max-width: 992px) {
+        .Bmi1 {
+          font-size: 2rem;
+        }
+        .childbmi,
+        .childadvice
+         {
+          width: 50vw;
+        }
+        input,
+        .gender,
+        .bmibutton,
+        .advicebutton,
+        .nextbutton,
+        .backbutton{
+          width: 70vw;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em;
+        }
+        .chevronicon {
+          transform: translateX(-2000%);
+          font-size: 16px;
+          width: 10px;
+          height: 10px;
+        }
       }
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton {
-        width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-      }
-      .chevronicon {
-        transform: translateX(-2700%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-      @media screen and (max-width: 450px) {
+  
+      
+      @media screen and (max-width: 768px) {
         .Bmi1 {
           font-size: 1.7rem;
         }
@@ -417,19 +371,78 @@
         .advicebutton,
         .nextbutton,
         .backbutton {
-        width: 60vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
+          width: 70vw;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em;
         }
         .chevronicon {
-          transform: translateX(-2800%);
+          transform: translateX(-2500%);
           font-size: 16px;
           width: 10px;
           height: 10px;
         }
-    } 
-    }
+      }
   
+      
+      @media screen and (max-width: 576px) {
+        .Bmi1 {
+          font-size: 1.7rem;
+        }
+        .childbmi,
+        .childadvice
+        {
+          width: 70vw;
+        }
+        input,
+        .gender,
+        .bmibutton,
+        .advicebutton,
+        .nextbutton,
+        .backbutton {
+          width: 70vw;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em;
+        }
+        .chevronicon {
+          transform: translateX(-2700%);
+          font-size: 16px;
+          width: 10px;
+          height: 10px;
+        }
+        @media screen and (max-width: 450px) {
+          .Bmi1 {
+            font-size: 1.7rem;
+          }
+          .childbmi,
+          .childadvice
+           {
+            width: 60vw;
+          }
+          input,
+          .gender,
+          .bmibutton,
+          .advicebutton,
+          .nextbutton,
+          .backbutton {
+          width: 60vw;
+          margin: 0 auto;
+          display: flex;
+          justify-content: center;
+          align-items: center;
+          margin-bottom: 1em;
+          }
+          .chevronicon {
+            transform: translateX(-2800%);
+            font-size: 16px;
+            width: 10px;
+            height: 10px;
+          }
+      } 
+      }
+    
