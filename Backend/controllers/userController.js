@@ -68,20 +68,18 @@ const updateUserData = async (req, res) => {
   console.log('update user data session', req.session.userId)
 
   try{
-
     const data = req.body
     const userId = await User.findOne({userId: req.session.userId})
     console.log('userId', userId)
     
     if (userId.userId == req.session.userId) {
-      
+
       const updateUser = await User.findOneAndUpdate(
         {userId : req.session.userId},
         { $set: {...data, }}
       )
       console.log('updated Ohh Yeahhh!!!!')
     }
-
     console.log('data', data)
     res.json({
       data : data
