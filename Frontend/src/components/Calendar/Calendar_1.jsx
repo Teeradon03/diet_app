@@ -30,7 +30,6 @@ function Calendar_1() {
     generateQuestionId(20);  // Generate the question ID before making the request
 
     const dataToSend = {
-      questionId: questionId,
       calendar: date,
     };
 

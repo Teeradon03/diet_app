@@ -72,8 +72,8 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
     const data = {
       questionId: selectedOptions.map((option) => option.id),
       question: selectedLabels.map((option) => option.label),
-      answer: 5,
-      userId: 1,
+      answer: value,
+      
     };
 
     const response = await axios.post(
