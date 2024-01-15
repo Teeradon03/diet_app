@@ -173,7 +173,7 @@ const yesno = () => {
       };
 
       const response = await axios.post(
-        "http://localhost:9999/api/create-questionnaires",
+        "http://localhost:9999/api/form/create-questionnaires",
         data,
         {
           withCredentials: true,
@@ -211,8 +211,9 @@ const yesno = () => {
       if (
         questions &&
         questions[currentImageIndex] &&
-        questions[currentImageIndex].id === 30
+        questions[currentImageIndex].id === 41
       ) {
+        console.log('fdgfdgdfg',questions[currentImageIndex].id === 30)
         window.location.href = "/Calendar_1";
         return;
       }

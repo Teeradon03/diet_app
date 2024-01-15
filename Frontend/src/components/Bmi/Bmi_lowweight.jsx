@@ -6,30 +6,34 @@ import styles from './Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Bmi_lowweight() {
-  return (
-    <div>
-      <div className={styles.Bmi1}>
-        <h1><strong>ค่าดัชนีมวลกาย (BMI)</strong></h1>
-        <br />
-        <Image className='ant-image-img' width="60%" src="/public/10.jpg" />
-        <br />
-        <div className={styles.childbmi}><strong>BMI น้อยกว่า 18.50</strong></div>
-        <div className={styles.childbmi}><strong>อยู่ในเกณฑ์ น้ำหนักน้อย/ผอม</strong></div>
-        <div className={styles.childbmi}><strong>ภาวะเสี่ยงต่อโรค มากกว่าคนปกติ</strong></div>
-        <br />
-
+    return (
         <div>
-          <Link to="/Advice_lowweight">
-            <button className={styles.advicebutton}><strong>คำแนะนำ</strong></button>
-          </Link>
-
-          <Link to="/BMR_calculator">
-            <button className={styles.nextbutton}><strong>ถัดไป</strong></button>
-          </Link>
-        </div>
-        <div className={styles.chevronicon}>
-          <Link to="/BMI_calculator">
-            <Button
+            <div className={styles.Bmi1}>
+            <p> ค่าดัชนีมวลกาย (BMI) </p>
+            <br/>
+            < Image className='ant-image-img'
+              width="60%"
+              src="/public/bmi_img/lowweight.jpg"
+            />
+            <br />
+            <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
+            <div className={styles.childbmi}>อยู่ในเกณฑ์ น้ำหนักน้อย/ผอม</div>
+            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค มากกว่าคนปกติ</div>
+            <br />
+    
+            <div >
+              <Link to="/Advice_lowweight"className={styles.link}>
+                <button className={styles.advicebutton}>คำแนะนำ</button> 
+              </Link>
+            
+            
+            <Link to="/BMR_calculator"className={styles.link}> 
+                <button className={styles.nextbutton}>ถัดไป</button> 
+              </Link>
+            </div>
+            <div className={styles.chevronicon}>
+            <Link to="/BMI_calculator">
+            <Button 
               shape="circle"
               style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
               icon={<VscChevronLeft />}

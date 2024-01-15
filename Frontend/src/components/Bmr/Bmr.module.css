@@ -1,3 +1,20 @@
+.Bmr1 {
+    
+  padding: 30px;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 auto;
+}
+
+.age{
+  padding: 10px;
+  display: flex;
+  margin: 10px;
+}
+
 .inputbmr{   
     margin: 0 auto;
     justify-content: center;
@@ -14,8 +31,14 @@
     box-shadow: 10px 10px 8px 6px #b2b2b2;
   
 }
+.genderv1{
+  
+  display: flex;
+  
+}
+
 .gender select {
-    
+  
     width: calc(100% );
     max-width: 210px;
     height: 80px;
@@ -26,8 +49,8 @@
     background-color: #fff;
     color: #111;
     box-shadow: 10px 10px 8px 6px #b2b2b2;
-    padding: 8px; 
     font-size: 40px; 
+    font-weight: bold;
     
   
   }
@@ -45,7 +68,7 @@
     max-width: 210px;
     padding: 15px;
     position: relative; 
-    top: 100px; 
+    top: 50px; 
     margin-bottom: 55px;
     background-color: #FFFF;
     border: 1px solid #ccc;
@@ -55,6 +78,7 @@
     font-size: 30px;
     cursor: pointer;
     text-align :center;
+    font-weight: bold;
   }
 
   .bmrbutton:hover{
@@ -68,9 +92,67 @@
     transform: translateY(5px);
 
   }
+  
+
+  .nextbutton {
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    display: block;
+    width: 100%;
+    max-width: 210px;
+    padding: 15px;
+    position: relative; 
+    top: 50px; 
+    margin-bottom: 55px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
+  }
+  .nextbutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 0 4px 0 0 #b2b2b2;
+  }
+  
+  .nextbutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .chevronicon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 300px;
+    top: 30px;
+  }
 
   @media screen and (max-width: 1600px) {
-    .Bmi1 {
+    .Bmr1 {
       font-size: 2.5rem;
     }
     input,
@@ -86,6 +168,7 @@
       justify-content: center;
       align-items: center;
       margin-bottom: 1em;
+      
     }
     .chevronicon {
       transform: translateX(-1000%);
@@ -96,7 +179,7 @@
   }
 
   @media screen and (max-width: 1400px) {
-    .Bmi1 {
+    .Bmr1 {
       font-size: 2.5rem;
     }
     input,
@@ -126,7 +209,7 @@
   
        
     @media screen and (max-width: 1200px) {
-      .Bmi1 {
+      .Bmr1 {
         font-size: 2rem;
       }
       input,
@@ -154,7 +237,7 @@
 
     
     @media screen and (max-width: 992px) {
-      .Bmi1 {
+      .Bmr1 {
         font-size: 2rem;
       }
       .childbmi,
@@ -186,7 +269,7 @@
 
     
     @media screen and (max-width: 768px) {
-      .Bmi1 {
+      .Bmr1 {
         font-size: 1.7rem;
       }
       .childbmi,
@@ -218,7 +301,7 @@
 
     
     @media screen and (max-width: 576px) {
-      .Bmi1 {
+      .Bmr1 {
         font-size: 1.7rem;
       }
       .childbmi,
@@ -247,7 +330,7 @@
         height: 10px;
       }
       @media screen and (max-width: 450px) {
-        .Bmi1 {
+        .Bmr1 {
           font-size: 1.7rem;
         }
         .childbmi,
