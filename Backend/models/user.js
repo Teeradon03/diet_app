@@ -3,6 +3,8 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
+    age: Number,
+    gender: String,
     dataOfBirth : Date,
     phone: Number,
     height: Number,
@@ -23,7 +25,7 @@ const userSchema = mongoose.Schema({
     line_email: String,
 })  
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model("User", userSchema)
 module.exports = {
     User
 } 

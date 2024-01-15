@@ -5,13 +5,14 @@ const { model } = require("mongoose");
 const { User } = require("../models/user");
 const axios = require("axios");
 /// Controller
-const { loginLine, getUserData, updateUser } = require('../controllers/userController');
+const { loginLine, getUserData, updateUserData } = require('../controllers/userController');
 
 /// middleware
 const {isLoggedIn}  = require('../middleware/isLoggedIn')
 // router.use(isLoggedIn)
 
 router.post('/user-login',loginLine )
+router.post('/update-user-data', updateUserData )
 router.get('/get-users', isLoggedIn ,getUserData)
 
 
