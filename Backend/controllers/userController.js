@@ -28,7 +28,7 @@ const loginLine = async (req, res) => {
       line_picture_url: decode.data.picture,
     };
 
-    const generateUserId = () => {
+    const generateUserId = () => { 
       const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
       const timestamp = new Date().getTime();
       const randomBase36 = randomNumber.toString(36);
@@ -64,6 +64,36 @@ const loginLine = async (req, res) => {
   }
 };
 
+const updateUserData = async (req, res) => {
+  console.log('update user data session', req.session.userId)
+
+  try{
+
+    const data = req.body
+    const userId = await User.findOne({userId: req.session.userId})
+    console.log('userId', userId)
+    
+    if (userId.userId == req.session.userId) {
+      
+      const updateUser = await User.findOneAndUpdate(
+        {userId : req.session.userId},
+        { $set: {...data, }}
+      )
+      console.log('updated Ohh Yeahhh!!!!')
+    }
+
+    console.log('data', data)
+    res.json({
+      data : data
+    })
+
+  }
+  catch(error){
+    console.log(' Error', error.message)
+    res.json({ error : error.message})
+  }
+}
+
 const getUserData = async (req, res) => {
   console.log("session in get user data", req.session.userId);
   // res.send(`hello ${req.session.userId}`);
@@ -85,4 +115,5 @@ const getUserData = async (req, res) => {
 module.exports = {
   loginLine,
   getUserData,
+  updateUserData
 };
