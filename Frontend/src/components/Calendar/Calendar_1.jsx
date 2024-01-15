@@ -42,25 +42,25 @@ function Calendar_1() {
           <Calendar onChange={handleDateChange} value={date} />
         </div>
         <p className="text-center">
-        <br/><br/>
+          <br /><br />
           <span className="bold" style={buttonStyle}>กรุณาเลือกวันที่ </span>
           &nbsp;&nbsp;&nbsp;
           <span className="bold" style={buttonStyle}>{date.toDateString()}</span>
         </p>
       </header>
-      <br/>
-      <Link to="/Target"> {/* Changed the route for the "No" response */}
-            <button className={styles.nextbutton}style={buttonStyle}>ถัดไป</button> 
-              </Link>
+      <br />
+      <Link to="/Target"> 
+        <button className={styles.nextbutton} style={buttonStyle}> ถัดไป </button>
+      </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
-          <Button 
+          <Button
             shape="circle"
-            style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
+            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
         </Link>
-        
+
       </div>
     </div>
   );

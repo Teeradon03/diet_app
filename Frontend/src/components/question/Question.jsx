@@ -98,27 +98,10 @@ const Question = () => {
 
     ];
 
-
-	const sendToAPI = async () => {
-		try {
-			const data = {
-				questionId: questions[currentQuestion].id,
-				answer: 5
-			};
-
-			const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
-			console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
-		} catch (error) {
-			console.error('Error:', error);
-		}
-	};
-
-
     const [currentQuestion, setCurrentQuestion] = useState(0);
     const [selectedOption, setSelectedOption] = useState('');
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-
 
     const handleOptionSelect = (event, option) => {
         setSelectedOption(option.value);
@@ -152,19 +135,6 @@ const Question = () => {
             setShowScore(true);
         }
 
-
-			// เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
-			sendToAPI();
-		}
-
-		function handleNextQuestion(value) {
-			if (questions[currentQuestion].id === 10 || questions[currentQuestion].id === 11) {
-				console.log('Choice Selected:', value);
-				console.log('Answer:', value);
-			}
-		}
-	};
-
         if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
             console.log('ID:', questions[currentQuestion].id);
             console.log('Question:', questions[currentQuestion].question);
@@ -181,23 +151,24 @@ const Question = () => {
         };
     };
 
-
     const sendToAPI = async () => {
+        console.log('selectedOption', selectedOption)
         try {
             const data = {
                 questionId: questions[currentQuestion].id,
                 question: questions[currentQuestion].question,
-                answer: 5,
-                userId: 1
+                answer: selectedOption
             };
 
-            const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+            const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data,{
+            withCredentials: true
+            });
             console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
         } catch (error) {
             console.error('Error:', error);
         }
     };
-
+    
     function highlightButton(button) {
         const buttons = document.getElementsByTagName('button');
         for (let i = 0; i < buttons.length; i++) {
