@@ -4,26 +4,13 @@ import GoBack from "../goBack/GoBack"
 import React, { useState } from 'react';
 
 export default function Ever() {
-	const [selectedOption, setSelectedOption] = useState('');
-
-	const handleOptionSelect = (option) => {
-		setSelectedOption(option);
-	  };
-
-	  const handleNext = () => {
-		// ตรวจสอบ selectedOption เพื่อเปลี่ยนหน้าเมื่อคลิก "ดำเนินการต่อ"
-		if (selectedOption === 'มีรหัสลูกค้า') {
-			window.location.href =('/customerkey');
-		}
-	  };
 
 	return (
 		<div className="container text-center pt-3 col-sm-10 col-lg-8 col-md-8 col-xl-6">
 				< GoBack />
 			<div className="row justify-content-center mt-5">
 				<div className="answer mt-5 ">
-					<h1 style={{ margin: '10px', fontWeight: 900 }}
-						>
+					<h1 style={{ margin: '10px', fontWeight: 900 }}>
 						รหัสลูกค้า
 					</h1>
 				</div>

@@ -1,22 +1,22 @@
 .font-family {
-  font-family: 'Noto Sans Thai', sans-serif;
-  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-}
-
-.yes-button {
-  font-family: 'Noto Sans Thai', sans-serif;
-  font-size: 30px;
-  display: block;
-  width: 100%; 
-  padding: 30px; 
-  margin-bottom: 25px;
-  background-color: #FFFF;
-  border: 1px solid #ccc;
-  color: rgb(13, 13, 13);
-  border-radius: 35px;
-  box-shadow: 8px 12px 3px 5px #b2b2b2;
-  cursor: pointer;
-  text-align :center;
+    font-family: 'Noto Sans Thai', sans-serif;
+    /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+  }
+  
+  .yes-button {
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: 30px;
+    display: block;
+    width: 100%; 
+    padding: 30px; 
+    margin-bottom: 25px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    cursor: pointer;
+    text-align :center;
 
 }
 
@@ -251,38 +251,38 @@
 }
 
 @media screen and (max-width: 576px) {
-.and {
-  position: relative;
-  left: 10px;
-}
-.Ynquiztion {
-  font-size: 1.5rem;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-  padding-top: 40px;
-}
-.imgmedia {
-  width: 100%;
-  height: auto;
-  display: block;
-  margin: 0 auto; 
-  position: relative;
-  left: -50px;
-}
-.chevron-icon {
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
-  transform: translateX(-270px);
-}
-.no-button,
-.yes-button {
- width: 25vw;
- position: relative;
- left: 5px;
-}
+  .and {
+    position: relative;
+    left: 10px;
+  }
+  .Ynquiztion {
+    font-size: 1.5rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 40px;
+  }
+  .imgmedia {
+    width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto; 
+    position: relative;
+    left: -50px;
+  }
+  .chevron-icon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    transform: translateX(-270px);
+  }
+  .no-button,
+  .yes-button {
+   width: 25vw;
+   position: relative;
+   left: 5px;
+  }
 }
 
 @media screen and (max-width: 400px) {
