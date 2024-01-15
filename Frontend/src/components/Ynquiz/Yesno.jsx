@@ -168,8 +168,7 @@ const yesno = () => {
       const data = {
         questionId: questions[currentQuestionIndex].id,
         question: questions[currentQuestionIndex].question,
-        answer: 5,
-        userId: 1,
+        answer: answer
       };
 
       const response = await axios.post(

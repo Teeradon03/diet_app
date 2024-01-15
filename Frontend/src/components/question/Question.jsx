@@ -154,8 +154,7 @@ const Question = () => {
       const data = {
         questionId: questions[currentQuestion].id,
         question: questions[currentQuestion].question,
-        answer: 5,
-        userId: 1,
+        answer: selectedOption
       };
 
       const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data,{
