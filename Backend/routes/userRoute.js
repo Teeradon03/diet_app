@@ -12,7 +12,7 @@ const {isLoggedIn}  = require('../middleware/isLoggedIn')
 // router.use(isLoggedIn)
 
 router.post('/user-login',loginLine )
-router.post('/update-user-data', updateUserData )
+router.post('/update-user-data', isLoggedIn ,updateUserData )
 router.get('/get-users', isLoggedIn ,getUserData)
 
 
