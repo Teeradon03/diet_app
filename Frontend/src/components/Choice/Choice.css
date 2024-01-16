@@ -3,6 +3,9 @@
   /* ส่วนอื่น ๆ ของ CSS ของคุณ */
 }
 
+.text-box{
+  width: 60%;
+}
 .texe {
   padding-top: 20px;
 }
