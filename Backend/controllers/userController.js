@@ -56,7 +56,7 @@ const loginLine = async (req, res) => {
       console.log("User Created");
       req.session.userId = user.userId;
     }
-    console.log(req.session.userId);
+    // console.log(req.session.userId);
 
     res.send(`logged in as ${req.session.userId}`);
   } catch (error) {
@@ -69,15 +69,19 @@ const updateUserData = async (req, res) => {
 
   try{
     const data = req.body
+    // console.log('data', data)
     const userId = await User.findOne({userId: req.session.userId})
-    console.log('userId', userId)
+    // console.log('userId', userId)
     
     if (userId.userId == req.session.userId) {
-
+      const dateOfBirth = data.dateOfBirth
+      // console.log('dataofbirth', dateOfBirth)
       const updateUser = await User.findOneAndUpdate(
         {userId : req.session.userId},
-        { $set: {...data, }}
+        { $set: {...data, dataOfBirth: dateOfBirth}},
+        { new : true}
       )
+      // console.log('updateUser', updateUser)
       console.log('updated Ohh Yeahhh!!!!')
     }
     console.log('data', data)
