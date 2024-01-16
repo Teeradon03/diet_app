@@ -32,7 +32,7 @@ function Name() {
     // Add your logic for navigating to the next page here
 
     // Send data using Axios
-    axios.post('http://localhost:9999/api/user/update-user-data', formData)
+    axios.post('http://localhost:9999/api/user/update-user-data', formData, { withCredentials: true})
       .then(response => {
         console.log('Data sent successfully:', response.data);
         // Add your logic for navigating to the next page here if needed
@@ -52,7 +52,7 @@ function Name() {
             <input
               type="text"
               placeholder="ชื่อ"
-              onChange={(e) => handleInputChange('firstname', e.target.value)}
+              onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
           </div>
 
