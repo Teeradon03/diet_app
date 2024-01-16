@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -7,7 +7,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 const CustomerKey = () => {
   const [formData, setFormData] = useState({
-    firstname: '',
+    CustomerID: '',
     productType: 'product',
   });
 
@@ -26,24 +26,27 @@ const CustomerKey = () => {
   };
 
   const handleNextClick = () => {
-    // เพิ่มโค้ดที่ต้องการทำหลังจากคลิกปุ่ม "ถัดไป" ที่นี่
+    // ตรวจสอบว่าข้อมูลถูกต้องหรือไม่
+    if (formData.CustomerID.trim() === '') {
+      alert('กรุณากรอกรหัสลูกค้า');
+    } else {
+      window.location.href = '/';
+    }
   };
 
   return (
     <div className='Bmi1'>
       <div className={styles.Bmi1}>
-        <br /><br />
-        <h>กรอกรหัสลูกค้า</h>
+        <p>กรอกรหัสลูกค้า</p>
         <br />
         <div className='Bmi1 '>
-        <h>โปรดระบุรหัสที่ถูกต้อง</h>
+          <p>โปรดระบุรหัสที่ถูกต้อง</p>
           <div className={styles.inputv1}>
-          <br />
             <input
               type="text"
               placeholder="nanoX123456"
-              value={formData.firstname}
-              onChange={(e) => handleInputChange('firstname', e.target.value)}
+              value={formData.CustomerID}
+              onChange={(e) => handleInputChange('CustomerID', e.target.value)}
             />
           </div>
 
@@ -57,22 +60,22 @@ const CustomerKey = () => {
         </div>
 
         <div>
-          <Link to="/Question" className={styles.link}>
-            <button className={styles.performbutton} onClick={handleNextClick}>
+          {/* เพิ่ม onClick เพื่อเรียกใช้ handleNextClick */}
+          <button className={styles.performbutton} onClick={handleNextClick}>
             ดำเนินการต่อ
-            </button>
-          </Link>
-        </div>
-        <div className={styles.chevronicon}>
-          <Link to="/BMR_calculator">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
+          </button>
         </div>
       </div>
+      
+      <Link to="/BMR_calculator">
+        <div className={styles.chevronicon}>
+          <Button
+            className={styles.button}
+            shape="circle"
+            icon={<VscChevronLeft />}
+          />
+        </div>
+      </Link>
     </div>
   );
 };
