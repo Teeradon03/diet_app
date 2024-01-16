@@ -171,7 +171,7 @@ const Choice2 = () => {
       <br /><br />
       <Select
         mode="multiple"
-        style={{ width: '60%' }}
+        className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
         optionLabelProp="label"

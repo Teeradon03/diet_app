@@ -127,7 +127,7 @@ const Choice = () => {
       <br />
       <Select
         mode="multiple"
-        style={{ width: "60%" }}
+        className="text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"

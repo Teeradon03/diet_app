@@ -217,11 +217,9 @@ const Question = () => {
                 <div>
                   <div className="question" >
                     <div className="font-family">
-                      <h1 style={{ fontWeight: 900 }}>Question {currentQuestion + 1} </h1>
+                      <h1 className="quiznum">Question {currentQuestion + 1} </h1>
                       <div className="ques" >
-                        <p style={{ width: "500px" }}>
-                          {questions[currentQuestion].question}
-                        </p>
+                        <p>{questions[currentQuestion].question}</p>
                       </div>
                     </div>
                   </div>
@@ -241,8 +239,7 @@ const Question = () => {
                               }`}
                               onClick={(event) =>
                                 handleOptionSelect(event, option)
-                              }
-                              style={{ margin: "45px", fontWeight: 900 }}
+                              } 
                             >
                               {option.label}{" "}
                               {/* เปลี่ยนจาก option เป็น option.label */}
@@ -257,7 +254,6 @@ const Question = () => {
                       className="next"
                       onClick={handleNextQuestion}
                       disabled={!selectedOption}
-                      style={{ fontWeight: 900 }}
                     >
                       หน้าถัดไป
                     </button>

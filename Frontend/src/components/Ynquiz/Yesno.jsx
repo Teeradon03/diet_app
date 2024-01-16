@@ -265,6 +265,10 @@ const yesno = () => {
     fontWeight: 900, // แก้ตามที่ต้องการ
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
+  const imageStyle = {
+    width: 500,
+    height: 500
+  }
 
   return (
     <div className="Ynquiztion">
@@ -276,7 +280,7 @@ const yesno = () => {
           className="imgmedia"
           src={images[currentImageIndex]}
           alt={`Image ${currentImageIndex + 1}`}
-          style={{ width: "500px", height: "500px" }}
+          style={imageStyle}
         />
       </div>
 
@@ -288,7 +292,7 @@ const yesno = () => {
         >
           ไม่
         </button>
-        <h1 className="and" style={{ ...buttonStyle, margin: "0 60px" }}>
+        <h1 className="and" ><br/>
           หรือ
         </h1>
         <button
