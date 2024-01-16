@@ -115,15 +115,16 @@ const options = [
   },
 ];
 
-const sendToAPI = async (selectedOptions, selectedLabels) => {
+const sendToAPI = async (selectedOptions, questionId = 10,) => {
   try {
     const data = {
-      questionId: selectedOptions.map(option => option.id),
-      question: selectedLabels.map(option => option.label),
-      answer: value,
+      questionId: questionId,
+      answer: selectedOptions,
     };
-
-    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
+    // console.log(data)
+    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data, {
+      withCredentials: true
+    });
     console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error('Error:', error);
@@ -138,12 +139,13 @@ const Choice2 = () => {
     setSelectedOptions(value);
     const questionId = 10;
 
-    console.log('QuestionId :',questionId)
-    console.log('AnswerId :', value);
+    // console.log('QuestionId :', questionId)
+    // console.log('AnswerId :', value);
   };
 
   const handleNext = async () => {
     if (selectedOptions.length > 0) {
+      // console.log('sdasbghbbbbbbbbbb',questionId)
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
       await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
       window.location.href = '/Choice';

@@ -18,11 +18,10 @@ function Target() {
     console.log('Target Weight:', targetWeight);
 
     const dataToSend = {
-      questionId: questionId,
       targetWeight: targetWeight,
     };
 
-    await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, {dataToSend,witCredentials:true})
       .then(function (response) {
         console.log(response);
       })

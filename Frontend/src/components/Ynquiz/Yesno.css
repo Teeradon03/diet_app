@@ -57,10 +57,10 @@
   box-shadow: 8px 12px 3px 5px #b2b2b2;
 }
 
-.no-button:active{
+/* .no-button:active{
   box-shadow: none;
   transform: translateY(5px);
-}
+} */
 
 .yes-button:hover{
   background-color: #757575;

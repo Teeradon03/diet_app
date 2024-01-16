@@ -138,6 +138,7 @@ exports.createQuestionnaires = async (req, res) => {
         { new: true }
       );
       console.log("updated file sucessfully");
+      res.send('updated')
     } else {
       console.log("This questionId already exists");
       res.json({
