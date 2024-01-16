@@ -29,15 +29,16 @@ function Advice_obesitylevel1() {
           </Link>
         </div>
       </div>
-      <div className={styles.chevronicon}>
-        <Link to="/Bmi_obesitylevel1">
-          <Button
-            shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px', fontWeight: 'bold' }}
-            icon={<VscChevronLeft />}
-          />
-        </Link>
+      
+      <Link to="/Bmi_obesitylevel1">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
       </div>
+    </Link>
     </div>
   );
 }

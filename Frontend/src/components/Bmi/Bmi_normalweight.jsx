@@ -30,15 +30,15 @@ function Bmi_normalweight() {
             </Link>
           </div>
         </div>
-        <div className={styles.chevronicon}>
-          <Link to="/BMI_calculator">
-          <Button // Changed button to Ant Design's Button component
-            shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px', fontWeight: 'bold' }}
-            icon={<VscChevronLeft />}
-          />
-        </Link>
+        <Link to="/BMI_calculator">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
       </div>
+    </Link>
     </div>
   );
 }

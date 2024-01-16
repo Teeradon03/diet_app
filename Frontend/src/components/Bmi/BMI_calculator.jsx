@@ -92,17 +92,16 @@ function BMI_calculator(props) {
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
           <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
-         
-          <div className={styles.chevronicon}>
-          <Link to="/Weight_show">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-        </div>
-          
+        
+        <Link to="/Target">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
         </div>
         
       );

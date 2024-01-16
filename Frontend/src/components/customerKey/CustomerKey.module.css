@@ -68,25 +68,28 @@
 }
 
 .performbutton {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  line-height: 2;
-  width: 250px;
-  max-width: 230px;
-  position: fixed; /* ให้ปุ่มอยู่ในตำแหน่งที่ต้องการแม้ว่าจะมีการเลื่อนหน้าเว็บ */
-  bottom: 40px; /* ตั้งค่าระยะห่างจากขอบล่างเป็น 40 พิกเซล */
-  left: 50%; /* ตั้งค่าให้ปุ่มอยู่ตรงกลางทางนอก */
-  transform: translateX(-50%); /* ปรับตำแหน่งให้ปุ่มแนบอยู่กับขอบล่างด้านล่าง */
-  background-color: #FFFF;
-  border: 1px solid #ccc;
-  color: rgb(13, 13, 13);
-  border-radius: 35px;
-  box-shadow: 10px 10px 8px 6px #b2b2b2;
-  font-size: 2rem;
-  cursor: pointer;
-  text-align: center;
-  font-weight: bold;
+  margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    display: block;
+    width: 250px;
+    max-width: 220px;
+    padding: 1px;
+    position: relative; 
+    top: 200px; 
+    margin-bottom: 55px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 40px;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
 }
 
 

@@ -8,34 +8,42 @@ import axios from 'axios';
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
-  const pageId = '45'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
+  const questionId = '45'; // Change the questionId accordingly
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setWeight(value);
   };
 
+  const handleNextClick = () => {
+    if (weight.trim() === '' || weight < 25 || weight > 300) {
+      alert('กรุณากรอกน้ำหนักให้ถูกต้อง (25-300 กก.)');
+    } else {
+      console.log('Weight:', weight);
+      handleSubmit(); // Call the handleSubmit function to send data to the server
+      window.location.href = '/Height_show';
+    }
+  };
+
   const handleSubmit = async () => {
     console.log('Weight:', weight);
 
     const dataToSend = {
-      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
-      weight: weight
+      questionId: questionId,
+      weight: weight,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    try {
+      await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, { witCredentials: true });
+      console.log('Data sent successfully');
+    } catch (error) {
+      console.error(error);
+    }
   };
 
-
   return (
-    <div className={styles.Bmi1} id={pageId}>
-      <p >น้ำหนักของคุณเท่าไหร่</p>
+    <div className={styles.Bmi1}>
+      <p>น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -55,21 +63,19 @@ function Weight_show(props) {
         src="/public/w1.jpg"
       />
       <div>
-        <Link to="/BMI_calculator"className={styles.link}>
-          <button className={styles.nextbutton} onClick={handleSubmit} >
-            ถัดไป
-          </button>
-        </Link>
+        <button className={styles.nextbutton} onClick={handleNextClick}>
+          ถัดไป
+        </button>
       </div>
-      <div className={styles.chevronicon}>
-        <Link to="/Height_show">
+      <Link to="/Calendar_1">
+        <div className={styles.chevronicon}>
           <Button
+            className={styles.button}
             shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }

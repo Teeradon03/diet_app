@@ -17,6 +17,7 @@ function BMR_calculator(props) {
   const [currentPage, setCurrentPage] = useState(0);
   const [questionId, setUserId] = useState('47'); // Replace 'yourId' with the desired ID
 
+  
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
 
@@ -88,15 +89,16 @@ function BMR_calculator(props) {
         <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
-             <div className={styles.chevronicon}>
+        
           <Link to="/BMI_calculator">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-          </div>
+      <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
       </div>
       
     );

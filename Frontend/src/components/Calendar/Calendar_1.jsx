@@ -65,15 +65,15 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
+      <Link to="/Yesno">
       <div className={styles.chevronicon}>
-        <Link to="/Yesno">
-          <Button
-            shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-            icon={<VscChevronLeft />}
-          />
-        </Link>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
       </div>
+    </Link>
     </div>
   );
 }
