@@ -117,7 +117,6 @@ const options = [
 
 const sendToAPI = async (selectedOptions, questionId = 10,) => {
   try {
-    // console.log('ansadsfadsf', selectedOptions)
     const data = {
       questionId: questionId,
       answer: selectedOptions,
@@ -133,7 +132,7 @@ const sendToAPI = async (selectedOptions, questionId = 10,) => {
 };
 
 const Choice2 = () => {
-  const [selectedOptions, setSelectedOptions, questionId] = useState([]);
+  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
