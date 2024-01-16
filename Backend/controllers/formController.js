@@ -102,7 +102,7 @@ exports.createQuestionnaires = async (req, res) => {
   try {
     console.log("data questionId", data.questionId);
     const questionIdAlreadyExists = await Questionnaire.findOne({
-      questionId: data.questionId,
+      questionId: data.questionId, userId: req.session.userId
     });
     // console.log("userId in query", userId.userId);
     console.log("questionIdAlreadyExists", questionIdAlreadyExists);
@@ -115,8 +115,10 @@ exports.createQuestionnaires = async (req, res) => {
     console.log("req.session.userId :", req.session.userId);
     const dateTime = new Date();
     // console.log(' condition ', questionIdAlreadyExists !== null)
+    // console.log('test', questionIdAlreadyExists.userId != req.session.userId)
+    // console.log('test2', questionIdAlreadyExists === null)
 
-    if (questionIdAlreadyExists === null) {
+    if (questionIdAlreadyExists === null ) {
       console.log(" questionnaires is not exists");
 
       const newQuestionnaires = new Questionnaire({
@@ -133,10 +135,11 @@ exports.createQuestionnaires = async (req, res) => {
       questionIdAlreadyExists.questionId == data.questionId
     ) {
       const updateQuestionnaires = await Questionnaire.findOneAndUpdate(
-        { questionId: data.questionId },
-        { $set: { ...data, dateTime, userId: req.session.userId } },
+        { questionId: data.questionId, userId: req.session.userId },
+        { $set: { ...data} },
         { new: true }
       );
+      console.log('updateeqad', updateQuestionnaires)
       console.log("updated file sucessfully");
       res.send('updated')
     } else {

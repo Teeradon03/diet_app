@@ -7,11 +7,13 @@ const userSchema = mongoose.Schema({
     gender: String,
     dataOfBirth : Date,
     phone: Number,
+    targetWeight: Number,
     height: Number,
     weight: Number,
     bmi: Number,
     bmiIndex: String,
     calories: Number,
+    
     userId : {
         type : String,
         required: true,

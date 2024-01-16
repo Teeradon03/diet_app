@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Link } from 'react-router-dom';
@@ -47,18 +47,18 @@ function Calendar_1() {
         </div>
       </header>
       <br />
-      <Link to="/Target" className={styles.link}>
+      <Link to="/Weight_show" className={styles.link}>
         <button className={styles.nextbutton} onClick={handleSubmit}>
           ถัดไป
         </button>
       </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
-          <Button
-            shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-            icon={<VscChevronLeft />}
-          />
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
         </Link>
       </div>
     </div>

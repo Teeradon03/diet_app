@@ -1,4 +1,4 @@
-import React from 'react';
+
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -13,7 +13,7 @@ function Bmi_lowweight() {
             <br/>
             < Image className='ant-image-img'
               width="60%"
-              src="/public/bmi_img/lowweight.jpg"
+              src="/public/10.jpg"
             />
             <br />
             <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
@@ -27,20 +27,21 @@ function Bmi_lowweight() {
               </Link>
             
             
-            <Link to="/BMR_calculator"className={styles.link}> 
+            <Link to="/"className={styles.link}> 
                 <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>
-            <div className={styles.chevronicon}>
-            <Link to="/BMI_calculator">
-            <Button 
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-        </div>
+            
       </div>
+      <Link to="/BMI_calculator">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
     </div>
   );
 }
