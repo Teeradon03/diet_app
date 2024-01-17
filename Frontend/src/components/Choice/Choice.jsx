@@ -136,7 +136,7 @@ const Choice = () => {
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
-          หน้าถัดไป
+          ถัดไป
         </button>
       </div>
       <div>

@@ -7,8 +7,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Bmi_obesitylevel1() {
     return (
         <div>
+          
             <div className={styles.Bmi1}>
-            <p> ค่าดัชนีมวลกาย (BMI) </p>
+            <h1> ค่าดัชนีมวลกาย (BMI) </h1>
+            <br />
             < Image className='ant-image-img'
               width="60%"
               src="/public/10.jpg"

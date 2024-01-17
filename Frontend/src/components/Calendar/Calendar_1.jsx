@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import React, { useState } from 'react';
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 import { Link } from 'react-router-dom';
@@ -6,27 +6,38 @@ import { Button } from 'antd';
 import { VscChevronLeft } from 'react-icons/vsc';
 import axios from 'axios';
 
-import styles from '../Bmi/Bmi.module.css';
-import './calendar.css';
+import styles from "../Bmi/Bmi.module.css";
+import "./calendar.css";
 
 function Calendar_1() {
+  const [date, setDate] = useState(new Date());
+  const [questionId, setQuestionId] = useState('');  // State to hold the question ID
 
-  const [value, onChange] = useState(new Date());
+  const generateQuestionId = () => {
+    // You can use any logic to generate a unique ID, for example, a timestamp
+    const newQuestionId = Date.now().toString();
+    setQuestionId(newQuestionId);
+  };
+
+  const handleDateChange = (newDate) => {
+    if (newDate !== null) {
+      setDate(newDate);
+      console.log('Selected date:', newDate);
+    }
+  };
 
   const handleSubmit = async () => {
-  
-    // console.log('valueee :', value)
+    generateQuestionId(20);  // Generate the question ID before making the request
 
-    const utcDate = value.toUTCString();
-    // console.log('utcDate :', utcDate)
-    const data = {
-      dateOfBirth : utcDate
-    }
+    const dataToSend = {
+      calendar: date,
+    };
+
     try {
-      const response = await axios.post('http://localhost:9999/api/user/update-user-data', data, { withCredentials: true });
-      console.log('response data from server',response.data);
+      const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, { withCredentials: true });
+      console.log(response.data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -43,7 +54,7 @@ function Calendar_1() {
           <br />
           <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
           
-          <h4 className={styles.Bmi1}>{value.toDateString()}</h4>
+          <h4 className={styles.Bmi1}>{date.toDateString()}</h4>
         </div>
       </header>
       <br />
@@ -54,11 +65,11 @@ function Calendar_1() {
       </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
+          <Button
+            shape="circle"
+            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
+            icon={<VscChevronLeft />}
+          />
         </Link>
       </div>
     </div>

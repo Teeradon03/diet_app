@@ -30,9 +30,9 @@ const Question = () => {
             question: 'คุณทานอาหารเช้าช่วงเวลาไหน',
             options: [
                 { value: 1, label: 'ไม่รับประทานอาหารเช้า' },
-                { value: 2, label: 'ระหว่าง 6.00 น. - 8.00 น.' },
-                { value: 3, label: 'ระหว่าง 8.00 น. - 10.00 น.' },
-                { value: 4, label: 'ระหว่าง 10.00 น. - 12.00 น.' }
+                { value: 2, label: '6.00 น. - 8.00 น.' },
+                { value: 3, label: '8.00 น. - 10.00 น.' },
+                { value: 4, label: '10.00 น. - 12.00 น.' }
             ]
         },
         {
@@ -40,9 +40,9 @@ const Question = () => {
             question: 'คุณทานอาหารกลางวันช่วงเวลาไหน',
             options: [
                 { value: 1, label: 'ไม่รับประทานอาหารกลางวัน' },
-                { value: 2, label: 'ระหว่าง 10.00 น. - 12.00 น.' },
-                { value: 3, label: 'ระหว่าง 12.00 น. - 14.00 น.' },
-                { value: 4, label: 'ระหว่าง 14.00 น. - 16.00 น.' }
+                { value: 2, label: '10.00 น. - 12.00 น.' },
+                { value: 3, label: '12.00 น. - 14.00 น.' },
+                { value: 4, label: '14.00 น. - 16.00 น.' }
             ]
         },
         {
@@ -50,9 +50,9 @@ const Question = () => {
             question: 'คุณทานอาหารเย็นช่วงไหน',
             options: [
                 { value: 1, label: 'ไม่รับประทานอาหารเย็น' },
-                { value: 2, label: 'ระหว่าง 16.00 น. - 18.00 น.' },
-                { value: 3, label: 'ระหว่าง 18.00 น. - 20.00 น.' },
-                { value: 4, label: 'ระหว่าง 20.00 น. - 22.00 น.' }
+                { value: 2, label: '16.00 น. - 18.00 น.' },
+                { value: 3, label: '18.00 น. - 20.00 น.' },
+                { value: 4, label: '20.00 น. - 22.00 น.' }
             ]
         },
         {
@@ -217,7 +217,6 @@ const Question = () => {
                 <div>
                   <div className="question" >
                     <div className="font-family">
-                      <h1 className="quiznum">Question {currentQuestion + 1} </h1>
                       <div className="ques" >
                         <p>{questions[currentQuestion].question}</p>
                       </div>
@@ -255,7 +254,7 @@ const Question = () => {
                       onClick={handleNextQuestion}
                       disabled={!selectedOption}
                     >
-                      หน้าถัดไป
+                      ถัดไป
                     </button>
                   </div>
                 </Col>
