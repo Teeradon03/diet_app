@@ -21,12 +21,13 @@ const loginLine = async (req, res) => {
       params,
       { headers }
     );
-
+      // console.log('decode', decode)
     const userLineData = {
       line_user_id: decode.data.sub,
       line_username: decode.data.name,
       line_picture_url: decode.data.picture,
     };
+    // console.log('userlinedata', userLineData)
 
     const generateUserId = () => { 
       const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
