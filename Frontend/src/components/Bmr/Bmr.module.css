@@ -54,36 +54,7 @@
   
   }
 
-  input,
-  .gender,
-  .bmrbutton .advicebutton,
-  .nextbutton,
-  .backbutton,
-  .bmibutton {
-    width: 50vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    line-height: 1.5;
-    display: block;
-    width: 100%;
-    max-width: 210px;
-    padding: 15px;
-    position: relative; 
-    top: 50px; 
-    margin-bottom: 55px;
-    background-color: #FFFF;
-    border: 1px solid #ccc;
-    color: rgb(13, 13, 13);
-    border-radius: 35px;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 30px;
-    cursor: pointer;
-    text-align :center;
-    font-weight: bold;
-  }
+ 
 
   .bmrbutton:hover{
     background-color: #757575;
@@ -107,9 +78,9 @@
     height: 100%;
     line-height: 1.5;
     display: block;
-    width: 100%;
+    width: 250px;
     max-width: 210px;
-    padding: 15px;
+    padding: 1px;
     position: relative; 
     top: 50px; 
     margin-bottom: 55px;
@@ -118,7 +89,7 @@
     color: rgb(13, 13, 13);
     border-radius: 35px;
     box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 30px;
+    font-size: 2.5rem;
     cursor: pointer;
     text-align :center;
     font-weight: bold;

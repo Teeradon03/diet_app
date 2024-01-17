@@ -60,7 +60,7 @@ function Calendar_1() {
         </p>
       </header>
       <br />
-      <Link to="/Target" className={styles.link}>
+      <Link to="/Weight_show" className={styles.link}>
         <button className={styles.nextbutton} onClick={handleSubmit}>
           ถัดไป
         </button>

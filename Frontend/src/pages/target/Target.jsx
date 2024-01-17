@@ -47,7 +47,7 @@ function Target() {
       <br />
       <div className={styles.inputlabel}>
 
-        <input
+        <input className='input-ss'
           type="number"
           value={targetWeight}
           onChange={handleInputChange}
