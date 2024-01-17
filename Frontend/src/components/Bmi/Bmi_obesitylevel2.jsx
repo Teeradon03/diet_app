@@ -11,7 +11,7 @@ function Bmi_obesitylevel2() {
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             < Image className='ant-image-img'
               width="60%"
-              src="/public/10.jpg"
+              src="/10.jpg"
             /><br />
             <div className={styles.childbmi}>BMI  25 - 29.90</div>
             <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 2</div>
