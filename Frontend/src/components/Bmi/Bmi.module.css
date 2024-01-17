@@ -273,7 +273,7 @@
       }
     }
 
-    @media screen and (max-width: 1400px) {
+    @media screen and (min-width: 1400px) {
       .Bmi1 {
         font-size: 2.5rem;
       }
@@ -301,9 +301,7 @@
     
          
       @media screen and (max-width: 1200px) {
-        .Bmi1 {
-          font-size: 2rem;
-        }
+        
         .advicebutton,
         .nextbutton,
         .backbutton,
@@ -326,9 +324,7 @@
   
       
       @media screen and (max-width: 992px) {
-        .Bmi1 {
-          font-size: 2rem;
-        }
+       
         .childbmi,
         .childadvice
          {
@@ -357,9 +353,7 @@
   
       
       @media screen and (max-width: 768px) {
-        .Bmi1 {
-          font-size: 1.7rem;
-        }
+       
         .childbmi,
         .childadvice
          {
@@ -388,9 +382,7 @@
   
       
       @media screen and (max-width: 576px) {
-        .Bmi1 {
-          font-size: 1.7rem;
-        }
+       
         .childbmi,
         .childadvice
         {
@@ -416,9 +408,7 @@
           height: 10px;
         }
         @media screen and (max-width: 450px) {
-          .Bmi1 {
-            font-size: 1.7rem;
-          }
+          
           .childbmi,
           .childadvice
            {

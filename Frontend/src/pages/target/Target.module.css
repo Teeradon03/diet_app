@@ -266,15 +266,14 @@
   
     }
     
-    @media screen and (max-width: 1600px) {
-      .Bmi1 {
-        font-size: 2.5rem;
-      }
+    @media screen and (min-width: 1600px) {
+      
+      input,
       .advicebutton,
       .nextbutton,
       .backbutton,
       .bmibutton {
-        width: 50vw;
+        width: 80vw;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -290,15 +289,14 @@
       }
     }
 
-    @media screen and (max-width: 1400px) {
-      .Bmi1 {
-        font-size: 2.5rem;
-      }
+    @media screen and (min-width: 1400px) {
+      
+      input,
       .advicebutton,
       .nextbutton,
       .backbutton,
       .bmibutton {
-        width: 50vw;
+        width: 80vw;
         margin: 0 auto;
         display: flex;
         justify-content: center;
@@ -315,15 +313,14 @@
     }
     
          
-      @media screen and (max-width: 1200px) {
-        .Bmi1 {
-          font-size: 1.6rem;
-        }
+      @media screen and (min-width: 1200px) {
+        
+        input,
         .advicebutton,
         .nextbutton,
         .backbutton,
         .bmibutton {
-          width: 50vw;
+          width: 80vw;
           margin: 0 auto;
           display: flex;
           justify-content: center;
@@ -341,13 +338,11 @@
   
       
       @media screen and (max-width: 992px) {
-        .Bmi1 {
-          font-size: 1.6rem;
-        }
+      
         .childbmi,
         .childadvice
          {
-          width: 50vw;
+          width: 70vw;
         }
         input,
         .gender,
@@ -372,13 +367,11 @@
   
       
       @media screen and (max-width: 768px) {
-        .Bmi1 {
-          font-size: 1.5rem;
-        }
+      
         .childbmi,
         .childadvice
          {
-          width: 60vw;
+          width: 70vw;
         }
         input,
         .gender,
@@ -403,9 +396,7 @@
   
       
       @media screen and (max-width: 576px) {
-        .Bmi1 {
-          font-size: 1.5rem;
-        }
+       
         .childbmi,
         .childadvice
         {
@@ -431,9 +422,7 @@
           height: 10px;
         }
         @media screen and (max-width: 450px) {
-          .Bmi1 {
-            font-size: 1.5rem;
-          }
+          
           .childbmi,
           .childadvice
            {

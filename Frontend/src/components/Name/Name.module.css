@@ -14,7 +14,7 @@
 }
 
 .inputv1{   
-    
+    margin: 0 auto;
     justify-content: center;
     align-items: center;
     padding: 0px;
@@ -102,11 +102,12 @@
   transform: translateY(5px);
 }
 
+ 
 @media screen and (max-width: 1600px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
+  .advicebutton,
   .nextbutton,
   .backbutton,
   .bmibutton {
@@ -126,35 +127,11 @@
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1400px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
-  .nextbutton,
-  .backbutton,
-  .bmibutton {
-    width: 50vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-    
-  }
-  .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-}
-    
-@media screen and (max-width: 1200px) {
-  .Bmi1 {
-    font-size: 2rem;
-  }
-  
+  .advicebutton,
   .nextbutton,
   .backbutton,
   .bmibutton {
@@ -175,110 +152,140 @@
 }
 
 
-@media screen and (max-width: 992px) {
-  .Bmi1 {
-    font-size: 2rem;
-  }
-  .childbmi,
-  .childadvice
-   {
-    width: 50vw;
-  }
-  
-  .nextbutton,
-  .backbutton{
-    width: 70vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  .chevronicon {
-    transform: translateX(-2000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-}
 
-
-@media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
-  .childbmi,
-  .childadvice
-   {
-    width: 60vw;
-  }
-  
-  .nextbutton,
-  .backbutton {
-    width: 70vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-}
-
-
-@media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
-  .childbmi,
-  .childadvice
-  {
-    width: 70vw;
-  }
- 
-  .nextbutton,
-  .backbutton {
-    width: 70vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-  @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.7rem;
+     
+  @media screen and (max-width: 1200px) {
+    
+    .advicebutton,
+    .nextbutton,
+    .backbutton,
+    .bmibutton {
+      width: 50vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      
     }
+    .chevronicon {
+      transform: translateX(-1000%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  
+  @media screen and (max-width: 992px) {
+   
+    .childbmi,
+    .childadvice
+     {
+      width: 50vw;
+    }
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton{
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      transform: translateX(-2000%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  
+  @media screen and (max-width: 768px) {
+   
     .childbmi,
     .childadvice
      {
       width: 60vw;
     }
-  
-    .nextbutton {
-    width: 60vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
     }
     .chevronicon {
-      transform: translateX(-2800%);
+      transform: translateX(-2500%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
-} 
-}
+  }
+
+  
+  @media screen and (max-width: 576px) {
+   
+    .childbmi,
+    .childadvice
+    {
+      width: 70vw;
+    }
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      transform: translateX(-2700%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+    @media screen and (max-width: 450px) {
+      
+      .childbmi,
+      .childadvice
+       {
+        width: 60vw;
+      }
+      input,
+      .gender,
+      .bmibutton,
+      .advicebutton,
+      .nextbutton,
+      .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      }
+      .chevronicon {
+        transform: translateX(-2800%);
+        font-size: 16px;
+        width: 10px;
+        height: 10px;
+      }
+  } 
+  }
