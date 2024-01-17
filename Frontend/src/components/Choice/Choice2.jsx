@@ -16,7 +16,7 @@ const options = [
           (ทานอาหารคาร์โบไฮเดรตตํ่า รับประทานเนื้อสัตว์เป็นหลัก)
         </span>
       </span>),
-    value: '1'
+    value: 1
   },
   {
     label: (
@@ -27,7 +27,7 @@ const options = [
           (ไม่รับประทานเนื้อสัตว์)
         </span>
       </span>),
-    value: '2'
+    value: 2
   },
   {
     label: (
@@ -38,7 +38,7 @@ const options = [
           (ไม่รับประทานอาหารผลิตภัณฑ์จากสัตว์)
         </span>
       </span>),
-    value: '3'
+    value: 3
   },
   {
     label: (
@@ -49,7 +49,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีแลคโตส)
         </span>
       </span>),
-    value: '4'
+    value: 4
   },
   {
     label: (
@@ -60,7 +60,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีส่วนประกอบของกลูเตน)
         </span>
       </span>),
-    value: '5'
+    value: 5
   }, {
     label: (
       <span>
@@ -70,7 +70,7 @@ const options = [
           (ไม่รับประทานเนื้อสัตว์ แต่รับประทานปลาหรือหอย)
         </span>
       </span>),
-    value: '6'
+    value: 6
   }, {
     label: (
       <span>
@@ -80,7 +80,7 @@ const options = [
           (ทานอาหารแบบคาร์โบไฮเดรตตํ๋า ไม่ทานขนมหวาน)
         </span>
       </span>),
-    value: '7'
+    value: 7
   }, {
     label: (
       <span>
@@ -90,7 +90,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีไข่ หรือส่วนประกอบของไข่)
         </span>
       </span>),
-    value: '8'
+    value: 8
   },
   {
     label: (
@@ -101,7 +101,7 @@ const options = [
           (รับประทานอาหารที่ไม่มีส่วนประกอบของอาหารทะเล)
         </span>
       </span>),
-    value: '9'
+    value: 9
   },
   {
     label: (
@@ -112,16 +112,17 @@ const options = [
 
         </span>
       </span>),
-    value: '10'
+    value: 10
   },
 ];
 
-const sendToAPI = async (selectedOptions, selectedLabels) => {
+const sendToAPI = async (selectedOptions, questionId = 10,) => {
   try {
     const data = {
       questionId: selectedOptions.map(option => option.id),
       question: selectedLabels.map(option => option.label),
       answer: 5,
+      userId: 1
     };
 
     const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
@@ -132,7 +133,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 };
 
 const Choice2 = () => {
-  const [selectedLabels, setSelectedLabels] = useState([]);
+  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
@@ -144,16 +145,13 @@ const Choice2 = () => {
     sendToAPI(selectedOptions, selectedLabels);
   };
 
-  const handleNext = async () => {
+  const handleNext = () => {
     if (selectedLabels.length > 0) {
-      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
-      await sendToAPI();
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
-  
 
   const handleBack = () => {
     window.location.href = ('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
@@ -173,7 +171,7 @@ const Choice2 = () => {
       <br /><br />
       <Select
         mode="multiple"
-        style={{ width: '60%' }}
+        className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
         optionLabelProp="label"

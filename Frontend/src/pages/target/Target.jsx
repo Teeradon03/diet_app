@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -7,22 +7,32 @@ import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-  const questionId = '32';
+
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setTargetWeight(value);
   };
+
+  const handleNextClick = () => {
+    if (targetWeight.trim() === '') {
+      alert('กรุณากรอกน้ำหนักเป้าหมายของคุณ');
+    } else {
+      console.log('Target Weight:', targetWeight);
+      handleSubmit(); // Call the handleSubmit function to send data to the server
+      window.location.href = '/BMI_calculator';
+    }
+  };
   
+
   const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
 
     const dataToSend = {
-      questionId: questionId,
       targetWeight: targetWeight,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true })
       .then(function (response) {
         console.log(response);
       })
@@ -31,13 +41,9 @@ function Target() {
       });
   };
 
-  const boldTextStyle = {
-    fontWeight: 'bold', // Set the fontWeight to 'bold'
-  };
-
   return (
     <div className={styles.Bmi1}>
-      <h1 style={boldTextStyle}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
+      <h1 className={styles.Bmi1}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input
@@ -45,10 +51,12 @@ function Target() {
           value={targetWeight}
           onChange={handleInputChange}
         />
-        <label htmlFor="target" style={boldTextStyle}> กก.</label>
+        <label htmlFor="target">&nbsp; กก.</label>
       </div>
+      <br />
 
-      <p style={boldTextStyle}>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <br />
 
       <Image
         width={300}
@@ -56,21 +64,20 @@ function Target() {
         src="/public/t1.jpg"
       />
       <div>
-        <Link to="/Height_show">
-          <button className={styles.nextbutton} onClick={handleSubmit} style={boldTextStyle}>
-            ถัดไป
-          </button>
-        </Link>
+        {/* Change onClick to handleNextClick */}
+        <button className={styles.nextbutton} onClick={handleNextClick}>
+          ถัดไป
+        </button>
       </div>
-      <div className={styles.chevronicon}>
-        <Link to="/Calendar_1">
+      <Link to="/Height_show">
+        <div className={styles.chevronicon}>
           <Button
+            className={styles.button}
             shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }

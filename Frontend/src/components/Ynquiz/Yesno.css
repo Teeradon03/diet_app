@@ -39,9 +39,7 @@
 
 .questionyesno {
   font-size: 40px;
-  padding-top: 50px;
-  font-weight: bold;
-
+  padding-top: 20px;
 }
 
 .button-container {
@@ -57,10 +55,10 @@
   box-shadow: 8px 12px 3px 5px #b2b2b2;
 }
 
-.no-button:active{
+/* .no-button:active{
   box-shadow: none;
   transform: translateY(5px);
-}
+} */
 
 .yes-button:hover{
   background-color: #757575;
@@ -128,6 +126,11 @@
 }
 
 @media screen and (max-width: 1600px) {
+  .and{
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
   .Ynquiztion {
     display: flex;
     font-size: 2.2rem;
@@ -318,58 +321,59 @@
 .yes-button {
  position: relative;
  left: 5px;
- width: 30vw;
- max-width: 300px; /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
- margin: 0 auto; /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
 }
 }
-
-@media screen and (max-width: 450px) {
-  .questionyesno {
-    position: relative;
-    left: 70px;
-    font-size: 1.5rem;
-  }
-  .and {
-    position: relative;
-    left: 50px;
-  }
-  .Ynquiztion {
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-    margin: 20px;
-    padding-top: 20px;
-    font-weight: bold;
-  }
-  .imgmedia {
-    width: 80%;
-    height: 80%;
-    display: block;
-    margin: 0 auto; 
-  }
-  .chevron-icon {
-    font-size: 30px;
-    width: 45px;
-    height: 45px;
-  }
-  .no-button,
-  .yes-button {
-   width: 39vw;
-   position: relative;
-   left: 60px;
-  }
-  }
 
 @media screen and (max-width: 400px) {
-.questionyesno {
+.question {
   position: relative;
   left: 70px;
-  font-size: 1.5rem;
+  font-size: 2rem;
 }
 .and {
   position: relative;
   left: 50px;
+}
+.Ynquiztion {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  margin: 20px;
+  padding-top: 20px;
+}
+.imgmedia {
+  width: 100%;
+  height: 300px;
+  display: block;
+  margin: 0 auto; 
+  position: relative;
+  left: -15px;
+}
+.chevron-icon {
+  font-size: 30px;
+  width: 45px;
+  height: 45px;
+}
+.no-button,
+.yes-button {
+ width: 39vw;
+ position: relative;
+ left: 60px;
+}
+}
+
+@media screen and (max-width: 400px) {
+.questionyesno {
+  position: relative;
+  left: 0px;
+  font-size: 1.5rem;
+}
+.and {
+  position: relative;
+  left: 10px;
+  font-weight: bold;
+  margin-left: 10px;
+  margin-right: 20px;
 }
 .Ynquiztion {
   flex-direction: column;
@@ -395,5 +399,6 @@
   width: 30vw;
   max-width: 300px; /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
   margin: 0 auto; /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
+  left: 0px;
 }
 }

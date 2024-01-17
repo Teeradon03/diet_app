@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -8,15 +8,16 @@ import Height from '../Height/Height';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-function BMR_calculator(props) {
+function BMR_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState('male');
   const [bmr, setBmr] = useState(null); 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('36'); // Replace 'yourId' with the desired ID
 
+
+
+  
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
 
@@ -30,52 +31,73 @@ function BMR_calculator(props) {
 
     const calculatedBmr = bmrConstant + (genderFactor * weight) + (4.799 * height) - (5.677 * age);
     setBmr(calculatedBmr);
-    determinePage(calculatedBmr);
+
+    console.log('Calculated BMR:', calculatedBmr);
+
+    // Send BMR and ID to the server
+    const dataToSend = {
+      bmr: calculatedBmr,
+    };
+
+    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
   };
 
-  const determinePage = (calculatedBmr) => {
-    setCurrentPage(1);
-  };
 
-  const buttonStyle = {
-    fontWeight: 900, // แก้ตามที่ต้องการ
-    // เพิ่มสไตล์อื่นๆ ตามต้องการ
-  };
+
   const renderContent = () => {
+    
+
     return (
-      <div>
-        <br/>
-        <h1 style={{ fontWeight: 'bold' }}>คำนวณแคลอรี่ (BMR)</h1>
-        
+      <div className={styles.Bmr1}>
+        <br />
+        <p>คำนวณแคลอรี่ (BMR)</p>
+
         <Weight onWeightChange={(value) => setWeight(value)} />
 
         <Height onHeightChange={(value) => setHeight(value)} />
-        <br/>
-       
-        <h2 style={{ fontWeight: 'bold' }}>อายุ (ปี) </h2>
+        
+
+        <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
           <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
         </div>
-       
-        <h2 style={{ fontWeight: 'bold' }}>เพศ  </h2>
+
+        <p className={styles.genderv1}>เพศ</p>
         <div className={styles.gender}>
-        <select value={gender} onChange={(e) => setGender(e.target.value)}>
-          <option value="male" style={{ fontWeight: 'bold' }}>ชาย</option>
-          <option value="female" style={{ fontWeight: 'bold' }}>หญิง</option>
-        </select>
+          <select value={gender} onChange={(e) => setGender(e.target.value)}>
+            <option value="male">ชาย</option>
+            <option value="female">หญิง</option>
+          </select>
         </div>
         {bmr !== null && (
           <div>
             <br />
-            <p style={{ fontWeight: 'bold' }}> ค่า BMR ของคือ : {bmr.toFixed(2)} </p>
-            
+            <p>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
           </div>
         )}
-        <button className={styles.bmrbutton} onClick={calculateBmr}>Calculate BMR</button>
+        <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
         
-       
+        <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
+          <button className={styles.nextbutton}>ถัดไป</button> 
+            </Link>
         
+          <Link to="/BMI_calculator">
+      <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
       </div>
+    </Link>
+      </div>
+      
     );
   };
 

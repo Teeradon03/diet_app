@@ -4,10 +4,11 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Name/Name.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
+import axios from 'axios'; // Import Axios
 
 function Name() {
   const [formData, setFormData] = useState({
-    firstname: '',
+    firstName: '',
     lastName: '',
     age: '',
     gender: '',
@@ -29,19 +30,29 @@ function Name() {
     console.log('Form Data:', formData);
 
     // Add your logic for navigating to the next page here
+
+    // Send data using Axios
+    axios.post('http://localhost:9999/api/user/update-user-data', formData, { withCredentials: true})
+      .then(response => {
+        console.log('Data sent successfully:', response.data);
+        // Add your logic for navigating to the next page here if needed
+      })
+      .catch(error => {
+        console.error('Error sending data:', error);
+      });
   };
 
   return (
     <div className=''>
       <div className={styles.Bmi1} >
-        <h2>กรุณากรอกข้อมูลดังนี้</h2>
+        <p>กรุณากรอกข้อมูลดังนี้</p>
         <br />
         <div className='body '>
           <div className={styles.inputv1}>
             <input
               type="text"
               placeholder="ชื่อ"
-              onChange={(e) => handleInputChange('firstname', e.target.value)}
+              onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
           </div>
 
@@ -71,7 +82,7 @@ function Name() {
         </div>
 
         <div>
-          <Link to="/Question">
+          <Link to="/Question" className={styles.link}>
             <button className={styles.nextbutton} onClick={handleNextClick}>
               ถัดไป
             </button>

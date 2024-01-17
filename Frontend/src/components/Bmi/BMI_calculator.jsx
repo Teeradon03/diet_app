@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -13,12 +13,12 @@ import Bmi_obesitylevel3 from '../Bmi/Bmi_obesitylevel3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-function BMI_calculator(props) {
+function BMI_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('35');
+
 
   const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
@@ -27,10 +27,9 @@ function BMI_calculator(props) {
     console.log("BMI:", calculatedBmi);
 
     const dataToSend = {
-      questionId: questionId,
-      bmi: calculatedBmi,
+      bmi: calculatedBmi
     };
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend)
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend ,{ withCredentials: true })
     .then(function (response) {
       console.log(response);
     })
@@ -73,7 +72,7 @@ function BMI_calculator(props) {
             <Weight onWeightChange={(value) => setWeight(value)} />
             <br/>
             <Height onHeightChange={(value) => setHeight(value)} />
-            <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
+            <button className={styles.bmibutton} onClick={calculateBmi} >คำนวณ BMI</button>
           </div>
         );
     }
@@ -85,23 +84,23 @@ function BMI_calculator(props) {
     } else {
       return (
       
-        <div>
+        <div className={styles.Bmi1}>
           <br />
-            <h1 style={{ fontWeight: 'bold' }}>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
+            <p>คำนวณค่าดัชนีมวลกาย (BMI)</p>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />
-          <button className={styles.bmibutton} onClick={calculateBmi} style={{ fontWeight: 'bold' }}>คำนวณ BMI</button>
-          <div className={styles.chevronicon}>
-          <Link to="/Weight_show">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-        </div>
-          
+          <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
+        
+        <Link to="/Target">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
         </div>
         
       );

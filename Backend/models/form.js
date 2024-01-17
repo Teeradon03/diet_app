@@ -9,7 +9,7 @@ const Question = mongoose.model("Question", questionSchema);
 
 const questionnaireSchema = new mongoose.Schema({
   questionId: { type: String, required: true },
-  // userId: { type: String, required: true },
+  userId: { type: String, required: true },
   // lineId: { type: String, required: true},
   dateTime: { type: Date, default: Date.now },
   answer : { type: [Number] , required: true },
