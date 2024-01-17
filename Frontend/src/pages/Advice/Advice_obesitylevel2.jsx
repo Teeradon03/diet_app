@@ -37,7 +37,7 @@ function Advice_obesitylevel2() {
           shape="circle"
           icon={<VscChevronLeft />}
         />
-      </div>
+       </div>
     </Link>
     </div>
   );

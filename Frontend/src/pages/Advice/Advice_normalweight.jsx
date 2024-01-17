@@ -35,7 +35,7 @@ function Advice_normalweight() {
           shape="circle"
           icon={<VscChevronLeft />}
         />
-      </div>
+       </div>
     </Link>
     </div>
   );
