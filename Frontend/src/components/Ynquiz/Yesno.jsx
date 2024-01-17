@@ -8,36 +8,36 @@ const yesno = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const images = [
-    "/img/yn1.jpg",//id12-img17
-    "/img/yn2.jpg",//id13-img18
-    "/img/yn3.jpg",//id14-img19
+    "/img/17.jpg",//id12-img17
+    "/img/18.jpg",//id13-img18
+    "/img/19.jpg",//id14-img19
     "/img/20.jpg",//id15-img20
-    "/img/yn5.jpg",//id16-img21
-    "/img/yn6.jpg",//id17-img22
-    "/img/yn7.jpg",//id18-img23
-    "/img/yn8.jpg",//id19-img24
-    "/img/yn9.jpg",//id20-img25
-    "/img/yn10.jpg",//id21-img26
-    "/img/yn11.jpg",//id22-img27
-    "/img/yn12.jpg",//id23-img28
+    "/img/21.jpg",//id16-img21
+    "/img/22.jpg",//id17-img22
+    "/img/23.jpg",//id18-img23
+    "/img/24.jpg",//id19-img24
+    "/img/25.jpg",//id20-img25
+    "/img/26.jpg",//id21-img26
+    "/img/27.jpg",//id22-img27
+    "/img/28.jpg",//id23-img28
     "/img/29.jpg",//id24-img29
     "/img/30.jpg",//id25-img30
     "/img/31.jpg",//id26img31
     "/img/32.jpg",//id27img32
-    "/img/yn17.jpg",//id28img33
-    "/img/yn18.jpg",//id29img34
-    "/img/yn19.jpg",//id30-img35
-    "/img/yn20.jpg",//id31-img36
-    "/img/yn21.jpg",//id32-img37
-    "/img/beer.jpg",//id33-img38
-    "/img/yn23.jpg",//id34-img39
-    "/img/tod.jpg",//id35-img40
+    "/img/33.jpg",//id28img33
+    "/img/34.jpg",//id29img34
+    "/img/35.jpg",//id30-img35
+    "/img/36.jpg",//id31-img36
+    "/img/37.jpg",//id32-img37
+    "/img/38.jpg",//id33-img38
+    "/img/39.jpg",//id34-img39
+    "/img/40.jpg",//id35-img40
     "/img/41.jpg",//id36-img41
     "/img/42.jpg",//id37-img42
     "/img/43.jpg",//id38-img43
     "/img/44.jpg",//id39-img44
     "/img/45.jpg",//id40-img45
-    "/img/born.jpg",//id41-img46
+    "/img/46.jpg",//id41-img46
   ]; // เพิ่ม URLs ของรูปภาพที่นี่
 
   const [questions] = useState([
@@ -83,7 +83,7 @@ const yesno = () => {
     },
     {
       id: 22,
-      question: "ในร่างกายของคุณที่ต้องการลดคือ หน้าอก",
+      question: "ในร่างกายของคุณที่ต้องการลดคือ ต้นแขน",
     },
     {
       id: 23,
@@ -266,8 +266,8 @@ const yesno = () => {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const imageStyle = {
-    width: 500,
-    height: 500
+    width: 300,
+    height: 300
   }
 
   return (
