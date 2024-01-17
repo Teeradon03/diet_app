@@ -1,5 +1,5 @@
 .Bmr1 {
-    
+
   padding: 30px;
   display: flex;
   margin: 20px;
@@ -9,355 +9,369 @@
   margin: 0 auto;
 }
 
-.age{
+.age {
   padding: 10px;
   display: flex;
   margin: 10px;
 }
 
-.inputbmr{   
-    margin: 0 auto;
-    justify-content: center;
-    align-items: center;
-    padding: 1px;
-    width: calc(100% );
-    max-width: 210px;
-    box-sizing: border-box;
-    border-radius: 35px;
-    margin-bottom: 2em;
-    font-size: 40px;
-    background-color: #fff;
-    color: #111;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-  
+.inputbmr {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 1px;
+  width: calc(100%);
+  max-width: 210px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 2em;
+  font-size: 40px;
+  background-color: #fff;
+  color: #111;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+
 }
-.genderv1{
-  
+
+.genderv1 {
+
   display: flex;
-  
+
 }
 
 .gender select {
-  
-    width: calc(100% );
-    max-width: 210px;
-    height: 80px;
-    box-sizing: border-box;
-    border-radius: 35px;
+
+  width: calc(100%);
+  max-width: 210px;
+  height: 80px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 40px;
+  font-weight: bold;
+
+
+}
+
+.bmrbutton {
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  max-width: 210px;
+  padding: 15px;
+  position: relative;
+  top: 50px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.bmrbutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+}
+
+.bmrbutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+
+}
+
+
+.nextbutton {
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  max-width: 210px;
+  padding: 15px;
+  position: relative;
+  top: 50px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 30px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+.nextbutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.nextbutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.chevronicon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+
+  color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  left: 300px;
+  top: 30px;
+}
+
+@media screen and (max-width: 1600px) {
+  .Bmr1 {
+    font-size: 2.5rem;
+  }
+
+  input,
+  .gender,
+  .bmrbutton .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
     margin-bottom: 1em;
-    font-size: 1rem;
-    background-color: #fff;
-    color: #111;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 40px; 
-    font-weight: bold;
-    
-  
-  }
 
-  .bmrbutton {
-     
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    line-height: 1.5;
-    display: block;
-    width: 100%;
-    max-width: 210px;
-    padding: 15px;
-    position: relative; 
-    top: 50px; 
-    margin-bottom: 55px;
-    background-color: #FFFF;
-    border: 1px solid #ccc;
-    color: rgb(13, 13, 13);
-    border-radius: 35px;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 30px;
-    cursor: pointer;
-    text-align :center;
-    font-weight: bold;
-  }
-
-  .bmrbutton:hover{
-    background-color: #757575;
-    color: #FFFF;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-  }
-  
-  .bmrbutton:active{
-    box-shadow: none;
-    transform: translateY(5px);
-
-  }
-  
-
-  .nextbutton {
-    
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    line-height: 1.5;
-    display: block;
-    width: 100%;
-    max-width: 210px;
-    padding: 15px;
-    position: relative; 
-    top: 50px; 
-    margin-bottom: 55px;
-    background-color: #FFFF;
-    border: 1px solid #ccc;
-    color: rgb(13, 13, 13);
-    border-radius: 35px;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 30px;
-    cursor: pointer;
-    text-align :center;
-    font-weight: bold;
-  }
-  .nextbutton:hover{
-    background-color: #757575;
-    color: #FFFF;
-    box-shadow: 0 4px 0 0 #b2b2b2;
-  }
-  
-  .nextbutton:active{
-    box-shadow: none;
-    transform: translateY(5px);
-  }
-
-  .link {
-    text-decoration: none;
   }
 
   .chevronicon {
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    border: none;
-    
-    color: #757575;
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .Bmr1 {
+    font-size: 2.5rem;
+  }
+
+  input,
+  .gender,
+  .bmrbutton .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
-    cursor: pointer;
-    outline: none;
-    position: absolute;
-    left: 300px;
-    top: 30px;
+    margin-bottom: 1em;
+
   }
 
-  @media screen and (max-width: 1600px) {
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+  .Bmr1 {
+    font-size: 2rem;
+  }
+
+  input,
+  .gender,
+  .bmrbutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .Bmr1 {
+    font-size: 2rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 50vw;
+  }
+
+  .bmrbutton,
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    transform: translateX(-2000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .Bmr1 {
+    font-size: 1.7rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 60vw;
+  }
+
+  .bmrbutton,
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    transform: translateX(-2500%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+  .Bmr1 {
+    font-size: 1.7rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 70vw;
+  }
+
+  .bmrbutton,
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    transform: translateX(-2700%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
     .Bmr1 {
-      font-size: 2.5rem;
+      font-size: 1.7rem;
     }
+
+    .childbmi,
+    .childadvice {
+      width: 60vw;
+    }
+
+    .bmrbutton,
     input,
     .gender,
-    .bmrbutton
+    .bmibutton,
     .advicebutton,
     .nextbutton,
-    .backbutton,
-    .bmibutton {
-      width: 50vw;
+    .backbutton {
+      width: 60vw;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 1em;
-      
     }
+
     .chevronicon {
-      transform: translateX(-1000%);
+      transform: translateX(-2800%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
   }
-
-  @media screen and (max-width: 1400px) {
-    .Bmr1 {
-      font-size: 2.5rem;
-    }
-    input,
-    .gender,
-    .bmrbutton
-    .advicebutton,
-    .nextbutton,
-    .backbutton,
-    .bmibutton {
-      width: 50vw;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1em;
-      
-    }
-    .chevronicon {
-      transform: translateX(-1000%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
-    }
-  }
-  
-
-  
-       
-    @media screen and (max-width: 1200px) {
-      .Bmr1 {
-        font-size: 2rem;
-      }
-      input,
-      .gender,
-      .bmrbutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton,
-      .bmibutton {
-        width: 50vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-        
-      }
-      .chevronicon {
-        transform: translateX(-1000%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-    }
-
-    
-    @media screen and (max-width: 992px) {
-      .Bmr1 {
-        font-size: 2rem;
-      }
-      .childbmi,
-      .childadvice
-       {
-        width: 50vw;
-      }
-      .bmrbutton,
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton{
-        width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-      }
-      .chevronicon {
-        transform: translateX(-2000%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-    }
-
-    
-    @media screen and (max-width: 768px) {
-      .Bmr1 {
-        font-size: 1.7rem;
-      }
-      .childbmi,
-      .childadvice
-       {
-        width: 60vw;
-      }
-      .bmrbutton,
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton {
-        width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-      }
-      .chevronicon {
-        transform: translateX(-2500%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-    }
-
-    
-    @media screen and (max-width: 576px) {
-      .Bmr1 {
-        font-size: 1.7rem;
-      }
-      .childbmi,
-      .childadvice
-      {
-        width: 70vw;
-      }
-      .bmrbutton,
-      input,
-      .gender,
-      .bmibutton,
-      .advicebutton,
-      .nextbutton,
-      .backbutton {
-        width: 70vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-      }
-      .chevronicon {
-        transform: translateX(-2700%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
-      }
-      @media screen and (max-width: 450px) {
-        .Bmr1 {
-          font-size: 1.7rem;
-        }
-        .childbmi,
-        .childadvice
-         {
-          width: 60vw;
-        }
-        .bmrbutton,
-        input,
-        .gender,
-        .bmibutton,
-        .advicebutton,
-        .nextbutton,
-        .backbutton {
-        width: 60vw;
-        margin: 0 auto;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        margin-bottom: 1em;
-        }
-        .chevronicon {
-          transform: translateX(-2800%);
-          font-size: 16px;
-          width: 10px;
-          height: 10px;
-        }
-    } 
-    }
-  
+}

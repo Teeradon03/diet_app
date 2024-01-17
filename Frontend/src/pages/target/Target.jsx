@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -7,22 +7,32 @@ import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-  const questionId = '43';
+
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setTargetWeight(value);
   };
+
+  const handleNextClick = () => {
+    if (targetWeight.trim() === '') {
+      alert('กรุณากรอกน้ำหนักเป้าหมายของคุณ');
+    } else {
+      console.log('Target Weight:', targetWeight);
+      handleSubmit(); // Call the handleSubmit function to send data to the server
+      window.location.href = '/BMI_calculator';
+    }
+  };
   
+
   const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
 
     const dataToSend = {
-      questionId: questionId,
       targetWeight: targetWeight,
     };
 
-    await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true })
       .then(function (response) {
         console.log(response);
       })
@@ -30,8 +40,6 @@ function Target() {
         console.log(error);
       });
   };
-
-  
 
   return (
     <div className={styles.Bmi1}>
@@ -53,24 +61,23 @@ function Target() {
       <Image
         width={300}
         height={300}
-        src="/public/t1.jpg"
+        src="/public/bmi_img/taget.jpg"
       />
       <div>
-        <Link to="/Height_show"className={styles.link}>
-          <button className={styles.nextbutton} onClick={handleSubmit}>
-            ถัดไป
-          </button>
-        </Link>
+        {/* Change onClick to handleNextClick */}
+        <button className={styles.nextbutton} onClick={handleNextClick}>
+          ถัดไป
+        </button>
       </div>
-      <div className={styles.chevronicon}>
-        <Link to="/Calendar_1">
+      <Link to="/Height_show">
+        <div className={styles.chevronicon}>
           <Button
+            className={styles.button}
             shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }

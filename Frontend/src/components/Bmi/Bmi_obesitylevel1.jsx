@@ -8,8 +8,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Bmi_obesitylevel1() {
     return (
         <div>
+          
             <div className={styles.Bmi1}>
-            <p> ค่าดัชนีมวลกาย (BMI) </p>
+            <h1> ค่าดัชนีมวลกาย (BMI) </h1>
+            <br />
             < Image className='ant-image-img'
               width="60%"
               src="/public/bmi_img/obesity1.jpg"
@@ -25,20 +27,20 @@ function Bmi_obesitylevel1() {
               </Link>
             
             
-            <Link to="/BMR_calculator"className={styles.link}> 
+            <Link to="/"className={styles.link}> 
             <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>
           </div>
-          <div className={styles.chevronicon}>
-            <Link to="/BMI_calculator">
-            <Button 
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize:'22px', width: '50px', height: '50px'  }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-          </div>
+          <Link to="/BMI_calculator">
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
         </div>
       )
     }

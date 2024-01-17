@@ -1,75 +1,75 @@
-import React, { useState } from 'react';
-import { Image, Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { useState } from "react";
+import { Image, Button } from "antd";
+import { Link } from "react-router-dom";
 import { VscChevronLeft } from "react-icons/vsc";
-import styles from '../Bmi/Bmi.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import styles from "../Bmi/Bmi.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-function Weight_show(props) {
-  const [weight, setWeight] = useState('');
-  const pageId = '45'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
+function Weight_show() {
+  const [weight, setWeight] = useState("");
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setWeight(value);
   };
 
-  const handleSubmit = async () => {
-    console.log('Weight:', weight);
-
-    const dataToSend = {
-      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
-      weight: weight
-    };
-
-    await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+  const handleNextClick = () => {
+    if (weight.trim() === "" || weight < 25 || weight > 300) {
+      alert("กรุณากรอกน้ำหนักให้ถูกต้อง (25-300 กก.)");
+    } else {
+      console.log("Weight:", weight);
+      handleSubmit(); // Call the handleSubmit function to send data to the server
+      window.location.href = "/Height_show";
+    }
   };
 
+  const handleSubmit = async () => {
+    console.log("Weight:", weight);
+
+    const dataToSend = {
+      weight: weight,
+    };
+
+    try {
+      await axios.post(
+        "http://localhost:9999/api/user/update-user-data",
+        dataToSend,
+        { witCredentials: true }
+      );
+      console.log("Data sent successfully");
+    } catch (error) {
+      console.error(error);
+    }
+  };
 
   return (
-    <div className={styles.Bmi1} id={pageId}>
-      <p >น้ำหนักของคุณเท่าไหร่</p>
+    <div className={styles.Bmi1}>
+      <p>น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input
-          type="number"
-          value={weight}
-          onChange={handleInputChange}
-        />
+        <input type="number" value={weight} onChange={handleInputChange} />
         <label htmlFor="weight">&nbsp; กก.</label>
       </div>
       <br />
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
-      <Image
-        width={300}
-        height={300}
-        src="/public/w1.jpg"
-      />
+      <Image width={300} height={300} src="/public/bmi_img/weight.jpg" />
       <div>
-        <Link to="/BMI_calculator"className={styles.link}>
-          <button className={styles.nextbutton} onClick={handleSubmit} >
-            ถัดไป
-          </button>
-        </Link>
+        <button className={styles.nextbutton} onClick={handleNextClick}>
+          ถัดไป
+        </button>
       </div>
-      <div className={styles.chevronicon}>
-        <Link to="/Height_show">
+      <Link to="/Calendar_1">
+        <div className={styles.chevronicon}>
           <Button
+            className={styles.button}
             shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
-        </Link>
-      </div>
+        </div>
+      </Link>
     </div>
   );
 }

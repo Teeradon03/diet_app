@@ -1,43 +1,34 @@
-import React, { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import { Link } from 'react-router-dom';
-import { Button } from 'antd';
-import { VscChevronLeft } from 'react-icons/vsc';
-import axios from 'axios';
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { Link } from "react-router-dom";
+import { Button } from "antd";
+import { VscChevronLeft } from "react-icons/vsc";
+import axios from "axios";
 
-import styles from '../Bmi/Bmi.module.css';
-import './calendar.css';
+import styles from "../Bmi/Bmi.module.css";
+import "./calendar.css";
 
 function Calendar_1() {
-  const [date, setDate] = useState(new Date());
-  const [questionId, setQuestionId] = useState('');  // State to hold the question ID
-
-  const generateQuestionId = () => {
-    // You can use any logic to generate a unique ID, for example, a timestamp
-    const newQuestionId = Date.now().toString();
-    setQuestionId(newQuestionId);
-  };
-
-  const handleDateChange = (newDate) => {
-    if (newDate !== null) {
-      setDate(newDate);
-      console.log('Selected date:', newDate);
-    }
-  };
+  const [value, onChange] = useState(new Date());
 
   const handleSubmit = async () => {
-    generateQuestionId(20);  // Generate the question ID before making the request
+    // console.log('valueee :', value)
 
-    const dataToSend = {
-      calendar: date,
+    const utcDate = value.toUTCString();
+    // console.log('utcDate :', utcDate)
+    const data = {
+      dateOfBirth: utcDate,
     };
-
     try {
-      const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, { withCredentials: true });
-      console.log(response.data);
+      const response = await axios.post(
+        "http://localhost:9999/api/user/update-user-data",
+        data,
+        { withCredentials: true }
+      );
+      console.log("response data from server", response.data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -47,18 +38,18 @@ function Calendar_1() {
         <h1 className={styles.Bmi1}>วัน/เดือน/ปีเกิด</h1>
         <br />
         <div className="calendar-container">
-          <Calendar onChange={handleDateChange} value={date} />
+          <Calendar onChange={onChange} value={value} />
         </div>
-        <p className="text-center">
+        <div className="text-center">
           <br />
           <br />
           <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
-          
-          <h4 className={styles.Bmi1}>{date.toDateString()}</h4>
-        </p>
+
+          <h4 className={styles.Bmi1}>{value.toDateString()}</h4>
+        </div>
       </header>
       <br />
-      <Link to="/Target" className={styles.link}>
+      <Link to="/Weight_show" className={styles.link}>
         <button className={styles.nextbutton} onClick={handleSubmit}>
           ถัดไป
         </button>
@@ -66,8 +57,8 @@ function Calendar_1() {
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
           <Button
+            className={styles.button}
             shape="circle"
-            style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
             icon={<VscChevronLeft />}
           />
         </Link>

@@ -8,36 +8,36 @@ const yesno = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const images = [
-    "/img/yn1.jpg",
-    "/img/yn2.jpg",
-    "/img/yn3.jpg",
-    "/img/yn4.jpg",
-    "/img/yn5.jpg",
-    "/img/yn6.jpg",
-    "/img/yn7.jpg",
-    "/img/yn8.jpg",
-    "/img/yn9.jpg",
-    "/img/yn10.jpg",
-    "/img/yn11.jpg",
-    "/img/yn12.jpg",
-    "/img/yn13.jpg",
-    "/img/yn14.jpg",
-    "/img/yn15.jpg",
-    "/img/yn16.jpg",
-    "/img/yn17.jpg",
-    "/img/yn18.jpg",
-    "/img/yn19.jpg",
-    "/img/yn20.jpg",
-    "/img/yn21.jpg",
-    "/img/beer.jpg",
-    "/img/yn23.jpg",
-    "/img/tod.jpg",
-    "/img/yn25.jpg",
-    "/img/yn26.jpg",
-    "/img/kan.jpg",
-    "/img/leg.jpg",
-    "/img/back.jpg",
-    "/img/born.jpg",
+    "/img/yn1.jpg",//id12-img17
+    "/img/yn2.jpg",//id13-img18
+    "/img/yn3.jpg",//id14-img19
+    "/img/20.jpg",//id15-img20
+    "/img/yn5.jpg",//id16-img21
+    "/img/yn6.jpg",//id17-img22
+    "/img/yn7.jpg",//id18-img23
+    "/img/yn8.jpg",//id19-img24
+    "/img/yn9.jpg",//id20-img25
+    "/img/yn10.jpg",//id21-img26
+    "/img/yn11.jpg",//id22-img27
+    "/img/yn12.jpg",//id23-img28
+    "/img/29.jpg",//id24-img29
+    "/img/30.jpg",//id25-img30
+    "/img/31.jpg",//id26img31
+    "/img/32.jpg",//id27img32
+    "/img/yn17.jpg",//id28img33
+    "/img/yn18.jpg",//id29img34
+    "/img/yn19.jpg",//id30-img35
+    "/img/yn20.jpg",//id31-img36
+    "/img/yn21.jpg",//id32-img37
+    "/img/beer.jpg",//id33-img38
+    "/img/yn23.jpg",//id34-img39
+    "/img/tod.jpg",//id35-img40
+    "/img/41.jpg",//id36-img41
+    "/img/42.jpg",//id37-img42
+    "/img/43.jpg",//id38-img43
+    "/img/44.jpg",//id39-img44
+    "/img/45.jpg",//id40-img45
+    "/img/born.jpg",//id41-img46
   ]; // เพิ่ม URLs ของรูปภาพที่นี่
 
   const [questions] = useState([
