@@ -22,7 +22,7 @@ function Bmi_obesitylevel1() {
             <br />
     
             <div >
-              <Link to="/Advice_obesitylevel1"className={styles.link}>
+              <Link to="/Advice_normalweight"className={styles.link}>
               <button className={styles.advicebutton}>คำแนะนำ</button> 
               </Link>
             

@@ -40,8 +40,8 @@
 .questionyesno {
   font-size: 40px;
   padding-top: 20px;
-  font-weight: bold;
-  padding-top: 50px;
+  font-weight: 900;
+  /* ทำตัวหนา */
 }
 
 .button-container {
@@ -62,7 +62,7 @@
   transform: translateY(5px);
 }
 
-.yes-button:hover {
+*/ .yes-button:hover {
   background-color: #757575;
   color: #FFFF;
   box-shadow: 8px 12px 3px 5px #b2b2b2;
@@ -122,10 +122,53 @@
   align-items: center;
 }
 
-.imgmedia {
-  width: 500%;
-  height: 500%;
+.imageStyle {
+  width: 400%;
+  height: 400%;
 }
+
+@media screen and (min-width: 1601px) {
+  .and {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .Ynquiztion {
+    display: flex;
+    font-size: 2.8rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+  .imgmedia {
+    width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .chevron-icon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .no-button,
+  .yes-button {
+    width: 10vw;
+    max-width: 300px;
+    /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
+    margin: 0 auto;
+    /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
+  }
+
+}
+
 
 @media screen and (max-width: 1600px) {
   .and {
@@ -146,16 +189,16 @@
   }
 
   .imgmedia {
-    width: 100%;
+    width: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
   }
 
   .chevron-icon {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 
   .no-button,
@@ -177,13 +220,13 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 60px;
     font-weight: bold;
 
   }
 
   .imgmedia {
-    width: 100%;
+    width: 700px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -215,12 +258,12 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: bold;
   }
 
   .imgmedia {
-    width: 100%;
+    width: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -230,11 +273,13 @@
     font-size: 40px;
     width: 60px;
     height: 60px;
+    font-weight: bold;
+    left: 200px;
   }
 
   .no-button,
   .yes-button {
-    width: 10vw;
+    width: 20vw;
     max-width: 300px;
     /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
     margin: 0 auto;
@@ -252,21 +297,22 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
   }
 
   .imgmedia {
-    width: 100%;
+    width: 500px;
     height: auto;
     display: block;
     margin: 0 auto;
   }
 
   .chevron-icon {
-    font-size: 30px;
-    width: 45px;
-    height: 45px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
     font-weight: bold;
+    left: 120px;
   }
 
   .no-button,
@@ -288,7 +334,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: bold;
   }
 
@@ -303,7 +349,7 @@
     font-size: 30px;
     width: 45px;
     height: 45px;
-    transform: translateX(-200px);
+    left: 70px;
   }
 
   .no-button,
@@ -343,7 +389,7 @@
     font-size: 30px;
     width: 40px;
     height: 40px;
-    transform: translateX(-270px);
+    left: 50;
   }
 
   .no-button,
@@ -376,7 +422,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 45px;
     font-weight: bold;
   }
 
@@ -408,6 +454,7 @@
     left: 0px;
     font-size: 1.5rem;
     margin: 0 auto;
+    padding-top: 45px;
   }
 
   .and {
@@ -423,7 +470,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 45px;
     font-weight: bold;
   }
 

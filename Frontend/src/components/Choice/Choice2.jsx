@@ -166,6 +166,7 @@ const Choice2 = () => {
   return (
     <div>
       <div>
+      <br/><br/><br/><br/>
         <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />

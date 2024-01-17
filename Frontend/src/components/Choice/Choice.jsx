@@ -120,6 +120,7 @@ const Choice = () => {
   return (
     <div>
       <div className="text">
+        <br/><br/><br/><br/>
         <h1 style={buttonStyle}>โรคประจำตัวของคุณ </h1>
         <p>(เลือกได้มากกว่า 1 ข้อ)</p>
       </div>

@@ -266,8 +266,8 @@ const yesno = () => {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const imageStyle = {
-    width: 300,
-    height: 300
+    width: 400,
+    height: 400
   }
 
   return (
@@ -280,7 +280,7 @@ const yesno = () => {
           className="imgmedia"
           src={images[currentImageIndex]}
           alt={`Image ${currentImageIndex + 1}`}
-          style={imageStyle}
+          //style={imageStyle}
         />
       </div>
 
