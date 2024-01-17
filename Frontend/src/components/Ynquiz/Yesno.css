@@ -39,9 +39,9 @@
 
 .questionyesno {
   font-size: 40px;
-  padding-top: 20px;
-  font-weight: bold;
   padding-top: 50px;
+  font-weight: bold;
+
 }
 
 .button-container {
@@ -258,7 +258,6 @@
 }
 
 @media screen and (max-width: 768px) {
-
 .Ynquiztion {
   font-size: 1.4rem;
   flex-direction: column;

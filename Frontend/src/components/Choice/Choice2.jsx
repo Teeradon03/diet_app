@@ -144,13 +144,16 @@ const Choice2 = () => {
     sendToAPI(selectedOptions, selectedLabels);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (selectedLabels.length > 0) {
+      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
+      await sendToAPI();
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
+  
 
   const handleBack = () => {
     window.location.href = ('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
