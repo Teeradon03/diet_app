@@ -8,7 +8,7 @@ import axios from 'axios'; // Import Axios
 
 function Name() {
   const [formData, setFormData] = useState({
-    firstname: '',
+    firstName: '',
     lastName: '',
     age: '',
     gender: '',
@@ -52,7 +52,7 @@ function Name() {
             <input
               type="text"
               placeholder="ชื่อ"
-              onChange={(e) => handleInputChange('firstname', e.target.value)}
+              onChange={(e) => handleInputChange('firstName', e.target.value)}
             />
           </div>
 
@@ -88,16 +88,16 @@ function Name() {
             </button>
           </Link>
         </div>
-        <div className={styles.chevronicon}>
-          <Link to="/">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-        </div>
       </div>
+      <Link to="/Form">
+      <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+      </div>
+    </Link>
     </div>
   );
 }

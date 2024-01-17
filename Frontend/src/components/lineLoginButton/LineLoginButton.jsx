@@ -5,7 +5,7 @@ import axios from 'axios';
 
 const LineLoginButton = () => {
 
-  const handleLineLogin =  async () => {
+  const handleLineLogin = async () => {
     console.log('in login func');
     try {
       await liff.init({
@@ -21,7 +21,14 @@ const LineLoginButton = () => {
       // console.log('access token: ' + accessToken)
       console.log('idToken', idToken);
       console.log('user profile', userProfile);
-      lineSend(idToken)
+      const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
+        {
+          withCredentials: true
+        }
+      )
+
+      console.log(response.data)
+
       if (liff.isLoggedIn()) {
         window.location.replace('/home')
       }
@@ -30,15 +37,7 @@ const LineLoginButton = () => {
     }
   };
 
-  const lineSend = async(idToken) => {
-    try{
-      await axios.post("http://localhost:9999/api/user-login", idToken)
-      console.log("data",idToken)
-    }
-    catch(error) {
-      console.error(error);
-    }
-  }
+
 
   return (
     <>

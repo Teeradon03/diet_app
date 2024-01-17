@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -13,7 +13,7 @@ import Bmi_obesitylevel3 from '../Bmi/Bmi_obesitylevel3';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-function BMI_calculator(props) {
+function BMI_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
@@ -27,8 +27,7 @@ function BMI_calculator(props) {
     console.log("BMI:", calculatedBmi);
 
     const dataToSend = {
-      questionId: questionId,
-      bmi: calculatedBmi,
+      bmi: calculatedBmi
     };
     await axios.post('http://localhost:9999/api/create-questionnaires', {dataToSend,witCredentials:true})
     .then(function (response) {
@@ -42,11 +41,11 @@ function BMI_calculator(props) {
   const determinePage = (calculatedBmi) => {
     if (calculatedBmi < 18.5) {
       setCurrentPage(1);
-    } else if (calculatedBmi < 22.9) {
+    } else if (calculatedBmi <= 22.9) {
       setCurrentPage(2);
-    } else if (calculatedBmi < 24.9) {
+    } else if (calculatedBmi <= 24.9) {
       setCurrentPage(3);
-    } else if (calculatedBmi < 29.9) {
+    } else if (calculatedBmi <= 29.9) {
       setCurrentPage(4);
     } else if (calculatedBmi >= 29.9) {
       setCurrentPage(5);

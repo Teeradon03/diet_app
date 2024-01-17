@@ -54,8 +54,13 @@
   
   }
 
-  .bmrbutton {
-     
+  input,
+  .gender,
+  .bmrbutton .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
     margin: 0 auto;
     display: flex;
     justify-content: center;
@@ -157,21 +162,27 @@
     .Bmr1 {
       font-size: 2.5rem;
     }
+
+    .childbmi,
+    .childadvice {
+      width: 60vw;
+    }
+
+    .bmrbutton,
     input,
     .gender,
-    .bmrbutton
+    .bmibutton,
     .advicebutton,
     .nextbutton,
-    .backbutton,
-    .bmibutton {
-      width: 50vw;
+    .backbutton {
+      width: 60vw;
       margin: 0 auto;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 1em;
-      
     }
+
     .chevronicon {
       transform: translateX(-200%);
       font-size: 16px;

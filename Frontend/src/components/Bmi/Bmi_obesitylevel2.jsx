@@ -1,4 +1,3 @@
-import React from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -18,7 +17,7 @@ function Bmi_obesitylevel2() {
             <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 2</div>
             <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   อันตรายระดับ 2</div>
             <br />
-    
+
             <div >
               <Link to="/Advice_obesitylevel2"className={styles.link}>
               <button className={styles.advicebutton}>คำแนะนำ</button>

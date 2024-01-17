@@ -2,9 +2,9 @@ import React, { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
-import styles from '../Bmi/Bmi.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import styles from "../Bmi/Bmi.module.css";
+import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
@@ -26,7 +26,7 @@ function Weight_show(props) {
   };
 
   const handleSubmit = async () => {
-    console.log('Weight:', weight);
+    console.log("Weight:", weight);
 
     const dataToSend = {
       questionId: questionId,
@@ -57,11 +57,7 @@ function Weight_show(props) {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
-      <Image
-        width={300}
-        height={300}
-        src="/public/w1.jpg"
-      />
+      <Image width={300} height={300} src="/public/bmi_img/weight.jpg" />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป

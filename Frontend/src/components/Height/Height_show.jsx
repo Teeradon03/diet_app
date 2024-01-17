@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -6,7 +6,7 @@ import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
-function Height_show(props) {
+function Height_show() {
   const [height, setHeight] = useState('');
   const questionId = '44';
 
@@ -29,7 +29,7 @@ function Height_show(props) {
     console.log('Height:', height);
 
     const dataToSend = {
-      questionId: questionId,
+
       height: height,
     };
 
@@ -60,7 +60,7 @@ function Height_show(props) {
       <Image
         width={300}
         height={300}
-        src="/public/h1.jpg"
+        src="/public/bmi_img/hight.jpg"
       />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>

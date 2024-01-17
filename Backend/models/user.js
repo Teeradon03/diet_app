@@ -3,13 +3,17 @@ const mongoose = require('mongoose')
 const userSchema = mongoose.Schema({
     firstName: String,
     lastName: String,
+    age: Number,
+    gender: String,
     dataOfBirth : Date,
     phone: Number,
+    targetWeight: Number,
     height: Number,
     weight: Number,
     bmi: Number,
     bmiIndex: String,
     calories: Number,
+    
     userId : {
         type : String,
         required: true,
@@ -23,7 +27,7 @@ const userSchema = mongoose.Schema({
     line_email: String,
 })  
 
-const User = mongoose.model('User', userSchema)
+const User = mongoose.model("User", userSchema)
 module.exports = {
     User
 } 

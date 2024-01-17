@@ -49,10 +49,9 @@
 }
 
 .gender select {
-  margin: 0 auto;   
-  width: calc(100% );
+  margin: 40px auto 0; /* Add 30px top margin, center horizontally */
+  width: calc(100%);
   max-width: 300px;
-  width: 300px;
   height: 4.5rem;
   box-sizing: border-box;
   border-radius: 35px;
@@ -64,8 +63,8 @@
   padding: 8px; 
   font-size: 25px; 
   font-weight: bold;
-
 }
+
 
 .nextbutton {
     

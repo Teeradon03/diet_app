@@ -2,13 +2,13 @@ import React, { useState } from 'react';
 import { Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
-import styles from '../Bmr/Bmr.module.css';
-import Weight from '../Weight/Weight';
-import Height from '../Height/Height';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import axios from 'axios';
+import styles from "../Bmr/Bmr.module.css";
+import Weight from "../Weight/Weight";
+import Height from "../Height/Height";
+import "bootstrap/dist/css/bootstrap.min.css";
+import axios from "axios";
 
-function BMR_calculator(props) {
+function BMR_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
@@ -21,7 +21,7 @@ function BMR_calculator(props) {
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
 
-    if (gender === 'male') {
+    if (gender === "male") {
       bmrConstant = 88.362;
       genderFactor = 13.397;
     } else {
@@ -29,14 +29,14 @@ function BMR_calculator(props) {
       genderFactor = 9.247;
     }
 
-    const calculatedBmr = bmrConstant + (genderFactor * weight) + (4.799 * height) - (5.677 * age);
+    const calculatedBmr =
+      bmrConstant + genderFactor * weight + 4.799 * height - 5.677 * age;
     setBmr(calculatedBmr);
     determinePage(calculatedBmr);
     console.log('Calculated BMR:', calculatedBmr);
 
     // Send BMR and ID to the server
     const dataToSend = {
-      questionId: questionId,
       bmr: calculatedBmr,
     };
 
@@ -68,7 +68,11 @@ function BMR_calculator(props) {
 
         <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
-          <input type="number" value={age} onChange={(e) => setAge(e.target.value)} />
+          <input
+            type="number"
+            value={age}
+            onChange={(e) => setAge(e.target.value)}
+          />
         </div>
 
         <p className={styles.genderv1}>เพศ</p>

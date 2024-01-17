@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -7,7 +7,7 @@ import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-  const questionId = '43';
+
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -29,11 +29,10 @@ function Target() {
     console.log('Target Weight:', targetWeight);
 
     const dataToSend = {
-      questionId: questionId,
       targetWeight: targetWeight,
     };
 
-    await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, { dataToSend, witCredentials: true })
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true })
       .then(function (response) {
         console.log(response);
       })
@@ -62,7 +61,7 @@ function Target() {
       <Image
         width={300}
         height={300}
-        src="/public/t1.jpg"
+        src="/public/bmi_img/taget.jpg"
       />
       <div>
         {/* Change onClick to handleNextClick */}

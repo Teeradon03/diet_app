@@ -1,4 +1,3 @@
-import React from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -12,7 +11,7 @@ function Bmi_normalweight() {
           <p> ค่าดัชนีมวลกาย (BMI) </p>
           < Image className='ant-image-img'
             width="60%"
-            src="/public/10.jpg"
+            src="/public/bmi_img/normal.jpg"
           /><br />
           <div className={styles.childbmi}>BMI  18.50 - 22.90</div>
           <div className={styles.childbmi}>อยู่ในเกณฑ์   น้ำหนักปกติ</div>

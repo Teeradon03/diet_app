@@ -2,6 +2,7 @@ import { Select } from 'antd';
 import React, { useState } from 'react';
 import { VscChevronLeft } from 'react-icons/vsc';
 import './Choice.css';
+import axios from 'axios';
 
 
 const options = [
@@ -14,7 +15,7 @@ const options = [
           (ทานอาหารคาร์โบไฮเดรตตํ่า รับประทานเนื้อสัตว์เป็นหลัก)
         </span>
       </span>),
-    value: '1'
+    value: 1
   },
   {
     label: (
@@ -25,7 +26,7 @@ const options = [
           (ไม่รับประทานเนื้อสัตว์)
         </span>
       </span>),
-    value: '2'
+    value: 2
   },
   {
     label: (
@@ -36,7 +37,7 @@ const options = [
           (ไม่รับประทานอาหารผลิตภัณฑ์จากสัตว์)
         </span>
       </span>),
-    value: '3'
+    value: 3
   },
   {
     label: (
@@ -47,7 +48,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีแลคโตส)
         </span>
       </span>),
-    value: '4'
+    value: 4
   },
   {
     label: (
@@ -58,7 +59,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีส่วนประกอบของกลูเตน)
         </span>
       </span>),
-    value: '5'
+    value: 5
   }, {
     label: (
       <span>
@@ -68,7 +69,7 @@ const options = [
           (ไม่รับประทานเนื้อสัตว์ แต่รับประทานปลาหรือหอย)
         </span>
       </span>),
-    value: '6'
+    value: 6
   }, {
     label: (
       <span>
@@ -78,7 +79,7 @@ const options = [
           (ทานอาหารแบบคาร์โบไฮเดรตตํ๋า ไม่ทานขนมหวาน)
         </span>
       </span>),
-    value: '7'
+    value: 7
   }, {
     label: (
       <span>
@@ -88,7 +89,7 @@ const options = [
           (ไม่รับประทานอาหารที่มีไข่ หรือส่วนประกอบของไข่)
         </span>
       </span>),
-    value: '8'
+    value: 8
   },
   {
     label: (
@@ -99,7 +100,7 @@ const options = [
           (รับประทานอาหารที่ไม่มีส่วนประกอบของอาหารทะเล)
         </span>
       </span>),
-    value: '9'
+    value: 9
   },
   {
     label: (
@@ -110,30 +111,50 @@ const options = [
 
         </span>
       </span>),
-    value: '10'
+    value: 10
   },
 ];
 
+const sendToAPI = async (selectedOptions, selectedLabels) => {
+  try {
+    const data = {
+      questionId: selectedOptions.map(option => option.id),
+      question: selectedLabels.map(option => option.label),
+      answer: value,
+    };
+
+    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
+    console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+  } catch (error) {
+    console.error('Error:', error);
+  }
+};
+
 const Choice2 = () => {
-  const [selectedLabels, setSelectedLabels] = useState([]);
+  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
-    const selectedLabels = selectedOptions.map(option => option.label);
-    setSelectedLabels(selectedLabels);
-    console.log('ข้อจำกัดด้านการทานอาหาร:', selectedLabels);
+    setSelectedOptions(value);
+    const questionId = 10;
+
+    console.log('QuestionId :',questionId)
+    console.log('AnswerId :', value);
   };
 
-  const handleNext = () => {
-    if (selectedLabels.length > 0) {
+  const handleNext = async () => {
+    if (selectedOptions.length > 0) {
+      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
+      await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
 
+
   const handleBack = () => {
-    window.location.href =('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    window.location.href = ('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {
@@ -150,7 +171,7 @@ const Choice2 = () => {
       <br /><br />
       <Select
         mode="multiple"
-        style={{ width: '60%' }}
+        className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
         optionLabelProp="label"
@@ -159,7 +180,7 @@ const Choice2 = () => {
       <br /><br /><br />
       <div className='font-family'>
         <button className='next-list' onClick={handleNext} style={buttonStyle}>
-          หน้าถัดไป
+          ถัดไป
         </button>
       </div>
       <div>
