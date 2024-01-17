@@ -162,11 +162,16 @@ const Choice2 = () => {
     // สไตล์เพิ่มเติมตามต้องการ
   };
 
+  const textStyle = {
+    fontSize: '20px', // ปรับขนาดตัวอักษรตามต้องการ
+    // สไตล์เพิ่มเติมตามต้องการ
+  };
+
 
   return (
     <div>
       <div>
-        <h1 className='text' style={buttonStyle}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+        <h1 className='text' style={{...buttonStyle, ...textStyle}}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
       <Select

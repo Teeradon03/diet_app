@@ -98,6 +98,10 @@
 }
 
 @media screen and (max-width: 1600px) {
+  .text {
+    padding-top: 100px;
+  }
+  
   .next-list{
     font-size: 1rem;
     width: 15vw !important;
