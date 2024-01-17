@@ -40,6 +40,7 @@
 .questionyesno {
   font-size: 40px;
   padding-top: 20px;
+  font-weight: 900; /* ทำตัวหนา */
 }
 
 .button-container {
@@ -120,9 +121,9 @@
   align-items: center;
 }
 
-.imgmedia {
-  width: 500%;
-  height: 500%;
+.imageStyle {
+  width: 400%;
+  height: 400%;
 }
 
 @media screen and (max-width: 1600px) {
@@ -151,9 +152,9 @@
   }
 
   .chevron-icon {
-    font-size: 30px;
-    width: 50px;
-    height: 50px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 
   .no-button,
@@ -167,7 +168,7 @@
 
 }
 
-@media screen and (min-width: 1400px) {
+@media screen and (max-width: 1400px) {
   .Ynquiztion {
     display: flex;
     font-size: 1.5rem;
@@ -175,7 +176,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 60px;
     font-weight: bold;
 
   }
@@ -205,7 +206,7 @@
 }
 
 
-@media screen and (min-width: 1200px) {
+@media screen and (max-width: 1200px) {
   .Ynquiztion {
     display: flex;
     font-size: 1.5rem;
@@ -213,7 +214,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: bold;
   }
 
@@ -228,6 +229,8 @@
     font-size: 40px;
     width: 60px;
     height: 60px;
+    font-weight: bold;
+    left: 200px;
   }
 
   .no-button,
@@ -241,7 +244,7 @@
 }
 
 
-@media screen and (min-width: 992px) {
+@media screen and (max-width: 992px) {
 
   .Ynquiztion {
     display: flex;
@@ -250,7 +253,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
   }
 
   .imgmedia {
@@ -261,10 +264,11 @@
   }
 
   .chevron-icon {
-    font-size: 30px;
-    width: 45px;
-    height: 45px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
     font-weight: bold;
+    left: 120px;
   }
 
   .no-button,
@@ -278,17 +282,17 @@
 
 }
 
-@media screen and (min-width: 768px) {
+@media screen and (max-width: 768px) {
 
-.Ynquiztion {
-  font-size: 1.4rem;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-  padding-top: 20px;
-  font-weight: bold;
-}
+  .Ynquiztion {
+    font-size: 1.4rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 40px;
+    font-weight: bold;
+  }
 
   .imgmedia {
     width: 80%;
@@ -301,7 +305,7 @@
     font-size: 30px;
     width: 45px;
     height: 45px;
-    transform: translateX(-200px);
+    left: 70px;
   }
 
   .no-button,
@@ -314,85 +318,99 @@
   }
 }
 
-@media screen and (min-width: 576px) {
-.and {
-  position: relative;
-  left: 10px;
-}
-.Ynquiztion {
-  font-size: 1.5rem;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  margin: 20px;
-  padding-top: 40px;
-  font-weight: bold;
-}
-.imgmedia {
-  width: 80%;
-  height: 80%;
-  display: block;
-  margin: 0 auto; 
-}
-.chevron-icon {
-  font-size: 30px;
-  width: 40px;
-  height: 40px;
-  transform: translateX(-270px);
-}
-.no-button,
-.yes-button {
- position: relative;
- left: 5px;
- width: 30vw;
- max-width: 300px; /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
- margin: 0 auto; /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
-}
-}
-
-@media screen and (min-width: 450px) {
-  .questionyesno {
-    position: relative;
-    left: 70px;
-    font-size: 1.5rem;
-  }
+@media screen and (max-width: 576px) {
   .and {
     position: relative;
-    left: 50px;
+    left: 10px;
   }
+
   .Ynquiztion {
+    font-size: 1.5rem;
     flex-direction: column;
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 40px;
     font-weight: bold;
   }
+
   .imgmedia {
     width: 80%;
     height: 80%;
     display: block;
-    margin: 0 auto; 
-  }
-  .chevron-icon {
-    font-size: 30px;
-    width: 45px;
-    height: 45px;
-  }
-  .no-button,
-  .yes-button {
-   width: 39vw;
-   position: relative;
-   left: 60px;
-  }
+    margin: 0 auto;
   }
 
-@media screen and (min-width: 400px) {
+  .chevron-icon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 50;
+  }
+
+  .no-button,
+  .yes-button {
+    position: relative;
+    left: 5px;
+    width: 30vw;
+    max-width: 300px;
+    /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
+    margin: 0 auto;
+    /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
+  }
+}
+
+@media screen and (max-width: 450px) {
   .questionyesno {
     position: relative;
     left: 0px;
     font-size: 1.5rem;
     margin: 0 auto;
+  }
+
+  .and {
+    position: relative;
+    left: 0px;
+  }
+
+  .Ynquiztion {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 45px;
+    font-weight: bold;
+  }
+
+  .imgmedia {
+    width: 80%;
+    height: 80%;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .chevron-icon {
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+  }
+
+  .no-button,
+  .yes-button {
+    width: 30vw;
+    position: relative;
+    left: 0px;
+    margin: 0 auto;
+  }
+}
+
+@media screen and (max-width: 400px) {
+  .questionyesno {
+    position: relative;
+    left: 0px;
+    font-size: 1.5rem;
+    margin: 0 auto;
+    padding-top: 45px;
   }
 
   .and {
@@ -408,7 +426,7 @@
     align-items: center;
     text-align: center;
     margin: 20px;
-    padding-top: 20px;
+    padding-top: 45px;
     font-weight: bold;
   }
 

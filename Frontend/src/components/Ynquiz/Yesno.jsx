@@ -266,8 +266,8 @@ const yesno = () => {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const imageStyle = {
-    width: 300,
-    height: 300
+    width: 450,
+    height: 450
   }
 
   return (
@@ -292,9 +292,9 @@ const yesno = () => {
         >
           ไม่
         </button>
-        <h1 className="and" ><br/>
+        <h1 className="and" ><br/> &nbsp;
           หรือ
-        </h1>
+        </h1> &nbsp;
         <button
           className="yes-button"
           style={buttonStyle}
