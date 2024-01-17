@@ -13,7 +13,7 @@ function Bmi_lowweight() {
             <br/>
             < Image className='ant-image-img'
               width="60%"
-              src="/public/10.jpg"
+              src="/10.jpg"
             />
             <br />
             <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
