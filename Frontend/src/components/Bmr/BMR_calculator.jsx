@@ -41,7 +41,7 @@ function BMR_calculator() {
     };
 
     await axios
-      .post("http://localhost:9999/api/form/create-questionnaires", dataToSend, {
+      .post("localhost:9999/api/form/create-questionnaires", dataToSend, {
         dataToSend,
         witCredentials: true,
       })
@@ -57,7 +57,8 @@ function BMR_calculator() {
     return (
       <div className={styles.Bmr1}>
         <br />
-        <p>คำนวณแคลอรี่ (BMR)</p>
+        <p>คำนวณแคลอรี่</p>
+        <p>(BMR)</p>
 
         <Weight onWeightChange={(value) => setWeight(value)} />
 

@@ -23,23 +23,15 @@ const LineLoginButton = () => {
     }
   };
 
-
-
   return (
     <>
       <Button
         variant="contained"
-        style={{
-          backgroundColor: '#00BF00',
-          color: 'white',
-          borderRadius: 5,
-          padding: '10px 20px',
-        }}
+        className="bg-success text-white rounded p-2 ps-4 pe-4"
         startIcon={<img src='/LINE_APP_iOS.png' alt="LINE logo" style={{ width: 20, height: 20 }} />}
         onClick={handleLineLogin}
       >
         Sign In With Line
-
       </Button>
 
 
