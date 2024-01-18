@@ -35,7 +35,7 @@ function Weight_show() {
       await axios.post(
         "http://localhost:9999/api/user/update-user-data",
         dataToSend,
-        { witCredentials: true }
+        { withCredentials: true }
       );
       console.log("Data sent successfully");
     } catch (error) {

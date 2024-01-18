@@ -34,7 +34,7 @@ function Height_show() {
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true });
+      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);
