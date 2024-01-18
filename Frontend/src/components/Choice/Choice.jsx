@@ -127,10 +127,10 @@ const Choice = () => {
       <Select
         mode="multiple"
         allowClear
-        style={{ width: '100%' }}
+        className='text-box'
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
-        // optionLabelProp="label"
+        optionLabelProp="label"
         options={options}
       />
       <br />

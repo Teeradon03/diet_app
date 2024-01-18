@@ -175,6 +175,7 @@ const Choice2 = () => {
       <br /><br />
       <Select
         mode="multiple"
+        allowClear
         className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
