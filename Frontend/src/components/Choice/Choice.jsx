@@ -125,14 +125,15 @@ const Choice = () => {
       <br />
       <Select
         mode="multiple"
-        className="text-box"
+        allowClear
+        style={{ width: '100%' }}
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
-        optionLabelProp="label"
+        // optionLabelProp="label"
         options={options}
       />
       <br />
-      <br />
+      <br />  
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
