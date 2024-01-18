@@ -23,7 +23,7 @@ function Bmi_obesitylevel3() {
               </Link>
             
             
-            <Link to="/"className={styles.link}> 
+            <Link to="/BMR_calculator"className={styles.link}> 
             <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>
