@@ -1,7 +1,8 @@
 
 import SlideButton from 'react-slide-button';
 import { useNavigate } from "react-router-dom";
-import NanoLogo from "../../components/logo/NanoLogo";
+
+import styles from '../../components/login/Login.module.css'
 function HomePage() {
     const linkTo = useNavigate()
 
@@ -9,20 +10,20 @@ function HomePage() {
         <>
             <div className='container text-center'>
                 <div className='row '>
-                    <div className='col-12 mt-5 pt-5'>
-                        <NanoLogo />
+                    <div className='col-12 pt-2'>
+                    <img src="logo-nano.png" alt="logo" className={styles.nanoLogoImage}/>
                     </div>
                 </div>
                 <div className='row'>
-                    <div className='col-12 mt-5 pt-5'>
-                        <h4 className='text-center'>Welcome to program weight lose</h4>
+                    <div className='col-12 mt-5 '>
+                        <h1 className='text-center'>ยินดีต้อนรับเข้าสู่ <br/> โปรแกรมลดน้ำหนัก</h1>
                     </div>
                 </div>
                 <div className='row justify-content-center'>
-                    <div className='col-12 mt-5 pt-5' style={{ width: '300px' }}>
+                    <div className='col-12 mt-5 pt-5 w-auto p-3' >
                     <SlideButton
                             mainText="เข้าสู่ระบบ"
-                            overlayText="N O N E"
+                             
                             classList="my-class"
                             caretClassList="my-caret-class"
                             overlayClassList="my-overlay-class"
