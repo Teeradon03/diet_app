@@ -67,17 +67,15 @@ const options = [
   },
 ];
 
-const sendToAPI = async (selectedOptions, selectedLabels) => {
+const sendToAPI = async (selectedOptions, questionId = 11) => {
   try {
     const data = {
-      questionId: selectedOptions.map((option) => option.id),
-      question: selectedLabels.map((option) => option.label),
-      answer: value,
-      
+      questionId: questionId,
+      answer: selectedOptions,
     };
-
+    // console.log(data)
     const response = await axios.post(
-      "http://localhost:9999/api/form/create-questionnaires",data,
+      "http://localhost:9999/api/form/create-questionnaires", data,
       {
         withCredentials: true,
       }
@@ -89,7 +87,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 };
 
 const Choice = () => {
-  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
+  const [selectedOptions, setSelectedOptions, questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter((option) =>
@@ -98,15 +96,15 @@ const Choice = () => {
     setSelectedOptions(value);
     const questionId = 11;
 
-    console.log('QuestionId :',questionId)
-    console.log("AnswerId :", value);
+    // console.log('QuestionId :',questionId)
+    // console.log("AnswerId :", value);
 
   };
 
   const handleNext = () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
-      sendToAPI(selectedOptions, 11); // 11 คือ questionId ที่คุณกำหนด
+      sendToAPI(selectedOptions, questionId); // 11 คือ questionId ที่คุณกำหนด
       window.location.href = "/Yesno"; // ต้องการ URL ของ Yesno ที่คุณกำหนด
     } else {
       alert("กรุณาเลือกโรคประจำตัวอย่างน้อย 1 ข้อ");
@@ -120,7 +118,6 @@ const Choice = () => {
   return (
     <div>
       <div className="text">
-        <br/><br/><br/><br/>
         <h1 style={buttonStyle}>โรคประจำตัวของคุณ </h1>
         <p>(เลือกได้มากกว่า 1 ข้อ)</p>
       </div>

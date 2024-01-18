@@ -2,6 +2,16 @@
   text-decoration: none;
 }
 
+.ant-image-img {
+  width: 100%;
+  /* หรือค่าที่ต้องการ */
+  height: auto;
+  max-width: 400px;
+  /* หรือค่าที่ต้องการ */
+  max-height: 400px;
+  /* หรือค่าที่ต้องการ */
+}
+
 .advicebutton {
   margin: 0 auto;
   display: flex;
@@ -239,6 +249,7 @@ input {
   margin-right: 5px;
   /* Add some margin between input and label */
   font-size: 1rem;
+  text-align: center;
   font-weight: bold;
   background-color: #fff;
   color: #111;
@@ -276,7 +287,7 @@ label {
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1400px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
@@ -306,9 +317,6 @@ label {
 
 
 @media screen and (max-width: 1200px) {
-  .Bmi1 {
-    font-size: 2rem;
-  }
 
   .advicebutton,
   .nextbutton,
@@ -333,9 +341,6 @@ label {
 
 
 @media screen and (max-width: 992px) {
-  .Bmi1 {
-    font-size: 2rem;
-  }
 
   .childbmi,
   .childadvice {
@@ -366,9 +371,6 @@ label {
 
 
 @media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
 
   .childbmi,
   .childadvice {
@@ -399,9 +401,6 @@ label {
 
 
 @media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
 
   .childbmi,
   .childadvice {
@@ -430,9 +429,6 @@ label {
   }
 
   @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.7rem;
-    }
 
     .childbmi,
     .childadvice {

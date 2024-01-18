@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function Height_show() {
   const [height, setHeight] = useState('');
-
+  const questionId = '44';
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -34,7 +34,7 @@ function Height_show() {
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true });
+      await axios.post('localhost:9999/api/form/create-questionnaires', dataToSend, { witCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);
@@ -57,10 +57,7 @@ function Height_show() {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
 
-      <Image
-        width={300}
-        height={300}
-        src="/public/bmi_img/hight.jpg"
+      <Image className={styles['ant-image-img']} src="/public/bmi_img/hight.jpg"
       />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
