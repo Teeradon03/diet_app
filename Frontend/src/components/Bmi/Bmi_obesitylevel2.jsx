@@ -10,14 +10,13 @@ function Bmi_obesitylevel2() {
             <div className={styles.Bmi1}>
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             < Image className='ant-image-img'
-              width="60%"
-              src="/public/10.jpg"
+              width="80%"
+              src="/public/bmi_img/obesity2.jpg"
             /><br />
-            <div className={styles.childbmi}>BMI  25 - 29.90</div>
-            <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 2</div>
-            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   อันตรายระดับ 2</div>
+            <div className={styles.childbmi}>BMI 25 - 29.90</div>
+            <div className={styles.childbmi}>อ้วน / โรคอ้วนระดับ 2</div>
             <br />
-    
+
             <div >
               <Link to="/Advice_obesitylevel2"className={styles.link}>
               <button className={styles.advicebutton}>คำแนะนำ</button>

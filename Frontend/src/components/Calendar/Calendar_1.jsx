@@ -1,32 +1,34 @@
-import  { useState } from 'react';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
-import { Link } from 'react-router-dom';
-import { Button } from 'antd';
-import { VscChevronLeft } from 'react-icons/vsc';
-import axios from 'axios';
+import { useState } from "react";
+import Calendar from "react-calendar";
+import "react-calendar/dist/Calendar.css";
+import { Link } from "react-router-dom";
+import { Button } from "antd";
+import { VscChevronLeft } from "react-icons/vsc";
+import axios from "axios";
 
-import styles from '../Bmi/Bmi.module.css';
-import './calendar.css';
+import styles from "../Bmi/Bmi.module.css";
+import "./calendar.css";
 
 function Calendar_1() {
-
   const [value, onChange] = useState(new Date());
 
   const handleSubmit = async () => {
-  
     // console.log('valueee :', value)
 
     const utcDate = value.toUTCString();
     // console.log('utcDate :', utcDate)
     const data = {
-      dateOfBirth : utcDate
-    }
+      dateOfBirth: utcDate,
+    };
     try {
-      const response = await axios.post('http://localhost:9999/api/user/update-user-data', data, { withCredentials: true });
-      console.log('response data from server',response.data);
+      const response = await axios.post(
+        "http://localhost:9999/api/user/update-user-data",
+        data,
+        { withCredentials: true }
+      );
+      console.log("response data from server", response.data);
     } catch (error) {
-      console.error('Error:', error);
+      console.error("Error:", error);
     }
   };
 
@@ -42,7 +44,6 @@ function Calendar_1() {
           <br />
           <br />
           <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
-          
           <h4 className={styles.Bmi1}>{value.toDateString()}</h4>
         </div>
       </header>
@@ -54,11 +55,11 @@ function Calendar_1() {
       </Link>
       <div className={styles.chevronicon}>
         <Link to="/Yesno">
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
+          <Button
+            className={styles.button}
+            shape="circle"
+            icon={<VscChevronLeft />}
+          />
         </Link>
       </div>
     </div>

@@ -18,7 +18,7 @@ function BMI_calculator() {
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-
+  const [questionId, setUserId] = useState('46');
 
   const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
@@ -29,7 +29,7 @@ function BMI_calculator() {
     const dataToSend = {
       bmi: calculatedBmi
     };
-    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend ,{ withCredentials: true })
+    await axios.post('http://localhost:9999/api/create-questionnaires', {dataToSend,witCredentials:true})
     .then(function (response) {
       console.log(response);
     })
@@ -41,11 +41,11 @@ function BMI_calculator() {
   const determinePage = (calculatedBmi) => {
     if (calculatedBmi < 18.5) {
       setCurrentPage(1);
-    } else if (calculatedBmi < 22.9) {
+    } else if (calculatedBmi <= 22.9) {
       setCurrentPage(2);
-    } else if (calculatedBmi < 24.9) {
+    } else if (calculatedBmi <= 24.9) {
       setCurrentPage(3);
-    } else if (calculatedBmi < 29.9) {
+    } else if (calculatedBmi <= 29.9) {
       setCurrentPage(4);
     } else if (calculatedBmi >= 29.9) {
       setCurrentPage(5);

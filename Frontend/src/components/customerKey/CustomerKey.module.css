@@ -3,7 +3,6 @@
 }
 
 .Bmi1 {
-    
   padding: 30px;
   display: flex;
   margin: 20px;
@@ -50,8 +49,8 @@
 }
 
 .productType select {
-     
-  width: calc(100% );
+
+  width: calc(100%);
   max-width: 300px;
   height: 4.5rem;
   box-sizing: border-box;
@@ -61,45 +60,45 @@
   background-color: #fff;
   color: #111;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
-  padding: 8px; 
-  font-size: 25px; 
+  padding: 8px;
+  font-size: 25px;
   font-weight: bold;
 
 }
 
 .performbutton {
   margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100%;
-    line-height: 1.5;
-    display: block;
-    width: 250px;
-    max-width: 220px;
-    padding: 1px;
-    position: relative; 
-    top: 200px; 
-    margin-bottom: 55px;
-    background-color: #FFFF;
-    border: 1px solid #ccc;
-    color: rgb(13, 13, 13);
-    border-radius: 35px;
-    box-shadow: 10px 10px 8px 6px #b2b2b2;
-    font-size: 40px;
-    cursor: pointer;
-    text-align :center;
-    font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 250px;
+  max-width: 220px;
+  padding: 1px;
+  position: relative;
+  top: 200px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
 }
 
 
-.performbutton:hover{
+.performbutton:hover {
   background-color: #757575;
   color: #FFFF;
   box-shadow: 0 4px 0 0 #b2b2b2;
 }
 
-.performbutton:active{
+.performbutton:active {
   box-shadow: none;
   transform: translateY(5px);
 }
@@ -108,7 +107,6 @@
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
   .performbutton {
     width: 50vw;
     margin: 0 auto;
@@ -116,8 +114,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
   }
+
   .chevronicon {
     transform: translateX(-1000%);
     font-size: 16px;
@@ -130,7 +129,6 @@
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
   .performbutton {
     width: 50vw;
     margin: 0 auto;
@@ -138,8 +136,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
   }
+
   .chevronicon {
     transform: translateX(-1000%);
     font-size: 16px;
@@ -147,12 +146,12 @@
     height: 10px;
   }
 }
-    
+
 @media screen and (max-width: 1200px) {
   .Bmi1 {
     font-size: 2rem;
   }
-  
+
   .performbutton {
     width: 50vw;
     margin: 0 auto;
@@ -160,8 +159,9 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
   }
+
   .chevronicon {
     transform: translateX(-1000%);
     font-size: 16px;
@@ -175,13 +175,13 @@
   .Bmi1 {
     font-size: 2rem;
   }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 50vw;
   }
-  
-  .performbutton{
+
+  .performbutton {
     width: 70vw;
     margin: 0 auto;
     display: flex;
@@ -202,12 +202,12 @@
   .Bmi1 {
     font-size: 1.7rem;
   }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 60vw;
   }
-  
+
   .performbutton {
     width: 70vw;
     margin: 0 auto;
@@ -229,12 +229,12 @@
   .Bmi1 {
     font-size: 1.7rem;
   }
+
   .childbmi,
-  .childadvice
-  {
+  .childadvice {
     width: 70vw;
   }
- 
+
   .performbutton {
     width: 70vw;
     margin: 0 auto;
@@ -253,25 +253,26 @@
     .Bmi1 {
       font-size: 1.7rem;
     }
+
     .childbmi,
-    .childadvice
-     {
+    .childadvice {
       width: 60vw;
     }
-  
+
     .performbutton {
-    width: 60vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
     }
+
     .chevronicon {
       transform: translateX(-2800%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
-} 
+  }
 }

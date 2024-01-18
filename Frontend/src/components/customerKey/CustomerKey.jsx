@@ -62,7 +62,7 @@ const CustomerKey = () => {
         <div>
           {/* เพิ่ม onClick เพื่อเรียกใช้ handleNextClick */}
           <button className={styles.performbutton} onClick={handleNextClick}>
-            ดำเนินการต่อ
+            ถัดไป
           </button>
         </div>
       </div>
