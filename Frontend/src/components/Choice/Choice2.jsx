@@ -146,12 +146,16 @@ const Choice2 = () => {
   };
 
   const handleNext = () => {
-    if (selectedLabels.length > 0) {
-      window.location.href = '/Choice';
+    if (selectedOptions.length > 0) {
+      // Call sendToAPI to send data to the API
+      sendToAPI(selectedOptions, questionId);
+      // Redirect to the next page (assuming "/Question" is the correct URL)
+      window.location.href = "/Question";
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
+  
 
   const handleBack = () => {
     window.location.href = ('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
@@ -163,7 +167,7 @@ const Choice2 = () => {
   };
 
   const textStyle = {
-    fontSize: '20px', // ปรับขนาดตัวอักษรตามต้องการ
+    fontSize: '40px', // ปรับขนาดตัวอักษรตามต้องการ
     // สไตล์เพิ่มเติมตามต้องการ
   };
 
