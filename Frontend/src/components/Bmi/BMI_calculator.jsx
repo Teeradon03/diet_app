@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate   } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from'../Bmi/Bmi.module.css'
 import Weight from '../Weight/Weight';
@@ -19,12 +19,12 @@ function BMI_calculator() {
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
   const [questionId, setUserId] = useState('46');
-
+  const navigate = useNavigate();
   const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
+    console.log("BMI:", calculatedBmi);
     setBmi(calculatedBmi);
     determinePage(calculatedBmi);
-    console.log("BMI:", calculatedBmi);
 
     const dataToSend = {
       bmi: calculatedBmi
@@ -40,48 +40,23 @@ function BMI_calculator() {
 
   const determinePage = (calculatedBmi) => {
     if (calculatedBmi < 18.5) {
-      setCurrentPage(1);
+      navigate('/Bmi_lowweight');
+      
     } else if (calculatedBmi <= 22.9) {
-      setCurrentPage(2);
+      navigate('/Bmi_normalweight');
     } else if (calculatedBmi <= 24.9) {
-      setCurrentPage(3);
+      navigate('/Bmi_obesitylevel1');
     } else if (calculatedBmi <= 29.9) {
-      setCurrentPage(4);
+      navigate('/Bmi_obesitylevel2');
     } else if (calculatedBmi >= 29.9) {
-      setCurrentPage(5);
-    } else {
-      setCurrentPage(0); 
-    }
+      navigate('/Bmi_obesitylevel3');
+    } 
   };
+  console.log('current page', currentPage)
 
-  const RenderBmiComponent = ({ bmiValue }) => {
-    switch (currentPage) {
-      case 1:
-        return <Bmi_lowweight bmiValue={bmiValue} />;
-      case 2:
-        return <Bmi_normalweight bmiValue={bmiValue} />;
-      case 3:
-        return <Bmi_obesitylevel1 bmiValue={bmiValue} />;
-      case 4:
-        return <Bmi_obesitylevel2 bmiValue={bmiValue} />;
-      case 5:
-        return <Bmi_obesitylevel3 bmiValue={bmiValue} />;
-      default:
-        return (
-          <div>
-            <Weight onWeightChange={(value) => setWeight(value)} />
-            <br/>
-            <Height onHeightChange={(value) => setHeight(value)} />
-            <button className={styles.bmibutton} onClick={calculateBmi} >คำนวณ BMI</button>
-          </div>
-        );
-    }
-  };
   
   const renderContent = () => {
-    if (currentPage >= 1 && currentPage <= 5) {
-      return <RenderBmiComponent bmiValue={bmi.toFixed(1)} />;
-    } else {
+   
       return (
       
         <div className={styles.Bmi1}>
@@ -105,7 +80,7 @@ function BMI_calculator() {
         
       );
       
-    }
+    
     
   };
   

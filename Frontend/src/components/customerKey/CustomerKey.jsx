@@ -38,9 +38,10 @@ const CustomerKey = () => {
     <div className='Bmi1'>
       <div className={styles.Bmi1}>
         <p>กรอกรหัสลูกค้า</p>
-        <br />
+        
         <div className='Bmi1 '>
           <p>โปรดระบุรหัสที่ถูกต้อง</p>
+          <br />
           <div className={styles.inputv1}>
             <input
               type="text"
@@ -62,7 +63,7 @@ const CustomerKey = () => {
         <div>
           {/* เพิ่ม onClick เพื่อเรียกใช้ handleNextClick */}
           <button className={styles.performbutton} onClick={handleNextClick}>
-            ดำเนินการต่อ
+            ถัดไป
           </button>
         </div>
       </div>

@@ -11,10 +11,7 @@ function Bmi_lowweight() {
             <div className={styles.Bmi1}>
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             <br/>
-            < Image className='ant-image-img'
-              width="60%"
-              src="/public/10.jpg"
-            />
+            <Image className={styles['ant-image-img']} src="/public/bmi_img/lowweight.jpg" />
             <br />
             <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
             <div className={styles.childbmi}>อยู่ในเกณฑ์ น้ำหนักน้อย/ผอม</div>

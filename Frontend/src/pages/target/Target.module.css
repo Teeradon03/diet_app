@@ -224,6 +224,7 @@
 .inputlabel {
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 input {
@@ -236,6 +237,7 @@ input {
   margin-right: 5px;
   /* Add some margin between input and label */
   font-size: 1rem;
+  text-align: center;
   font-weight: bold;
   background-color: #fff;
   color: #111;

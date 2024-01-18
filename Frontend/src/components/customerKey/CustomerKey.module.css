@@ -26,6 +26,7 @@
   border-radius: 35px;
   margin-bottom: 2em;
   font-size: 2rem;
+  text-align: center;
   background-color: #fff;
   color: #111;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
@@ -64,6 +65,7 @@
   padding: 8px; 
   font-size: 25px; 
   font-weight: bold;
+  text-align: center;
 
 }
 

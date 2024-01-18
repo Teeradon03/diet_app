@@ -2,6 +2,13 @@
   text-decoration: none;
 }
 
+.ant-image-img {
+  width: 100%; /* หรือค่าที่ต้องการ */
+  height: auto;
+  max-width: 400px; /* หรือค่าที่ต้องการ */
+  max-height: 400px; /* หรือค่าที่ต้องการ */
+}
+
 .advicebutton {
     margin: 0 auto;
     display: flex;
@@ -238,6 +245,7 @@
       border-radius: 35px;
       margin-right: 5px; /* Add some margin between input and label */
       font-size: 1rem;
+      text-align: center;
       font-weight: bold;
       background-color: #fff;
       color: #111;
