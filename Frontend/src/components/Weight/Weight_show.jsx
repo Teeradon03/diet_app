@@ -34,7 +34,7 @@ function Weight_show(props) {
     };
 
     try {
-      await axios.post('http://localhost:9999/api/create-questionnaires', dataToSend, { witCredentials: true });
+      await axios.post('localhost:9999/api/form/create-questionnaires', dataToSend, { witCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);
@@ -57,7 +57,7 @@ function Weight_show(props) {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
-      <Image width={300} height={300} src="/public/bmi_img/weight.jpg" />
+      <Image className={styles['ant-image-img']} src="/public/bmi_img/weight.jpg" />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป

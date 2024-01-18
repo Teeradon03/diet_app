@@ -2,6 +2,12 @@
   text-decoration: none;
 }
 
+.ant-image-img {
+  width: 100%; /* หรือค่าที่ต้องการ */
+  height: auto;
+  max-width: 400px; /* หรือค่าที่ต้องการ */
+  max-height: 400px; /* หรือค่าที่ต้องการ */
+}
 .advicebutton {
   margin: 0 auto;
   display: flex;

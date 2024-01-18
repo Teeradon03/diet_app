@@ -9,10 +9,8 @@ function Bmi_normalweight() {
       <div>
            <div className={styles.Bmi1}>
           <p> ค่าดัชนีมวลกาย (BMI) </p>
-          < Image className='ant-image-img'
-            width="60%"
-            src="/public/bmi_img/normal.jpg"
-          /><br />
+          <Image className={styles['ant-image-img']} src="/public/bmi_img/normal.jpg" />
+          <br />
           <div className={styles.childbmi}>BMI  18.50 - 22.90</div>
           <div className={styles.childbmi}>อยู่ในเกณฑ์   น้ำหนักปกติ</div>
           <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   เท่ากับคนปกติ</div>
@@ -24,7 +22,7 @@ function Bmi_normalweight() {
             </Link>
           
           
-          <Link to="/"className={styles.link}> {/* Changed the route for the "No" response */}
+          <Link to="/BMR_calculator"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
           </div>

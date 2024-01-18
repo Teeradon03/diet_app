@@ -32,7 +32,7 @@ function Target() {
       targetWeight: targetWeight,
     };
 
-    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { witCredentials: true })
+    await axios.post('localhost:9999/api/form/create-questionnaires', dataToSend, { witCredentials: true })
       .then(function (response) {
         console.log(response);
       })
@@ -60,10 +60,7 @@ function Target() {
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
       <br />
 
-      <Image
-        width={300}
-        height={300}
-        src="/public/bmi_img/taget.jpg"
+      <Image className={styles['ant-image-img']} src="/public/bmi_img/taget.jpg"
       />
       <div>
         {/* Change onClick to handleNextClick */}
