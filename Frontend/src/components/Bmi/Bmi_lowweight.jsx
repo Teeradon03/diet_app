@@ -1,4 +1,4 @@
-
+import React from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -12,13 +12,12 @@ function Bmi_lowweight() {
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             <br/>
             < Image className='ant-image-img'
-              width="60%"
-              src="/10.jpg"
+              width="80%"
+              src="/public/bmi_img/lowweight.jpg"
             />
             <br />
             <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
-            <div className={styles.childbmi}>อยู่ในเกณฑ์ น้ำหนักน้อย/ผอม</div>
-            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค มากกว่าคนปกติ</div>
+            <div className={styles.childbmi}>น้ำหนักน้อย / ผอม</div>
             <br />
     
             <div >
@@ -27,7 +26,7 @@ function Bmi_lowweight() {
               </Link>
             
             
-            <Link to="/"className={styles.link}> 
+            <Link to="/BMR_calculator"className={styles.link}> 
                 <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>
