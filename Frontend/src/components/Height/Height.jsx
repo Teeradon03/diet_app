@@ -13,8 +13,6 @@ function Height(props) {
     }
   };
 
- 
-
   return (
     <div className={styles.Bmi1}>
       <p>ส่วนสูง (ซม.)</p>

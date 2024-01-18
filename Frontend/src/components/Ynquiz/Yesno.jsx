@@ -8,36 +8,36 @@ const yesno = () => {
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
 
   const images = [
-    "/img/yn1.jpg",
-    "/img/yn2.jpg",
-    "/img/yn3.jpg",
-    "/img/yn4.jpg",
-    "/img/yn5.jpg",
-    "/img/yn6.jpg",
-    "/img/yn7.jpg",
-    "/img/yn8.jpg",
-    "/img/yn9.jpg",
-    "/img/yn10.jpg",
-    "/img/yn11.jpg",
-    "/img/yn12.jpg",
-    "/img/yn13.jpg",
-    "/img/yn14.jpg",
-    "/img/yn15.jpg",
-    "/img/yn16.jpg",
-    "/img/yn17.jpg",
-    "/img/yn18.jpg",
-    "/img/yn19.jpg",
-    "/img/yn20.jpg",
-    "/img/yn21.jpg",
-    "/img/beer.jpg",
-    "/img/yn23.jpg",
-    "/img/tod.jpg",
-    "/img/yn25.jpg",
-    "/img/yn26.jpg",
-    "/img/kan.jpg",
-    "/img/leg.jpg",
-    "/img/back.jpg",
-    "/img/born.jpg",
+    "/img/17.jpg",//id12-img17
+    "/img/18.jpg",//id13-img18
+    "/img/19.jpg",//id14-img19
+    "/img/20.jpg",//id15-img20
+    "/img/21.jpg",//id16-img21
+    "/img/22.jpg",//id17-img22
+    "/img/23.jpg",//id18-img23
+    "/img/24.jpg",//id19-img24
+    "/img/25.jpg",//id20-img25
+    "/img/26.jpg",//id21-img26
+    "/img/27.jpg",//id22-img27
+    "/img/28.jpg",//id23-img28
+    "/img/29.jpg",//id24-img29
+    "/img/30.jpg",//id25-img30
+    "/img/31.jpg",//id26img31
+    "/img/32.jpg",//id27img32
+    "/img/33.jpg",//id28img33
+    "/img/34.jpg",//id29img34
+    "/img/35.jpg",//id30-img35
+    "/img/36.jpg",//id31-img36
+    "/img/37.jpg",//id32-img37
+    "/img/38.jpg",//id33-img38
+    "/img/39.jpg",//id34-img39
+    "/img/40.jpg",//id35-img40
+    "/img/41.jpg",//id36-img41
+    "/img/42.jpg",//id37-img42
+    "/img/43.jpg",//id38-img43
+    "/img/44.jpg",//id39-img44
+    "/img/45.jpg",//id40-img45
+    "/img/46.jpg",//id41-img46
   ]; // เพิ่ม URLs ของรูปภาพที่นี่
 
   const [questions] = useState([
@@ -83,7 +83,7 @@ const yesno = () => {
     },
     {
       id: 22,
-      question: "ในร่างกายของคุณที่ต้องการลดคือ หน้าอก",
+      question: "ในร่างกายของคุณที่ต้องการลดคือ ต้นแขน",
     },
     {
       id: 23,
@@ -266,24 +266,26 @@ const yesno = () => {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const imageStyle = {
-    width: 500,
-    height: 500
+    width: 400,
+    height: 400
   }
 
   return (
     <div className="Ynquiztion">
       <div className="font-family">
+      <br/>
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
+          <br/><br/>
         </p>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}
           alt={`Image ${currentImageIndex + 1}`}
-          style={imageStyle}
+          //style={imageStyle}
         />
       </div>
-
+      <br/>
       <div className="button-container">
         <button
           className="no-button"

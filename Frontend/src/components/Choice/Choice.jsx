@@ -118,25 +118,27 @@ const Choice = () => {
   return (
     <div>
       <div className="text">
+        <br/><br/><br/><br/>
         <h1 style={buttonStyle}>โรคประจำตัวของคุณ </h1>
-        <p>(เลือกได้มากกว่า 1 ข้อ)</p>
+        <h3>(เลือกได้มากกว่า 1 ข้อ)</h3>
       </div>
       <br />
       <br />
       <Select
         mode="multiple"
-        className="text-box"
+        allowClear
+        className='text-box'
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
         options={options}
       />
       <br />
-      <br />
+      <br />  
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
-          หน้าถัดไป
+          ถัดไป
         </button>
       </div>
       <div>

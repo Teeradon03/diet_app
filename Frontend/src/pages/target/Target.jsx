@@ -61,7 +61,7 @@ function Target() {
       <Image
         width={300}
         height={300}
-        src="/public/t1.jpg"
+        src="/public/bmi_img/taget.jpg"
       />
       <div>
         {/* Change onClick to handleNextClick */}

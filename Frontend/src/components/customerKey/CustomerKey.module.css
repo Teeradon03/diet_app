@@ -26,6 +26,7 @@
   border-radius: 35px;
   margin-bottom: 2em;
   font-size: 2rem;
+  text-align: center;
   background-color: #fff;
   color: #111;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
@@ -64,6 +65,7 @@
   padding: 8px; 
   font-size: 25px; 
   font-weight: bold;
+  text-align: center;
 
 }
 
@@ -104,12 +106,20 @@
   transform: translateY(5px);
 }
 
-@media screen and (max-width: 1600px) {
-  .Bmi1 {
+
+
+
+@media screen and (min-width: 1600px) {
+  .Bmr1 {
     font-size: 2.5rem;
   }
-  
-  .performbutton {
+  input,
+  .gender,
+  .bmrbutton
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
     width: 50vw;
     margin: 0 auto;
     display: flex;
@@ -119,41 +129,49 @@
     
   }
   .chevronicon {
-    transform: translateX(-1000%);
+    transform: translateX(-200%);
     font-size: 16px;
-    width: 10px;
-    height: 10px;
+   
   }
 }
 
 @media screen and (max-width: 1400px) {
+  .Bmr1 {
+    font-size: 2.5rem;
+  }
+  input,
+  .gender,
+  .bmrbutton
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    
+  }
+  .chevronicon {
+    transform: translateX(-300%);
+    font-size: 16px;
+    
+  }
+}
+
+
+
+ 
+@media screen and (max-width: 1600px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
-  .performbutton {
-    width: 50vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-    
-  }
-  .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-}
-    
-@media screen and (max-width: 1200px) {
-  .Bmi1 {
-    font-size: 2rem;
-  }
-  
-  .performbutton {
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
     width: 50vw;
     margin: 0 auto;
     display: flex;
@@ -170,27 +188,24 @@
   }
 }
 
-
-@media screen and (max-width: 992px) {
+@media screen and (min-width: 1400px) {
   .Bmi1 {
-    font-size: 2rem;
+    font-size: 2.5rem;
   }
-  .childbmi,
-  .childadvice
-   {
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
     width: 50vw;
-  }
-  
-  .performbutton{
-    width: 70vw;
     margin: 0 auto;
     display: flex;
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
+    
   }
   .chevronicon {
-    transform: translateX(-2000%);
+    transform: translateX(-1000%);
     font-size: 16px;
     width: 10px;
     height: 10px;
@@ -198,80 +213,140 @@
 }
 
 
-@media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
-  .childbmi,
-  .childadvice
-   {
-    width: 60vw;
-  }
-  
-  .performbutton {
-    width: 70vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-}
 
-
-@media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.7rem;
-  }
-  .childbmi,
-  .childadvice
-  {
-    width: 70vw;
-  }
- 
-  .performbutton {
-    width: 70vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
-  }
-  .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
-  }
-  @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.7rem;
+     
+  @media screen and (max-width: 1200px) {
+    
+    .advicebutton,
+    .nextbutton,
+    .backbutton,
+    .bmibutton {
+      width: 50vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      
     }
+    .chevronicon {
+      transform: translateX(-1000%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  
+  @media screen and (max-width: 992px) {
+   
+    .childbmi,
+    .childadvice
+     {
+      width: 50vw;
+    }
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton{
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      transform: translateX(-2000%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+  }
+
+  
+  @media screen and (max-width: 768px) {
+   
     .childbmi,
     .childadvice
      {
       width: 60vw;
     }
-  
-    .performbutton {
-    width: 60vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
     }
     .chevronicon {
-      transform: translateX(-2800%);
+      transform: translateX(-2500%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
-} 
-}
+  }
+
+  
+  @media screen and (max-width: 576px) {
+   
+    .childbmi,
+    .childadvice
+    {
+      width: 70vw;
+    }
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      transform: translateX(-2700%);
+      font-size: 16px;
+      width: 10px;
+      height: 10px;
+    }
+    @media screen and (max-width: 450px) {
+      
+      .childbmi,
+      .childadvice
+       {
+        width: 60vw;
+      }
+      input,
+      .gender,
+      .bmibutton,
+      .advicebutton,
+      .nextbutton,
+      .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      }
+      .chevronicon {
+        transform: translateX(-2800%);
+        font-size: 16px;
+        width: 10px;
+        height: 10px;
+      }
+  } 
+  }

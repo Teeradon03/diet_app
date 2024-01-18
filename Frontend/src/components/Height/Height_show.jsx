@@ -60,7 +60,7 @@ function Height_show() {
       <Image
         width={300}
         height={300}
-        src="/public/h1.jpg"
+        src="/public/bmi_img/hight.jpg"
       />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>

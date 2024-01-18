@@ -168,11 +168,14 @@ const Choice2 = () => {
   return (
     <div>
       <div>
-        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+      <br/><br/><br/><br/>
+        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร</h1>
+        <h3>(เลือกได้มากกว่า 1 ข้อ)</h3>
       </div>
       <br /><br />
       <Select
         mode="multiple"
+        allowClear
         className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
@@ -182,7 +185,7 @@ const Choice2 = () => {
       <br /><br /><br />
       <div className='font-family'>
         <button className='next-list' onClick={handleNext} style={buttonStyle}>
-          หน้าถัดไป
+          ถัดไป
         </button>
       </div>
       <div>

@@ -10,12 +10,11 @@ function Bmi_obesitylevel3() {
             <div className={styles.Bmi1}>
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             < Image className='ant-image-img'
-              width="60%"
-              src="/10.jpg"
+              width="80%"
+              src="/public/bmi_img/obesity3.jpg"
             /><br />
             <div className={styles.childbmi}>BMI  มากกว่า 30</div>
-            <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 3</div>
-            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   อันตรายระดับ 3</div>
+            <div className={styles.childbmi}>อ้วนมาก / โรคอ้วนระดับ 3</div>
             <br />
     
             <div >
@@ -24,7 +23,7 @@ function Bmi_obesitylevel3() {
               </Link>
             
             
-            <Link to="/"className={styles.link}> 
+            <Link to="/BMR_calculator"className={styles.link}> 
             <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>
