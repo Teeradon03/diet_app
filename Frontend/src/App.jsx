@@ -33,13 +33,13 @@ import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
 import Report from "./pages/report/report.jsx";
 import Users from "./pages/report/user/Users.jsx";
-import NewChoice from './components/Choice/NewChoice.jsx'
+
 import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-        <Route path="/newchoice" element={<NewChoice/>}/>
+
 
         <Route path="/report" element={<Report/>}/>
         <Route path="/report/users" element={<Users />}/>
