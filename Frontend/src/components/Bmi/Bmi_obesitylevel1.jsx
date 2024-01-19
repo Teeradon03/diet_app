@@ -8,13 +8,15 @@ function Bmi_obesitylevel1() {
     return (
         <div>
             <div className={styles.Bmi1}>
-            <p> ค่าดัชนีมวลกาย (BMI) </p>
+            <h1> ค่าดัชนีมวลกาย (BMI) </h1>
+            <br />
             < Image className='ant-image-img'
               width="60%"
-              src="/public/bmi_img/obesity1.jpg"
+              src="/public/10.jpg"
             /><br />
-            <div className={styles.childbmi}>BMI 23 - 24.90</div>
-            <div className={styles.childbmi}>ท้วม / โรคอ้วนระดับ 1</div>
+            <div className={styles.childbmi}>BMI  23 - 24.90</div>
+            <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 1</div>
+            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   อันตรายระดับ 1</div>
             <br />
     
             <div >
@@ -29,14 +31,12 @@ function Bmi_obesitylevel1() {
             </div>
           </div>
           <Link to="/BMI_calculator">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "BMI_calculator"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
         </div>
       )
     }

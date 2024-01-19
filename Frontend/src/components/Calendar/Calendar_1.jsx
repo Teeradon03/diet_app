@@ -13,29 +13,9 @@ function Calendar_1() {
   const handleDateChange = (newDate) => {
     if (newDate !== null) {
       setDate(newDate);
-      
+      console.log('Selected date:', newDate);
     }
   };
-
-  const formatThaiDate = (date) => {
-    const thaiMonthNames = [
-      'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน',
-      'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม',
-      'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม',
-    ];
-
-    const day = date.getDate();
-    const month = thaiMonthNames[date.getMonth()];
-    const year = date.getFullYear() + 543; // แปลงปี ค.ศ. เป็น พ.ศ.
-
-    return `${day} ${month} ${year}`;
-  };
-
-  const logThaiMessage = (message) => {
-  const formattedDate = new Date().toLocaleDateString('th-TH');  // ใช้ toLocaleDateString เพื่อให้ได้วันที่และเดือนเท่านั้น
-  console.log(`${message} วันที่ ${formattedDate}`);
-};
-
 
   const handleSubmit = async () => {
     const dataToSend = {
@@ -43,9 +23,8 @@ function Calendar_1() {
     };
   
     try {
-      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
-      logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
-      // เพิ่มตรงนี้: นำคุณสมบัติการนำทางไปยังหน้าถัดไปได้ตามที่คุณต้องการ
+      const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, { withCredentials: true });
+      console.log(response.data);
     } catch (error) {
       logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);
       console.error('Error:', error);
@@ -58,18 +37,14 @@ function Calendar_1() {
         <h1 className={styles.Bmi1}>วัน/เดือน/ปีเกิด</h1>
         <br />
         <div className="calendar-container">
-          <Calendar 
-            onChange={handleDateChange} 
-            value={date} 
-            locale="th-TH" // ตั้งค่า locale เป็นภาษาไทย
-          />
+          <Calendar onChange={onChange} value={value} />
         </div>
         <p className="text-center">
           <br />
           <br />
-          <span className={styles.Bmi1} >กรุณาเลือกวันที่ </span>
-          &nbsp;&nbsp;&nbsp;
-          <h1>{formatThaiDate(date)}</h1>
+          <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
+          
+          <h4 className={styles.Bmi1}>{date.toDateString()}</h4>
         </p>
       </header>
       <br />
@@ -78,14 +53,14 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
-      
-      <Link to="/Yesno">
-        <button 
-          className={styles.chevronicon} 
-          onClick={() => window.location.href = "Yesno"}>
-          <VscChevronLeft />
-        </button>
-      </Link>
+      <div className={styles.chevronicon}>
+        <Link to="/Yesno">
+          <Button
+            shape="circle"
+            icon={<VscChevronLeft />}
+          />
+        </Link>
+      </div>
     </div>
   );
 }

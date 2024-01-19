@@ -2,6 +2,11 @@
   text-align: center;
 }
 
+.text-center{
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
 .App-logo {
   height: 40vmin;
   pointer-events: none;
@@ -205,6 +210,37 @@ abbr[title] {
   .chevronicon {
     transform: translateX(-300%);
     font-size: 16px;
+  }
+
+
+}
+
+@media (max-width: 992px) {
+  .chevronicon {
+    transform: translateX(-600%);
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .chevronicon {
+    transform: translateX(-5000%);
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 576px) {
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 450px) {
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 50px;
+    width: 50px; /* Optional: Add this line to ensure the width is exactly 50px */
   }
 }
 

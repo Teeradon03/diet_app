@@ -32,7 +32,7 @@ function Name() {
     // Add your logic for navigating to the next page here
 
     // Send data using Axios
-    axios.post('http://localhost:9999/api/user/update-user-data', formData, { withCredentials: true})
+    axios.post('http://localhost:9999/api/user/update-user-data', formData)
       .then(response => {
         console.log('Data sent successfully:', response.data);
         // Add your logic for navigating to the next page here if needed
@@ -88,16 +88,15 @@ function Name() {
             </button>
           </Link>
         </div>
-        <div className={styles.chevronicon}>
-          <Link to="/">
-            <Button
-              shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
-              icon={<VscChevronLeft />}
-            />
-          </Link>
-        </div>
       </div>
+     
+    <Link to="/Form">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.history.back()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

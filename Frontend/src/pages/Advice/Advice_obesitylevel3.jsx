@@ -29,14 +29,12 @@ function Advice_obesitylevel3() {
         </div>
       </div>
       <Link to="/Bmi_obesitylevel3">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-       </div>
-    </Link>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Bmi_obesitylevel3"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

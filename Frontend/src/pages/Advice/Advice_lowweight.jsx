@@ -28,14 +28,12 @@ function Advice_lowweight() {
         </div>
       </div>
       <Link to="/Bmi_lowweight">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-       </div>
-    </Link>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Bmi_lowweight"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

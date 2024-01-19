@@ -135,17 +135,16 @@ const Choice2 = () => {
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
-    setSelectedOptions(value);
-    const questionId = 10;
+    const selectedLabels = selectedOptions.map(option => option.label);
+    setSelectedLabels(selectedLabels);
+    console.log('ข้อจำกัดด้านการทานอาหาร:', selectedLabels);
 
-    console.log('QuestionId :', questionId)
-    console.log('AnswerId :', value);
+    // เรียกใช้ sendToAPI พร้อมส่ง selectedOptions และ selectedLabels เพื่อใช้ในการส่งไปยัง API
+    sendToAPI(selectedOptions, selectedLabels);
   };
 
-  const handleNext = async () => {
-    if (selectedOptions.length > 0) {
-      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
-      await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
+  const handleNext = () => {
+    if (selectedLabels.length > 0) {
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
@@ -166,7 +165,9 @@ const Choice2 = () => {
   return (
     <div>
       <div>
-        <br /><br />
+
+        <h1 className='text' style={buttonStyle}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+      <br/><br/><br/><br/>
         <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
