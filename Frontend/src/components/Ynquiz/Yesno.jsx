@@ -276,6 +276,7 @@ const yesno = () => {
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
         </p>
+        <br/>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}
