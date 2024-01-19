@@ -7,6 +7,7 @@
 }
 .text-box{
   width: 80%;
+
   font-size: 22px;
 }
 .texe {
@@ -100,8 +101,11 @@
 }
 
 @media screen and (max-width: 1600px) {
+  .text{
+    padding-top: 100px;
+  }
   .next-list{
-    font-size: 1rem;
+    font-size: 1.8rem;
     width: 15vw !important;
     position: relative;
     left: 510px

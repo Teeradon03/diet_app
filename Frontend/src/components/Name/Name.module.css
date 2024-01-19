@@ -1,25 +1,33 @@
+.link {
+  text-decoration: none;
+}
+
 .Bmi1 {
-    
+
   padding: 30px;
   display: flex;
   margin: 20px;
   flex-direction: column;
   align-items: center;
   margin: 0 auto;
+  font-weight: bold;
 }
 
-.inputv1{   
-    
-    justify-content: center;
-    align-items: center;
-    padding: 1px;
-    width: calc(100% );
-    max-width: 210px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-bottom: 2em;
-    font-size: 1rem;
-   
+
+
+.inputv1 input {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc(100%);
+  max-width: 300px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 2em;
+  font-size: 2rem;
+
+  font-weight: bold;
 }
 
 .chevronicon {
@@ -39,25 +47,26 @@
 }
 
 .gender select {
-     
-  width: calc(100% );
-  max-width: 210px;
-  height: 50px;
+  margin: 40px auto 0;
+  /* Add 30px top margin, center horizontally */
+  width: calc(100%);
+  max-width: 300px;
+  height: 4.5rem;
   box-sizing: border-box;
-  border-radius: 8px;
+  border-radius: 35px;
   margin-bottom: 1em;
   font-size: 1rem;
   background-color: #fff;
   color: #111;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
-  padding: 8px; 
-  font-size: 25px; 
-  
-
+  padding: 8px;
+  font-size: 25px;
+  font-weight: bold;
 }
 
+
 .nextbutton {
-    
+
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -68,37 +77,38 @@
   width: 250px;
   max-width: 210px;
   padding: 1px;
-  position: relative; 
-  top: 25px; 
+  position: relative;
+  top: 50px;
   margin-bottom: 55px;
   background-color: #FFFF;
   border: 1px solid #ccc;
   color: rgb(13, 13, 13);
-  border-radius: 5px;
+  border-radius: 35px;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
-  font-size: larger;
+  font-size: 2.5rem;
   cursor: pointer;
-  text-align :center;
+  text-align: center;
+  font-weight: bold;
 }
 
-.nextbutton:hover{
+.nextbutton:hover {
   background-color: #757575;
   color: #FFFF;
   box-shadow: 0 4px 0 0 #b2b2b2;
 }
 
-.nextbutton:active{
+.nextbutton:active {
   box-shadow: none;
   transform: translateY(5px);
 }
 
 
-    
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
   .Bmi1 {
-    font-size: 1.6rem;
+    font-size: 2.5rem;
   }
-  
+
+  .advicebutton,
   .nextbutton,
   .backbutton,
   .bmibutton {
@@ -108,8 +118,61 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
   }
+
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
   .chevronicon {
     transform: translateX(-1000%);
     font-size: 16px;
@@ -120,17 +183,18 @@
 
 
 @media screen and (max-width: 992px) {
-  .Bmi1 {
-    font-size: 1.6rem;
-  }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 50vw;
   }
-  
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
-  .backbutton{
+  .backbutton {
     width: 70vw;
     margin: 0 auto;
     display: flex;
@@ -138,6 +202,7 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2000%);
     font-size: 16px;
@@ -148,15 +213,16 @@
 
 
 @media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 60vw;
   }
-  
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
   .backbutton {
     width: 70vw;
@@ -166,6 +232,7 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2500%);
     font-size: 16px;
@@ -176,15 +243,16 @@
 
 
 @media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+
   .childbmi,
-  .childadvice
-  {
+  .childadvice {
     width: 70vw;
   }
- 
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
   .backbutton {
     width: 70vw;
@@ -194,35 +262,40 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2700%);
     font-size: 16px;
     width: 10px;
     height: 10px;
   }
+
   @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.5rem;
-    }
+
     .childbmi,
-    .childadvice
-     {
+    .childadvice {
       width: 60vw;
     }
-  
-    .nextbutton {
-    width: 60vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
     }
+
     .chevronicon {
       transform: translateX(-2800%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
-} 
+  }
 }

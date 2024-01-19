@@ -44,7 +44,7 @@ function Target() {
   return (
     <div className={styles.Bmi1}>
       <h1 className={styles.Bmi1}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
-      <br />
+      
       <div className={styles.inputlabel}>
 
         <input className='input-ss'
@@ -69,13 +69,11 @@ function Target() {
         </button>
       </div>
       <Link to="/Height_show">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Height_show"()}>
+          <VscChevronLeft />
+        </button>
       </Link>
     </div>
   );

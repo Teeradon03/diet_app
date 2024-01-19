@@ -9,9 +9,9 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function BMR_calculator() {
-  const [weight, setWeight] = useState();
-  const [height, setHeight] = useState();
-  const [age, setAge] = useState();
+  const [weight, setWeight] = useState(0);
+  const [height, setHeight] = useState(0);
+  const [age, setAge] = useState(0);
   const [gender, setGender] = useState('male');
   const [bmr, setBmr] = useState(null); 
   const [currentPage, setCurrentPage] = useState(0);
@@ -59,7 +59,7 @@ function BMR_calculator() {
     return (
       <div className={styles.Bmr1}>
         <br />
-        <h className={styles.cal}>คำนวณแคลอรี่ (BMR)</h>
+        <p className={styles.Bmr1}>คำนวณแคลอรี่ (BMR)</p>
 
         <Weight onWeightChange={(value) => setWeight(value)} />
 
@@ -89,20 +89,20 @@ function BMR_calculator() {
           </div>
         )}
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
-        
+        <br />
+        <div>
         <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
-        
-          <Link to="/BMI_calculator">
-      <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+        </div>
+         
+      <Link to="/BMI_calculator">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "BMI_calculator"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
       </div>
       
     );

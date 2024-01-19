@@ -45,8 +45,8 @@ function Name() {
   return (
     <div className=''>
       <div className={styles.Bmi1} >
+      <br />
         <p>กรุณากรอกข้อมูลดังนี้</p>
-        <br />
         <div className='body '>
           <div className={styles.inputv1}>
             <input
@@ -89,7 +89,7 @@ function Name() {
           </Link>
         </div>
         <div className={styles.chevronicon}>
-          <Link to="/">
+          <Link to="/Form">
             <Button
               shape="circle"
               style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}

@@ -117,10 +117,10 @@
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+        width: 60px;
+        height: 60px;
+        left: 300px;
   }
 }
 
@@ -140,10 +140,11 @@
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+    
   }
 }
 
@@ -163,10 +164,10 @@
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 200px;
   }
 }
 
@@ -191,10 +192,10 @@
   }
 
   .chevronicon {
-    transform: translateX(-2000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+    left: 120px;
   }
 }
 
@@ -219,10 +220,10 @@
   }
 
   .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 30px;
   }
 }
 
@@ -247,10 +248,10 @@
   }
 
   .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    left: 10px;
   }
 
   @media screen and (max-width: 450px) {
@@ -273,10 +274,10 @@
     }
 
     .chevronicon {
-      transform: translateX(-2800%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+      font-size: 20px;
+        width: 40px;
+        height: 40px;
+        left: 10px;
     }
   }
 }
