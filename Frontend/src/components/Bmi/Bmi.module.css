@@ -240,16 +240,14 @@
     input {
       padding: 10px;
       width: calc(100%);
-      max-width: 220px; /* Adjust the max-width as needed */
+      max-width: 300px; /* Adjust the max-width as needed */
       box-sizing: border-box;
       border-radius: 35px;
       margin-right: 5px; /* Add some margin between input and label */
       font-size: 1rem;
       text-align: center;
       font-weight: bold;
-      background-color: #fff;
-      color: #111;
-      box-shadow: 10px 10px 8px 6px #b2b2b2;
+     
     }
     
     label {

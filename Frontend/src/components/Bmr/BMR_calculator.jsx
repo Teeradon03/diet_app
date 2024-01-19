@@ -59,7 +59,7 @@ function BMR_calculator() {
     return (
       <div className={styles.Bmr1}>
         <br />
-        <p>คำนวณแคลอรี่ (BMR)</p>
+        <p className={styles.Bmr1}>คำนวณแคลอรี่ (BMR)</p>
 
         <Weight onWeightChange={(value) => setWeight(value)} />
 
