@@ -35,7 +35,6 @@
 }
 
 .nextbutton {
-
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -119,8 +118,7 @@
 
 
 .Bmi1 {
-
-  padding: 30px;
+  padding-top: 30px;
   display: flex;
   margin: 20px;
   flex-direction: column;
@@ -146,7 +144,6 @@
   height: 50px;
   border-radius: 50%;
   border: none;
-
   color: #757575;
   display: flex;
   justify-content: center;
@@ -157,8 +154,6 @@
   left: 300px;
   top: 30px;
 }
-
-
 
 
 .childbmi {
@@ -242,15 +237,16 @@
 input {
   padding: 10px;
   width: calc(100%);
-  max-width: 220px;
+  max-width: 300px;
   /* Adjust the max-width as needed */
   box-sizing: border-box;
   border-radius: 35px;
   margin-right: 5px;
   /* Add some margin between input and label */
   font-size: 1rem;
+  text-align: center;
   font-weight: bold;
-  
+
 }
 
 label {
@@ -277,10 +273,9 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -303,10 +298,9 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -329,10 +323,10 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 220px;
   }
 }
 
@@ -359,10 +353,10 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+    left: 130px;
   }
 }
 
@@ -389,10 +383,10 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    left: 80px;
   }
 }
 
@@ -419,10 +413,14 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 60px;
+  }
+
+  .styles.Bmi1 {
+    padding-top: 40px;
   }
 
   @media screen and (max-width: 450px) {
@@ -447,10 +445,14 @@ label {
     }
 
     .chevronicon {
-      transform: translateX(-2800%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+      left: 30px;
+    }
+
+    .styles.Bmi1 {
+      padding-top: 40px;
     }
   }
 }

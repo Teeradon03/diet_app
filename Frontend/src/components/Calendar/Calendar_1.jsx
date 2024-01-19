@@ -1,34 +1,54 @@
-import { useState } from "react";
-import Calendar from "react-calendar";
-import "react-calendar/dist/Calendar.css";
-import { Link } from "react-router-dom";
-import { Button } from "antd";
-import { VscChevronLeft } from "react-icons/vsc";
-import axios from "axios";
-
-import styles from "../Bmi/Bmi.module.css";
-import "./calendar.css";
+import React, { useState } from 'react';
+import Calendar from 'react-calendar';
+import 'react-calendar/dist/Calendar.css';
+import { Link } from 'react-router-dom';
+import { VscChevronLeft } from 'react-icons/vsc';
+import axios from 'axios';
+import styles from '../Bmi/Bmi.module.css';
+import './calendar.css';
 
 function Calendar_1() {
-  const [value, onChange] = useState(new Date());
+  const [date, setDate] = useState(new Date());
+
+  const handleDateChange = (newDate) => {
+    if (newDate !== null) {
+      setDate(newDate);
+      
+    }
+  };
+
+  const formatThaiDate = (date) => {
+    const thaiMonthNames = [
+      'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน',
+      'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม',
+      'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม',
+    ];
+
+    const day = date.getDate();
+    const month = thaiMonthNames[date.getMonth()];
+    const year = date.getFullYear() + 543; // แปลงปี ค.ศ. เป็น พ.ศ.
+
+    return `${day} ${month} ${year}`;
+  };
+
+  const logThaiMessage = (message) => {
+  const formattedDate = new Date().toLocaleDateString('th-TH');  // ใช้ toLocaleDateString เพื่อให้ได้วันที่และเดือนเท่านั้น
+  console.log(`${message} วันที่ ${formattedDate}`);
+};
+
 
   const handleSubmit = async () => {
-    // console.log('valueee :', value)
-
-    const utcDate = value.toUTCString();
-    // console.log('utcDate :', utcDate)
-    const data = {
-      dateOfBirth: utcDate,
+    const dataToSend = {
+      calendar: date,
     };
+  
     try {
-      const response = await axios.post(
-        "http://localhost:9999/api/user/update-user-data",
-        data,
-        { withCredentials: true }
-      );
-      console.log("response data from server", response.data);
+      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
+      // เพิ่มตรงนี้: นำคุณสมบัติการนำทางไปยังหน้าถัดไปได้ตามที่คุณต้องการ
     } catch (error) {
-      console.error("Error:", error);
+      logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);
+      console.error('Error:', error);
     }
   };
 
@@ -38,15 +58,19 @@ function Calendar_1() {
         <h1 className={styles.Bmi1}>วัน/เดือน/ปีเกิด</h1>
         <br />
         <div className="calendar-container">
-          <Calendar onChange={onChange} value={value} />
+          <Calendar 
+            onChange={handleDateChange} 
+            value={date} 
+            locale="th-TH" // ตั้งค่า locale เป็นภาษาไทย
+          />
         </div>
-        <div className="text-center">
+        <p className="text-center">
           <br />
           <br />
-          <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
-
-          <h4 className={styles.Bmi1}>{value.toDateString()}</h4>
-        </div>
+          <span className={styles.Bmi1} >กรุณาเลือกวันที่ </span>
+          &nbsp;&nbsp;&nbsp;
+          <h1>{formatThaiDate(date)}</h1>
+        </p>
       </header>
       <br />
       <Link to="/Weight_show" className={styles.link}>
@@ -54,15 +78,14 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
-      <div className={styles.chevronicon}>
-        <Link to="/Yesno">
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </Link>
-      </div>
+      
+      <Link to="/Yesno">
+        <button 
+          className={styles.chevronicon} 
+          onClick={() => window.location.href = "Yesno"}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

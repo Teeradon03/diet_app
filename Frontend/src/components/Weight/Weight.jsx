@@ -22,7 +22,6 @@ function Weight(props) {
       type="number"
       value={weight}
       onChange={handleInputChange}
-      style={{ width: '1000px' }}
     />
     </div>
   );

@@ -294,7 +294,7 @@ const yesno = () => {
           ไม่
         </button>
         <h1 className="and" ><br/>
-          หรือ
+        &nbsp; หรือ &nbsp;
         </h1>
         <button
           className="yes-button"

@@ -7,7 +7,7 @@
 }
 .text-box{
   width: 80%;
-  height: 70px;
+  font-size: 20px;
 }
 .texe {
   padding-top: 20px;
@@ -24,6 +24,7 @@
   margin-bottom: 20px;
   font-size: larger;
 }
+
 .next-list {
   display: block;
   width: 100%;
@@ -74,7 +75,7 @@
   }
   
   .next-list{
-    font-size: 1rem;
+    font-size: 1.8rem;
     width: 15vw !important;
     position: relative;
     left: 510px
