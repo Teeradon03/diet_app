@@ -266,8 +266,8 @@ const yesno = () => {
     // เพิ่มสไตล์อื่นๆ ตามต้องการ
   };
   const imageStyle = {
-    width: 300,
-    height: 300
+    width: 400,
+    height: 400
   }
 
   return (
@@ -276,6 +276,7 @@ const yesno = () => {
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
         </p>
+        <br/>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}
@@ -292,9 +293,9 @@ const yesno = () => {
         >
           ไม่
         </button>
-        <h1 className="and" ><br/> &nbsp;
+        <h1 className="and" ><br/>
           หรือ
-        </h1> &nbsp;
+        </h1>
         <button
           className="yes-button"
           style={buttonStyle}

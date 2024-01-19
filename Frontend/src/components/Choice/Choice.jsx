@@ -135,6 +135,7 @@ const Choice = () => {
         onChange={handleChange}
         optionLabelProp="label"
         options={options}
+        
       />
       <br />
       <br />

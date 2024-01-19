@@ -40,8 +40,8 @@
 .questionyesno {
   font-size: 40px;
   padding-top: 20px;
-  font-weight: bold;
-  padding-top: 50px;
+  font-weight: 900;
+  /* ทำตัวหนา */
 }
 
 .button-container {
@@ -57,10 +57,10 @@
   box-shadow: 8px 12px 3px 5px #b2b2b2;
 }
 
-.no-button:active{
+.no-button:active {
   box-shadow: none;
   transform: translateY(5px);
-} */
+}
 
 */ .yes-button:hover {
   background-color: #757575;
@@ -145,10 +145,30 @@
     font-weight: bold;
   }
 
-.imgmedia {
-  width: 500%;
-  height: 500%;
+  .imgmedia {
+    width: 700px;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+  }
+
+  .chevron-icon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+
+  .no-button,
+  .yes-button {
+    width: 10vw;
+    max-width: 300px;
+    /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
+    margin: 0 auto;
+    /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
+  }
+
 }
+
 
 @media screen and (max-width: 1600px) {
   .and {

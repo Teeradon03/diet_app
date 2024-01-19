@@ -2,7 +2,9 @@
   font-family: 'Noto Sans Thai', sans-serif;
   /* ส่วนอื่น ๆ ของ CSS ของคุณ */
 }
-
+.ant-select-selection {
+  width: 0;
+}
 .text-box{
   width: 80%;
   height: 70px;
