@@ -27,16 +27,13 @@ function Advice_normalweight() {
           </Link>
         </div>
       </div>
-      
       <Link to="/Bmi_normalweight">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-       </div>
-    </Link>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Bmi_normalweight"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

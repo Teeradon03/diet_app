@@ -65,15 +65,14 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
-      <Link to="/Yesno">
-      <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+      
+    <Link to="/Yesno">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Yesno"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

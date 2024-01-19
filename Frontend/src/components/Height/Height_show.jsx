@@ -65,13 +65,11 @@ function Height_show() {
         </button>
       </div>
       <Link to="/Weight_show">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Weight_show"()}>
+          <VscChevronLeft />
+        </button>
       </Link>
     </div>
   );

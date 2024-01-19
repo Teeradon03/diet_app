@@ -134,21 +134,21 @@
   }
   
   .chevronicon {
-      width: 50px;
-      height: 50px;
-      border-radius: 50%;
-      border: none;
-      
-      color: #757575;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      cursor: pointer;
-      outline: none;
-      position: absolute;
-      left: 300px;
-      top: 30px;
-    }
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+  
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 10px;
+    top: 30px;
+  }
   
   
   
@@ -267,10 +267,9 @@
         
       }
       .chevronicon {
-        transform: translateX(-1000%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
+        font-size: 40px;
+         width: 60px;
+         height: 60px;
       }
     }
 
@@ -291,10 +290,9 @@
         
       }
       .chevronicon {
-        transform: translateX(-1000%);
-        font-size: 16px;
-        width: 10px;
-        height: 10px;
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
       }
     }
     
@@ -316,10 +314,9 @@
           
         }
         .chevronicon {
-          transform: translateX(-1000%);
-          font-size: 16px;
-          width: 10px;
-          height: 10px;
+          font-size: 40px;
+          width: 60px;
+          height: 60px;
         }
       }
   
@@ -345,10 +342,9 @@
           margin-bottom: 1em;
         }
         .chevronicon {
-          transform: translateX(-2000%);
-          font-size: 16px;
-          width: 10px;
-          height: 10px;
+          font-size: 40px;
+          width: 55px;
+          height: 55px;
         }
       }
   
@@ -374,10 +370,9 @@
           margin-bottom: 1em;
         }
         .chevronicon {
-          transform: translateX(-2500%);
-          font-size: 16px;
-          width: 10px;
-          height: 10px;
+          font-size: 30px;
+          width: 45px;
+          height: 45px;
         }
       }
   
@@ -403,10 +398,9 @@
           margin-bottom: 1em;
         }
         .chevronicon {
-          transform: translateX(-2700%);
-          font-size: 16px;
-          width: 10px;
-          height: 10px;
+          font-size: 30px;
+          width: 40px;
+          height: 40px;
         }
         @media screen and (max-width: 450px) {
           
@@ -429,10 +423,9 @@
           margin-bottom: 1em;
           }
           .chevronicon {
-            transform: translateX(-2800%);
-            font-size: 16px;
-            width: 10px;
-            height: 10px;
+            font-size: 20px;
+            width: 30px;
+            height: 30px;
           }
       } 
       }

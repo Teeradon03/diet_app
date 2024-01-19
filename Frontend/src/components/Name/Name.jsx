@@ -89,15 +89,14 @@ function Name() {
           </Link>
         </div>
       </div>
-      <Link to="/Form">
-      <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+     
+    <Link to="/Form">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.history.back()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }

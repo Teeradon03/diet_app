@@ -64,13 +64,11 @@ function Weight_show(props) {
         </button>
       </div>
       <Link to="/Calendar_1">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Calendar_1"()}>
+          <VscChevronLeft />
+        </button>
       </Link>
     </div>
   );

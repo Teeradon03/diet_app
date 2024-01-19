@@ -89,20 +89,20 @@ function BMR_calculator() {
           </div>
         )}
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
-        
+        <br />
+        <div>
         <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
-        
-          <Link to="/BMI_calculator">
-      <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+        </div>
+         
+      <Link to="/BMI_calculator">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "BMI_calculator"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
       </div>
       
     );
