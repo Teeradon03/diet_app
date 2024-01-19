@@ -13,7 +13,7 @@ function Calendar_1() {
   const handleDateChange = (newDate) => {
     if (newDate !== null) {
       setDate(newDate);
-      
+      logThaiMessage('เลือกวันที่:', newDate);
     }
   };
 
@@ -26,26 +26,26 @@ function Calendar_1() {
 
     const day = date.getDate();
     const month = thaiMonthNames[date.getMonth()];
-    const year = date.getFullYear() + 543; // แปลงปี ค.ศ. เป็น พ.ศ.
+    const year = date.getFullYear() + 543;
 
     return `${day} ${month} ${year}`;
   };
 
-  const logThaiMessage = (message) => {
-  const formattedDate = new Date().toLocaleDateString('th-TH');  // ใช้ toLocaleDateString เพื่อให้ได้วันที่และเดือนเท่านั้น
-  console.log(`${message} วันที่ ${formattedDate}`);
-};
-
+  const logThaiMessage = (message, selectedDate) => {
+    const formattedDate = selectedDate ? formatThaiDate(selectedDate) : "";
+    console.log(`${message} ${formattedDate}`);
+  };
 
   const handleSubmit = async () => {
     const dataToSend = {
       calendar: date,
     };
-  
+
     try {
       const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
       logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
-      // เพิ่มตรงนี้: นำคุณสมบัติการนำทางไปยังหน้าถัดไปได้ตามที่คุณต้องการ
+      console.log('Server response:', response.data);
+      // Add navigation to the next page here if needed
     } catch (error) {
       logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);
       console.error('Error:', error);
@@ -61,16 +61,16 @@ function Calendar_1() {
           <Calendar 
             onChange={handleDateChange} 
             value={date} 
-            locale="th-TH" // ตั้งค่า locale เป็นภาษาไทย
+            locale="th-TH"
           />
         </div>
-        <p className="text-center">
+        <div className="text-center">
           <br />
           <br />
-          <span>กรุณาเลือกวันที่ </span>
+          <p>กรุณาเลือกวันที่ </p>
           &nbsp;&nbsp;&nbsp;
           <span>{formatThaiDate(date)}</span>
-        </p>
+        </div>
       </header>
       <br />
       <Link to="/Weight_show" className={styles.link}>
@@ -79,10 +79,8 @@ function Calendar_1() {
         </button>
       </Link>
       
-      <Link to="/Yesno">
-        <button 
-          className={styles.chevronicon} 
-          onClick={() => window.location.href = "Yesno"}>
+      <Link to="/Yesno" className={styles.link}>
+        <button className={styles.chevronicon}>
           <VscChevronLeft />
         </button>
       </Link>

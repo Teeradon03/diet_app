@@ -17,7 +17,7 @@
 }
 
 .inputbmr{   
-    margin: 0 auto;
+    
     justify-content: center;
     align-items: center;
     padding: 1px;
@@ -238,7 +238,7 @@
      {
       width: 50vw;
     }
-    input,
+    
     .gender,
     .bmrbutton,
     .advicebutton,
@@ -266,7 +266,7 @@
      {
       width: 60vw;
     }
-    input,
+    
     .gender,
     .bmrbutton,
     .advicebutton,
@@ -294,7 +294,7 @@
     {
       width: 70vw;
     }
-    input,
+    
     .gender,
     .bmrbutton,
     .advicebutton,
@@ -319,7 +319,7 @@
        {
         width: 60vw;
       }
-      input,
+      
       .gender,
       .bmrbutton,
       .advicebutton,
