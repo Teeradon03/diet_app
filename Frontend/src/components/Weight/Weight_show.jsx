@@ -6,30 +6,41 @@ import styles from "../Bmi/Bmi.module.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
-function Weight_show(props) {
-  const [weight, setWeight] = useState('');
-  const pageId = '45'; // ระบุ ID ที่ต้องการให้เป็นไปตามความต้องการ
+function Weight_show() {
+  const [weight, setWeight] = useState("");
 
   const handleInputChange = (e) => {
     const value = e.target.value;
     setWeight(value);
   };
 
+  const handleNextClick = () => {
+    if (weight.trim() === "" || weight < 25 || weight > 300) {
+      alert("กรุณากรอกน้ำหนักให้ถูกต้อง (25-300 กก.)");
+    } else {
+      console.log("Weight:", weight);
+      handleSubmit(); // Call the handleSubmit function to send data to the server
+      window.location.href = "/Height_show";
+    }
+  };
+
   const handleSubmit = async () => {
     console.log("Weight:", weight);
 
     const dataToSend = {
-      questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
-      weight: weight
+      weight: weight,
     };
 
-    await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    try {
+      await axios.post(
+        "http://localhost:9999/api/user/update-user-data",
+        dataToSend,
+        { witCredentials: true }
+      );
+      console.log("Data sent successfully");
+    } catch (error) {
+      console.error(error);
+    }
   };
 
   return (
@@ -37,14 +48,18 @@ function Weight_show(props) {
       <p>น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input type="number" value={weight} onChange={handleInputChange} />
+        <input
+          type="number"
+          value={weight}
+          onChange={handleInputChange}
+        />
         <label htmlFor="weight">&nbsp; กก.</label>
       </div>
       <br />
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
-      <Image width={300} height={300} src="/public/bmi_img/weight.jpg" />
+      <Image className={styles['ant-image-img']} src="/public/bmi_img/weight.jpg" />
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป

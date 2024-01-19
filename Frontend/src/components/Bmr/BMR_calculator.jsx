@@ -12,10 +12,8 @@ function BMR_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
-  const [gender, setGender] = useState('male');
-  const [bmr, setBmr] = useState(null); 
-  const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('47'); // Replace 'yourId' with the desired ID
+  const [gender, setGender] = useState("male");
+  const [bmr, setBmr] = useState(null);
 
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
@@ -39,7 +37,11 @@ function BMR_calculator() {
       bmr: calculatedBmr,
     };
 
-    await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, {dataToSend,witCredentials:true})
+    await axios
+      .post("http://localhost:9999/api/form/create-questionnaires", dataToSend, {
+        dataToSend,
+        witCredentials: true,
+      })
       .then(function (response) {
         console.log(response);
       })
@@ -53,14 +55,17 @@ function BMR_calculator() {
   };
 
   const renderContent = () => {
+    
+
     return (
       <div className={styles.Bmr1}>
         <br />
-        <p>คำนวณแคลอรี่ (BMR)</p>
+        <h className={styles.cal}>คำนวณแคลอรี่ (BMR)</h>
 
         <Weight onWeightChange={(value) => setWeight(value)} />
 
         <Height onHeightChange={(value) => setHeight(value)} />
+        
 
         <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
@@ -84,21 +89,27 @@ function BMR_calculator() {
             <p>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
           </div>
         )}
-        <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
-        
-        <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
-          <button className={styles.nextbutton}>ถัดไป</button> 
-            </Link>
-             <div className={styles.chevronicon}>
-          <Link to="/BMI_calculator">
+        <button className={styles.bmrbutton} onClick={calculateBmr}>
+          คำนวณ BMR
+        </button>
+
+        <Link to="/CustomerKey" className={styles.link}>
+          {" "}
+          {/* Changed the route for the "No" response */}
+          <button className={styles.nextbutton}>ถัดไป</button>
+        </Link>
+
+        <Link to="/BMI_calculator">
+          <div className={styles.chevronicon}>
             <Button
+              className={styles.button}
               shape="circle"
-              style={{ left: 10, top: 10, fontSize: '22px', width: '50px', height: '50px' }}
               icon={<VscChevronLeft />}
             />
-          </Link>
           </div>
+        </Link>
       </div>
+      
     );
   };
 

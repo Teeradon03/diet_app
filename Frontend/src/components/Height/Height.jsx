@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../Bmi/Bmi.module.css';
 
 function Height(props) {
-  const [height, setHeight] = useState('0');
+  const [height, setHeight] = useState('');
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -12,6 +12,8 @@ function Height(props) {
       props.onHeightChange(value);
     }
   };
+
+ 
 
   return (
     <div className={styles.Bmi1}>

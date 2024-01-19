@@ -7,7 +7,6 @@ import axios from 'axios';
 
 const options = [
   {
-    id : 1,
     label: (
       <span>
         โลว์คาร์บหรือคีโต
@@ -116,16 +115,15 @@ const options = [
   },
 ];
 
-const sendToAPI = async (selectedOptions, questionId = 10,) => {
+const sendToAPI = async (selectedOptions, selectedLabels) => {
   try {
     const data = {
       questionId: selectedOptions.map(option => option.id),
       question: selectedLabels.map(option => option.label),
-      answer: 5,
-      userId: 1
+      answer: value,
     };
 
-    const response = await axios.post('http://localhost:9999/api/create-questionnaires', data);
+    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
     console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error('Error:', error);
@@ -133,29 +131,27 @@ const sendToAPI = async (selectedOptions, questionId = 10,) => {
 };
 
 const Choice2 = () => {
-  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
+  const [selectedOptions, setSelectedOptions, questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
-    const selectedLabels = selectedOptions.map(option => option.label);
-    setSelectedLabels(selectedLabels);
-    console.log('ข้อจำกัดด้านการทานอาหาร:', selectedLabels);
+    setSelectedOptions(value);
+    const questionId = 10;
 
-    // เรียกใช้ sendToAPI พร้อมส่ง selectedOptions และ selectedLabels เพื่อใช้ในการส่งไปยัง API
-    sendToAPI(selectedOptions, selectedLabels);
+    console.log('QuestionId :', questionId)
+    console.log('AnswerId :', value);
   };
 
-  const handleNext = () => {
+  const handleNext = async () => {
     if (selectedOptions.length > 0) {
-      // Call sendToAPI to send data to the API
-      sendToAPI(selectedOptions, questionId);
-      // Redirect to the next page (assuming "/Question" is the correct URL)
-      window.location.href = "/Question";
+      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
+      await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
+      window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
-  
+
 
   const handleBack = () => {
     window.location.href = ('/Question'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
@@ -166,25 +162,29 @@ const Choice2 = () => {
     // สไตล์เพิ่มเติมตามต้องการ
   };
 
-  const textStyle = {
-    fontSize: '40px', // ปรับขนาดตัวอักษรตามต้องการ
-    // สไตล์เพิ่มเติมตามต้องการ
-  };
-
 
   return (
     <div>
       <div>
-        <h1 className='text' style={{...buttonStyle, ...textStyle}}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
+        <br /><br />
+        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
       <Select
-        mode="multiple"
-        className='text-box'
-        placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
-        onChange={handleChange}
-        optionLabelProp="label"
-        options={options}
+        className='text-box' // กำหนดชื่อคลาสสไตล์ขององค์ประกอบ Select
+        placeholder="กรุณาเลือกคำตอบต่อไปนี้ " // ข้อความที่จะแสดงในกล่องเลือกก่อนที่ผู้ใช้จะเลือก
+        onChange={handleChange} // ฟังก์ชันที่จะเรียกเมื่อมีการเปลี่ยนแปลงในการเลือก
+        optionLabelProp="label" // ระบุ property ของ option ที่จะใช้เป็น label แสดงในรายการเลือก
+        options={options} // รายการตัวเลือกที่จะแสดงใน Select
+        mode="multiple" // ให้สามารถเลือกหลายตัวเลือกได้
+        tags={false} // ปิดใช้งานความสามารถในการเพิ่มตัวเลือก
+        filterOption={false} // ปิดใช้งานการกรองตัวเลือก
+        onKeyDown={(e) => {
+          // ตรวจสอบถ้ามีการกดปุ่มที่เป็นตัวอักษร ให้ยกเลิกการกด
+          if (e.key.length === 1) {
+            e.preventDefault();
+          }
+        }}
       />
       <br /><br /><br />
       <div className='font-family'>

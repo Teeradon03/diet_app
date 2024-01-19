@@ -7,17 +7,14 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function Bmi_obesitylevel1() {
     return (
         <div>
-          
             <div className={styles.Bmi1}>
-            <h1> ค่าดัชนีมวลกาย (BMI) </h1>
-            <br />
+            <p> ค่าดัชนีมวลกาย (BMI) </p>
             < Image className='ant-image-img'
               width="60%"
-              src="/public/10.jpg"
+              src="/public/bmi_img/obesity1.jpg"
             /><br />
-            <div className={styles.childbmi}>BMI  23 - 24.90</div>
-            <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 1</div>
-            <div className={styles.childbmi}>ภาวะเสี่ยงต่อโรค   อันตรายระดับ 1</div>
+            <div className={styles.childbmi}>BMI 23 - 24.90</div>
+            <div className={styles.childbmi}>ท้วม / โรคอ้วนระดับ 1</div>
             <br />
     
             <div >
@@ -26,7 +23,7 @@ function Bmi_obesitylevel1() {
               </Link>
             
             
-            <Link to="/"className={styles.link}> 
+            <Link to="/BMR_calculator"className={styles.link}> 
             <button className={styles.nextbutton}>ถัดไป</button> 
               </Link>
             </div>

@@ -40,7 +40,8 @@
 .questionyesno {
   font-size: 40px;
   padding-top: 20px;
-  font-weight: 900; /* ทำตัวหนา */
+  font-weight: bold;
+  padding-top: 50px;
 }
 
 .button-container {
@@ -61,7 +62,7 @@
   transform: translateY(5px);
 } */
 
-.yes-button:hover {
+*/ .yes-button:hover {
   background-color: #757575;
   color: #FFFF;
   box-shadow: 8px 12px 3px 5px #b2b2b2;
@@ -126,6 +127,29 @@
   height: 400%;
 }
 
+@media screen and (min-width: 1601px) {
+  .and {
+    font-weight: bold;
+    margin-left: 20px;
+    margin-right: 20px;
+  }
+
+  .Ynquiztion {
+    display: flex;
+    font-size: 2.8rem;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    margin: 20px;
+    padding-top: 20px;
+    font-weight: bold;
+  }
+
+.imgmedia {
+  width: 500%;
+  height: 500%;
+}
+
 @media screen and (max-width: 1600px) {
   .and {
     font-weight: bold;
@@ -145,7 +169,7 @@
   }
 
   .imgmedia {
-    width: 100%;
+    width: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -182,7 +206,7 @@
   }
 
   .imgmedia {
-    width: 100%;
+    width: 700px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -219,7 +243,7 @@
   }
 
   .imgmedia {
-    width: 100%;
+    width: 600px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -235,7 +259,7 @@
 
   .no-button,
   .yes-button {
-    width: 10vw;
+    width: 20vw;
     max-width: 300px;
     /* เพิ่ม max-width เพื่อไม่ให้ปุ่มกว้างเกินไป */
     margin: 0 auto;
@@ -257,7 +281,7 @@
   }
 
   .imgmedia {
-    width: 100%;
+    width: 500px;
     height: auto;
     display: block;
     margin: 0 auto;
@@ -397,7 +421,7 @@
 
   .no-button,
   .yes-button {
-    width: 30vw;
+    width: 25vw;
     position: relative;
     left: 0px;
     margin: 0 auto;
