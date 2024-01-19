@@ -13,7 +13,7 @@ const {isLoggedIn}  = require('../middleware/isLoggedIn')
 
 router.post('/user-login',loginLine )
 router.post('/update-user-data', isLoggedIn ,updateUserData )
-router.get('/get-users', isLoggedIn ,getUserData)
+router.get('/get-users' ,getUserData)
 
 
 // router.post('/user-update', updateUser)
