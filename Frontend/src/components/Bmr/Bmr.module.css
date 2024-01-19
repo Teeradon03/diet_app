@@ -1,5 +1,4 @@
 .Bmr1 {
-
   display: flex;
   margin: 20px;
   flex-direction: column;
@@ -94,7 +93,6 @@
 
 }
 
-
 .nextbutton {
 
   margin: 0 auto;
@@ -153,9 +151,6 @@
   top: 30px;
 }
 
-
-
-
 @media screen and (max-width: 1600px) {
   .Bmi1 {
     font-size: 2.5rem;
@@ -167,7 +162,7 @@
   .nextbutton,
   .backbutton,
   .bmibutton {
-    width: 50vw;
+    width: 60vw;
     margin: 0 auto;
     display: flex;
     justify-content: center;

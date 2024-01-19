@@ -73,6 +73,7 @@ function BMR_calculator() {
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
+            style={{ width: '1000px' }}
           />
         </div>
 

@@ -246,9 +246,7 @@
     margin: 0 auto;
     /* จะทำให้ปุ่มอยู่ตรงกลางของหน้าจอ */
   }
-
 }
-
 
 @media screen and (max-width: 1200px) {
   .Ynquiztion {

@@ -148,7 +148,6 @@
   height: 50px;
   border-radius: 50%;
   border: none;
-
   color: #757575;
   display: flex;
   justify-content: center;
@@ -295,10 +294,9 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -321,10 +319,9 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
@@ -348,10 +345,11 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    font-weight: bold;
+    left: 200px;
   }
 }
 
@@ -381,10 +379,11 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+    font-weight: bold;
+    left: 120px;
   }
 }
 
@@ -414,10 +413,10 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+    left: 70px;
   }
 }
 
@@ -447,10 +446,10 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 50;
   }
 
   @media screen and (max-width: 450px) {
@@ -478,10 +477,9 @@ label {
     }
 
     .chevronicon {
-      transform: translateX(-2800%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+      font-size: 30px;
+    width: 45px;
+    height: 45px;
     }
   }
 }

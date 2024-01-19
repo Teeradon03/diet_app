@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Image, Button } from 'antd';
+import { Image } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from './Target.module.css';
@@ -7,7 +7,6 @@ import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -23,7 +22,6 @@ function Target() {
       window.location.href = '/BMI_calculator';
     }
   };
-
 
   const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
@@ -46,22 +44,17 @@ function Target() {
       <h1 className={styles.Bmi1}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
-
         <input className='input-ss'
           type="number"
           value={targetWeight}
           onChange={handleInputChange}
         />
         <label htmlFor="target">&nbsp; กก.</label>
-
       </div>
       <br />
-
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
       <br />
-
-      <Image className={styles['ant-image-img']} src="/public/bmi_img/taget.jpg"
-      />
+      <Image className={styles['ant-image-img']} src="/public/bmi_img/taget.jpg" />
       <div>
         {/* Change onClick to handleNextClick */}
         <button className={styles.nextbutton} onClick={handleNextClick}>
@@ -69,13 +62,11 @@ function Target() {
         </button>
       </div>
       <Link to="/Height_show">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Height_show"()}>
+          <VscChevronLeft />
+        </button>
       </Link>
     </div>
   );

@@ -17,14 +17,13 @@ function Weight(props) {
 
   return (
     <div className={styles.Bmi1}>
-      
       <p>น้ำหนักตัว (กก.)</p>
       <input
-        type="number"
-        value={weight}
-        onChange={handleInputChange}
-        
-      />
+      type="number"
+      value={weight}
+      onChange={handleInputChange}
+      style={{ width: '1000px' }}
+    />
     </div>
   );
 }

@@ -22,6 +22,7 @@ function Height(props) {
         type="number"
         value={height}
         onChange={handleInputChange}
+        style={{ width: '1000px' }}
       />
     </div>
   );
