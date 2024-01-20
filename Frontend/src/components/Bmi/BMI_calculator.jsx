@@ -67,15 +67,14 @@ function BMI_calculator() {
           <Height onHeightChange={(value) => setHeight(value)} />
           <button className={styles.bmibutton} onClick={calculateBmi}>คำนวณ BMI</button>
         
-        <Link to="/Target">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+        
+    <Link to="/Target">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "Target"()}>
+          <VscChevronLeft />
+        </button>
+      </Link>
         </div>
         
       );

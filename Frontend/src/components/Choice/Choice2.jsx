@@ -115,16 +115,15 @@ const options = [
   },
 ];
 
-const sendToAPI = async (selectedOptions, questionId = 10,) => {
+const sendToAPI = async (selectedOptions, selectedLabels) => {
   try {
     const data = {
-      questionId: questionId,
-      answer: selectedOptions,
+      questionId: selectedOptions.map(option => option.id),
+      question: selectedLabels.map(option => option.label),
+      answer: value,
     };
-    // console.log(data)
-    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data, {
-      withCredentials: true
-    });
+
+    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data);
     console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error('Error:', error);
@@ -139,13 +138,12 @@ const Choice2 = () => {
     setSelectedOptions(value);
     const questionId = 10;
 
-    // console.log('QuestionId :', questionId)
-    // console.log('AnswerId :', value);
+    console.log('QuestionId :',questionId)
+    console.log('AnswerId :', value);
   };
 
   const handleNext = async () => {
     if (selectedOptions.length > 0) {
-      // console.log('sdasbghbbbbbbbbbb',questionId)
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
       await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
       window.location.href = '/Choice';
@@ -168,14 +166,12 @@ const Choice2 = () => {
   return (
     <div>
       <div>
-      <br/><br/><br/><br/>
-        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร</h1>
-        <h3>(เลือกได้มากกว่า 1 ข้อ)</h3>
+      <br/><br/>
+        <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
       <Select
         mode="multiple"
-        allowClear
         className='text-box'
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
