@@ -68,16 +68,14 @@ const CustomerKey = () => {
         </div>
       </div>
       
-      <Link to="/BMR_calculator">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
+      <Link to="/ever">
+        <button 
+        className={styles.chevronicon} 
+        onClick={() => window.location.href = "ever"()}>
+          <VscChevronLeft />
+        </button>
       </Link>
-    </div>
+      </div>
   );
 };
 

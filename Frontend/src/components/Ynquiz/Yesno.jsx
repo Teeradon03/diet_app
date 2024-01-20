@@ -103,7 +103,7 @@ const yesno = () => {
     },
     {
       id: 27,
-      question: "ลุกหรือเดินเพื่อยืดเส้นสายเกือบทั้งวัน",
+      question: "พฤติกรรมของคุณในช่วงระหว่างวันคือ ลุกหรือเดินเพื่อยืดเส้นสายเกือบทั้งวัน",
     },
     {
       id: 28,
@@ -278,6 +278,7 @@ const yesno = () => {
           {questions[currentQuestionIndex].question}
           <br/><br/>
         </p>
+        <br/>
         <img
           className="imgmedia"
           src={images[currentImageIndex]}

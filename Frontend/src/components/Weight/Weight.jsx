@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import styles from '../Bmi/Bmi.module.css';
 
 function Weight(props) {
-  const [weight, setWeight] = useState('0');
+  const [weight, setWeight] = useState('');
 
   const handleInputChange = (event) => {
     const value = event.target.value;
@@ -17,7 +17,7 @@ function Weight(props) {
 
   return (
     <div className={styles.Bmi1}>
-      <br />
+      
       <p>น้ำหนักตัว (กก.)</p>
       <input
         type="number"

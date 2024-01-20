@@ -2,6 +2,12 @@
   text-decoration: none;
 }
 
+.ant-image-img {
+  width: 100%; /* หรือค่าที่ต้องการ */
+  height: auto;
+  max-width: 400px; /* หรือค่าที่ต้องการ */
+  max-height: 400px; /* หรือค่าที่ต้องการ */
+}
 .advicebutton {
   margin: 0 auto;
   display: flex;
@@ -11,7 +17,7 @@
   line-height: 1.5;
   display: block;
   width: 100%;
-  max-width: 210px;
+  max-width: 250px;
   padding: 15px;
   position: relative;
   background-color: #FFFF;
@@ -224,22 +230,22 @@
 .inputlabel {
   display: flex;
   align-items: center;
+  text-align: center;
 }
 
 input {
   padding: 10px;
   width: calc(100%);
-  max-width: 220px;
+  max-width: 300px;
   /* Adjust the max-width as needed */
   box-sizing: border-box;
   border-radius: 35px;
   margin-right: 5px;
   /* Add some margin between input and label */
   font-size: 1rem;
+  text-align: center;
   font-weight: bold;
-  background-color: #fff;
-  color: #111;
-  box-shadow: 10px 10px 8px 6px #b2b2b2;
+
 }
 
 label {
@@ -285,14 +291,13 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
-@media screen and (max-width: 1400px) {
+@media screen and (min-width: 1400px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
@@ -311,18 +316,15 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
 
 @media screen and (max-width: 1200px) {
-  .Bmi1 {
-    font-size: 1.6rem;
-  }
+  
 
   .advicebutton,
   .nextbutton,
@@ -338,18 +340,15 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-1000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
   }
 }
 
 
 @media screen and (max-width: 992px) {
-  .Bmi1 {
-    font-size: 1.6rem;
-  }
+  
 
   .childbmi,
   .childadvice {
@@ -371,18 +370,15 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2000%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
   }
 }
 
 
 @media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+
 
   .childbmi,
   .childadvice {
@@ -404,18 +400,15 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2500%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
   }
 }
 
 
 @media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+ 
 
   .childbmi,
   .childadvice {
@@ -437,17 +430,13 @@ label {
   }
 
   .chevronicon {
-    transform: translateX(-2700%);
-    font-size: 16px;
-    width: 10px;
-    height: 10px;
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
   }
 
   @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.5rem;
-    }
-
+  
     .childbmi,
     .childadvice {
       width: 60vw;
@@ -468,10 +457,9 @@ label {
     }
 
     .chevronicon {
-      transform: translateX(-2800%);
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
     }
   }
 }
