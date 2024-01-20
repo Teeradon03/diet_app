@@ -111,6 +111,10 @@ const Choice = () => {
     }
   };
 
+  const handleBack = () => {
+    window.location.href = ('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+  };
+
   const buttonStyle = {
     fontWeight: 900,
   };
@@ -142,7 +146,7 @@ const Choice = () => {
         </button>
       </div>
       <div>
-        <button className="chevron-list" style={buttonStyle}>
+        <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
           <VscChevronLeft />
           {/* ไอคอนย้อนกลับ */}
         </button>
