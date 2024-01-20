@@ -1,4 +1,4 @@
-// import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 import './App.css'
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
@@ -66,6 +66,7 @@ function App() {
         <Route path='/Bmi_obesitylevel1' element={<Bmi_obesitylevel1 />}/>
         <Route path='/Bmi_obesitylevel2' element={<Bmi_obesitylevel2 />}/>
         <Route path='/Bmi_obesitylevel3' element={<Bmi_obesitylevel3 />}/>
+        
         <Route path='/BMR_calculator' element={<BMR_calculator />}/>
 
 
