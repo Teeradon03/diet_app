@@ -103,7 +103,7 @@ const yesno = () => {
     },
     {
       id: 27,
-      question: "ลุกหรือเดินเพื่อยืดเส้นสายเกือบทั้งวัน",
+      question: "พฤติกรรมของคุณในช่วงระหว่างวันคือ ลุกหรือเดินเพื่อยืดเส้นสายเกือบทั้งวัน",
     },
     {
       id: 28,
@@ -273,8 +273,10 @@ const yesno = () => {
   return (
     <div className="Ynquiztion">
       <div className="font-family">
+      <br/>
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
+          <br/><br/>
         </p>
         <br/>
         <img
@@ -284,7 +286,7 @@ const yesno = () => {
           //style={imageStyle}
         />
       </div>
-
+      <br/>
       <div className="button-container">
         <button
           className="no-button"

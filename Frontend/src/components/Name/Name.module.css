@@ -3,7 +3,7 @@
 }
 
 .Bmi1 {
-    
+
   padding: 30px;
   display: flex;
   margin: 20px;
@@ -13,21 +13,18 @@
   font-weight: bold;
 }
 
-
-
-.inputv1 input{
-    margin: 0 auto;
+.inputv1{   
+    
     justify-content: center;
     align-items: center;
-    padding: 15px;
+    padding: 1px;
     width: calc(100% );
-    max-width: 300px;
+    max-width: 210px;
     box-sizing: border-box;
-    border-radius: 35px;
+    border-radius: 8px;
     margin-bottom: 2em;
-    font-size: 2rem;
-    
-    font-weight: bold;
+    font-size: 1rem;
+   
 }
 
 .chevronicon {
@@ -48,10 +45,10 @@
 }
 
 .gender select {
-  margin: 40px auto 0; /* Add 30px top margin, center horizontally */
-  width: calc(100%);
-  max-width: 300px;
-  height: 4.5rem;
+     
+  width: calc(100% );
+  max-width: 210px;
+  height: 50px;
   box-sizing: border-box;
   border-radius: 35px;
   margin-bottom: 1em;
@@ -61,12 +58,13 @@
   box-shadow: 10px 10px 8px 6px #b2b2b2;
   padding: 8px; 
   font-size: 25px; 
-  font-weight: bold;
+  
+
 }
 
 
 .nextbutton {
-    
+
   margin: 0 auto;
   display: flex;
   justify-content: center;
@@ -78,7 +76,7 @@
   max-width: 210px;
   padding: 1px;
   position: relative; 
-  top: 50px; 
+  top: 25px; 
   margin-bottom: 55px;
   background-color: #FFFF;
   border: 1px solid #ccc;
@@ -88,26 +86,25 @@
   font-size: 2.5rem;
   cursor: pointer;
   text-align :center;
-  font-weight: bold;
 }
 
-.nextbutton:hover{
+.nextbutton:hover {
   background-color: #757575;
   color: #FFFF;
   box-shadow: 0 4px 0 0 #b2b2b2;
 }
 
-.nextbutton:active{
+.nextbutton:active {
   box-shadow: none;
   transform: translateY(5px);
 }
 
 
-    
-@media screen and (max-width: 1200px) {
+@media screen and (max-width: 1600px) {
   .Bmi1 {
     font-size: 2.5rem;
   }
+
   .advicebutton,
   .nextbutton,
   .backbutton,
@@ -118,8 +115,34 @@
     justify-content: center;
     align-items: center;
     margin-bottom: 1em;
-    
+
   }
+
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+  
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
   .chevronicon {
     font-size: 40px;
     width: 60px;
@@ -129,17 +152,18 @@
 
 
 @media screen and (max-width: 992px) {
-  .Bmi1 {
-    font-size: 1.6rem;
-  }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 50vw;
   }
-  
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
-  .backbutton{
+  .backbutton {
     width: 70vw;
     margin: 0 auto;
     display: flex;
@@ -147,6 +171,7 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2000%);
     font-size: 16px;
@@ -157,15 +182,16 @@
 
 
 @media screen and (max-width: 768px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+
   .childbmi,
-  .childadvice
-   {
+  .childadvice {
     width: 60vw;
   }
-  
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
   .backbutton {
     width: 70vw;
@@ -175,6 +201,7 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2500%);
     font-size: 16px;
@@ -185,15 +212,16 @@
 
 
 @media screen and (max-width: 576px) {
-  .Bmi1 {
-    font-size: 1.5rem;
-  }
+
   .childbmi,
-  .childadvice
-  {
+  .childadvice {
     width: 70vw;
   }
- 
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
   .nextbutton,
   .backbutton {
     width: 70vw;
@@ -203,35 +231,40 @@
     align-items: center;
     margin-bottom: 1em;
   }
+
   .chevronicon {
     transform: translateX(-2700%);
     font-size: 16px;
     width: 10px;
     height: 10px;
   }
+
   @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.5rem;
-    }
+
     .childbmi,
-    .childadvice
-     {
+    .childadvice {
       width: 60vw;
     }
-  
-    .nextbutton {
-    width: 60vw;
-    margin: 0 auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-bottom: 1em;
+
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
     }
+
     .chevronicon {
       transform: translateX(-2800%);
       font-size: 16px;
       width: 10px;
       height: 10px;
     }
-} 
+  }
 }

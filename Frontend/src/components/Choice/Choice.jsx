@@ -117,7 +117,6 @@ const Choice = () => {
     window.location.href = ('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
-
   const buttonStyle = {
     fontWeight: 900,
   };
@@ -126,13 +125,14 @@ const Choice = () => {
     <div>
       <div className="text">
         <h1 style={buttonStyle}>โรคประจำตัวของคุณ </h1>
-        <p>(เลือกได้มากกว่า 1 ข้อ)</p>
+        <h3>(เลือกได้มากกว่า 1 ข้อ)</h3>
       </div>
       <br />
       <br />
       <Select
         mode="multiple"
-        className="text-box"
+        allowClear
+        className='text-box'
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
@@ -140,7 +140,7 @@ const Choice = () => {
         
       />
       <br />
-      <br />
+      <br />  
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
@@ -148,7 +148,7 @@ const Choice = () => {
         </button>
       </div>
       <div>
-      <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
+        <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
           <VscChevronLeft />
           {/* ไอคอนย้อนกลับ */}
         </button>

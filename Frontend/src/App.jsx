@@ -1,4 +1,4 @@
-// import "bootstrap/dist/css/bootstrap.css"
+import "bootstrap/dist/css/bootstrap.css"
 
 import './App.css'
 import { BrowserRouter, Routes, Route, } from "react-router-dom";
@@ -31,12 +31,22 @@ import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
+import Report from "./pages/report/report.jsx";
+import Users from "./pages/report/user/Users.jsx";
 
-
+import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+
+        <Route path="/report" element={<Report/>}/>
+        <Route path="/report/users" element={<Users />}/>
+        <Route path="/report/questionnaires" element={<Questionnaires />}/>
+
+
+
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound404 />} />
         <Route path="/login" element={<Login />} />
@@ -66,6 +76,7 @@ function App() {
         <Route path='/Bmi_obesitylevel1' element={<Bmi_obesitylevel1 />}/>
         <Route path='/Bmi_obesitylevel2' element={<Bmi_obesitylevel2 />}/>
         <Route path='/Bmi_obesitylevel3' element={<Bmi_obesitylevel3 />}/>
+
         <Route path='/BMR_calculator' element={<BMR_calculator />}/>
 
 

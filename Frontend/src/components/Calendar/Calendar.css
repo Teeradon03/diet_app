@@ -18,6 +18,10 @@
   }
 }
 
+.text-center{
+  font-weight: bold;
+}
+
 .bold {
   font-size: 20px;
 }

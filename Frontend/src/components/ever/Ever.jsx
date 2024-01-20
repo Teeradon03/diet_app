@@ -53,7 +53,7 @@ export default function Ever() {
 
 							onClick={handleNext}
 						>
-						ดำเนินการต่อ</button>
+						ถัดไป</button>
 				</div>
 			</div>
 		</div>

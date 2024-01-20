@@ -12,8 +12,8 @@ function Bmi_lowweight() {
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             <br/>
             < Image className='ant-image-img'
-              width="60%"
-              src="/public/10.jpg"
+              width="80%"
+              src="/public/bmi_img/lowweight.jpg"
             />
             <br />
             <div className={styles.childbmi}>BMI น้อยกว่า 18.50</div>
@@ -32,10 +32,11 @@ function Bmi_lowweight() {
             </div>
             
       </div>
-    <Link to="/BMI_calculator">
-        <button 
-        className={styles.chevronicon} 
-        onClick={() => window.location.href = "BMI_calculator"()}>
+      <Link to="/BMI_calculator">
+        <button
+          className={styles.chevronicon}
+          onClick={() => (window.location.href = "BMI_calculator"())}
+        >
           <VscChevronLeft />
         </button>
       </Link>

@@ -139,12 +139,14 @@ const Choice2 = () => {
     setSelectedLabels(selectedLabels);
     console.log('ข้อจำกัดด้านการทานอาหาร:', selectedLabels);
 
-    // เรียกใช้ sendToAPI พร้อมส่ง selectedOptions และ selectedLabels เพื่อใช้ในการส่งไปยัง API
-    sendToAPI(selectedOptions, selectedLabels);
+    console.log('QuestionId :',questionId)
+    console.log('AnswerId :', value);
   };
 
-  const handleNext = () => {
-    if (selectedLabels.length > 0) {
+  const handleNext = async () => {
+    if (selectedOptions.length > 0) {
+      // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
+      await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
       window.location.href = '/Choice';
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");

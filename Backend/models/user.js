@@ -12,7 +12,7 @@ const userSchema = mongoose.Schema({
     weight: Number,
     bmi: Number,
     bmiIndex: String,
-    calories: Number,
+    bmr: Number,
     
     userId : {
         type : String,

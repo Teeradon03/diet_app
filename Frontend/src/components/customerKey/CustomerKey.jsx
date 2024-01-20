@@ -68,14 +68,14 @@ const CustomerKey = () => {
         </div>
       </div>
       
-      <Link to="/BMR_calculator">
+      <Link to="/ever">
         <button 
         className={styles.chevronicon} 
-        onClick={() => window.location.href = "BMR_calculator"()}>
+        onClick={() => window.location.href = "ever"()}>
           <VscChevronLeft />
         </button>
       </Link>
-    </div>
+      </div>
   );
 };
 

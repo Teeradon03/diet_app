@@ -29,11 +29,7 @@ function BMI_calculator() {
     const dataToSend = {
       bmi: calculatedBmi
     };
-
-    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend ,{ withCredentials: true })
-
-    await axios.post('http://localhost:9999/api/create-questionnaires', {dataToSend,witCredentials:true})
-
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend , { withCredentials: true })
     .then(function (response) {
       console.log(response);
     })
@@ -44,13 +40,14 @@ function BMI_calculator() {
 
   const determinePage = (calculatedBmi) => {
     if (calculatedBmi < 18.5) {
-      setCurrentPage(1);
+      navigate('/Bmi_lowweight');
+      
     } else if (calculatedBmi <= 22.9) {
-      setCurrentPage(2);
+      navigate('/Bmi_normalweight');
     } else if (calculatedBmi <= 24.9) {
-      setCurrentPage(3);
+      navigate('/Bmi_obesitylevel1');
     } else if (calculatedBmi <= 29.9) {
-      setCurrentPage(4);
+      navigate('/Bmi_obesitylevel2');
     } else if (calculatedBmi >= 29.9) {
       navigate('/Bmi_obesitylevel3');
     } 

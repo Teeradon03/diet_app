@@ -11,8 +11,8 @@ function Bmi_obesitylevel1() {
             <h1> ค่าดัชนีมวลกาย (BMI) </h1>
             <br />
             < Image className='ant-image-img'
-              width="60%"
-              src="/public/10.jpg"
+              width="80%"
+              src="/public/bmi_img/obesity1.jpg"
             /><br />
             <div className={styles.childbmi}>BMI  23 - 24.90</div>
             <div className={styles.childbmi}>อยู่ในเกณฑ์   อ้วน/อ้วนระดับ 1</div>
@@ -31,9 +31,10 @@ function Bmi_obesitylevel1() {
             </div>
           </div>
           <Link to="/BMI_calculator">
-        <button 
-        className={styles.chevronicon} 
-        onClick={() => window.location.href = "BMI_calculator"()}>
+        <button
+          className={styles.chevronicon}
+          onClick={() => (window.location.href = "BMI_calculator"())}
+        >
           <VscChevronLeft />
         </button>
       </Link>

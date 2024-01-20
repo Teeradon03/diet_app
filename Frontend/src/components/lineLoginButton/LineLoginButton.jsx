@@ -1,7 +1,7 @@
 import Button from '@mui/material/Button';
 
 import liff from '@line/liff';
-import axios from 'axios';
+
 
 const LineLoginButton = () => {
 
@@ -12,24 +12,10 @@ const LineLoginButton = () => {
         liffId: '2002171340-w1AjWX9e', // Use your own liffId
       });
       if (!liff.isLoggedIn()) {
-        console.log('before login');
+        // console.log('before login');
         liff.login();
       }
-      const userProfile = await liff.getProfile();
-      const idToken = liff.getIDToken();
-      // const accessToken = liff.getAccessToken();
-      // console.log('access token: ' + accessToken)
-      console.log('idToken', idToken);
-      console.log('user profile', userProfile);
-      const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
-        {
-          withCredentials: true
-        }
-      )
-
-      console.log(response.data)
-
-      if (liff.isLoggedIn()) {
+      else {
         window.location.replace('/home')
       }
     } catch (error) {
@@ -37,23 +23,15 @@ const LineLoginButton = () => {
     }
   };
 
-
-
   return (
     <>
       <Button
         variant="contained"
-        style={{
-          backgroundColor: '#00BF00',
-          color: 'white',
-          borderRadius: 5,
-          padding: '10px 20px',
-        }}
+        className="bg-success text-white rounded p-2 ps-4 pe-4"
         startIcon={<img src='/LINE_APP_iOS.png' alt="LINE logo" style={{ width: 20, height: 20 }} />}
         onClick={handleLineLogin}
       >
         Sign In With Line
-
       </Button>
 
 

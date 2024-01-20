@@ -1,4 +1,4 @@
-import  { useState } from 'react';
+import { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -22,7 +22,6 @@ function Target() {
       window.location.href = '/BMI_calculator';
     }
   };
-  
 
   const handleSubmit = async () => {
     console.log('Target Weight:', targetWeight);
@@ -43,7 +42,7 @@ function Target() {
   return (
     <div className={styles.Bmi1}>
       <h1 className={styles.Bmi1}>น้ำหนักเป้าหมายของคุณเท่าไหร่</h1>
-      <br />
+      
       <div className={styles.inputlabel}>
         <input
           type="number"

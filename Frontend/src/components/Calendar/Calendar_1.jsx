@@ -13,18 +13,39 @@ function Calendar_1() {
   const handleDateChange = (newDate) => {
     if (newDate !== null) {
       setDate(newDate);
-      console.log('Selected date:', newDate);
+      logThaiMessage('เลือกวันที่:', newDate);
     }
+  };
+
+  const formatThaiDate = (date) => {
+    const thaiMonthNames = [
+      'มกราคม', 'กุมภาพันธ์', 'มีนาคม', 'เมษายน',
+      'พฤษภาคม', 'มิถุนายน', 'กรกฎาคม', 'สิงหาคม',
+      'กันยายน', 'ตุลาคม', 'พฤศจิกายน', 'ธันวาคม',
+    ];
+
+    const day = date.getDate();
+    const month = thaiMonthNames[date.getMonth()];
+    const year = date.getFullYear() + 543;
+
+    return `${day} ${month} ${year}`;
+  };
+
+  const logThaiMessage = (message, selectedDate) => {
+    const formattedDate = selectedDate ? formatThaiDate(selectedDate) : "";
+    console.log(`${message} ${formattedDate}`);
   };
 
   const handleSubmit = async () => {
     const dataToSend = {
       calendar: date,
     };
-  
+
     try {
-      const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', dataToSend, { withCredentials: true });
-      console.log(response.data);
+      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
+      console.log('Server response:', response.data);
+      // Add navigation to the next page here if needed
     } catch (error) {
       logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);
       console.error('Error:', error);
@@ -37,15 +58,19 @@ function Calendar_1() {
         <h1 className={styles.Bmi1}>วัน/เดือน/ปีเกิด</h1>
         <br />
         <div className="calendar-container">
-          <Calendar onChange={onChange} value={value} />
+          <Calendar 
+            onChange={handleDateChange} 
+            value={date} 
+            locale="th-TH"
+          />
         </div>
         <p className="text-center">
           <br />
           <br />
-          <h1 className={styles.Bmi1}>วันที่คุณเลือก </h1>
-          
-          <h4 className={styles.Bmi1}>{date.toDateString()}</h4>
-        </p>
+          <p>กรุณาเลือกวันที่ </p>
+          &nbsp;&nbsp;&nbsp;
+          <span>{formatThaiDate(date)}</span>
+        </div>
       </header>
       <br />
       <Link to="/Weight_show" className={styles.link}>
@@ -53,14 +78,12 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
-      <div className={styles.chevronicon}>
-        <Link to="/Yesno">
-          <Button
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </Link>
-      </div>
+      
+      <Link to="/Yesno" className={styles.link}>
+        <button className={styles.chevronicon}>
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
   );
 }
