@@ -70,7 +70,7 @@ function Calendar_1() {
           <p>กรุณาเลือกวันที่ </p>
           &nbsp;&nbsp;&nbsp;
           <span>{formatThaiDate(date)}</span>
-        </div>
+        </p>
       </header>
       <br />
       <Link to="/Weight_show" className={styles.link}>

@@ -10,10 +10,6 @@ function Bmi_normalweight() {
            <div className={styles.Bmi1}>
           <p> ค่าดัชนีมวลกาย (BMI) </p>
           < Image className='ant-image-img'
-<<<<<<<<< Temporary merge branch 1
-            width="60%"
-            src="/public/10.jpg"
-=========
             width="80%"
             src="/public/bmi_img/normal.jpg"
           /><br />
@@ -27,8 +23,9 @@ function Bmi_normalweight() {
             <button className={styles.advicebutton}>คำแนะนำ</button> 
             </Link>
           
+
           
-          <Link to="/"className={styles.link}> {/* Changed the route for the "No" response */}
+          <Link to="/BMR_calculator"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
 
@@ -58,15 +55,15 @@ function Bmi_normalweight() {
           </div>
         </div>
         <Link to="/BMI_calculator">
-         <div className={styles.chevronicon}>
-        <Button
-          className={styles.button}
-          shape="circle"
-          icon={<VscChevronLeft />}
-        />
-      </div>
-    </Link>
+        <button
+          className={styles.chevronicon}
+          onClick={() => (window.location.href = "BMI_calculator"())}
+        >
+          <VscChevronLeft />
+        </button>
+      </Link>
     </div>
+  </div>
   );
 }
 
