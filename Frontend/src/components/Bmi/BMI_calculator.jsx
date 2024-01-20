@@ -29,7 +29,7 @@ function BMI_calculator() {
     const dataToSend = {
       bmi: calculatedBmi
     };
-    await axios.post('http://localhost:9999/api/create-questionnaires', {dataToSend,witCredentials:true})
+    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend , { withCredentials: true })
     .then(function (response) {
       console.log(response);
     })
