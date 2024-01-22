@@ -167,9 +167,11 @@ const yesno = () => {
     try {
       const data = {
         questionId: questions[currentQuestionIndex].id,
-        question: questions[currentQuestionIndex].question,
+
         answer: answer
       };
+
+      // console.log('data in before axios',data)
 
       const response = await axios.post(
         "http://localhost:9999/api/form/create-questionnaires",
@@ -179,7 +181,7 @@ const yesno = () => {
         }
       );
 
-      console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+      // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
     } catch (error) {
       console.error("Error:", error);
     }
@@ -212,7 +214,9 @@ const yesno = () => {
         questions[currentImageIndex] &&
         questions[currentImageIndex].id === 41
       ) {
-        console.log('fdgfdgdfg',questions[currentImageIndex].id === 30)
+        // console.log('fdgfdgdfg',questions[currentImageIndex].id === 41)
+        // console.log('answer', questions[currentImageIndex].id)
+        sendToAPI(answer);
         window.location.href = "/Calendar_1";
         return;
       }
@@ -223,8 +227,8 @@ const yesno = () => {
       questions[currentImageIndex] &&
       questions[currentImageIndex].id
     ) {
-      console.log("Question ID:", questions[currentImageIndex].id);
-      console.log("Answer:", answer);
+      // console.log("Question ID:", questions[currentImageIndex].id);
+      // console.log("Answer:", answer);
 
       // เรียกใช้งานฟังก์ชันสำหรับส่งข้อมูลไปยัง API
       sendToAPI(answer);
