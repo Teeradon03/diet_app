@@ -31,7 +31,7 @@ import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
-import Report from "./pages/report/report.jsx";
+import Report from "./pages/report/Report.jsx"
 import Users from "./pages/report/user/Users.jsx";
 
 import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
