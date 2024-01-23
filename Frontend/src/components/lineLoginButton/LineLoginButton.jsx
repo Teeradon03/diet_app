@@ -9,7 +9,7 @@ const LineLoginButton = () => {
     console.log('in login func');
     try {
       await liff.init({
-        liffId: '2002171340-w1AjWX9e', // Use your own liffId
+        liffId: '2002961723-1mlX4q3q', // Use your own liffId
       });
       if (!liff.isLoggedIn()) {
         // console.log('before login');

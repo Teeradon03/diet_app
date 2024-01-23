@@ -15,13 +15,14 @@ const loginLine = async (req, res) => {
     const headers = {
       "Content-Type": "application/x-www-form-urlencoded",
     };
-
+    console.log('before decode')
     const decode = await axios.post(
       "https://api.line.me/oauth2/v2.1/verify",
       params,
       { headers }
-    );
-      // console.log('decode', decode)
+    )
+
+      console.log('decode', decode)
     const userLineData = {
       line_user_id: decode.data.sub,
       line_username: decode.data.name,
@@ -57,7 +58,7 @@ const loginLine = async (req, res) => {
       console.log("User Created");
       req.session.userId = user.userId;
     }
-    // console.log(req.session.userId);
+    console.log(req.session.userId);
 
     res.send(`logged in as ${req.session.userId}`);
   } catch (error) {
@@ -79,7 +80,7 @@ const updateUserData = async (req, res) => {
       // console.log('dataofbirth', dateOfBirth)
       const updateUser = await User.findOneAndUpdate(
         {userId : req.session.userId},
-        { $set: {...data, dataOfBirth: dateOfBirth}},
+        { $set: {...data, dateOfBirth: dateOfBirth}},
         { new : true}
       )
       // console.log('updateUser', updateUser)

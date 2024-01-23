@@ -5,7 +5,7 @@ import axios from 'axios';
 const Home = () => {
 
   useEffect(() => {
-    liff.init({ liffId: '2002171340-w1AjWX9e' })
+    liff.init({ liffId: '2002961723-1mlX4q3q' })
       .then(() => {
         /// something 
         handleLineLogin()
@@ -19,12 +19,13 @@ const Home = () => {
       // console.log('access token: ' + accessToken)
       // console.log('idToken', idToken);
       // console.log('user profile', userProfile);
+      // console.log('idtokenn', idToken)
       const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
         {
           withCredentials: true
         }
       )
-      console.log(response.data)
+      console.log(response)
     }
     catch (error) {
       console.log(error)
