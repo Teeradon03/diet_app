@@ -89,8 +89,9 @@ export default function Users() {
   };
 
   return (
-    <Paper sx={{ width: "100%", overflow: "hidden" }}>
+    <Paper sx={{ width: "90%", overflow: "hidden" }}> 
       <TextField
+        
                 label="Search"
                 variant="outlined"
                 fullWidth
