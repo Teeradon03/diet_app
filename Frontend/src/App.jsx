@@ -37,9 +37,8 @@ import Users from "./pages/report/user/Users.jsx";
 import SideBar from "./pages/report/SideBar.jsx";
 import HeaderBar from "./pages/report/HeaderBar.jsx";
 import MainApp from "./pages/report/MainApp.jsx";
-
-
 import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
+import Table from "./pages/report/user/Table.jsx";
 
 function App() {
   return (
@@ -91,6 +90,7 @@ function App() {
         <Route path="/report/SideBar" element={<SideBar />} />
         <Route path="/report/HeaderBar" element={<HeaderBar />} />
         <Route path="/report/MainApp" element={<MainApp />} />
+        <Route path="/report/Table" element={<Table />} />
 
       </Routes>
     </BrowserRouter>
