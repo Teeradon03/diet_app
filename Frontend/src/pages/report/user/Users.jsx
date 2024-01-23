@@ -61,47 +61,47 @@ function stableSort(array, comparator) {
 //การกำหนดค่าสำหรับเซลล์หัวของตาราง
 const headCells = [
     { id: "id", label: "Id" },
-    { id: "userId", label: "User Id", minWidth: 100 },
-    {
-      id: "line_user_id",
-      label: "Line User",
-      minWidth: 170,
-      align: "center",
-      format: (value) => value.toLocaleString("en-US"),
-    },
-    {
-      id: "line_username",
-      label: "Line Username",
-      minWidth: 170,
-      align: "center",
-      format: (value) => value.toLocaleString("en-US"),
-    },
-    {
-      id: "line_picture_url",
-      label: "Line Picture URL",
-      minWidth: 50,
-      align: "center",
-      format: (value) => value.toLocaleString("en-US"),
-    },
-    {
-      id: "dateOfBirth",
-      label: "dateOfBirth",
-      minWidth: 170,
-      align: "center",
-      format: (value) => value.toLocaleString("en-US"),
-    },
-    {
-      id: "height",
-      label: "Height",
-    },
-    {
-      id: "weight",
-      label: "Weight",
-    },
-    {
-      id: "targetWeight",
-      label: "Target Weight",
-    },
+  { id: "userId", label: "User Id", minWidth: 100 },
+  {
+    id: "line_user_id",
+    label: "Line User",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "line_username",
+    label: "Line Username",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "line_picture_url",
+    label: "Line Picture URL",
+    minWidth: 50,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "dateOfBirth",
+    label: "Date Of Birth",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "height",
+    label: "Height",
+  },
+  {
+    id: "weight",
+    label: "Weight",
+  },
+  {
+    id: "targetWeight",
+    label: "Target Weight",
+  },
 ];
 
 //คอมโพเนนต์สำหรับการแสดงหัวตารางพร้อมฟังก์ชันการเรียงลำดับ
@@ -228,23 +228,27 @@ export default function EnhancedTable() {
   const [rows, setRows] = React.useState([]);
 
 
-  function createData(id,
+  function createData(
+ 
+    userId,
     line_user_id,
     line_username,
-    ine_picture_url,
-    dataOfBirth,
+    line_picture_url,
+    dateOfBirth,
     height,
     weight,
-    targetWeight) {
+    targetWeight,
+    ) {
   return {
-        id,
-        line_user_id,
-        line_username,
-        ine_picture_url,
-        dataOfBirth,
-        height,
-        weight,
-        targetWeight
+  
+    userId,
+    line_user_id,
+    line_username,
+    line_picture_url,
+    dateOfBirth,
+    height,
+    weight,
+    targetWeight,
       };
   };
   const getUserData = async () => {
@@ -255,19 +259,20 @@ export default function EnhancedTable() {
         // Map the response data to rows using createData function
         const mappedRows = usersData.map((userData) =>
           createData(
-            userData.id,
+            userData.userId,
             userData.line_user_id,
             userData.line_username,
             userData.line_picture_url,
-            userData.dataOfBirth,
+            userData.dateOfBirth,
             userData.height,
             userData.weight,
-            userData.targetWeight
+            userData.targetWeight,
           )
         );
     
         // Replace the existing rows with the mappedRows
         setRows(mappedRows);
+        console.log('upasadfsadf', mappedRows)
       } catch (error) {
         console.error("Error fetching user data:", error);
       }
@@ -343,7 +348,7 @@ export default function EnhancedTable() {
         console.log('rowwwwww', rows)
 
   return (
-    <Box sx={{ width: '100%' }}>
+    <Box sx={{ width: '100%', height: "80%" }}>
       <Paper sx={{ width: '100%', mb: 2 }}>
         <EnhancedTableToolbar numSelected={selected.length} />
         <TableContainer>
@@ -386,23 +391,24 @@ export default function EnhancedTable() {
                         }}
                       />
                     </TableCell>
-                    <TableCell
+                   <TableCell
                       component="th"
                       id={labelId}
                       scope="row"
                       padding="none"
+                      align='center'
                     >
-                      {row.userId}
-                    </TableCell>
-                    
-                    <TableCell align="left">{row.userId}</TableCell>
-                    <TableCell align="right">{row.line_user_id}</TableCell>
-                    <TableCell align="right">{row.line_username}</TableCell>
-                    <TableCell align="right">{row.line_picture_url}</TableCell>
-                    <TableCell align="right">{row.dataOfBirth}</TableCell>
-                    <TableCell align="right">{row.height}</TableCell>
-                    <TableCell align="right">{row.weight}</TableCell>
-                    <TableCell align="right">{row.targetWeight}</TableCell>
+                      {index+1}
+                    </TableCell> 
+
+                    <TableCell align="center">{row.userId}</TableCell>
+                    <TableCell align="center">{row.line_user_id}</TableCell>
+                    <TableCell align="center">{row.line_username}</TableCell>
+                    <TableCell align="center">{row.line_picture_url}</TableCell>
+                    <TableCell align="center">{row.dateOfBirth}</TableCell>
+                    <TableCell align="center">{row.height}</TableCell>
+                    <TableCell align="center">{row.weight}</TableCell>
+                    <TableCell align="center">{row.targetWeight}</TableCell>
                   </TableRow>
                 );
               })}

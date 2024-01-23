@@ -99,8 +99,8 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
                     />
                   </Box>
                   <Box textAlign="center">
-                    <Typography sx={{ m: "10px 0 0 0" }}>ROITAI</Typography>
-                    <Typography>DEV </Typography>
+                    <Typography sx={{ m: "10px 0 0 0" }}>REPORT</Typography>
+                    
                   </Box>
                 </Box>
               )}

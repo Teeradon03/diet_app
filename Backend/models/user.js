@@ -5,7 +5,7 @@ const userSchema = mongoose.Schema({
     lastName: String,
     age: Number,
     gender: String,
-    dataOfBirth : Date,
+    dateOfBirth : Date,
     phone: Number,
     targetWeight: Number,
     height: Number,

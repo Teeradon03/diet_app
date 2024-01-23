@@ -8,6 +8,7 @@ const loginLine = async (req, res) => {
     console.log(data);
     const extractedData = Object.keys(data).map((key) => key.split(":")[0]);
     const token = extractedData[0];
+    console.log('asdasasfsdddddddd', token)
     const params = new URLSearchParams();
     params.append("id_token", token);
     params.append("client_id", process.env.CHANNELID);
@@ -79,7 +80,7 @@ const updateUserData = async (req, res) => {
       // console.log('dataofbirth', dateOfBirth)
       const updateUser = await User.findOneAndUpdate(
         {userId : req.session.userId},
-        { $set: {...data, dataOfBirth: dateOfBirth}},
+        { $set: {...data, dateOfBirth: dateOfBirth}},
         { new : true}
       )
       // console.log('updateUser', updateUser)

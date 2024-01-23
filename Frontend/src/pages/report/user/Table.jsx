@@ -61,10 +61,47 @@ function stableSort(array, comparator) {
 //การกำหนดค่าสำหรับเซลล์หัวของตาราง
 const headCells = [
     { id: "id", label: "Id" },
-    { id: "userId", label: "User Id", minWidth: 100 },
-    { id: "questionId", label: "Question Id", minWidth: 100 },
-    { id: "answer", label: "Answer", minWidth: 100 },
-    { id: "dateTime", label: "Date Time", minWidth: 100 },
+  { id: "userId", label: "User Id", minWidth: 100 },
+  {
+    id: "line_user_id",
+    label: "Line User",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "line_username",
+    label: "Line Username",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "line_picture_url",
+    label: "Line Picture URL",
+    minWidth: 50,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "dataOfBirth",
+    label: "Data O Birth",
+    minWidth: 170,
+    align: "center",
+    format: (value) => value.toLocaleString("en-US"),
+  },
+  {
+    id: "height",
+    label: "Height",
+  },
+  {
+    id: "weight",
+    label: "Weight",
+  },
+  {
+    id: "targetWeight",
+    label: "Target Weight",
+  },
 ];
 
 //คอมโพเนนต์สำหรับการแสดงหัวตารางพร้อมฟังก์ชันการเรียงลำดับ
@@ -124,6 +161,7 @@ EnhancedTableHead.propTypes = {
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
+
 function EnhancedTableToolbar(props) {
   const { numSelected } = props;
 
@@ -154,7 +192,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Questionnaries
+          User
         </Typography>
       )}
 
@@ -193,21 +231,29 @@ export default function EnhancedTable() {
   function createData(
     id,
     userId,
-    questionId,
-    answer,
-    dateTime,
+    line_user_id,
+    line_username,
+    line_picture_url,
+    dataOfBirth,
+    height,
+    weight,
+    targetWeight,
     ) {
   return {
     id,
     userId,
-    questionId,
-    answer,
-    dateTime,
+    line_user_id,
+    line_username,
+    line_picture_url,
+    dataOfBirth,
+    height,
+    weight,
+    targetWeight,
       };
   };
   const getUserData = async () => {
     try {
-        const response = await axios.get("http://localhost:9999/api/form/get-questionnaires");
+        const response = await axios.get("http://localhost:9999/api/user/get-users");
         const usersData = response.data;
         console.log('usersdata', usersData)
         // Map the response data to rows using createData function
@@ -215,9 +261,13 @@ export default function EnhancedTable() {
           createData(
             userData.id,
             userData.userId,
-            userData.questionId,
-            userData.answer,
-            userData.dateTime,
+            userData.line_user_id,
+            userData.line_username,
+            userData.line_picture_url,
+            userData.dataOfBirth,
+            userData.height,
+            userData.weight,
+            userData.targetWeight,
           )
         );
     
@@ -354,10 +404,13 @@ export default function EnhancedTable() {
                     
                     <TableCell align="center">{row.id}</TableCell>
                     <TableCell align="center">{row.userId}</TableCell>
-                    <TableCell align="center">{row.questionId}</TableCell>
-                    <TableCell align="center">{row.answer}</TableCell>
-                    <TableCell align="center">{row.dateTime}</TableCell>
-                   
+                    <TableCell align="center">{row.line_user_id}</TableCell>
+                    <TableCell align="center">{row.line_username}</TableCell>
+                    <TableCell align="center">{row.line_picture_url}</TableCell>
+                    <TableCell align="center">{row.dataOfBirth}</TableCell>
+                    <TableCell align="center">{row.height}</TableCell>
+                    <TableCell align="center">{row.weight}</TableCell>
+                    <TableCell align="center">{row.targetWeight}</TableCell>
                   </TableRow>
                 );
               })}

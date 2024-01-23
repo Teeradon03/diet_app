@@ -61,10 +61,8 @@ function stableSort(array, comparator) {
 //การกำหนดค่าสำหรับเซลล์หัวของตาราง
 const headCells = [
     { id: "id", label: "Id" },
-    { id: "userId", label: "User Id", minWidth: 100 },
-    { id: "questionId", label: "Question Id", minWidth: 100 },
-    { id: "answer", label: "Answer", minWidth: 100 },
-    { id: "dateTime", label: "Date Time", minWidth: 100 },
+    { id: "content", label: "Content", minWidth: 100, },
+    
 ];
 
 //คอมโพเนนต์สำหรับการแสดงหัวตารางพร้อมฟังก์ชันการเรียงลำดับ
@@ -124,6 +122,7 @@ EnhancedTableHead.propTypes = {
   orderBy: PropTypes.string.isRequired,
   rowCount: PropTypes.number.isRequired,
 };
+
 function EnhancedTableToolbar(props) {
   const { numSelected } = props;
 
@@ -154,7 +153,7 @@ function EnhancedTableToolbar(props) {
           id="tableTitle"
           component="div"
         >
-          Questionnaries
+          Question
         </Typography>
       )}
 
@@ -192,32 +191,22 @@ export default function EnhancedTable() {
 
   function createData(
     id,
-    userId,
-    questionId,
-    answer,
-    dateTime,
-    ) {
+    content,) {
   return {
-    id,
-    userId,
-    questionId,
-    answer,
-    dateTime,
+        id,
+       content,
       };
   };
   const getUserData = async () => {
     try {
-        const response = await axios.get("http://localhost:9999/api/form/get-questionnaires");
+        const response = await axios.get("http://localhost:9999/api/form/get-questions");
         const usersData = response.data;
         console.log('usersdata', usersData)
         // Map the response data to rows using createData function
         const mappedRows = usersData.map((userData) =>
           createData(
             userData.id,
-            userData.userId,
-            userData.questionId,
-            userData.answer,
-            userData.dateTime,
+            userData.content,
           )
         );
     
@@ -342,7 +331,7 @@ export default function EnhancedTable() {
                         }}
                       />
                     </TableCell>
-                   <TableCell
+                    {/* <TableCell
                       component="th"
                       id={labelId}
                       scope="row"
@@ -350,14 +339,11 @@ export default function EnhancedTable() {
                       align='center'
                     >
                       {index+1}
-                    </TableCell> 
+                    </TableCell> */}
                     
                     <TableCell align="center">{row.id}</TableCell>
-                    <TableCell align="center">{row.userId}</TableCell>
-                    <TableCell align="center">{row.questionId}</TableCell>
-                    <TableCell align="center">{row.answer}</TableCell>
-                    <TableCell align="center">{row.dateTime}</TableCell>
-                   
+                    <TableCell align="center">{row.content}</TableCell>
+                    
                   </TableRow>
                 );
               })}

@@ -8,6 +8,7 @@ import "./MainApp.css"
 
 import Questionnaires from './questionnaires/Questionnaires';
 import Users from './user/Users';
+import Question from './question/Question';
 import ContentMap from "./ContentMap";
 
 function MainApp() {
@@ -30,6 +31,7 @@ function MainApp() {
                 
                     {sidebarData === "ผู้ใช้งาน" && <Users/>}
                     {sidebarData === "แบบสอบถาม" && <Questionnaires/>}
+                    {sidebarData === "คำถาม" && <Question/>}
               
             
             </Box>

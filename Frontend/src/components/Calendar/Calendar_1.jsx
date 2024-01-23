@@ -38,11 +38,11 @@ function Calendar_1() {
 
   const handleSubmit = async () => {
     const dataToSend = {
-      calendar: date,
+      dateOfBirth: date,
     };
 
     try {
-      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true});
       logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
       console.log('Server response:', response.data);
       // Add navigation to the next page here if needed

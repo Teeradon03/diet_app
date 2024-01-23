@@ -31,14 +31,15 @@ import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
-import Report from "./pages/report/Report.jsx";
+import Report from "./pages/report/Report.jsx"
 import Users from "./pages/report/user/Users.jsx";
 
 import SideBar from "./pages/report/SideBar.jsx";
 import HeaderBar from "./pages/report/HeaderBar.jsx";
 import MainApp from "./pages/report/MainApp.jsx";
 import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
-import Table from "./pages/report/user/Table.jsx";
+import EnhancedTable from "./pages/report/user/Table.jsx";
+
 
 function App() {
   return (
@@ -48,6 +49,7 @@ function App() {
         <Route path="/report" element={<Report/>}/>
         <Route path="/report/users" element={<Users />}/>
         <Route path="/report/questionnaires" element={<Questionnaires />}/>
+       
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound404 />} />
         <Route path="/login" element={<Login />} />
@@ -90,7 +92,7 @@ function App() {
         <Route path="/report/SideBar" element={<SideBar />} />
         <Route path="/report/HeaderBar" element={<HeaderBar />} />
         <Route path="/report/MainApp" element={<MainApp />} />
-        <Route path="/report/Table" element={<Table />} />
+        <Route path="/report/Table" element={<EnhancedTable />} />
 
       </Routes>
     </BrowserRouter>
