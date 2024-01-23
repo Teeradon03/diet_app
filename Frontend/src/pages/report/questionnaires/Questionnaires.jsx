@@ -9,6 +9,7 @@ import TablePagination from "@mui/material/TablePagination";
 import TableRow from "@mui/material/TableRow";
 import TextField from "@mui/material/TextField";
 import axios from "axios";
+
 const columns = [
     { id: "id", label: "Id" },
     { id: "userId", label: "User Id", minWidth: 100 },
@@ -60,7 +61,7 @@ export default function Questionnaires() {
     );
 
     return (
-        <Paper sx={{ width: "1000px", overflow: "hidden" }}>
+        <Paper sx={{ width: "1000px", overflow: "hidden", height: '500px' }}>
             <TextField
                 label="Search"
                 variant="outlined"

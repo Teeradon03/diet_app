@@ -212,7 +212,7 @@ const yesno = () => {
         questions[currentImageIndex] &&
         questions[currentImageIndex].id === 41
       ) {
-        console.log('fdgfdgdfg',questions[currentImageIndex].id === 30)
+        console.log('',questions[currentImageIndex].id === 30)
         window.location.href = "/Calendar_1";
         return;
       }

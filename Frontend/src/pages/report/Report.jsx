@@ -17,7 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Questionnaires from './questionnaires/Questionnaires';
 import Users from './user/Users';
 
-const drawerWidth = 240;
+const drawerWidth = 320; //กำหนดความกว้างของ Drawer
 
 function ResponsiveDrawer(props) {
   const { window } = props;

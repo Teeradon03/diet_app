@@ -131,13 +131,12 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 };
 
 const Choice2 = () => {
-  const [selectedOptions, setSelectedOptions, questionId] = useState([]);
+  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter(option => value.includes(option.value));
-    const selectedLabels = selectedOptions.map(option => option.label);
-    setSelectedLabels(selectedLabels);
-    console.log('ข้อจำกัดด้านการทานอาหาร:', selectedLabels);
+    setSelectedOptions(value);
+    const questionId = 10;
 
     console.log('QuestionId :',questionId)
     console.log('AnswerId :', value);
@@ -167,27 +166,17 @@ const Choice2 = () => {
   return (
     <div>
       <div>
-
-        <h1 className='text' style={buttonStyle}> ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
-      <br/><br/><br/><br/>
+      <br/><br/>
         <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
       <br /><br />
       <Select
-        className='text-box' // กำหนดชื่อคลาสสไตล์ขององค์ประกอบ Select
-        placeholder="กรุณาเลือกคำตอบต่อไปนี้ " // ข้อความที่จะแสดงในกล่องเลือกก่อนที่ผู้ใช้จะเลือก
-        onChange={handleChange} // ฟังก์ชันที่จะเรียกเมื่อมีการเปลี่ยนแปลงในการเลือก
-        optionLabelProp="label" // ระบุ property ของ option ที่จะใช้เป็น label แสดงในรายการเลือก
-        options={options} // รายการตัวเลือกที่จะแสดงใน Select
-        mode="multiple" // ให้สามารถเลือกหลายตัวเลือกได้
-        tags={false} // ปิดใช้งานความสามารถในการเพิ่มตัวเลือก
-        filterOption={false} // ปิดใช้งานการกรองตัวเลือก
-        onKeyDown={(e) => {
-          // ตรวจสอบถ้ามีการกดปุ่มที่เป็นตัวอักษร ให้ยกเลิกการกด
-          if (e.key.length === 1) {
-            e.preventDefault();
-          }
-        }}
+        mode="multiple"
+        className='text-box'
+        placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+        onChange={handleChange}
+        optionLabelProp="label"
+        options={options}
       />
       <br /><br /><br />
       <div className='font-family'>

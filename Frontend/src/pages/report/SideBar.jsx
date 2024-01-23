@@ -1,10 +1,5 @@
 import React, { useState } from "react";
-import {
-  Sidebar,
-  Menu,
-  MenuItem,
-  SubMenu,
-} from "react-pro-sidebar";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
 import { Box, IconButton, Typography, useTheme, Badge } from "@mui/material";
 import { Link } from "react-router-dom";
 import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
@@ -14,19 +9,41 @@ import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined
 import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
 import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
-import TableViewIcon from '@mui/icons-material/TableView';
+import TableViewIcon from "@mui/icons-material/TableView";
+import Person from "@mui/icons-material/Person";
 
+import Users from "./user/Users";
+import Questionnaires from "./questionnaires/Questionnaires";
+import ContentMap from "./ContentMap";
 
-
-const SideBar = () => {
+const SideBar = ({isSidebar, updateSidebarData}) => {
   const [isCollapsed, setisCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState(null);
 
+  // const handleClick = () => {
+  //   // Example: send data back to MainApp component
+  //   const newData = "New Data from SideBar";
+  //   updateSidebarData(newData);
+  // };
+
+  const handleMenuItemClick = (menuItem) => {
+    setSelectedMenuItem(menuItem);
+    /// props
+    updateSidebarData(menuItem)
+    
+  };
+
+  const renderComponent = () => {
+    console.log('sdas', selectedMenuItem)
+    
+  };
 
   return (
     <div
       style={{
+        display: "flex",
         height: "100%",
       }}
     >
@@ -35,14 +52,14 @@ const SideBar = () => {
         toggled={toggled}
         onBackdropClick={() => setToggled(false)}
         onBreakPoint={setBroken}
-        image= "/public/logo-nano.png"
+        image="/public/logo-nano.png"
         breakPoint="md"
         style={{ height: "100%" }}
       >
         <div
-          style={{ Direction: "column", height: "100%" }}
+          style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
-          <div style={{marginBottom: "32px" }}>
+          <div style={{ flex: 1, marginBottom: "32px" }}>
             <Menu iconShape="square">
               {/* LOGO */}
               <MenuItem
@@ -54,6 +71,7 @@ const SideBar = () => {
               >
                 {!isCollapsed && (
                   <Box
+                    display="flex"
                     justifyContent="space-between"
                     alignItems="center"
                     ml="15px"
@@ -68,6 +86,7 @@ const SideBar = () => {
               {!isCollapsed && (
                 <Box mb="25px">
                   <Box
+                    display="flex"
                     justifyContent="center"
                     alignItems="center"
                   >
@@ -80,33 +99,52 @@ const SideBar = () => {
                     />
                   </Box>
                   <Box textAlign="center">
-                    <Typography sx={{ sm: "10px 0 0 0" }}>Admin</Typography>
+                    <Typography sx={{ m: "10px 0 0 0" }}>ROITAI</Typography>
+                    <Typography>DEV </Typography>
                   </Box>
                 </Box>
               )}
 
-              <Link to="/admin" className="menu-bars">
-                <MenuItem icon={<HomeOutlinedIcon />}>Dashboard</MenuItem>
-              </Link>
+              {/* <Link to="/admin" className="menu-bars"> */}
+              <MenuItem
+                icon={<HomeOutlinedIcon />}
+                
+              >
+                Dashboard
+              </MenuItem>
+              {/* </Link> */}
 
-              <SubMenu icon={<MapOutlinedIcon />} label="Data">
-                <Link to={"/admin/viewtable"} className="menu-bars">
-                  <MenuItem icon={<TableViewIcon />}>
-                    {" "}
-                    Table 
-                  </MenuItem>
-                </Link>
-                <MenuItem icon={<BarChartOutlinedIcon />}>
+              <SubMenu icon={<MapOutlinedIcon />} label="ข้อมูล">
+                {/* <Link to={""} className="menu-bars"> */}
+                  <MenuItem icon={<TableViewIcon />} onClick={() => handleMenuItemClick("คำถาม")}> คำถาม</MenuItem>
+                {/* </Link> */}
+                {/* <Link to={"/report/questionnaires"} className="menu-bars"> */}
+                <MenuItem
+                  icon={<BarChartOutlinedIcon />}
+                  onClick={() => handleMenuItemClick("แบบสอบถาม")}
+                >
                   {" "}
-                  Line charts
+                  แบบสอบถาม
                 </MenuItem>
+                {/* </Link> */}
+                {/* <Link to={"/report/users"} className="menu-bars"> */}
+                <MenuItem
+                  icon={<Person />}
+                  onClick={() => handleMenuItemClick("ผู้ใช้งาน")}
+                >
+                  {" "}
+                  ผู้ใช้งาน
+                </MenuItem>
+                {/* </Link> */}
               </SubMenu>
 
               <SubMenu label="Manage" icon={<PeopleOutlinedIcon />}>
-                <Link to={"/admin/manage"} className="menu-bars">
+                <Link to={"/admin/User"} className="menu-bars">
                   <MenuItem>User</MenuItem>
                 </Link>
-                <MenuItem> Admin</MenuItem>
+                <Link to={"/admin/Admin"} className="menu-bars">
+                  <MenuItem> Admin</MenuItem>
+                </Link>
               </SubMenu>
             </Menu>
 
@@ -146,6 +184,7 @@ const SideBar = () => {
             )}
           </div>
         </div>
+        {renderComponent()}
       </main>
     </div>
   );
