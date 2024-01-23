@@ -38,7 +38,7 @@ function Calendar_1() {
 
   const handleSubmit = async () => {
     const dataToSend = {
-      calendar: date,
+      dateOfBirth: date,
     };
 
     try {
