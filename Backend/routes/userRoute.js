@@ -16,5 +16,5 @@ router.post('/update-user-data', isLoggedIn ,updateUserData )
 router.get('/get-users' ,getUserData)
 
 
-// router.post('/user-update', updateUser)
+// router.post('/user-update', updateUser)  
 module.exports = router
