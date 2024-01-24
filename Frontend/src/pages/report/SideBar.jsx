@@ -11,7 +11,7 @@ import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
 import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
 import TableViewIcon from "@mui/icons-material/TableView";
 import Person from "@mui/icons-material/Person";
-
+import './MainApp.css'
 import Users from "./user/Users";
 import Questionnaires from "./questionnaires/Questionnaires";
 import ContentMap from "./ContentMap";
@@ -43,7 +43,7 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
   return (
     <div
       style={{
-        display: "flex",
+        
         height: "100%",
       }}
     >
@@ -59,7 +59,7 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
         <div
           style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
-          <div style={{ flex: 1, marginBottom: "32px" }}>
+          <div style={{ marginBottom: "32px" }}>
             <Menu iconShape="square">
               {/* LOGO */}
               <MenuItem
@@ -86,7 +86,7 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
               {!isCollapsed && (
                 <Box mb="25px">
                   <Box
-                    display="flex"
+                    
                     justifyContent="center"
                     alignItems="center"
                   >

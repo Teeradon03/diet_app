@@ -52,7 +52,7 @@ function Weight_show(props) {
           value={weight}
           onChange={handleInputChange}
         />
-        <label htmlFor="weight">&nbsp; กก.</label>
+        <label htmlFor="weight"> กก.</label>
       </div>
       <br />
 

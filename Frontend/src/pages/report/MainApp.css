@@ -1,5 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Source+Sans+Pro:wght@400;600;700&display=swap");
-
+.font-family {
+  font-family: 'Noto Sans Thai', sans-serif;
+  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+}
 
 html,
 body,
@@ -7,7 +9,7 @@ body,
 .contentBar {
   height: 100%;
   width: 100%;
-  font-family: "Source Sans Pro", sans-serif;
+  font-family: "Noto Sans Thai", sans-serif;
   background-color: #dcdcdc;
   overflow: hidden;
 }

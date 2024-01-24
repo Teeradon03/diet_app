@@ -37,9 +37,12 @@ import SideBar from "./pages/report/SideBar.jsx";
 import HeaderBar from "./pages/report/HeaderBar.jsx";
 import MainApp from "./pages/report/MainApp.jsx";
 import Register from "./pages/Login/auth/register.jsx";
-
-
 import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
+
+   /////////////////////////////Fate2///////////////////////////////
+import Chart from "./Fate2/Chart/Chart.jsx";
+
+
 
 function App() {
   return (
@@ -92,6 +95,10 @@ function App() {
         <Route path="/report/HeaderBar" element={<HeaderBar />} />
         <Route path="/report/MainApp" element={<MainApp />} />
         <Route path="/Login/Register" element={<Register />} />
+
+   /////////////////////////////Fate2///////////////////////////////
+
+        <Route path="/Chart" element={<Chart />} />
 
 
       </Routes>

@@ -6,6 +6,8 @@ import SettingsOutlinedIcon from "@mui/icons-material/SettingsOutlined";
 import PersonOutlinedIcon from "@mui/icons-material/PersonOutlined";
 import SearchIcon from "@mui/icons-material/Search";
 import { Link } from "react-router-dom";
+import './MainApp.css'
+
 
 const HeaderBar = () => {
   const [anchorEl, setAnchorEl] = useState(null);
@@ -28,7 +30,7 @@ const HeaderBar = () => {
       </Box>
 
       {/* icons */}
-      <Box display="flex">
+      <Box >
         <IconButton>
           <NotificationsOutlinedIcon />
         </IconButton>
