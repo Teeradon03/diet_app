@@ -16,6 +16,7 @@ const loginLine = async (req, res) => {
       "Content-Type": "application/x-www-form-urlencoded",
     };
     console.log('before decode')
+    
     const decode = await axios.post(
       "https://api.line.me/oauth2/v2.1/verify",
       params,
