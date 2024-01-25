@@ -29,12 +29,11 @@ function Height_show() {
     console.log('Height:', height);
 
     const dataToSend = {
-
       height: height,
     };
 
     try {
-      await axios.post('localhost:9999/api/form/create-questionnaires', dataToSend, { witCredentials: true });
+      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);

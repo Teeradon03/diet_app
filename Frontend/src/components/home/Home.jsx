@@ -5,7 +5,7 @@ import axios from 'axios';
 const Home = () => {
 
   useEffect(() => {
-    liff.init({ liffId: '2002171340-w1AjWX9e' })
+    liff.init({ liffId: '2002961723-1mlX4q3q' })
       .then(() => {
         /// something 
         handleLineLogin()
@@ -17,7 +17,7 @@ const Home = () => {
       const idToken = liff.getIDToken();
       // const accessToken = liff.getAccessToken();
       // console.log('access token: ' + accessToken)
-      // console.log('idToken', idToken);
+      console.log('idToken', idToken);
       // console.log('user profile', userProfile);
       const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
         {
@@ -30,7 +30,7 @@ const Home = () => {
       console.log(error)
     }
   }
-  setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
+  //  setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
 
   return (
     <div className="container text-center">

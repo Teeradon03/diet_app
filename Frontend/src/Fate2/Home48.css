@@ -4,28 +4,27 @@
   }  
 
 .Card {
-    width: 500px;
-    height: 400px;
+    margin-bottom: 50px;
+    width: 400px;
+    height: 350px;
     border-radius: 35px;
     box-shadow: 8px 12px 3px 5px #b2b2b2;
     display: flex;
     justify-content: center;
     align-items: center;
     position: relative;
-    left: 390px;
+    left: 430px;
 }
-
+ 
 .Card2 {
-    width: 500px;
-    height: 300px;
+    margin-bottom: 50px;
+    width: 600px;
+    height: 170px;
     border-radius: 35px;
     box-shadow: 8px 12px 3px 5px #b2b2b2;
-    justify-content: center;
-    align-items: center;
     position: relative;
-    left: 390px;
+    left: 340px;
 }
-
 
 .text48 {
     font-family: 'Noto Sans Thai', sans-serif;
@@ -35,18 +34,108 @@
 }
 
 .chart-container {
-    display: flex;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
 
 .chart2 {
-    display: flex;
+    padding-top: 50px;
     justify-content: center;
     align-items: center;
     height: 100%;
 }
+
+.exercise {
+    width: 110px;
+    height: 110px;
+    border-radius: 80px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    position: relative;
+    left: 40px;
+    top: -60px;
+    border: 2px solid #A9A9A9;
+}
+
+.target {
+    width: 110px;
+    height: 110px;
+    border-radius: 80px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    position: relative;
+    left: 230px;
+    top: -170px;
+    border: 2px solid #A9A9A9;
+}
+
+.video {
+    width: 110px;
+    height: 110px;
+    border-radius: 80px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    position: relative;
+    left: 410px;
+    top: -280px;
+    border: 2px solid #A9A9A9;
+}
+
+.img {
+    width: 80px;
+    height: 80px;
+    position: relative;
+    left: -10px;
+    top: -10px;
+}
+
+.text-exercise {
+    position: relative;
+    left: -180px;
+    top: -270px;
+}
+
+.text-target {
+    position: relative;
+    left: 8px;
+    top: -306px;
+}
+
+.text-video {
+    position: relative;
+    left: 190px;
+    top: -345px;
+}
+
+.Card3 {
+    margin-bottom: 50px;
+    width: 600px;
+    height: 100px;
+    border-radius: 35px;
+    background-color: #cdcdcd;
+    position: relative;
+    left: 340px;
+}
+
+.chart3 {
+    padding-top: 50px;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+.date {
+    width: 80px;
+    height: 80px;
+    border-radius: 80px;
+    position: relative;
+    left: 30px;
+    top: -65px;
+    border: 2px solid #A9A9A9;
+}
+
+
+
+
+
 
 @media screen and (max-width: 1600px) {
     .text48 {
