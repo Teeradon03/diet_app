@@ -12,7 +12,7 @@ import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
 import Calendar_1 from './components/Calendar/Calendar_1';
-import Target from './pages/target/Target';
+import Target from './components/target/Target.jsx';
 import Name from './components/Name/Name';
 import Height_show from './components/Height/Height_show';
 import Weight_show from './components/Weight/Weight_show';
@@ -31,21 +31,11 @@ import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
-import Report from "./pages/report/Report.jsx"
-import Users from "./pages/report/user/Users.jsx";
 
-import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
-
-
-        <Route path="/report" element={<Report/>}/>
-        <Route path="/report/users" element={<Users />}/>
-        <Route path="/report/questionnaires" element={<Questionnaires />}/>
-
-
 
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound404 />} />
