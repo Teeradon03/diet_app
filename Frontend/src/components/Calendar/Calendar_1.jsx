@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from 'react-icons/vsc';
 import axios from 'axios';
 import styles from '../Bmi/Bmi.module.css';
-import './calendar.css';
+import './Calendar.css';
 
 function Calendar_1() {
   const [date, setDate] = useState(new Date());
