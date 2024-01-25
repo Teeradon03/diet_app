@@ -33,7 +33,7 @@ function Calendar_1() {
 
   const logThaiMessage = (message, selectedDate) => {
     const formattedDate = selectedDate ? formatThaiDate(selectedDate) : "";
-    console.log(`${message} ${formattedDate}`);
+    // console.log(`${message} ${formattedDate}`);
   };
 
   const handleSubmit = async () => {

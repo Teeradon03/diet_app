@@ -12,24 +12,18 @@ function BMI_calculator() {
   const [height, setHeight] = useState(0);
   const [bmi, setBmi] = useState(0);
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('46');
   const navigate = useNavigate();
   const calculateBmi = async() => {
     const calculatedBmi = weight / ((height / 100) * (height / 100));
-    console.log("BMI:", calculatedBmi);
+    // console.log("BMI:", calculatedBmi);
     setBmi(calculatedBmi);
     determinePage(calculatedBmi);
 
     const dataToSend = {
       bmi: calculatedBmi
     };
-    await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
-    .then(function (response) {
-      console.log(response);
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
+
   };
 
   const determinePage = (calculatedBmi) => {
@@ -46,8 +40,6 @@ function BMI_calculator() {
       navigate('/Bmi_obesitylevel3');
     } 
   };
-  console.log('current page', currentPage)
-
   
   const renderContent = () => {
    

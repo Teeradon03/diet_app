@@ -16,17 +16,17 @@ function Height_show() {
   };
 
   const handleNextClick = () => {
-    if (height.trim() === '') {
-      alert('กรุณากรอกส่วนสูงของคุณ');
+    if (height.trim() === '' || height < 100 || height > 300) {
+      alert('กรุณากรอกส่วนสูงของคุณให้ถูกต้อง (100-300 กก.)');
     } else {
-      console.log('Height:', height);
+      // console.log('Height:', height);
       handleSubmit(); // Call the handleSubmit function to send data to the server
       window.location.href = '/Target';
     }
   };
 
   const handleSubmit = async () => {
-    console.log('Height:', height);
+    // console.log('Height:', height);
 
     const dataToSend = {
       height: height,

@@ -80,7 +80,7 @@ const sendToAPI = async (selectedOptions, questionId = 11) => {
         withCredentials: true,
       }
     );
-    console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+    // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error("Error:", error);
   }

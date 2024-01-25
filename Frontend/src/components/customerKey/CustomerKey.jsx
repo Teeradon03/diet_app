@@ -30,7 +30,8 @@ const CustomerKey = () => {
     if (formData.CustomerID.trim() === '') {
       alert('กรุณากรอกรหัสลูกค้า');
     } else {
-      window.location.href = '/';
+      alert("อยู่ระหว่างการปรับปรุง  ขออภัยในความไม่สะดวก ครับ/ค่ะ")
+      // window.location.href = '/';
     }
   };
 
