@@ -56,8 +56,7 @@ function Height_show() {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
 
-      <Image className={styles['ant-image-img']} src="/public/bmi_img/hight.jpg"
-      />
+      <Image className={styles['ant-image-img']} src="/bmi_img/hight.jpg" alt='height image'/>
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป
