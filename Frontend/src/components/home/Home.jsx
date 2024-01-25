@@ -19,19 +19,18 @@ const Home = () => {
       // console.log('access token: ' + accessToken)
       // console.log('idToken', idToken);
       // console.log('user profile', userProfile);
-      // console.log('idtokenn', idToken)
       const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
         {
           withCredentials: true
         }
       )
-      console.log(response)
+      console.log(response.data)
     }
     catch (error) {
       console.log(error)
     }
   }
-  setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
+   setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
 
   return (
     <div className="container text-center">
