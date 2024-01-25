@@ -33,20 +33,15 @@ function BMR_calculator() {
       bmrConstant + genderFactor * weight + 4.799 * height - 5.677 * age;
     setBmr(calculatedBmr);
     determinePage(calculatedBmr);
-    console.log('Calculated BMR:', calculatedBmr);
+    // console.log('Calculated BMR:', calculatedBmr);
 
     // Send BMR and ID to the server
     const dataToSend = {
       bmr: calculatedBmr,
     };
 
-    await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
+
   };
 
   const determinePage = (calculatedBmr) => {
@@ -91,7 +86,7 @@ function BMR_calculator() {
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
         <br />
         <div>
-        <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
+        <Link to="/ever"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
         </div>

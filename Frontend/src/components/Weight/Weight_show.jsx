@@ -3,7 +3,6 @@ import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from "../Bmi/Bmi.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function Weight_show(props) {
@@ -19,7 +18,7 @@ function Weight_show(props) {
     if (weight.trim() === '' || weight < 25 || weight > 300) {
       alert('กรุณากรอกน้ำหนักให้ถูกต้อง (25-300 กก.)');
     } else {
-      console.log('Weight:', weight);
+      // console.log('Weight:', weight);
       handleSubmit(); // Call the handleSubmit function to send data to the server
       window.location.href = '/Height_show';
     }
@@ -29,7 +28,6 @@ function Weight_show(props) {
     // console.log("Weight:", weight);
 
     const dataToSend = {
-      questionId: questionId,
       weight: weight,
     };
 
