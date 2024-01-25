@@ -12,7 +12,8 @@ function Bmi_obesitylevel2() {
         <Image
           className="ant-image-img"
           width="80%"
-          src="/public/bmi_img/obesity2.jpg"
+          src="/bmi_img/obesity2.jpg"
+          alt='bmi_obesity_level_2'
         />
         <br />
         <div className={styles.childbmi}>BMI 25 - 29.90</div>

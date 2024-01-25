@@ -11,7 +11,8 @@ function Bmi_obesitylevel3() {
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             < Image className='ant-image-img'
               width="80%"
-              src="/public/bmi_img/obesity3.jpg"
+              src="/bmi_img/obesity3.jpg"
+              alt='bmi_obesity_level_3'
             /><br />
             <div className={styles.childbmi}>BMI  มากกว่า 30</div>
             <div className={styles.childbmi}>อ้วนมาก / โรคอ้วนระดับ 3</div>
