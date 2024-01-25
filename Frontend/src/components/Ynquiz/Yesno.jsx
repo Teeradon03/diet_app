@@ -280,7 +280,7 @@ const yesno = () => {
       <br/>
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
-          <br/><br/>
+          <br/>
         </p>
         <br/>
         <img

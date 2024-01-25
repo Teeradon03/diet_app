@@ -26,36 +26,6 @@
   font-size: larger;
 }
 
-.answer {
-  font-size: 16px;
-  font-weight: bold;
-  margin-bottom: 10px;
-}
-
-.answer-button {
-  display: block;
-  width: 30%;
-  padding: 20px;
-  margin-bottom: 12px;
-  background-color: #FFFF;
-  border: 1px solid #ccc;
-  color: rgb(13, 13, 13);
-  border-radius: 5px;
-  box-shadow: 3px 3px 2px 1px #b2b2b2;
-  font-size: larger;
-  cursor: pointer;
-  text-align: center;
-  /* Add this line to align text to the left */
-  position: relative;
-
-}
-
-.answer-button:active {
-  background-color: #b61f1f;
-  transform: translateY(5px);
-  outline: none;
-}
-
 .next-list {
   display: block;
   width: 100%;
@@ -119,6 +89,13 @@
     left: 300px;
   }
 }
+
+/*เพิ่ม CSS นี้ไปยังไฟล์ CSS หรือ Styled Component ของคุณ*/
+.ant-select-selection-search-input {
+  caret-color: transparent; /* ทำให้เคอร์เซอร์เป็นสีที่透ว */
+  cursor: none; /* ซ่อนเคอร์เซอร์ */
+}
+
 
 
 @media screen and (max-width: 1400px) {

@@ -91,7 +91,7 @@ function BMR_calculator() {
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
         <br />
         <div>
-        <Link to="/CustomerKey"className={styles.link}> {/* Changed the route for the "No" response */}
+        <Link to="/ever"className={styles.link}> {/* Changed the route for the "No" response */}
           <button className={styles.nextbutton}>ถัดไป</button> 
             </Link>
         </div>

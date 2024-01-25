@@ -30,7 +30,7 @@ const Home = () => {
       console.log(error)
     }
   }
-  setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
+   setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
 
   return (
     <div className="container text-center">

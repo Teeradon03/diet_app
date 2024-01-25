@@ -17,12 +17,13 @@ const loginLine = async (req, res) => {
       "Content-Type": "application/x-www-form-urlencoded",
     };
 
+    console.log('before decode')
     const decode = await axios.post(
       "https://api.line.me/oauth2/v2.1/verify",
       params,
       { headers }
     );
-      // console.log('decode', decode)
+      console.log('decode', decode)
     const userLineData = {
       line_user_id: decode.data.sub,
       line_username: decode.data.name,

@@ -24,6 +24,7 @@ function Height_show() {
       window.location.href = '/Target';
     }
   };
+  
 
   const handleSubmit = async () => {
     console.log('Height:', height);
