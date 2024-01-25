@@ -16,8 +16,8 @@ function Height_show() {
   };
 
   const handleNextClick = () => {
-    if (height.trim() === '') {
-      alert('กรุณากรอกส่วนสูงของคุณ');
+    if (height.trim() === '' || height < 100 || height > 300) {
+      alert('กรุณากรอกส่วนสูงของคุณให้ถูกต้อง (100-300 ซม.)');
     } else {
       console.log('Height:', height);
       handleSubmit(); // Call the handleSubmit function to send data to the server
@@ -50,7 +50,7 @@ function Height_show() {
           value={height}
           onChange={handleInputChange}
         />
-        <label htmlFor="height">&nbsp; ซม.</label>
+        <label htmlFor="height"> ซม.</label>
       </div>
       <br />
 

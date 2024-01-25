@@ -14,7 +14,7 @@ function Target() {
   };
 
   const handleNextClick = () => {
-    if (targetWeight.trim() === '') {
+    if (targetWeight.trim() === '' || targetWeight < 25 || targetWeight > 300) {
       alert('กรุณากรอกน้ำหนักเป้าหมายของคุณ');
     } else {
       console.log('Target Weight:', targetWeight);
