@@ -33,7 +33,7 @@ function Height_show() {
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);

@@ -1,16 +1,10 @@
 import { useState } from 'react';
-import { Button } from 'antd';
+
 import { Link, useNavigate   } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from'../Bmi/Bmi.module.css'
 import Weight from '../Weight/Weight';
 import Height from '../Height/Height';
-import Bmi_lowweight from '../Bmi/Bmi_lowweight';
-import Bmi_normalweight from '../Bmi/Bmi_normalweight';
-import Bmi_obesitylevel1 from '../Bmi/Bmi_obesitylevel1';
-import Bmi_obesitylevel2 from '../Bmi/Bmi_obesitylevel2';
-import Bmi_obesitylevel3 from '../Bmi/Bmi_obesitylevel3';
-import 'bootstrap/dist/css/bootstrap.min.css';
 import axios from 'axios';
 
 function BMI_calculator() {
@@ -29,7 +23,7 @@ function BMI_calculator() {
     const dataToSend = {
       bmi: calculatedBmi
     };
-    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend , { withCredentials: true })
+    await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
     .then(function (response) {
       console.log(response);
     })
@@ -93,11 +87,11 @@ function BMI_calculator() {
     if (bmiValue >= 29.9) return 'อยู่ในเกณฑ์อ้วนมาก / โรคอ้วนระดับ 3'
   };
 
-  const Page1 = () => <div>Content for BMI less than 18.5</div>;
-  const Page2 = () => <div>Content for BMI between 18.5 and 22.9</div>;
-  const Page3 = () => <div>Content for BMI between 23 and 24.9</div>;
-  const Page4 = () => <div>Content for BMI between 25 and 29.9</div>;
-  const Page5 = () => <div>Content for BMI greater than 30</div>;
+  // const Page1 = () => <div>Content for BMI less than 18.5</div>;
+  // const Page2 = () => <div>Content for BMI between 18.5 and 22.9</div>;
+  // const Page3 = () => <div>Content for BMI between 23 and 24.9</div>;
+  // const Page4 = () => <div>Content for BMI between 25 and 29.9</div>;
+  // const Page5 = () => <div>Content for BMI greater than 30</div>;
 
   return <div>{renderContent()}</div>;
 }

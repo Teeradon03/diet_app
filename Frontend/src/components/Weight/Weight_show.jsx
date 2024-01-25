@@ -26,7 +26,7 @@ function Weight_show(props) {
   };
 
   const handleSubmit = async () => {
-    console.log("Weight:", weight);
+    // console.log("Weight:", weight);
 
     const dataToSend = {
       questionId: pageId, // เพิ่ม ID ลงในข้อมูลที่จะส่ง
@@ -34,10 +34,10 @@ function Weight_show(props) {
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
-      console.log('Data sent successfully');
+      await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
+      // console.log('Data sent successfully');
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 

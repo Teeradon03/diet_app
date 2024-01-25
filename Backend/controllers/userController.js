@@ -1,13 +1,12 @@
-
 const { User } = require("../models/user");
 const axios = require("axios");
 const loginLine = async (req, res) => {
   try {
     const data = req.body;
-    console.log('data', data);
+    // console.log(data);
     const extractedData = Object.keys(data).map((key) => key.split(":")[0]);
     const token = extractedData[0];
-    console.log('asdasasfsdddddddd', token)
+    // console.log("asdasasfsdddddddd", token);
     const params = new URLSearchParams();
     params.append("id_token", token);
     params.append("client_id", process.env.CHANNELID);
@@ -16,13 +15,13 @@ const loginLine = async (req, res) => {
       "Content-Type": "application/x-www-form-urlencoded",
     };
 
-    console.log('before decode')
+    // console.log("before decode");
     const decode = await axios.post(
       "https://api.line.me/oauth2/v2.1/verify",
       params,
       { headers }
     );
-      console.log('decode', decode)
+    // console.log("decode", decode);
     const userLineData = {
       line_user_id: decode.data.sub,
       line_username: decode.data.name,
@@ -30,7 +29,7 @@ const loginLine = async (req, res) => {
     };
     // console.log('userlinedata', userLineData)
 
-    const generateUserId = () => { 
+    const generateUserId = () => {
       const randomNumber = Math.floor(Math.random() * 10000); // Adjust the range as needed
       const timestamp = new Date().getTime();
       const randomBase36 = randomNumber.toString(36);
@@ -47,7 +46,7 @@ const loginLine = async (req, res) => {
         { new: true }
       );
       req.session.userId = user.userId;
-      console.log('User Updated')
+      console.log("User Updated");
     } else {
       // Create a new user document
       const userId = generateUserId();
@@ -67,36 +66,34 @@ const loginLine = async (req, res) => {
 };
 
 const updateUserData = async (req, res) => {
-  console.log('update user data session', req.session.userId)
+  console.log("update user data session", req.session.userId);
 
-  try{
-    const data = req.body
+  try {
+    const data = req.body;
     // console.log('data', data)
-    const userId = await User.findOne({userId: req.session.userId})
+    const userId = await User.findOne({ userId: req.session.userId });
     // console.log('userId', userId)
-    
+
     if (userId.userId == req.session.userId) {
-      const dateOfBirth = data.dateOfBirth
+      const dateOfBirth = data.dateOfBirth;
       // console.log('dataofbirth', dateOfBirth)
       const updateUser = await User.findOneAndUpdate(
-        {userId : req.session.userId},
-        { $set: {...data, dateOfBirth: dateOfBirth}},
-        { new : true}
-      )
+        { userId: req.session.userId },
+        { $set: { ...data, dateOfBirth: dateOfBirth } },
+        { new: true }
+      );
       // console.log('updateUser', updateUser)
-      console.log('updated Ohh Yeahhh!!!!')
+      console.log("updated Ohh Yeahhh!!!!");
     }
-    console.log('data', data)
+    console.log("data", data);
     res.json({
-      data : data
-    })
-
+      data: data,
+    });
+  } catch (error) {
+    console.log(" Error", error.message);
+    res.json({ error: error.message });
   }
-  catch(error){
-    console.log(' Error', error.message)
-    res.json({ error : error.message})
-  }
-}
+};
 
 const getUserData = async (req, res) => {
   console.log("session in get user data", req.session.userId);
@@ -119,5 +116,5 @@ const getUserData = async (req, res) => {
 module.exports = {
   loginLine,
   getUserData,
-  updateUserData
+  updateUserData,
 };
