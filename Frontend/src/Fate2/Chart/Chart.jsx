@@ -3,6 +3,7 @@ import "./Chart.css"
 import PieChart from "./PieChart";
 import { UserData } from "./Data";
 
+
 function  Chart() {
   const [userData, setUserData] = useState({
     labels: UserData.map((data) => data.name),
@@ -11,11 +12,9 @@ function  Chart() {
         label: "Users Gained",
         data: UserData.map((data) => data.amount),
         backgroundColor: [
-          "#FCF6BD",
+          "#E8CFF8",
           "#D0F4DE",
           "#C0E4F6",
-          "#FFBBDA",
-          "#E8CFF8",
         ],
         borderColor: "white",
         borderWidth: 2,
@@ -27,7 +26,7 @@ function  Chart() {
 
   return (
     <div className="App">
-      <div style={{ width: 700 }}>
+      <div style={{ width: 300 }}>
         <PieChart chartData={userData} />
       </div>
     </div>
