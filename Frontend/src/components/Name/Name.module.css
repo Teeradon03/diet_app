@@ -3,7 +3,6 @@
 }
 
 .Bmi1 {
-
   padding: 30px;
   display: flex;
   margin: 20px;
@@ -14,7 +13,6 @@
 }
 
 .inputv1{   
-    
     justify-content: center;
     align-items: center;
     padding: 1px;
@@ -265,6 +263,10 @@
       font-size: 16px;
       width: 10px;
       height: 10px;
+    }
+    .Bmi1{
+      font-size: 2.3rem;
+      justify-self: center;
     }
   }
 }

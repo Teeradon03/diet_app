@@ -27,6 +27,12 @@
   background-color: #ffffff;
 }
 
+.headingStyle {
+  font-size: 50px;
+  padding-top: 20px;
+  font-weight: 900;
+}
+
 @media screen and (max-width: 1600px) {
   .answerButton {
     font-size: 2rem;
@@ -93,6 +99,10 @@
     justify-content:center ;
     width: 75vw;
   }
+  .headingStyle{
+    font-size: 2.5rem;
+    justify-self: center;
+  }
 }
 
 @media screen and (max-width: 400px) {
@@ -100,5 +110,9 @@
     font-size: 2rem;
     justify-content:center ;
     width: 75vw;
+  }
+  .headingStyle{
+    font-size: 2.3rem;
+    justify-self: center;
   }
 }

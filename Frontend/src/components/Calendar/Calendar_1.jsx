@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from 'react-icons/vsc';
 import axios from 'axios';
 import styles from '../Bmi/Bmi.module.css';
-import './Calendar.css';
+import './calendar.css';
 
 function Calendar_1() {
   const [date, setDate] = useState(new Date());
@@ -38,13 +38,13 @@ function Calendar_1() {
 
   const handleSubmit = async () => {
     const dataToSend = {
-      dateOfBirth: date,
+      calendar: date,
     };
 
     try {
-      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
-      // logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
-      // console.log('Server response:', response.data);
+      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
+      console.log('Server response:', response.data);
       // Add navigation to the next page here if needed
     } catch (error) {
       logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);
@@ -64,13 +64,13 @@ function Calendar_1() {
             locale="th-TH"
           />
         </div>
-        <p className="text-center">
+        <div className="text-center">
           <br />
           <br />
           <p>กรุณาเลือกวันที่ </p>
           &nbsp;&nbsp;&nbsp;
           <span>{formatThaiDate(date)}</span>
-        </p>
+        </div>
       </header>
       <br />
       <Link to="/Weight_show" className={styles.link}>
@@ -78,7 +78,6 @@ function Calendar_1() {
           ถัดไป
         </button>
       </Link>
-      
       <Link to="/Yesno" className={styles.link}>
         <button className={styles.chevronicon}>
           <VscChevronLeft />

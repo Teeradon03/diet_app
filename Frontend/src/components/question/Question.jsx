@@ -218,7 +218,7 @@ const Question = () => {
                   <div className="question" >
                     <div className="font-family">
                       <div className="ques" >
-                        <p>{questions[currentQuestion].question}</p>
+                        <p >{questions[currentQuestion].question}</p>
                       </div>
                     </div>
                   </div>

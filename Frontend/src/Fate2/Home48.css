@@ -1,7 +1,7 @@
 .font-family {
     font-family: 'Noto Sans Thai', sans-serif;
     /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-  }  
+}
 
 .Card {
     margin-bottom: 50px;
@@ -15,7 +15,7 @@
     position: relative;
     left: 430px;
 }
- 
+
 .Card2 {
     margin-bottom: 50px;
     width: 600px;
@@ -31,6 +31,15 @@
     padding-top: 40px;
     font-size: 40px;
     font-weight: bold;
+}
+
+.text-food{
+    font-family: 'Noto Sans Thai', sans-serif;
+    padding-top: 40px;
+    font-size: 40px;
+    font-weight: bold;
+    position: relative;
+    left: 150px;
 }
 
 .chart-container {
@@ -115,6 +124,10 @@
     left: 340px;
 }
 
+.Card3 .date:last-child {
+    margin-right: 0;
+  }
+
 .chart3 {
     padding-top: 50px;
     justify-content: center;
@@ -123,14 +136,84 @@
 }
 
 .date {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
     width: 80px;
     height: 80px;
-    border-radius: 80px;
+    font-size: 40px;
     position: relative;
-    left: 30px;
+    left:50px;
     top: -65px;
     border: 2px solid #A9A9A9;
+    border-radius: 80px;
+    margin-right: 10px;
 }
+
+.iconleft {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 5px;
+    top: 25px;
+  }
+
+  .iconright {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: absolute;
+    left: 540px;
+    top: 25px;
+  }
+  
+.test {
+    display: flex;
+    align-items: center;
+    font-size: 40px;
+    margin: auto;
+    width: 30px;
+    height: 30px;
+}
+
+.Card4 {
+    margin-bottom: 100px;
+    width: 400px;
+    height: 300px;
+    border-radius: 35px;
+    background-color: #cdcdcd;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 430px;
+}
+
+.Card4 {
+    margin-bottom: 50px;
+    width: 600px;
+    height: 600px;
+    border-radius: 35px;
+    position: relative;
+    left: 340px;
+}
+
+
 
 
 
@@ -139,7 +222,8 @@
 
 @media screen and (max-width: 1600px) {
     .text48 {
-        font-size: 4rem !important; /* เพิ่ม !important เพื่อแนะนำให้ CSS นี้มีความสำคัญ */
+        font-size: 4rem !important;
+        /* เพิ่ม !important เพื่อแนะนำให้ CSS นี้มีความสำคัญ */
         font-weight: bold;
     }
 }

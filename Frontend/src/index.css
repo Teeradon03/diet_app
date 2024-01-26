@@ -30,7 +30,7 @@
 }
 
 body {
-  
+    overflow: auto;
     padding: 0;
     font-family: 'Inter', sans-serif;
     font-family: 'Kanit', sans-serif;

@@ -13,7 +13,7 @@ export default function Form() {
       <div className="container text-center mt-5 pt-5">
         <div className="row">
           <div className="answer mt-5 mb-5">
-            <h2 style={headingStyle}>คุณเคยกรอกแบบสอบถามหรือยัง</h2>
+            <h2 className={styles.headingStyle}>คุณเคยกรอกแบบสอบถามหรือยัง</h2>
           </div>
         </div>
         <div className="row row-centered">
