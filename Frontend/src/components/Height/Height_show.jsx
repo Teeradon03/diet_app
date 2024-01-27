@@ -24,6 +24,7 @@ function Height_show() {
       window.location.href = '/Target';
     }
   };
+  
 
   const handleSubmit = async () => {
     // console.log('Height:', height);
@@ -45,7 +46,7 @@ function Height_show() {
       <p>ส่วนสูงของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input
+        <input className={styles.inputlabel}
           type="number"
           value={height}
           onChange={handleInputChange}

@@ -100,9 +100,11 @@ const Question = () => {
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
 
-  const handleOptionSelect = (event, option) => {
-    setSelectedOption(option.value);
-  };
+    const handleOptionSelect = (event, option) => {
+      setSelectedOption(option.label); // Use option.label instead of option.value
+      highlightButton(event.target); // Pass the button element to highlightButton
+    };
+    
 
   function removeHighlight() {
     const buttons = document.getElementsByTagName("button");
@@ -113,7 +115,7 @@ const Question = () => {
 
   const handleNextQuestion = () => {
     const isCorrect = selectedOption === questions[currentQuestion].answer;
-
+  
     if (isCorrect) {
       setScore(score + 1);
     }
@@ -122,12 +124,12 @@ const Question = () => {
 
     if (questions[currentQuestion].id === 9) {
       setShowScore(true);
-      // เรียกใช้ฟังก์ชัน sendToAPI() จาก handleNextQuestion โดยตรงที่ ID 9
       window.location.href = "/Choice2";
     } else if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
       setSelectedOption("");
       setShowScore(false);
+      highlightButton(); // Call highlightButton after updating the question
     } else {
       setShowScore(true);
     }
@@ -169,14 +171,28 @@ const Question = () => {
 
   function highlightButton(button) {
     const buttons = document.getElementsByTagName("button");
+  
     for (let i = 0; i < buttons.length; i++) {
       if (buttons[i] === button) {
+        const randomColor = getRandomColor();
+        buttons[i].style.backgroundColor = randomColor;
         buttons[i].classList.add("highlight");
       } else {
         buttons[i].classList.remove("highlight");
+        buttons[i].style.backgroundColor = ''; // Reset background color for other buttons
       }
     }
   }
+  
+  function getRandomColor() {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  }
+  
 
   const handlePreviousQuestion = () => {
     const prevQuestion = currentQuestion - 1;
@@ -218,7 +234,7 @@ const Question = () => {
                   <div className="question" >
                     <div className="font-family">
                       <div className="ques" >
-                        <p>{questions[currentQuestion].question}</p>
+                        <p >{questions[currentQuestion].question}</p>
                       </div>
                     </div>
                   </div>
@@ -236,8 +252,7 @@ const Question = () => {
                                   ? "highlight"
                                   : ""
                               }`}
-                              onClick={(event) =>
-                                handleOptionSelect(event, option)
+                              onClick={(event) => handleOptionSelect(event, option)
                               } 
                             >
                               {option.label}{" "}
@@ -259,7 +274,7 @@ const Question = () => {
                   </div>
                 </Col>
               </div>
-            )}
+            )} 
           </Col>
         </Col>
       </Content>

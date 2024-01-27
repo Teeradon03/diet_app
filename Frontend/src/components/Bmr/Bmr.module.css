@@ -17,6 +17,12 @@
   font-weight: bold;
 }
 
+.inputlabel {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
 .inputbmr{   
     
     justify-content: center;
