@@ -8,6 +8,7 @@ function Bmi_normalweight() {
     return (
       <div>
            <div className={styles.Bmi1}>
+           <br/>
           <p> ค่าดัชนีมวลกาย (BMI) </p>
           < Image className='ant-image-img'
             width="80%"

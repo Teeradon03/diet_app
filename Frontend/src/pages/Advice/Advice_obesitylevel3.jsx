@@ -11,6 +11,7 @@ function Advice_obesitylevel3() {
   return (
     <div>
       <div className={styles.Bmi1}>
+      <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
         <br />

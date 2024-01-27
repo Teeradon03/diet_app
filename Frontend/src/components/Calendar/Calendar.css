@@ -1,6 +1,10 @@
 .App {
   text-align: center;
 }
+.text-date{
+  font-size: 2rem;
+  font-weight: bold;
+}
 
 .App-logo {
   height: 40vmin;

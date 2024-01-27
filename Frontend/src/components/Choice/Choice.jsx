@@ -70,15 +70,13 @@ const options = [
 const sendToAPI = async (selectedOptions, selectedLabels) => {
   try {
     const data = {
-      questionId: selectedOptions.map((option) => option.id),
-      question: selectedLabels.map((option) => option.label),
-      answer: value,
+      questionId: selectedLabels,
+      answer: selectedOptions,
     };
 
     const response = await axios.post(
-
-      `${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,
-
+      `${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`,
+      data,
       {
         withCredentials: true,
       }

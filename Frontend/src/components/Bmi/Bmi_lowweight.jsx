@@ -9,6 +9,7 @@ function Bmi_lowweight() {
     return (
         <div>
             <div className={styles.Bmi1}>
+            <br/>
             <p> ค่าดัชนีมวลกาย (BMI) </p>
             <br/>
             < Image className='ant-image-img'

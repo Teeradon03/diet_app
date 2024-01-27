@@ -43,6 +43,7 @@ function Height_show() {
 
   return (
     <div className={styles.Bmi1}>
+      <br/>
       <p>ส่วนสูงของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>

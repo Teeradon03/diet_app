@@ -67,9 +67,9 @@ function Calendar_1() {
         <div className="text-center">
           <br />
           <br />
-          <p>กรุณาเลือกวันที่ </p>
+          <h1 className='text-date'>กรุณาเลือกวันที่ </h1>
           &nbsp;&nbsp;&nbsp;
-          <span>{formatThaiDate(date)}</span>
+          <h1 className='text-date'>{formatThaiDate(date)}</h1>
         </div>
       </header>
       <br />
