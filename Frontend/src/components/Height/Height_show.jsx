@@ -46,7 +46,7 @@ function Height_show() {
       <p>ส่วนสูงของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input
+        <input className={styles.inputlabel}
           type="number"
           value={height}
           onChange={handleInputChange}

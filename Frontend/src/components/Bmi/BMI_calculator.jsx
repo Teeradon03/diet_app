@@ -78,9 +78,6 @@ function BMI_calculator() {
         </div>
         
       );
-      
-    
-    
   };
   
 

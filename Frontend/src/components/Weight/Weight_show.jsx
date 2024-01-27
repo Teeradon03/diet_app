@@ -46,7 +46,7 @@ function Weight_show(props) {
       <p>น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input
+        <input className={styles.inputlabel}
           type="number"
           value={weight}
           onChange={handleInputChange}

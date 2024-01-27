@@ -68,7 +68,7 @@ function BMR_calculator() {
 
         <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
-          <input
+          <input className={styles.inputlabel}
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}

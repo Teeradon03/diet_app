@@ -73,11 +73,11 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
       questionId: selectedOptions.map((option) => option.id),
       question: selectedLabels.map((option) => option.label),
       answer: value,
-      
     };
 
     const response = await axios.post(
-      "http://localhost:9999/api/form/create-questionnaires",data,
+      "http://localhost:9999/api/form/create-questionnaires",
+      data,
       {
         withCredentials: true,
       }
@@ -89,7 +89,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 };
 
 const Choice = () => {
-  const [selectedOptions, setSelectedOptions,questionId] = useState([]);
+  const [selectedOptions, setSelectedOptions, questionId] = useState([]);
 
   const handleChange = (value) => {
     const selectedOptions = options.filter((option) =>
@@ -98,9 +98,8 @@ const Choice = () => {
     setSelectedOptions(value);
     const questionId = 11;
 
-    console.log('QuestionId :',questionId)
+    console.log("QuestionId :", questionId);
     console.log("AnswerId :", value);
-
   };
 
   const handleNext = () => {
@@ -114,7 +113,7 @@ const Choice = () => {
   };
 
   const handleBack = () => {
-    window.location.href = ('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    window.location.href = "/Choice2"; // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {
@@ -132,15 +131,18 @@ const Choice = () => {
       <Select
         mode="multiple"
         allowClear
-        className='text-box'
+        className="text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
-        options={options}
-        
+        options={options.map((option) => ({
+          ...option,
+          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+        }))}
+        size="large"
       />
       <br />
-      <br />  
+      <br />
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
@@ -148,7 +150,11 @@ const Choice = () => {
         </button>
       </div>
       <div>
-        <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
+        <button
+          className="chevron-list"
+          onClick={handleBack}
+          style={buttonStyle}
+        >
           <VscChevronLeft />
           {/* ไอคอนย้อนกลับ */}
         </button>
