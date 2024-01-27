@@ -15,7 +15,6 @@ const {
 
 const { isLoggedIn } = require('../middleware/isLoggedIn');
 
-
 /// question
 router.get("/get-questions", getQuestions);
 router.get("/get-question/:id", getQuestionById);

@@ -16,10 +16,10 @@ function Height_show() {
   };
 
   const handleNextClick = () => {
-    if (height.trim() === '') {
-      alert('กรุณากรอกส่วนสูงของคุณ');
+    if (height.trim() === '' || height < 100 || height > 300) {
+      alert('กรุณากรอกส่วนสูงของคุณให้ถูกต้อง (100-300 กก.)');
     } else {
-      console.log('Height:', height);
+      // console.log('Height:', height);
       handleSubmit(); // Call the handleSubmit function to send data to the server
       window.location.href = '/Target';
     }
@@ -27,14 +27,14 @@ function Height_show() {
   
 
   const handleSubmit = async () => {
-    console.log('Height:', height);
+    // console.log('Height:', height);
 
     const dataToSend = {
       height: height,
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
+      await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
       console.log('Data sent successfully');
     } catch (error) {
       console.error(error);
@@ -57,8 +57,7 @@ function Height_show() {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 100 ซม. ถึง 300 ซม.</p>
 
-      <Image className={styles['ant-image-img']} src="/public/bmi_img/hight.jpg"
-      />
+      <Image className={styles['ant-image-img']} src="/bmi_img/hight.jpg" alt='height image'/>
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป

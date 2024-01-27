@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { Image, Button } from 'antd';
+import  { useState } from 'react';
+import {  Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Name/Name.module.css';
@@ -27,19 +27,10 @@ function Name() {
 
   const handleNextClick = () => {
     // Display form data in the console
-    console.log('Form Data:', formData);
-
-    // Add your logic for navigating to the next page here
-
+    // console.log('Form Data:', formData);
     // Send data using Axios
-    axios.post('http://localhost:9999/api/user/update-user-data', formData, { withCredentials: true})
-      .then(response => {
-        console.log('Data sent successfully:', response.data);
-        // Add your logic for navigating to the next page here if needed
-      })
-      .catch(error => {
-        console.error('Error sending data:', error);
-      });
+    const response = axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, formData, { withCredentials: true})
+
   };
 
   return (

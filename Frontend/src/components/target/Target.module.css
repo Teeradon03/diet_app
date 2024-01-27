@@ -1,0 +1,465 @@
+.link {
+  text-decoration: none;
+}
+
+.ant-image-img {
+  width: 100%; /* หรือค่าที่ต้องการ */
+  height: auto;
+  max-width: 400px; /* หรือค่าที่ต้องการ */
+  max-height: 400px; /* หรือค่าที่ต้องการ */
+}
+.advicebutton {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 48px;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  max-width: 250px;
+  padding: 15px;
+  position: relative;
+  background-color: #FFFF;
+  border: 1px solid hsl(0, 0%, 80%);
+  color: rgb(13, 13, 13);
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: larger;
+  text-align: center;
+}
+
+.nextbutton {
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 250px;
+  max-width: 210px;
+  padding: 1px;
+  position: relative;
+  top: 50px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 40px;
+  font-weight: bold;
+  cursor: pointer;
+  text-align: center;
+}
+
+.backbutton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  max-width: 210px;
+  padding: 1px;
+  margin-bottom: 25px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: larger;
+  cursor: pointer;
+  text-align: center;
+}
+
+
+.nextbutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.nextbutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+
+.backbutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.backbutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.advicebutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.advicebutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+.label {
+  display: inline-block;
+
+
+}
+
+.Bmi1 {
+  font-weight: bold;
+  padding: 30px;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.highlight {
+  background-color: #757575;
+  color: rgb(255, 255, 255);
+}
+
+.antimageimg {
+  width: 100%;
+  height: auto;
+  display: block;
+  margin: 0 auto;
+}
+
+.chevronicon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+
+  color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  left: 300px;
+  top: 30px;
+}
+
+
+
+
+.childbmi {
+
+  display: inline-block;
+  border: 2px solid white;
+  background-color: #FFFF;
+  color: rgb(13, 13, 13);
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  padding: 10px;
+  margin: 15px auto;
+  width: 60%;
+  text-align: center;
+}
+
+.childadvice {
+
+  display: inline-block;
+  border: 2px solid white;
+  background-color: #FFFF;
+  color: rgb(13, 13, 13);
+  border-radius: 5px;
+  box-shadow: 1px 1px 1px 1px #b2b2b2;
+  padding: 10px;
+  margin: 5px auto;
+  width: 60%;
+  text-align: left;
+}
+
+
+
+
+.bmibutton {
+
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 100%;
+  max-width: 210px;
+  padding: 15px;
+  position: relative;
+  top: 100px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 5px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: larger;
+  cursor: pointer;
+  text-align: center;
+}
+
+.bmibutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.bmibutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+
+}
+
+.inputlabel {
+  display: flex;
+  align-items: center;
+  text-align: center;
+}
+
+input {
+  padding: 10px;
+  width: calc(100%);
+  max-width: 300px;
+  /* Adjust the max-width as needed */
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-right: 5px;
+  /* Add some margin between input and label */
+  font-size: 1rem;
+  text-align: center;
+  font-weight: bold;
+
+}
+
+label {
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+
+.gender select {
+
+  width: calc(100%);
+  max-width: 210px;
+  height: 60px;
+  box-sizing: border-box;
+  border-radius: 8px;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+  padding: 35px;
+  font-size: 25px;
+  border-radius: 8px;
+
+}
+
+@media screen and (max-width: 1600px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+@media screen and (max-width: 1200px) {
+  
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  
+
+  .childbmi,
+  .childadvice {
+    width: 50vw;
+  }
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+
+
+  .childbmi,
+  .childadvice {
+    width: 60vw;
+  }
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 30px;
+    width: 45px;
+    height: 45px;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+ 
+
+  .childbmi,
+  .childadvice {
+    width: 70vw;
+  }
+
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+  }
+
+  @media screen and (max-width: 450px) {
+  
+    .childbmi,
+    .childadvice {
+      width: 60vw;
+    }
+
+    input,
+    .gender,
+    .bmibutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .chevronicon {
+      font-size: 20px;
+      width: 30px;
+      height: 30px;
+    }
+  }
+}

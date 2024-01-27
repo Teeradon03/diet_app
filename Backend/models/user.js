@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     bmi: Number,
     bmiIndex: String,
     bmr: Number,
-    
+    role: String ,
     userId : {
         type : String,
         required: true,

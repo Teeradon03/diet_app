@@ -122,8 +122,8 @@ const sendToAPI = async (selectedOptions, questionId = 10) => {
       answer: selectedOptions,
     };
 
-    const response = await axios.post('http://localhost:9999/api/form/create-questionnaires', data,  { withCredentials: true});
-    console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,  { withCredentials: true});
+    // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error('Error:', error);
   }
@@ -137,8 +137,8 @@ const Choice2 = () => {
     setSelectedOptions(value);
     const questionId = 10;
 
-    console.log('QuestionId :',questionId)
-    console.log('AnswerId :', value);
+    // console.log('QuestionId :',questionId)
+    // console.log('AnswerId :', value);
   };
 
   const handleNext = async () => {

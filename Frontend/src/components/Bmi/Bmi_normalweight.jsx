@@ -11,8 +11,10 @@ function Bmi_normalweight() {
           <p> ค่าดัชนีมวลกาย (BMI) </p>
           < Image className='ant-image-img'
             width="80%"
-            src="/public/bmi_img/normal.jpg"
-          /><br />
+            src="/bmi_img/normal.jpg"
+            alt='bmi_normal_weight'
+          />
+          <br />
           <div className={styles.childbmi}>BMI 18.50 - 22.90</div>
           <div className={styles.childbmi}>ปกติ (สุขภาพดี)</div>
           <br />

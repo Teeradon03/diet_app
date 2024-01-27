@@ -33,20 +33,15 @@ function BMR_calculator() {
       bmrConstant + genderFactor * weight + 4.799 * height - 5.677 * age;
     setBmr(calculatedBmr);
     determinePage(calculatedBmr);
-    console.log('Calculated BMR:', calculatedBmr);
+    // console.log('Calculated BMR:', calculatedBmr);
 
     // Send BMR and ID to the server
     const dataToSend = {
       bmr: calculatedBmr,
     };
 
-    await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend , { withCredentials: true })
-      .then(function (response) {
-        console.log(response);
-      })
-      .catch(function (error) {
-        console.log(error);
-      });
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
+
   };
 
   const determinePage = (calculatedBmr) => {

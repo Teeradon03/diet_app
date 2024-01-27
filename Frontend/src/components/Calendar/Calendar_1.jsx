@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 import { VscChevronLeft } from 'react-icons/vsc';
 import axios from 'axios';
 import styles from '../Bmi/Bmi.module.css';
-import './calendar.css';
+import './Calendar.css';
 
 function Calendar_1() {
   const [date, setDate] = useState(new Date());
@@ -33,7 +33,7 @@ function Calendar_1() {
 
   const logThaiMessage = (message, selectedDate) => {
     const formattedDate = selectedDate ? formatThaiDate(selectedDate) : "";
-    console.log(`${message} ${formattedDate}`);
+    // console.log(`${message} ${formattedDate}`);
   };
 
   const handleSubmit = async () => {
@@ -41,10 +41,10 @@ function Calendar_1() {
       dateOfBirth: date,
     };
 
-    try {
-      const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true});
-      logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
-      console.log('Server response:', response.data);
+     try {
+      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
+      // logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
+      // console.log('Server response:', response.data);
       // Add navigation to the next page here if needed
     } catch (error) {
       logThaiMessage('เกิดข้อผิดพลาด: ' + error.message);

@@ -76,13 +76,14 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
     };
 
     const response = await axios.post(
-      "http://localhost:9999/api/form/create-questionnaires",
-      data,
+
+      `${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,
+
       {
         withCredentials: true,
       }
     );
-    console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
+    // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
     console.error("Error:", error);
   }

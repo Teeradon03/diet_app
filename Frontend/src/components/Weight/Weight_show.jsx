@@ -3,7 +3,6 @@ import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from "../Bmi/Bmi.module.css";
-import "bootstrap/dist/css/bootstrap.min.css";
 import axios from "axios";
 
 function Weight_show(props) {
@@ -19,25 +18,24 @@ function Weight_show(props) {
     if (weight.trim() === '' || weight < 25 || weight > 300) {
       alert('กรุณากรอกน้ำหนักให้ถูกต้อง (25-300 กก.)');
     } else {
-      console.log('Weight:', weight);
+      // console.log('Weight:', weight);
       handleSubmit(); // Call the handleSubmit function to send data to the server
       window.location.href = '/Height_show';
     }
   };
 
   const handleSubmit = async () => {
-    console.log("Weight:", weight);
+    // console.log("Weight:", weight);
 
     const dataToSend = {
-      questionId: questionId,
       weight: weight,
     };
 
     try {
-      await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true });
-      console.log('Data sent successfully');
+      await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
+      // console.log('Data sent successfully');
     } catch (error) {
-      console.error(error);
+      console.log(error);
     }
   };
 
@@ -57,7 +55,7 @@ function Weight_show(props) {
 
       <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
 
-      <Image className={styles['ant-image-img']} src="/public/bmi_img/weight.jpg" />
+      <Image className={styles['ant-image-img']} src="/bmi_img/weight.jpg" alt='weight image'/>
       <div>
         <button className={styles.nextbutton} onClick={handleNextClick}>
           ถัดไป

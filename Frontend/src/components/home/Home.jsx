@@ -3,9 +3,8 @@ import liff from '@line/liff';
 import axios from 'axios';
 
 const Home = () => {
-
   useEffect(() => {
-    liff.init({ liffId: '2002171340-w1AjWX9e' })
+    liff.init({ liffId: '2002961723-1mlX4q3q' })
       .then(() => {
         /// something 
         handleLineLogin()
@@ -19,12 +18,12 @@ const Home = () => {
       // console.log('access token: ' + accessToken)
       // console.log('idToken', idToken);
       // console.log('user profile', userProfile);
-      const response = await axios.post("http://localhost:9999/api/user/user-login", idToken,
+      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken,
         {
           withCredentials: true
         }
       )
-      console.log(response.data)
+      // console.log(response.data)
     }
     catch (error) {
       console.log(error)

@@ -14,7 +14,7 @@ const connectDB = require("./db/db");
 const user = require('./routes/userRoute')
 const login = require('./routes/login')
 const form = require('./routes/formRoute');
-
+const http = require('http')
 app.use(express.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json({ limit: "10mb" }));
@@ -24,6 +24,7 @@ app.use(
     origin: ["http://localhost:5173"],
   }),
 );
+
 
 app.use(session({
   secret: 'Hoiyaaaaaa',  
@@ -37,6 +38,8 @@ app.use('/api/user', user);
 app.use('/api/login', login)
 app.use('/api/form',form)
 
-app.listen(process.env.PORT || 3000, (req, res) => {
+http.createServer({  
+}, app).listen(process.env.PORT || 3000, (req, res) => {
   console.log(`app listening on port ${process.env.PORT}`);
 });
+
