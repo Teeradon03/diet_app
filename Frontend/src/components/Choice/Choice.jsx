@@ -119,7 +119,9 @@ const Choice = () => {
 
   const buttonStyle = {
     fontWeight: 900,
+    fontSize: '50px',
   };
+
 
   return (
     <div>
@@ -132,12 +134,15 @@ const Choice = () => {
       <Select
         mode="multiple"
         allowClear
-        className='text-box'
+        className="text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
-        options={options}
-        
+        options={options.map((option) => ({
+          ...option,
+          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+        }))}
+        size="large"
       />
       <br />
       <br />  

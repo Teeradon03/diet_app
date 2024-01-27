@@ -171,11 +171,16 @@ const Choice2 = () => {
       <br /><br />
       <Select
         mode="multiple"
-        className='text-box'
-        placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
+        allowClear
+        className="text-box"
+        placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
-        options={options}
+        options={options.map((option) => ({
+          ...option,
+          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+        }))}
+        size="large"
       />
       <br /><br /><br />
       <div className='font-family'>

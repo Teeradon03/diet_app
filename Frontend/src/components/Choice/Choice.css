@@ -225,3 +225,24 @@
     left: 30px;
   }
 } 
+
+@media screen and (max-width: 376px) {
+  .text {
+    padding-top: 100px;
+  }
+
+  .next-list {
+    font-size: 1rem;
+    width: 30vw !important;
+    position: absolute;
+    left: 115px
+  }
+
+  .chevron-list {
+    font-size: 7vw;
+    width: 10vw;
+    height: 10vw;
+    position: absolute;
+    left: 30px;
+  }
+} 
