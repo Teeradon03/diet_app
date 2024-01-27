@@ -97,8 +97,8 @@ const Choice = () => {
     setSelectedOptions(value);
     const questionId = 11;
 
-    console.log("QuestionId :", questionId);
-    console.log("AnswerId :", value);
+    // console.log("QuestionId :", questionId);
+    // console.log("AnswerId :", value);
   };
 
   const handleNext = () => {

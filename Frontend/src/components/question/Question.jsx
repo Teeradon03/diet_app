@@ -136,9 +136,9 @@ const Question = () => {
 
 
         if (questions[currentQuestion].id >= 1 && questions[currentQuestion].id <= 9) {
-            console.log('ID:', questions[currentQuestion].id);
+            // console.log('ID:', questions[currentQuestion].id);
             // console.log('Question:', questions[currentQuestion].question);
-            console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
+            // console.log('Answer:', selectedOption); // นำ console.log ไปวางตรงนี้หลังจากที่ได้ค่า selectedOption แล้ว
             sendToAPI();  // เรียกใช้ฟังก์ชันส่งข้อมูลไปยัง API Endpoint
         }
 
