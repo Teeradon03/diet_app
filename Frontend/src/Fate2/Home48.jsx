@@ -97,8 +97,8 @@ const Home48 = () => {
         <p className='text-food'> การลดน้ำหนักทั่วไป (อาหาร)</p>
         <Card className='Card4'>
           <div className="chart4">
-            <Card>
-              
+            <Card className='date-food'>
+              <p> วันที่ </p>
             </Card>
           </div>
         </Card>

@@ -1,0 +1,542 @@
+.target1 {
+    width: 500px;
+    height: 100px;
+    margin-bottom: 100px;
+    margin-top: 100px;
+    border-radius: 35px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.target2 {
+    width: 500px;
+    height: 100px;
+    border-radius: 35px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.target3 {
+    width: 500px;
+    height: 100px;
+    border-radius: 35px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    left: 400px;
+    top: -150px;
+}
+
+.text-head {
+    padding-top: 30px;
+    font-size: 70px;
+}
+
+.text-target1,
+.text-target2,
+.maybe-target {
+    font-size: 40px;
+}
+
+
+.targetWeight1 {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: calc(100%);
+    max-width: 300px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    left: 350px;
+    top: -300px;
+}
+
+.targetWeight2 {
+    margin: 0 auto;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    width: calc(100%);
+    max-width: 300px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    margin-bottom: 2em;
+    font-size: 2rem;
+    font-weight: bold;
+    position: relative;
+    left: 350px;
+    top: -240px;
+}
+
+.edit {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #FFD700;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 30px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    left: 200px;
+}
+
+.edit:hover {
+    background-color: #FFD700;
+    color: #000000;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.edit:active {
+    box-shadow: none;
+    transform: translateY(10px);
+}
+
+.save {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #2E8B57;
+    border: 1px solid #ccc;
+    color: #FFFF;
+    border-radius: 30px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    left: 700px;
+    top: -95px;
+}
+
+.save:hover {
+    background-color: #2E8B57;
+    color: #000000;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.save:active {
+    box-shadow: none;
+    transform: translateY(10px);
+}
+
+
+
+
+@media screen and (max-width: 1600px) {
+    .text-head {
+        font-size: 5rem;
+    }
+
+    .target1 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .target2 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .targetWeight1 {
+        width: 500px;
+        height: 100px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 3rem;
+    }
+    .save{
+        width: 30%;
+        font-size: 3rem;
+        top: -120px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .text-head {
+        font-size: 5rem;
+    }
+
+    .target1 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .target2 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+    }
+
+    .targetWeight1 {
+        width: 500px;
+        height: 100px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 3rem;
+    }
+    .save{
+        width: 30%;
+        font-size: 3rem;
+        top: -120px;
+    }
+}
+
+@media screen and (max-width: 1370px) {
+    .text-head {
+        font-size: 5rem;
+    }
+
+    .target1 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+        left: 100px;
+    }
+
+    .target2 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+        left: 100px;
+    }
+
+    .targetWeight1 {
+        width: 500px;
+        height: 100px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 3rem;
+    }
+    .save{
+        width: 30%;
+        font-size: 3rem;
+        top: -120px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .text-head {
+        font-size: 5rem;
+    }
+
+    .target1 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+        left: 50px;
+    }
+
+    .target2 {
+        width: 500px;
+        height: 100px;
+        font-size: 3rem;
+        left: 50px;
+    }
+
+    .targetWeight1 {
+        width: 500px;
+        height: 100px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 3rem;
+        left: 190px;
+    }
+    .save{
+        width: 30%;
+        font-size: 3rem;
+        top: -120px;
+        left: 650PX;
+    }
+}
+
+@media screen and (max-width: 992px) {
+    .text-head {
+        font-size: 4rem;
+    }
+
+    .target1 {
+        width: 400px;
+        height: 100px;
+        font-size: 2.5rem;
+        left: 70px;
+    }
+    .target2 {
+        width: 400px;
+        height: 100px;
+        font-size: 2.5rem;
+        left: 70px;
+    }
+    .contenner {
+        position: relative;
+        left: -80px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 3rem;
+        left: 150px;
+    }
+    .save{
+        width: 30%;
+        font-size: 3rem;
+        top: -120px;
+        left: 550pX;
+    }
+}
+
+@media screen and (max-width: 890px) {
+    .text-head {
+        font-size: 3.5rem;
+    }
+    .text-target1,
+    .text-target2,
+    .maybe-target{
+        font-size: 2rem;
+    }
+    .target1 {
+        width: 280px;
+        height: 100px;
+        left: 70px;
+    }
+    .target2 {
+        width: 280px;
+        height: 100px;
+        left: 70px;
+    }
+    .contenner {
+        position: relative;
+        left: -180px;
+    }
+    .edit {
+        width: 30%;
+        font-size: 2rem;
+        left: 120px;
+    }
+    .save{
+        width: 30%;
+        font-size: 2rem;
+        top: -100px;
+        left: 480pX;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .text-head {
+        font-size: 3rem;
+    }
+    .text-target1,
+    .text-target2,
+    .maybe-target{
+        font-size: 2rem;
+    }
+    .target1 {
+        width: 280px;
+        height: 100px;
+        left: 230px;
+    }
+    .target2 {
+        width: 280px;
+        height: 100px;
+        top: 100px;
+        left: 230px;
+    }
+    .targetWeight1 {
+        position: relative;
+        left: 160px;
+        top: -130px;
+    }
+    .targetWeight2 {
+        position: relative;
+        left: 160px;
+        top: 0px;
+    }
+    .target3 {
+        width: 400px;
+        height: 100px;
+        left: 100px;
+        top: -60px;
+    }
+    .edit {
+        width: 40%;
+        font-size: 2rem;
+        left: 50px;
+    }
+    .save{
+        width: 40%;
+        font-size: 2rem;
+        top: -100px;
+        left: 390pX;
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .text-head {
+        font-size: 3rem;
+    }
+    .text-target1,
+    .text-target2,
+    .maybe-target{
+        font-size: 2rem;
+    }
+    .target1 {
+        width: 280px;
+        height: 100px;
+        left: 180px;
+    }
+    .target2 {
+        width: 280px;
+        height: 100px;
+        top: 100px;
+        left: 180px;
+    }
+    .targetWeight1 {
+        position: relative;
+        left: 170px;
+        top: -130px;
+    }
+    .targetWeight2 {
+        position: relative;
+        left: 170px;
+        top: 0px;
+    }
+    .edit {
+        width: 40%;
+        font-size: 2rem;
+        left: 40px;
+    }
+    .save{
+        width: 40%;
+        font-size: 2rem;
+        top: -100px;
+        left: 350pX;
+    }
+}
+
+@media screen and (max-width: 576px) {
+    .text-head {
+        font-size: 3rem;
+    }
+    .text-target1,
+    .text-target2,
+    .maybe-target{
+        font-size: 2rem;
+    }
+    .target1 {
+        width: 280px;
+        height: 100px;
+        left: 150px;
+    }
+    .target2 {
+        width: 280px;
+        height: 100px;
+        top: 100px;
+        left: 150px;
+    }
+    .targetWeight1 {
+        position: relative;
+        left: 170px;
+        top: -130px;
+    }
+    .targetWeight2 {
+        position: relative;
+        left: 170px;
+        top: 0px;
+    }
+    .target3 {
+        width: 400px;
+        height: 100px;
+        left: 100px;
+        top: -60px;
+    }
+    .edit {
+        width: 40%;
+        font-size: 2rem;
+        left: 50px;
+    }
+    .save{
+        width: 40%;
+        font-size: 2rem;
+        top: -100px;
+        left: 300pX;
+    }
+}
+
+@media screen and (max-width: 500px) {
+    .text-head {
+        font-size: 2.5rem; /* ปรับขนาด font-size เป็น 2rem */
+    }
+
+    .text-target1,
+    .text-target2,
+    .maybe-target {
+        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
+    }
+
+    .target1,
+    .target2 {
+        width: 230px;
+        height: 80px;
+        left: 110px; /* ปรับตำแหน่ง left เป็น 10px */
+        margin: 50px; /* เพิ่ม margin เพื่อปรับระยะห่าง */
+    }
+
+    .target2 {
+        top: 100px; /* ปรับตำแหน่ง top ของ .target2 */
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        position: relative;
+        left: 20px; /* ปรับตำแหน่ง left เป็น 20px */
+        top: -130px; /* ปรับตำแหน่ง top ของ .targetWeight1 */
+    }
+
+    .targetWeight2 {
+        top: 0; /* ปรับตำแหน่ง top เป็น 0 */
+    }
+
+    .target3 {
+        width: 300px;
+        height: 80px;
+        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
+        top: -60px;
+        margin-bottom: 20px; /* เพิ่ม margin-bottom เพื่อปรับระยะห่าง */
+    }
+
+    .edit {
+        margin-bottom: 10px; /* ปรับ margin-bottom เป็น 10px */
+        width: 80%;
+        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
+        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
+    }
+
+    .save {
+        width: 80%;
+        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
+        top: 10px; /* ปรับตำแหน่ง top เป็น 10px */
+        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
+    }
+}
+
+@media screen and (max-width: 455px) {}
+
+@media screen and (max-width: 400px) {}
+
+@media screen and (max-width: 376px) {}
+
+@media screen and (max-width: 300px) {}

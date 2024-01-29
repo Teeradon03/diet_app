@@ -42,6 +42,7 @@ import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
    /////////////////////////////Fate2///////////////////////////////
 import Chart from "./Fate2/Chart/Chart.jsx";
 import Home48 from "./Fate2/Home48.jsx";
+import Target15 from "./Fate2/Target/Target15.jsx";
 
 
 
@@ -101,6 +102,7 @@ function App() {
 
         <Route path="/Chart" element={<Chart />} />
         <Route path="/Home48" element={<Home48 />} />
+        <Route path="/Target15" element={<Target15 />} />
 
 
       </Routes>
