@@ -27,10 +27,21 @@ import Bmi_normalweight from './components/Bmi/Bmi_normalweight';
 import Bmi_obesitylevel1 from './components/Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from './components/Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from './components/Bmi/Bmi_obesitylevel3';
-import Yesno from './components/Ynquiz/Yesno.jsx'
-import Choice from './components/Choice/Choice.jsx'
-import Choice2 from './components/Choice/Choice2.jsx'
-import BMR_calculator from './components/Bmr/BMR_calculator'
+import Yesno from './components/Ynquiz/Yesno.jsx';
+import Choice from './components/Choice/Choice.jsx';
+import Choice2 from './components/Choice/Choice2.jsx';
+import BMR_calculator from './components/Bmr/BMR_calculator';
+
+import Table from './pages/report/user/Table.jsx';
+import Product from './fate2/Products/Product.jsx';
+//import Nanox2 from './fate2/Products/Nanox2.jsx';
+//import Nanova from './fate2/Products/Nanova.jsx';
+import MainApp from './pages/report/MainApp';
+import QuestionReport from './pages/report/question/Question';
+import Questionnaires from './pages/report/questionnaires/Questionnaires';
+import User from './pages/report/user/Users';
+
+
 
 function App() {
   return (
@@ -75,6 +86,16 @@ function App() {
         <Route path="/Yesno" element={<Yesno />} />
         <Route path="/Choice" element={<Choice />} />
         <Route path="/Choice2" element={<Choice2 />} />
+
+        <Route path="/report/Table" element={<Table/>}/>
+        
+        <Route path="/fate2/product" element={<Product/>}/>
+
+        <Route path="/report/MainApp" element={<MainApp/>}/>
+        <Route path="/report/question" element={<QuestionReport/>}/>
+        <Route path="/report/questionnaires" element={<Questionnaires/>}/>
+        <Route path="/report/user" element={<User/>}/>
+      
 
       </Routes>
     </BrowserRouter>
