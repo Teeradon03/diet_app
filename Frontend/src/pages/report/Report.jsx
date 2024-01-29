@@ -19,7 +19,7 @@ import Users from './user/Users';
 
 const drawerWidth = 240;
 
-function ResponsiveDrawer(props) {
+function Report(props) {
   const { window } = props;
   const [mobileOpen, setMobileOpen] = React.useState(false);
   const [selectedMenuItem, setSelectedMenuItem] = React.useState(null);
@@ -120,8 +120,8 @@ function ResponsiveDrawer(props) {
   );
 }
 
-ResponsiveDrawer.propTypes = {
+Report.propTypes = {
   window: PropTypes.func,
 };
 
-export default ResponsiveDrawer;
+export default Report;

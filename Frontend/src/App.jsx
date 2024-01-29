@@ -31,11 +31,24 @@ import Yesno from './components/Ynquiz/Yesno.jsx'
 import Choice from './components/Choice/Choice.jsx'
 import Choice2 from './components/Choice/Choice2.jsx'
 import BMR_calculator from './components/Bmr/BMR_calculator'
+import Report from "./pages/report/Report.jsx"
+import Users from "./pages/report/user/Users.jsx";
+import EnhancedTable from "./pages/report/table.jsx";
+import Questionnaires from "./pages/report/questionnaires/Questionnaires.jsx";
 
+import DataTable from "./pages/report/Table2.jsx";
 function App() {
   return (
     <BrowserRouter>
       <Routes>
+
+
+        <Route path="/report" element={<Report/>}/>
+        <Route path="/report/users" element={<Users />}/>
+        <Route path="/report/questionnaires" element={<Questionnaires />}/>
+        <Route path="/report/test" element={<EnhancedTable/>}/>
+        <Route path="/report/test2" element={<DataTable/>}/>
+
 
         <Route path="/" element={<HomePage />} />
         <Route path="*" element={<NotFound404 />} />
