@@ -35,7 +35,7 @@
 }
 
 
-.targetWeight1 {
+.targetWeight1 input{
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -52,7 +52,7 @@
     top: -300px;
 }
 
-.targetWeight2 {
+.targetWeight2 input{
     margin: 0 auto;
     justify-content: center;
     align-items: center;
@@ -98,6 +98,34 @@
     transform: translateY(10px);
 }
 
+.popup {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #4CAF50;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.text-popup,
+.text-popup-error{
+    color: white;
+}
+
+.popup-error {
+    position: fixed;
+    top: 0;
+    right: 0;
+    background-color: #ff0000;
+    color: white;
+    padding: 15px;
+    text-align: center;
+    font-size: 24px;
+    font-weight: bold;
+}
+
 .save {
     display: block;
     width: 30%;
@@ -128,415 +156,430 @@
     transform: translateY(10px);
 }
 
-
-
-
-@media screen and (max-width: 1600px) {
-    .text-head {
-        font-size: 5rem;
-    }
-
-    .target1 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-    }
-
-    .target2 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-    }
-
-    .targetWeight1 {
-        width: 500px;
-        height: 100px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 3rem;
-    }
-    .save{
-        width: 30%;
-        font-size: 3rem;
-        top: -120px;
-    }
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
-@media screen and (max-width: 1400px) {
-    .text-head {
-        font-size: 5rem;
-    }
-
-    .target1 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-    }
-
-    .target2 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-    }
-
-    .targetWeight1 {
-        width: 500px;
-        height: 100px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 3rem;
-    }
-    .save{
-        width: 30%;
-        font-size: 3rem;
-        top: -120px;
-    }
-}
-
-@media screen and (max-width: 1370px) {
-    .text-head {
-        font-size: 5rem;
-    }
-
-    .target1 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-        left: 100px;
-    }
-
-    .target2 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-        left: 100px;
-    }
-
-    .targetWeight1 {
-        width: 500px;
-        height: 100px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 3rem;
-    }
-    .save{
-        width: 30%;
-        font-size: 3rem;
-        top: -120px;
-    }
-}
-
-@media screen and (max-width: 1200px) {
-    .text-head {
-        font-size: 5rem;
-    }
-
-    .target1 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-        left: 50px;
-    }
-
-    .target2 {
-        width: 500px;
-        height: 100px;
-        font-size: 3rem;
-        left: 50px;
-    }
-
-    .targetWeight1 {
-        width: 500px;
-        height: 100px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 3rem;
-        left: 190px;
-    }
-    .save{
-        width: 30%;
-        font-size: 3rem;
-        top: -120px;
-        left: 650PX;
-    }
-}
-
-@media screen and (max-width: 992px) {
-    .text-head {
-        font-size: 4rem;
-    }
-
-    .target1 {
-        width: 400px;
-        height: 100px;
-        font-size: 2.5rem;
-        left: 70px;
-    }
-    .target2 {
-        width: 400px;
-        height: 100px;
-        font-size: 2.5rem;
-        left: 70px;
-    }
-    .contenner {
-        position: relative;
-        left: -80px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 3rem;
-        left: 150px;
-    }
-    .save{
-        width: 30%;
-        font-size: 3rem;
-        top: -120px;
-        left: 550pX;
-    }
-}
-
-@media screen and (max-width: 890px) {
-    .text-head {
-        font-size: 3.5rem;
-    }
-    .text-target1,
-    .text-target2,
-    .maybe-target{
-        font-size: 2rem;
-    }
-    .target1 {
-        width: 280px;
-        height: 100px;
-        left: 70px;
-    }
-    .target2 {
-        width: 280px;
-        height: 100px;
-        left: 70px;
-    }
-    .contenner {
-        position: relative;
-        left: -180px;
-    }
-    .edit {
-        width: 30%;
-        font-size: 2rem;
-        left: 120px;
-    }
-    .save{
-        width: 30%;
-        font-size: 2rem;
-        top: -100px;
-        left: 480pX;
-    }
-}
-
-@media screen and (max-width: 768px) {
-    .text-head {
-        font-size: 3rem;
-    }
-    .text-target1,
-    .text-target2,
-    .maybe-target{
-        font-size: 2rem;
-    }
-    .target1 {
-        width: 280px;
-        height: 100px;
-        left: 230px;
-    }
-    .target2 {
-        width: 280px;
-        height: 100px;
-        top: 100px;
-        left: 230px;
-    }
-    .targetWeight1 {
-        position: relative;
-        left: 160px;
-        top: -130px;
-    }
-    .targetWeight2 {
-        position: relative;
-        left: 160px;
-        top: 0px;
-    }
-    .target3 {
-        width: 400px;
-        height: 100px;
-        left: 100px;
-        top: -60px;
-    }
-    .edit {
-        width: 40%;
-        font-size: 2rem;
-        left: 50px;
-    }
-    .save{
-        width: 40%;
-        font-size: 2rem;
-        top: -100px;
-        left: 390pX;
-    }
-}
-
-@media screen and (max-width: 640px) {
-    .text-head {
-        font-size: 3rem;
-    }
-    .text-target1,
-    .text-target2,
-    .maybe-target{
-        font-size: 2rem;
-    }
-    .target1 {
-        width: 280px;
-        height: 100px;
-        left: 180px;
-    }
-    .target2 {
-        width: 280px;
-        height: 100px;
-        top: 100px;
-        left: 180px;
-    }
-    .targetWeight1 {
-        position: relative;
-        left: 170px;
-        top: -130px;
-    }
-    .targetWeight2 {
-        position: relative;
-        left: 170px;
-        top: 0px;
-    }
-    .edit {
-        width: 40%;
-        font-size: 2rem;
-        left: 40px;
-    }
-    .save{
-        width: 40%;
-        font-size: 2rem;
-        top: -100px;
-        left: 350pX;
-    }
-}
-
-@media screen and (max-width: 576px) {
-    .text-head {
-        font-size: 3rem;
-    }
-    .text-target1,
-    .text-target2,
-    .maybe-target{
-        font-size: 2rem;
-    }
-    .target1 {
-        width: 280px;
-        height: 100px;
-        left: 150px;
-    }
-    .target2 {
-        width: 280px;
-        height: 100px;
-        top: 100px;
-        left: 150px;
-    }
-    .targetWeight1 {
-        position: relative;
-        left: 170px;
-        top: -130px;
-    }
-    .targetWeight2 {
-        position: relative;
-        left: 170px;
-        top: 0px;
-    }
-    .target3 {
-        width: 400px;
-        height: 100px;
-        left: 100px;
-        top: -60px;
-    }
-    .edit {
-        width: 40%;
-        font-size: 2rem;
-        left: 50px;
-    }
-    .save{
-        width: 40%;
-        font-size: 2rem;
-        top: -100px;
-        left: 300pX;
-    }
-}
-
-@media screen and (max-width: 500px) {
-    .text-head {
-        font-size: 2.5rem; /* ปรับขนาด font-size เป็น 2rem */
-    }
-
-    .text-target1,
-    .text-target2,
-    .maybe-target {
-        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
-    }
-
+@media (max-width: 1400px) {
     .target1,
-    .target2 {
-        width: 230px;
-        height: 80px;
-        left: 110px; /* ปรับตำแหน่ง left เป็น 10px */
-        margin: 50px; /* เพิ่ม margin เพื่อปรับระยะห่าง */
-    }
-
-    .target2 {
-        top: 100px; /* ปรับตำแหน่ง top ของ .target2 */
+    .target2,
+    .target3 {
+        width: 500px; 
+        position: relative;
+        left: 100px;
     }
 
     .targetWeight1,
     .targetWeight2 {
+        max-width: 800px; 
         position: relative;
-        left: 20px; /* ปรับตำแหน่ง left เป็น 20px */
-        top: -130px; /* ปรับตำแหน่ง top ของ .targetWeight1 */
-    }
-
-    .targetWeight2 {
-        top: 0; /* ปรับตำแหน่ง top เป็น 0 */
-    }
-
-    .target3 {
-        width: 300px;
-        height: 80px;
-        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
-        top: -60px;
-        margin-bottom: 20px; /* เพิ่ม margin-bottom เพื่อปรับระยะห่าง */
+        left: 300px;
     }
 
     .edit {
-        margin-bottom: 10px; /* ปรับ margin-bottom เป็น 10px */
-        width: 80%;
-        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
-        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 100px;
     }
 
-    .save {
-        width: 80%;
-        font-size: 1.5rem; /* ปรับขนาด font-size เป็น 1.5rem */
-        top: 10px; /* ปรับตำแหน่ง top เป็น 10px */
-        left: 10px; /* ปรับตำแหน่ง left เป็น 10px */
+    .save{
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 700px;
     }
 }
 
-@media screen and (max-width: 455px) {}
+@media (max-width: 1200px) {
+    .target1,
+    .target2,
+    .target3 {
+        width: 500px; 
+        position: relative;
+        left: 100px;
+    }
 
-@media screen and (max-width: 400px) {}
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 800px; 
+        position: relative;
+        left: 200px;
+    }
 
-@media screen and (max-width: 376px) {}
+    .edit {
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 90px;
+    }
 
-@media screen and (max-width: 300px) {}
+    .save{
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 650px;
+        top: -110px;
+    }
+}
+
+@media (max-width: 1100px) {
+    .target1,
+    .target2,
+    .target3 {
+        width: 400px; 
+        position: relative;
+        left: 100px;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 800px; 
+        position: relative;
+        left: 100px;
+    }
+
+    .edit {
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 80px;
+    }
+
+    .save{
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 600px;
+    }
+}
+
+@media (max-width: 1000px) {
+    .target1,
+    .target2,
+    .target3 {
+        width: 400px; 
+        position: relative;
+        left: 100px;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 800px; 
+        position: relative;
+        left: 50px;
+        top: 10px;
+    }
+
+    .edit {
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 80px;
+    }
+
+    .save{
+        width: 40%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 550px;
+    }
+}
+
+@media (max-width: 951px) {
+    .target1,
+    .target2 {
+        width: 300px; 
+        position: relative;
+        left: 100px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 2rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 800px; 
+        position: relative;
+        left: -50px;
+        top: 10px;
+    }
+
+    .edit {
+        width: 30%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 170px;
+    }
+
+    .save{
+        width: 30%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 500px;
+    }
+}
+
+@media (max-width: 851px) {
+    .target1,
+    .target2 {
+        width: 300px; 
+        position: relative;
+        left: 70px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 2rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 800px; 
+        position: relative;
+        left: -150px;
+        top: 10px;
+    }
+
+    .edit {
+        width: 30%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 140px;
+    }
+
+    .save{
+        width: 30%;
+        font-size: 2.5rem;
+        position: relative;
+        left: 450px;
+    }
+}
+
+@media (max-width: 751px) {
+    .text-head {
+        font-size: 3.5rem;
+    }
+
+    .target1,
+    .target2 {
+        width: 250px; 
+        position: relative;
+        left: 50px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 1.8rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 450px; 
+        position: relative;
+        left: -70px;
+        top: 10px;
+    }
+
+    .edit {
+        width: 35%;
+        font-size: 2rem;
+        position: relative;
+        left: 70px;
+    }
+
+    .save{
+        width: 35%;
+        font-size: 2rem;
+        position: relative;
+        left: 380px;
+        top: -95px;
+    }
+}
+
+@media (max-width: 651px) {
+    .text-head {
+        font-size: 3.5rem;
+    }
+
+    .target1,
+    .target2 {
+        width: 400px; 
+        position: relative;
+        left: 120px;
+        margin-bottom: 200px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 2.5rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 450px; 
+        position: relative;
+        left: -250px;
+        top: -130px;
+        margin-bottom:200px;
+    }
+
+    .edit {
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 70px;
+        top: -400px;
+    }
+
+    .save{
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 70px;
+        top: -370px;
+    }
+}
+
+@media (max-width: 551px) {
+    .text-head {
+        font-size: 3rem;
+    }
+
+    .target1,
+    .target2 {
+        width: 300px; 
+        position: relative;
+        left: 120px;
+        margin-bottom: 200px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 2rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 450px; 
+        position: relative;
+        left: -300px;
+        top: -130px;
+        margin-bottom:200px;
+    }
+
+    .edit {
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 70px;
+        top: -400px;
+    }
+
+    .save{
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 70px;
+        top: -370px;
+    }
+}
+
+@media (max-width: 451px) {
+    .text-head {
+        font-size: 2.5rem;
+    }
+
+    .target1,
+    .target2 {
+        width: 250px; 
+        position: relative;
+        left: 100px;
+        margin-bottom: 200px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 1.5rem;
+    }
+
+    .targetWeight1,
+    .targetWeight2 {
+        max-width: 250px; 
+        position: relative;
+        left: -250px;
+        top: -130px;
+        margin-bottom:200px;
+    }
+
+    .edit {
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 60px;
+        top: -400px;
+    }
+
+    .save{
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 60px;
+        top: -370px;
+    }
+}
+
+@media (max-width: 351px) {
+    .text-head {
+        font-size: 2rem;
+    }
+
+    .target1,
+    .target2 {
+        width: 200px; 
+        height: 70px;
+        position: relative;
+        left: 70px;
+        margin-bottom: 200px;
+    }
+
+    .text-target1,
+    .text-target2 {
+        font-size: 1rem;
+    }
+
+    .targetWeight1 {
+        max-width: 150px; 
+        position: relative;
+        left: -260px;
+        top: -100px;
+        margin-bottom:200px;
+    }
+
+    .targetWeight2 {
+        max-width: 150px; 
+        position: relative;
+        left: -260px;
+        top: -150px;
+        margin-bottom:200px;
+    }
+
+    .edit {
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 40px;
+        top: -400px;
+    }
+
+    .save{
+        width: 80%;
+        font-size: 2rem;
+        position: relative;
+        left: 40px;
+        top: -370px;
+    }
+}

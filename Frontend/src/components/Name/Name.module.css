@@ -3,6 +3,7 @@
 }
 
 .Bmi1 {
+
   padding: 30px;
   display: flex;
   margin: 20px;
@@ -12,17 +13,20 @@
   font-weight: bold;
 }
 
-.inputv1{   
-    justify-content: center;
-    align-items: center;
-    padding: 1px;
-    width: calc(100% );
-    max-width: 210px;
-    box-sizing: border-box;
-    border-radius: 8px;
-    margin-bottom: 2em;
-    font-size: 1rem;
-   
+
+
+.inputv1 input {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  width: calc(100%);
+  max-width: 300px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 2em;
+  font-size: 2rem;
+  font-weight: bold;
 }
 
 .chevronicon {
@@ -30,7 +34,6 @@
   height: 50px;
   border-radius: 50%;
   border: none;
-
   color: #757575;
   display: flex;
   justify-content: center;
@@ -38,15 +41,16 @@
   cursor: pointer;
   outline: none;
   position: absolute;
-  left: 10px;
+  left: 300px;
   top: 30px;
 }
 
 .gender select {
-     
-  width: calc(100% );
-  max-width: 210px;
-  height: 50px;
+  margin: 40px auto 0;
+  /* Add 30px top margin, center horizontally */
+  width: calc(100%);
+  max-width: 300px;
+  height: 4.5rem;
   box-sizing: border-box;
   border-radius: 35px;
   margin-bottom: 1em;
@@ -54,10 +58,10 @@
   background-color: #fff;
   color: #111;
   box-shadow: 10px 10px 8px 6px #b2b2b2;
-  padding: 8px; 
-  font-size: 25px; 
-  
-
+  padding: 8px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
 }
 
 
@@ -73,8 +77,8 @@
   width: 250px;
   max-width: 210px;
   padding: 1px;
-  position: relative; 
-  top: 25px; 
+  position: relative;
+  top: 50px;
   margin-bottom: 55px;
   background-color: #FFFF;
   border: 1px solid #ccc;
@@ -83,7 +87,8 @@
   box-shadow: 10px 10px 8px 6px #b2b2b2;
   font-size: 2.5rem;
   cursor: pointer;
-  text-align :center;
+  text-align: center;
+  font-weight: bold;
 }
 
 .nextbutton:hover {
@@ -128,7 +133,8 @@
   .Bmi1 {
     font-size: 2.5rem;
   }
-  
+
+  .advicebutton,
   .nextbutton,
   .backbutton,
   .bmibutton {
@@ -142,9 +148,36 @@
   }
 
   .chevronicon {
-    font-size: 40px;
-    width: 60px;
-    height: 60px;
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+}
+
+
+
+
+@media screen and (max-width: 1200px) {
+
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    transform: translateX(-1000%);
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
   }
 }
 
@@ -263,10 +296,6 @@
       font-size: 16px;
       width: 10px;
       height: 10px;
-    }
-    .Bmi1{
-      font-size: 2.3rem;
-      justify-self: center;
     }
   }
 }

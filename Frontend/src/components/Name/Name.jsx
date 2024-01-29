@@ -27,19 +27,10 @@ function Name() {
 
   const handleNextClick = () => {
     // Display form data in the console
-    console.log('Form Data:', formData);
-
-    // Add your logic for navigating to the next page here 
-
+    // console.log('Form Data:', formData);
     // Send data using Axios
-    axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, formData, { withCredentials: true})
-      .then(response => {
-        console.log('Data sent successfully:', response.data);
-        // Add your logic for navigating to the next page here if needed
-      })
-      .catch(error => {
-        console.error('Error sending data:', error);
-      });
+    const response = axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, formData, { withCredentials: true})
+
   };
 
   return (
@@ -47,7 +38,7 @@ function Name() {
       <div className={styles.Bmi1} >
       <br />
         <p>กรุณากรอกข้อมูลดังนี้</p>
-        <div className='body '>
+        <div className='body'>
           <div className={styles.inputv1}>
             <input
               type="text"
@@ -98,14 +89,6 @@ function Name() {
           </Link>
         </div>
       </div>
-     
-    <Link to="/Form">
-        <button 
-        className={styles.chevronicon} 
-        onClick={() => window.history.back()}>
-          <VscChevronLeft />
-        </button>
-      </Link>
     </div>
   );
 }
