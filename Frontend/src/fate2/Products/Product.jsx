@@ -6,12 +6,12 @@ function Product() {
   const cardData = [
     {
       title: 'nanoX2',
-      imageUrl: '/public/product_img/nanox2.png',
+      imageUrl: '/product_img/nanox2.png',
       link: '/fate2/Nanox2', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 1
     },
     {
       title: 'nanoVA',
-      imageUrl: '/public/product_img/nanoVa.png',
+      imageUrl: '/product_img/nanoVa.png',
       link: '/fate2/Nanova', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 2
     },
   ];

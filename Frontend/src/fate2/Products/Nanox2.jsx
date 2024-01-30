@@ -6,7 +6,7 @@ import "./Nano.css";
 function nanox2() {
   const cardData = [
     {
-      imageUrl: "/public/product_img/nanox2.png",
+      imageUrl: "/product_img/nanox2.png",
     },
   ];
 
