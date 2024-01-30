@@ -6,7 +6,7 @@ import "./Nano.css";
 function nanova() {
   const cardData = [
     {
-      imageUrl: "/public/product_img/nanoVa.png",
+      imageUrl: "/product_img/nanoVa.png",
     },
   ];
 
