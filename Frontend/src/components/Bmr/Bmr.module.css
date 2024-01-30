@@ -1,0 +1,364 @@
+.Bmr1 {
+    
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  font-weight: bold;
+  margin: 0 auto;
+  padding-top: 20px;
+}
+
+.age{
+  padding: 10px;
+  display: flex;
+  margin: 10px;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.inputlabel {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+.inputbmr{   
+    
+    justify-content: center;
+    align-items: center;
+    padding: 1px;
+    width: calc(100% );
+    max-width: 300px;
+    box-sizing: border-box;
+    text-align: center;
+    border-radius: 35px;
+    margin-bottom: 2em;
+    font-size: 40px;
+    margin-bottom: 1em
+  
+  
+}
+.genderv1{
+  display: flex;
+  font-size: 2.5rem;
+  font-weight: bold;
+}
+
+.gender select {
+  
+    width: calc(100% );
+    max-width: 300px;
+    height: 80px;
+    box-sizing: border-box;
+    border-radius: 35px;
+    margin-bottom: 1em;
+    font-size: 1rem;
+    background-color: #fff;
+    color: #111;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 40px; 
+    font-weight: bold;
+    text-align: center;
+    font-weight: bold;
+  
+  }
+
+  .bmrbutton{
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 2;
+    display: block;
+    width: 300px;
+    max-width: 300px;
+    padding: 1px;
+    position: relative; 
+    top: 50px; 
+    margin-bottom: 55px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
+  }
+
+  .bmrbutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+  }
+  
+  .bmrbutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+
+  }
+  
+
+  .nextbutton {
+    
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    line-height: 1.5;
+    display: block;
+    width: 250px;
+    max-width: 300px;
+    padding: 1px;
+    position: relative; 
+    top: 50px; 
+    margin-bottom: 55px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 10px 10px 8px 6px #b2b2b2;
+    font-size: 2.5rem;
+    cursor: pointer;
+    text-align :center;
+    font-weight: bold;
+  }
+  .nextbutton:hover{
+    background-color: #757575;
+    color: #FFFF;
+    box-shadow: 0 4px 0 0 #b2b2b2;
+  }
+  
+  .nextbutton:active{
+    box-shadow: none;
+    transform: translateY(5px);
+  }
+
+  .link {
+    text-decoration: none;
+  }
+
+  .chevronicon {
+    width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+
+  color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  left: 10px;
+  top: 30px;
+}
+
+
+
+
+@media screen and (max-width: 1600px) {
+  .Bmr1 {
+    font-size: 2.5rem;
+  }
+  .gender,
+  .bmrbutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    
+  }
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+  }
+}
+
+@media screen and (min-width: 1400px) {
+  .Bmr1 {
+    font-size: 2.5rem;
+  }
+  .gender,
+  .bmrbutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton,
+  .bmibutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+    
+  }
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+  }
+}
+
+  @media screen and (max-width: 1200px) {
+    .gender,
+    .bmrbutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton,
+    .bmibutton {
+      width: 50vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      
+    }
+    .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 200px;
+    }
+    .styles.nextbutton {
+      width: 70vw;
+    }
+  }
+
+  
+  @media screen and (max-width: 992px) {
+   
+    .childbmi,
+    .childadvice
+     {
+      width: 50vw;
+    }
+    
+    .gender,
+    .bmrbutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton{
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      font-size: 40px;
+    width: 55px;
+    height: 55px;
+    left: 120px;
+    }
+  }
+
+  
+  @media screen and (max-width: 768px) {
+   
+    .childbmi,
+    .childadvice
+     {
+      width: 60vw;
+    }
+    
+    .gender,
+    .bmrbutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      font-size: 30px;
+    width: 45px;
+    height: 45px;
+    left: 80px;
+    }
+  }
+
+  
+  @media screen and (max-width: 576px) {
+   
+    .childbmi,
+    .childadvice
+    {
+      width: 70vw;
+    }
+
+    .styles.Bmr1{
+      padding-top: 50px;
+    }
+    
+    .gender,
+    .bmrbutton,
+    .advicebutton,
+    .nextbutton,
+    .backbutton {
+      width: 70vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+    .chevronicon {
+      font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 30px;
+    }
+
+    @media screen and (max-width: 450px) {
+      
+      .childbmi,
+      .childadvice
+       {
+        width: 60vw;
+      }
+
+      .styles.Bmr1{
+        padding-top: 50px;
+      }
+      
+      .gender,
+      .bmrbutton,
+      .advicebutton,
+      .nextbutton,
+      .backbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+      }
+      .chevronicon {
+        font-size: 20px;
+        width: 40px;
+        height: 40px;
+        left: 20px;
+      }
+  } 
+  }

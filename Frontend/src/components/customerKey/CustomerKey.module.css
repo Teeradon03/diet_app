@@ -1,0 +1,284 @@
+.link {
+  text-decoration: none;
+}
+
+.Bmi1 {
+
+  padding: 30px;
+  display: flex;
+  margin: 20px;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  font-weight: bold;
+}
+
+
+
+.inputv1 input {
+  margin: 0 auto;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  width: calc(100%);
+  max-width: 300px;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 2em;
+  font-size: 2rem;
+  font-weight: bold;
+}
+
+
+.chevronicon {
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  border: none;
+  color: #757575;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+  outline: none;
+  position: absolute;
+  left: 300px;
+  top: 30px;
+}
+
+.productType select {
+
+  width: calc(100%);
+  max-width: 300px;
+  height: 4.5rem;
+  box-sizing: border-box;
+  border-radius: 35px;
+  margin-bottom: 1em;
+  font-size: 1rem;
+  background-color: #fff;
+  color: #111;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  padding: 8px;
+  font-size: 25px;
+  font-weight: bold;
+  text-align: center;
+
+}
+
+.performbutton {
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  line-height: 1.5;
+  display: block;
+  width: 250px;
+  max-width: 220px;
+  padding: 1px;
+  position: relative;
+  top: 200px;
+  margin-bottom: 55px;
+  background-color: #FFFF;
+  border: 1px solid #ccc;
+  color: rgb(13, 13, 13);
+  border-radius: 35px;
+  box-shadow: 10px 10px 8px 6px #b2b2b2;
+  font-size: 40px;
+  cursor: pointer;
+  text-align: center;
+  font-weight: bold;
+}
+
+
+.performbutton:hover {
+  background-color: #757575;
+  color: #FFFF;
+  box-shadow: 0 4px 0 0 #b2b2b2;
+}
+
+.performbutton:active {
+  box-shadow: none;
+  transform: translateY(5px);
+}
+
+@media screen and (max-width: 1600px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+
+  .performbutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+        width: 60px;
+        height: 60px;
+        left: 300px;
+  }
+}
+
+@media screen and (max-width: 1400px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+
+  .performbutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 300px;
+    
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .Bmi1 {
+    font-size: 2rem;
+  }
+
+  .performbutton {
+    width: 50vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 60px;
+    height: 60px;
+    left: 200px;
+  }
+}
+
+
+@media screen and (max-width: 992px) {
+  .Bmi1 {
+    font-size: 2rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 50vw;
+  }
+
+  .performbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 40px;
+    width: 55px;
+    height: 55px;
+    left: 120px;
+  }
+}
+
+
+@media screen and (max-width: 768px) {
+  .Bmi1 {
+    font-size: 1.7rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 60vw;
+  }
+
+  .performbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 30px;
+    width: 40px;
+    height: 40px;
+    left: 30px;
+  }
+}
+
+
+@media screen and (max-width: 576px) {
+  .Bmi1 {
+    font-size: 1.7rem;
+  }
+
+  .childbmi,
+  .childadvice {
+    width: 70vw;
+  }
+
+  .performbutton {
+    width: 70vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+    font-size: 20px;
+    width: 40px;
+    height: 40px;
+    left: 10px;
+  }
+
+  @media screen and (max-width: 450px) {
+    .Bmi1 {
+      font-size: 1.7rem;
+    }
+
+    .childbmi,
+    .childadvice {
+      width: 60vw;
+    }
+
+    .performbutton {
+      width: 60vw;
+      margin: 0 auto;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 1em;
+    }
+
+    .chevronicon {
+      font-size: 20px;
+        width: 40px;
+        height: 40px;
+        left: 10px;
+    }
+  }
+}
