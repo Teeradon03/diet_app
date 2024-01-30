@@ -4,7 +4,7 @@ import "./Target15.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { Link } from 'react-router-dom';
 
-const Target15 = () => {
+const CancelEdit = () => {
     const [formData, setFormData] = useState({
         Weight: '',
         TargetWeight: '',
@@ -13,8 +13,8 @@ const Target15 = () => {
     const [originalData, setOriginalData] = useState(null);
     const [isSaveClicked, setIsSaveClicked] = useState(false);
     const [validationError, setValidationError] = useState(false);
-    const [saveCount, setSaveCount] = useState(0);  // เพิ่ม state เพื่อติดตามจำนวนครั้งที่บันทึก
-    const [isEditing, setIsEditing] = useState(false)
+    const [isEditing, setIsEditing] = useState(false); 
+    const [saveCount, setSaveCount] = useState(0); 
     const handleInputChange = (field, value) => {
         setFormData({
             ...formData,
@@ -30,7 +30,7 @@ const Target15 = () => {
         setOriginalData({ ...formData });
 
         // Set isEditing to true to display input fields
-        setIsEditing(false);
+        setIsEditing(true);
 
         // Reset isSaveClicked, validation error, and saveCount when editing
         setIsSaveClicked(false);
@@ -47,13 +47,8 @@ const Target15 = () => {
         }
 
         // Output the saved data to the console
-        console.log(`น้ำหนักครั้งที่ ${saveCount + 1}`);
+        console.log(`แก้ไข`);
         console.log(formData);
-        setIsSaveClicked(true);
-
-        // Increase saveCount
-        setSaveCount(saveCount + 1);
-
         setIsSaveClicked(true);
 
         // Show notification
@@ -62,6 +57,9 @@ const Target15 = () => {
             description: 'ข้อมูลถูกบันทึกเรียบร้อยแล้ว',
             placement: 'topRight',
         });
+
+        // Reset isEditing after saving
+        setIsEditing(false);
     };
 
     const handleCancelEdit = () => {
@@ -74,8 +72,11 @@ const Target15 = () => {
         // Reset isSaveClicked and validation error when canceling edit
         setIsSaveClicked(false);
         setValidationError(false);
-        setSaveCount(0);
+
+        // Reset isEditing after canceling edit
+        setIsEditing(false);
     };
+
 
     return (
         <div>
@@ -107,9 +108,9 @@ const Target15 = () => {
             </div>
 
             {!originalData && (
-                <Link to="/CancelEdit">
-                    <button className='edit' onClick={handleEdit}>
-                        แก้ไขข้อมูล
+                <Link to="/Target15">
+                    <button className='edit-cancel' onClick={handleEdit}>
+                        ยกเลิกแก้ไข
                     </button>
                 </Link>
             )}
@@ -120,9 +121,11 @@ const Target15 = () => {
                 </button>
             )}
             {!originalData && (
+                <Link to="/Target15">
                 <button className='save' onClick={handleSave} disabled={validationError}>
                     บันทึกข้อมูล
                 </button>
+                </Link>
             )}
 
             {isSaveClicked && (
@@ -140,4 +143,4 @@ const Target15 = () => {
     );
 }
 
-export default Target15;
+export default CancelEdit;

@@ -1,4 +1,10 @@
-.target1 {
+
+a {
+    text-decoration: none; /* ลบขีดเส้นใต้ข้อความ */
+    color: inherit; /* ให้ลิงก์เป็นสีเดียวกับข้อความปกติ */
+  }
+  
+  .target1 {
     width: 500px;
     height: 100px;
     margin-bottom: 100px;
@@ -98,6 +104,35 @@
     transform: translateY(10px);
 }
 
+.edit-cancel {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #ff0000;
+    border: 1px solid #ccc;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    left: 200px;
+}
+
+.edit-cancel:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.edit-cancel:active {
+    box-shadow: none;
+    transform: translateY(10px);
+}
+
 .popup {
     position: fixed;
     top: 0;
@@ -147,7 +182,7 @@
 
 .save:hover {
     background-color: #2E8B57;
-    color: #000000;
+    color: #ffffff;
     box-shadow: 8px 12px 3px 5px #b2b2b2;
 }
 

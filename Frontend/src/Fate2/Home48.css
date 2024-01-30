@@ -61,7 +61,7 @@
     border-radius: 80px;
     box-shadow: 4px 4px 3px 2px #b2b2b2;
     position: relative;
-    left: 40px;
+    left: -70px;
     top: -60px;
     border: 2px solid #A9A9A9;
 }
@@ -72,8 +72,8 @@
     border-radius: 80px;
     box-shadow: 4px 4px 3px 2px #b2b2b2;
     position: relative;
-    left: 230px;
-    top: -170px;
+    left: 0px;
+    top: -60px;
     border: 2px solid #A9A9A9;
 }
 
@@ -83,8 +83,8 @@
     border-radius: 80px;
     box-shadow: 4px 4px 3px 2px #b2b2b2;
     position: relative;
-    left: 410px;
-    top: -280px;
+    left: 70px;
+    top: -60px;
     border: 2px solid #A9A9A9;
 }
 
@@ -92,26 +92,26 @@
     width: 80px;
     height: 80px;
     position: relative;
-    left: -10px;
-    top: -10px;
+    left: 0px;
+    top: 5px;
 }
 
 .text-exercise {
     position: relative;
     left: -180px;
-    top: -270px;
+    top: -50px;
 }
 
 .text-target {
     position: relative;
     left: 8px;
-    top: -306px;
+    top: -90px;
 }
 
 .text-video {
     position: relative;
     left: 190px;
-    top: -345px;
+    top: -130px;
 }
 
 .Card3 {
