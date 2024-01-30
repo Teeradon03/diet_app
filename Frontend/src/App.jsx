@@ -44,6 +44,8 @@ import Product from './fate2/Products/Product.jsx';
 import Nanox2 from './fate2/Products/Nanox2.jsx';
 import Nanova from './fate2/Products/Nanova.jsx';
 
+import Exercise from './fate2/Exercise/Exercise.jsx';
+
 
 
 function App() {
@@ -103,6 +105,8 @@ function App() {
         <Route path="/fate2/nanox2" element={<Nanox2/>}/>
         <Route path="/fate2/nanova" element={<Nanova/>}/>
 
+        <Route path="/fate2/exercise" element={<Exercise/>}/>
+      
        
       
 
