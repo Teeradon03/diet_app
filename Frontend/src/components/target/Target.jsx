@@ -2,12 +2,12 @@ import { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
+// import styles from '../Bmi/Bmi.module.css';
 import styles from './Target.module.css';
 import axios from 'axios';
 
 function Target() {
   const [targetWeight, setTargetWeight] = useState('');
-
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -42,7 +42,7 @@ function Target() {
       
       <div className={styles.inputlabel}>
 
-        <input className='input-ss'
+        <input className={styles.inputlabel}
           type="number"
           value={targetWeight}
           onChange={handleInputChange}

@@ -17,7 +17,7 @@ import Toolbar from '@mui/material/Toolbar';
 import Questionnaires from './questionnaires/Questionnaires';
 import Users from './user/Users';
 
-const drawerWidth = 240;
+const drawerWidth = 320; //กำหนดความกว้างของ Drawer
 
 function Report(props) {
   const { window } = props;
@@ -114,6 +114,7 @@ function Report(props) {
         <Toolbar />
         {selectedMenuItem === 'Users' && <Users />   }
         {selectedMenuItem === 'Questionnaires' && <Questionnaires />}
+        {selectedMenuItem === 'Questtion' && <Question />   }
 
       </Box>
     </Box>

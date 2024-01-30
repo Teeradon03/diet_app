@@ -19,7 +19,7 @@ function Weight(props) {
     <div className={styles.Bmi1}>
       
       <p>น้ำหนักตัว (กก.)</p>
-      <input
+      <input className={styles.inputlabel}
         type="number"
         value={weight}
         onChange={handleInputChange}

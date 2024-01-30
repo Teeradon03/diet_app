@@ -67,15 +67,16 @@ const options = [
   },
 ];
 
-const sendToAPI = async (selectedOptions, questionId = 11) => {
+const sendToAPI = async (selectedOptions, selectedLabels) => {
   try {
     const data = {
-      questionId: questionId,
+      questionId: selectedLabels,
       answer: selectedOptions,
     };
-    // console.log(data)
+
     const response = await axios.post(
-      `${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,
+      `${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`,
+      data,
       {
         withCredentials: true,
       }
@@ -96,15 +97,14 @@ const Choice = () => {
     setSelectedOptions(value);
     const questionId = 11;
 
-    // console.log('QuestionId :',questionId)
+    // console.log("QuestionId :", questionId);
     // console.log("AnswerId :", value);
-
   };
 
   const handleNext = () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
-      sendToAPI(selectedOptions, questionId); // 11 คือ questionId ที่คุณกำหนด
+      sendToAPI(selectedOptions, 11); // 11 คือ questionId ที่คุณกำหนด
       window.location.href = "/Yesno"; // ต้องการ URL ของ Yesno ที่คุณกำหนด
     } else {
       alert("กรุณาเลือกโรคประจำตัวอย่างน้อย 1 ข้อ");
@@ -112,7 +112,7 @@ const Choice = () => {
   };
 
   const handleBack = () => {
-    window.location.href = ('/Choice2'); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    window.location.href = "/Choice2"; // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {
@@ -130,15 +130,18 @@ const Choice = () => {
       <Select
         mode="multiple"
         allowClear
-        className='text-box'
+        className="text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
-        options={options}
-        
+        options={options.map((option) => ({
+          ...option,
+          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+        }))}
+        size="large"
       />
       <br />
-      <br />  
+      <br />
       <br />
       <div className="font-family">
         <button className="next-list" onClick={handleNext} style={buttonStyle}>
@@ -146,7 +149,11 @@ const Choice = () => {
         </button>
       </div>
       <div>
-        <button className='chevron-list' onClick={handleBack} style={buttonStyle}>
+        <button
+          className="chevron-list"
+          onClick={handleBack}
+          style={buttonStyle}
+        >
           <VscChevronLeft />
           {/* ไอคอนย้อนกลับ */}
         </button>

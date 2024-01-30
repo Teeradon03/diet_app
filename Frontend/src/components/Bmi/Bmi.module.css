@@ -110,8 +110,6 @@
     transform: translateY(5px);
   }
   
-  
-  
   .Bmi1 {
     
     padding: 30px;
@@ -121,6 +119,7 @@
     align-items: center;
     font-weight: bold;
     margin: 0 auto;
+    
   }
   
   .highlight {
@@ -187,13 +186,11 @@
     
     .label {
       display: inline-block;
-     
   
     }
     
   
-    .bmibutton {
-     
+    .bmibutton { 
       margin: 0 auto;
       display: flex;
       justify-content: center;
@@ -232,6 +229,7 @@
     .inputlabel {
       display: flex;
       align-items: center;
+      font-size: 1.8rem;
     }
     
     input {
@@ -241,7 +239,7 @@
       box-sizing: border-box;
       border-radius: 35px;
       margin-right: 5px; /* Add some margin between input and label */
-      font-size: 1rem;
+      font-size: 2rem;
       font-weight: bold;
       background-color: #fff;
       color: #111;
@@ -432,7 +430,7 @@
 
   @media screen and (max-width: 450px) {
     .Bmi1 {
-      font-size: 1.7rem;
+      font-size: 2.5rem;
     }
 
     .childbmi,
@@ -458,7 +456,7 @@
       font-size: 20px;
         width: 40px;
         height: 40px;
-        left: 10px;
+        left: 20px;
     }
   }
 }

@@ -227,10 +227,18 @@
 
 }
 
+.input.ss{
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
+
 .inputlabel {
   display: flex;
   align-items: center;
   text-align: center;
+  font-size: 1.8rem;
 }
 
 input {
@@ -458,8 +466,9 @@ label {
 
     .chevronicon {
       font-size: 20px;
-      width: 30px;
-      height: 30px;
+      width: 40px;
+      height: 40px;
+      left: 30px;
     }
   }
 }

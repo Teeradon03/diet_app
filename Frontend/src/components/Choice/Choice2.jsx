@@ -175,7 +175,11 @@ const Choice2 = () => {
         placeholder="กรุณาเลือกคำตอบต่อไปนี้ "
         onChange={handleChange}
         optionLabelProp="label"
-        options={options}
+        options={options.map((option) => ({
+          ...option,
+          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+        }))}
+        size="large"
       />
       <br /><br /><br />
       <div className='font-family'>

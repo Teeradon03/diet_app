@@ -41,10 +41,11 @@ function Weight_show(props) {
 
   return (
     <div className={styles.Bmi1}>
+      <br/>
       <p>น้ำหนักของคุณเท่าไหร่</p>
       <br />
       <div className={styles.inputlabel}>
-        <input
+        <input className={styles.inputlabel}
           type="number"
           value={weight}
           onChange={handleInputChange}

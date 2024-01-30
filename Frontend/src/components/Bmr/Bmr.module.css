@@ -17,6 +17,12 @@
   font-weight: bold;
 }
 
+.inputlabel {
+  display: flex;
+  align-items: center;
+  font-size: 1.8rem;
+}
+
 .inputbmr{   
     
     justify-content: center;
@@ -350,9 +356,9 @@
       }
       .chevronicon {
         font-size: 20px;
-        width: 30px;
-        height: 30px;
-        left: 5px;
+        width: 40px;
+        height: 40px;
+        left: 20px;
       }
   } 
   }

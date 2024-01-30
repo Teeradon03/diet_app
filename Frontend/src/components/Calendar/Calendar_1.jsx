@@ -41,7 +41,7 @@ function Calendar_1() {
       dateOfBirth: date,
     };
 
-    try {
+     try {
       const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
       // logThaiMessage('การส่งข้อมูลเสร็จสิ้น');
       // console.log('Server response:', response.data);
@@ -67,9 +67,9 @@ function Calendar_1() {
         <div className="text-center">
           <br />
           <br />
-          <p>กรุณาเลือกวันที่ </p>
+          <h1 className='text-date'>กรุณาเลือกวันที่ </h1>
           &nbsp;&nbsp;&nbsp;
-          <span>{formatThaiDate(date)}</span>
+          <h1 className='text-date'>{formatThaiDate(date)}</h1>
         </div>
       </header>
       <br />
