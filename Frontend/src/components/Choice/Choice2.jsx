@@ -168,7 +168,7 @@ const Choice2 = () => {
       <br/><br/>
         <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>
-      <br /><br />
+      <br />
       <Select
         mode="multiple"
         className='text-box'
@@ -181,7 +181,7 @@ const Choice2 = () => {
         }))}
         size="large"
       />
-      <br /><br /><br />
+      <br /><br /><br /><br />
       <div className='font-family'>
         <button className='next-list' onClick={handleNext} style={buttonStyle}>
           ถัดไป

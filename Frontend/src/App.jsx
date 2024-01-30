@@ -33,13 +33,16 @@ import Choice2 from './components/Choice/Choice2.jsx';
 import BMR_calculator from './components/Bmr/BMR_calculator';
 
 import Table from './pages/report/user/Table.jsx';
-import Product from './fate2/Products/Product.jsx';
-//import Nanox2 from './fate2/Products/Nanox2.jsx';
-//import Nanova from './fate2/Products/Nanova.jsx';
+
 import MainApp from './pages/report/MainApp';
 import QuestionReport from './pages/report/question/Question';
 import Questionnaires from './pages/report/questionnaires/Questionnaires';
 import User from './pages/report/user/Users';
+
+//fate2
+import Product from './fate2/Products/Product.jsx';
+import Nanox2 from './fate2/Products/Nanox2.jsx';
+import Nanova from './fate2/Products/Nanova.jsx';
 
 
 
@@ -88,13 +91,19 @@ function App() {
         <Route path="/Choice2" element={<Choice2 />} />
 
         <Route path="/report/Table" element={<Table/>}/>
-        
-        <Route path="/fate2/product" element={<Product/>}/>
 
         <Route path="/report/MainApp" element={<MainApp/>}/>
         <Route path="/report/question" element={<QuestionReport/>}/>
         <Route path="/report/questionnaires" element={<Questionnaires/>}/>
         <Route path="/report/user" element={<User/>}/>
+
+    
+        
+        <Route path="/fate2/product" element={<Product/>}/>
+        <Route path="/fate2/nanox2" element={<Nanox2/>}/>
+        <Route path="/fate2/nanova" element={<Nanova/>}/>
+        
+       
       
 
       </Routes>
