@@ -13,7 +13,7 @@ const userSchema = mongoose.Schema({
     bmi: Number,
     bmiIndex: String,
     bmr: Number,
-    role: String ,
+    role: { type : String, default: 'user'} ,
     userId : {
         type : String,
         required: true,

@@ -196,7 +196,8 @@ export default function EnhancedTable() {
         id,
        content,
       };
-  };
+    }
+    
   const getUserData = async () => {
     try {
         const response = await axios.get("http://localhost:9999/api/form/get-questions");

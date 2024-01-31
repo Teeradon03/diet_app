@@ -28,12 +28,9 @@ function MainApp() {
           <HeaderBar setIsSidebar={setIsSidebar} />
           <div className="content_body">
             <Box m="20px">
-                
                     {sidebarData === "ผู้ใช้งาน" && <Users/>}
                     {sidebarData === "แบบสอบถาม" && <Questionnaires/>}
                     {sidebarData === "คำถาม" && <QuestionReport/>}
-              
-            
             </Box>
           </div>
         </main>

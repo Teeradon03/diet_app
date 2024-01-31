@@ -16,7 +16,7 @@ import Users from "./user/Users";
 import Questionnaires from "./questionnaires/Questionnaires";
 import ContentMap from "./ContentMap";
 
-const SideBar = ({isSidebar, updateSidebarData}) => {
+const SideBar = ({ isSidebar, updateSidebarData }) => {
   const [isCollapsed, setisCollapsed] = useState(false);
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(false);
@@ -32,12 +32,12 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
     setSelectedMenuItem(menuItem);
     /// props
     updateSidebarData(menuItem)
-    
+
   };
 
   const renderComponent = () => {
     console.log('sdas', selectedMenuItem)
-    
+
   };
 
   return (
@@ -100,7 +100,7 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
                   </Box>
                   <Box textAlign="center">
                     <Typography sx={{ m: "10px 0 0 0" }}>REPORT</Typography>
-                    
+
                   </Box>
                 </Box>
               )}
@@ -108,34 +108,32 @@ const SideBar = ({isSidebar, updateSidebarData}) => {
               {/* <Link to="/admin" className="menu-bars"> */}
               <MenuItem
                 icon={<HomeOutlinedIcon />}
-                
+
               >
                 Dashboard
               </MenuItem>
               {/* </Link> */}
 
               <SubMenu icon={<MapOutlinedIcon />} label="ข้อมูล">
-                {/* <Link to={""} className="menu-bars"> */}
-                  <MenuItem icon={<TableViewIcon />} onClick={() => handleMenuItemClick("คำถาม")}> คำถาม</MenuItem>
-                {/* </Link> */}
-                {/* <Link to={"/report/questionnaires"} className="menu-bars"> */}
-                <MenuItem
-                  icon={<BarChartOutlinedIcon />}
-                  onClick={() => handleMenuItemClick("แบบสอบถาม")}
-                >
-                  {" "}
-                  แบบสอบถาม
-                </MenuItem>
-                {/* </Link> */}
-                {/* <Link to={"/report/users"} className="menu-bars"> */}
-                <MenuItem
-                  icon={<Person />}
-                  onClick={() => handleMenuItemClick("ผู้ใช้งาน")}
-                >
+
+                <Link to={"/report/question"} className="menu-bars">
+                  <MenuItem icon={<TableViewIcon />} > คำถาม</MenuItem>
+                </Link>
+
+
+                <Link to={"/report/questionnaires"} className="menu-bars">
+                  <MenuItem icon={<BarChartOutlinedIcon />}>
+                    {" "}
+                    แบบสอบถาม
+                  </MenuItem>
+                </Link>
+
+                <Link to={"/report/users"} className="menu-bars">
+                <MenuItem icon={<Person />}>
                   {" "}
                   ผู้ใช้งาน
                 </MenuItem>
-                {/* </Link> */}
+                </Link>
               </SubMenu>
 
               <SubMenu label="Manage" icon={<PeopleOutlinedIcon />}>

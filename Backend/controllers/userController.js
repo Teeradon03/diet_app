@@ -38,6 +38,9 @@ const loginLine = async (req, res) => {
       return `${randomBase36}${timestampBase36}`;
     };
 
+
+
+
     let user = await User.findOne({ line_user_id: decode.data.sub });
     if (user) {
       // Update the existing user data without changing the userId
@@ -48,19 +51,42 @@ const loginLine = async (req, res) => {
       );
       req.session.userId = user.userId;
       console.log("User Updated");
+      let payload = {
+        user: {
+          userId: req.session.userId,
+          role: user.role,
+          name: user.line_username
+        }
+      }
+      console.log('session', req.session.userId)
+      res.json(payload);
+
     } else {
       // Create a new user document
       const userId = generateUserId();
       // console.log(req.session.userId);
       user = new User({ ...userLineData, userId });
-
+      console.log(user)
       await user.save();
       console.log("User Created");
       req.session.userId = user.userId;
+      let payload = {
+        user: {
+          session: req.session.userId,
+          role: user.role,
+          name: user.line_username
+        }
+      }
+      console.log('session', req.session.userId)
+      res.json(payload);
     }
     // console.log(req.session.userId);
 
-    res.send(`logged in as ${req.session.userId}`);
+    // res.json({
+    //   session: req.session.userId,
+    //   data: user
+    // });
+  
   } catch (error) {
     res.json({ error: error.message });
   }
@@ -114,8 +140,24 @@ const getUserData = async (req, res) => {
   }
 };
 
+const currentUser = async(req,res) => {
+    try{
+      console.log('current User seessss', req.body)
+
+      const currentUser = await User.findOne({userId: req.body.userId})
+      console.log('current user', currentUser)
+      res.send(
+        currentUser
+      )
+    }
+    catch(error){
+      console.log('error', error.message)
+    }
+}
+
 module.exports = {
   loginLine,
   getUserData,
   updateUserData,
+  currentUser
 };

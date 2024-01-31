@@ -1,6 +1,6 @@
 
 
-import LineLoginButton from '../lineLoginButton/LineLoginButton';
+import LineLoginButton from '../../components/lineLoginButton/LineLoginButton';
 
 import styles from './Login.module.css'
 function Login() {

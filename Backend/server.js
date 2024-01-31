@@ -12,7 +12,7 @@ const connectDB = require("./db/db");
 
 // route
 const user = require('./routes/userRoute')
-const login = require('./routes/login')
+
 const form = require('./routes/formRoute');
 const http = require('http')
 app.use(express.json());
@@ -35,7 +35,7 @@ app.use(session({
 connectDB();
 
 app.use('/api/user', user);
-app.use('/api/login', login)
+
 app.use('/api/form',form)
 
 http.createServer({  
