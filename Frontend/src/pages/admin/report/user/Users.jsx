@@ -63,6 +63,9 @@ const headCells = [
     { id: "id", label: "Id" },
   { id: "userId", label: "User Id", minWidth: 100 },
   {
+    id: 'role', label: 'role'
+  },
+  {
     id: "line_user_id",
     label: "Line User",
     minWidth: 170,
@@ -231,6 +234,7 @@ export default function EnhancedTable() {
   function createData(
  
     userId,
+    role,
     line_user_id,
     line_username,
     line_picture_url,
@@ -242,6 +246,7 @@ export default function EnhancedTable() {
   return {
   
     userId,
+    role,
     line_user_id,
     line_username,
     line_picture_url,
@@ -250,16 +255,17 @@ export default function EnhancedTable() {
     weight,
     targetWeight,
       };
-  };
+  }
   const getUserData = async () => {
     try {
-        const response = await axios.get("http://localhost:9999/api/user/get-users");
+        const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/user/get-users`);
         const usersData = response.data;
-        console.log('usersdata', usersData)
+        // console.log('usersdata', usersData)
         // Map the response data to rows using createData function
         const mappedRows = usersData.map((userData) =>
           createData(
             userData.userId,
+            userData.role,
             userData.line_user_id,
             userData.line_username,
             userData.line_picture_url,
@@ -272,9 +278,9 @@ export default function EnhancedTable() {
     
         // Replace the existing rows with the mappedRows
         setRows(mappedRows);
-        console.log('upasadfsadf', mappedRows)
+        // console.log('upasadfsadf', mappedRows)
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        // console.error("Error fetching user data:", error);
       }
   };
 
@@ -402,6 +408,7 @@ export default function EnhancedTable() {
                     </TableCell> 
 
                     <TableCell align="center">{row.userId}</TableCell>
+                    <TableCell align="center">{row.role}</TableCell>
                     <TableCell align="center">{row.line_user_id}</TableCell>
                     <TableCell align="center">{row.line_username}</TableCell>
                     <TableCell align="center">{row.line_picture_url}</TableCell>

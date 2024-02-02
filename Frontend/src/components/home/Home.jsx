@@ -19,10 +19,10 @@ const Home = () => {
       })
   })
   const roleRedirect = (role) => {
-    console.log('role in role redirect', role)
+    // console.log('role in role redirect', role)
     if (role === 'user'){
-      setTimeout(() => navi('/form'), 3000)
-      navi('/user/index')
+      setTimeout(() => navi('/user/index'), 3000)
+      // navi('/user/index')
     }
     else{
       setTimeout(() => navi('/admin/index'), 3000)
@@ -45,7 +45,7 @@ const Home = () => {
         }
         
       ).then((response) => {
-        console.log('response data from home',response.data.user)
+        // console.log('response data from home',response.data.user)
         disPatch(loginRedux({
           userId: response.data.user.userId,
           role: response.data.user.role,
@@ -54,7 +54,10 @@ const Home = () => {
         localStorage.setItem('userId',response.data.user.userId)
         roleRedirect(response.data.user.role)
      
-      }).catch((error) => console.log('error', error.message))
+      }).catch((error) => {
+        // console.log('error', error.message)
+      }
+      )
 
 
     }

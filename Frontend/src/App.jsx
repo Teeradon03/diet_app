@@ -48,6 +48,7 @@ import AdminHomePage from "./pages/admin/AdminHomePage.jsx";
 import { currentUser } from "./functions/auth.js";
 import { useDispatch } from "react-redux";
 import { login } from "./store/userSlice.js";
+import ManageUsers from "./pages/admin/ManageUsers.jsx";
 function App() {
 
   const disPatch = useDispatch()
@@ -64,8 +65,7 @@ function App() {
       }))
     })
     .catch((error) => {
-      console.error('error', error)
-
+      // console.error('error', error)
     })
 
   return (
@@ -98,6 +98,12 @@ function App() {
           </AdminRoute>
         } />
 
+        <Route path="/admin/manageUser" element={
+          <AdminRoute>
+            <ManageUsers />
+          </AdminRoute>
+        } />
+
 
         {/* PUBLIC */}
         <Route path="/login" element={<Login />} />
@@ -115,7 +121,7 @@ function App() {
 
         <Route path="/home" element={
           // <UserRoute>
-            <Home />
+          <Home />
           // </UserRoute>
         } />
 

@@ -204,34 +204,34 @@ export default function EnhancedTable() {
     answer,
     dateTime,
       };
-  };
-  const getUserData = async () => {
+  }
+  const getQuestionnairesData = async () => {
     try {
-        const response = await axios.get("http://localhost:9999/api/form/get-questionnaires");
-        const usersData = response.data;
-        console.log('usersdata', usersData)
+        const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/form/get-questionnaires`);
+        const QuestionnairesData = response.data;
+        // console.log('questionnaire', QuestionnairesData)
         // Map the response data to rows using createData function
-        const mappedRows = usersData.map((userData) =>
+        const mappedRows = QuestionnairesData.map((questionnaire) =>
           createData(
-            userData.id,
-            userData.userId,
-            userData.questionId,
-            userData.answer,
-            userData.dateTime,
+            questionnaire.id,
+            questionnaire.userId,
+            Number(questionnaire.questionId),
+            questionnaire.answer,
+            questionnaire.dateTime,
           )
         );
     
         // Replace the existing rows with the mappedRows
         setRows(mappedRows);
-        console.log('upasadfsadf', mappedRows)
+        // console.log('upasadfsadf', mappedRows)
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        // console.error("Error fetching user data:", error);
       }
   };
 
   // console.log(users);
   useEffect(() => {
-    getUserData();
+    getQuestionnairesData();
   }, []);
 
   const handleRequestSort = (event, property) => {
@@ -296,7 +296,7 @@ export default function EnhancedTable() {
     [order, orderBy, page, rowsPerPage],
   );
 
-        console.log('rowwwwww', rows)
+        
 
   return (
     <Box sx={{ width: '100%', height: "80%" }}>
@@ -352,7 +352,6 @@ export default function EnhancedTable() {
                       {index+1}
                     </TableCell> 
                     
-                    <TableCell align="center">{row.id}</TableCell>
                     <TableCell align="center">{row.userId}</TableCell>
                     <TableCell align="center">{row.questionId}</TableCell>
                     <TableCell align="center">{row.answer}</TableCell>

@@ -12,7 +12,7 @@ mongoose.connect("mongodb://0.0.0.0:27017/nanoet", {
 const generateData = async () => {
   try {
 
-    const questionAlreadyExists = await Question.find({question: question.content})
+    const questionAlreadyExists = await Question.findOne({question: question.content})
     // console.log('me laewwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwww',questionAlreadyExists)
     if (questionAlreadyExists){
         console.log('me laewwww')

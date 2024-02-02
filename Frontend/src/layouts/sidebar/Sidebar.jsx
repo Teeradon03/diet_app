@@ -32,7 +32,7 @@ const SideBar = ({ isSidebar, updateSidebarData }) => {
   };
 
   const renderComponent = () => {
-    console.log('sdas', selectedMenuItem)
+    // console.log('sdas', selectedMenuItem)
 
   };
 
@@ -133,7 +133,7 @@ const SideBar = ({ isSidebar, updateSidebarData }) => {
               </SubMenu>
 
               <SubMenu label="Manage" icon={<PeopleOutlinedIcon />}>
-                <Link to={"/admin/manage"} className="menu-bars">
+                <Link to={"/admin/manageUser"} className="menu-bars">
                   <MenuItem>User</MenuItem>
                 </Link>
                 <MenuItem> Admin</MenuItem>

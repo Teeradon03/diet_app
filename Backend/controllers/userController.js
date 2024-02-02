@@ -77,7 +77,7 @@ const loginLine = async (req, res) => {
           name: user.line_username
         }
       }
-      console.log('session', req.session.userId)
+      // console.log('session', req.session.userId)
       res.json(payload);
     }
     // console.log(req.session.userId);
@@ -93,7 +93,7 @@ const loginLine = async (req, res) => {
 };
 
 const updateUserData = async (req, res) => {
-  console.log("update user data session", req.session.userId);
+  // console.log("update user data session", req.session.userId);
 
   try {
     const data = req.body;
@@ -110,9 +110,9 @@ const updateUserData = async (req, res) => {
         { new: true }
       );
       // console.log('updateUser', updateUser)
-      console.log("updated Ohh Yeahhh!!!!");
+      // console.log("updated Ohh Yeahhh!!!!");
     }
-    console.log("data", data);
+    // console.log("data", data);
     res.json({
       data: data,
     });
@@ -123,15 +123,15 @@ const updateUserData = async (req, res) => {
 };
 
 const getUserData = async (req, res) => {
-  console.log("session in get user data", req.session.userId);
+  // console.log("session in get user data", req.session.userId);
   // res.send(`hello ${req.session.userId}`);
 
   // console.log("UserId Session", req.session.username);
   try {
     var userData = await User.find({});
-    console.log(userData);
+    // console.log(userData);
     res.json(userData);
-    console.log("UserId Session", req.session.userId);
+    // console.log("UserId Session", req.session.userId);
   } catch (error) {
     console.log("error", error);
     res.json({
@@ -142,10 +142,10 @@ const getUserData = async (req, res) => {
 
 const currentUser = async(req,res) => {
     try{
-      console.log('current User seessss', req.body)
+      // console.log('current User seessss', req.body.userId)
 
       const currentUser = await User.findOne({userId: req.body.userId})
-      console.log('current user', currentUser)
+      // console.log('current user', currentUser)
       res.send(
         currentUser
       )
@@ -155,9 +155,29 @@ const currentUser = async(req,res) => {
     }
 }
 
+
+const changeRole = async(req,res) => {
+  try{
+    let userId, role;
+    /// split userId and role 
+    Object.keys(req.body.role).forEach((key) => {
+      const value = req.body.role[key];
+      userId = key;
+      role = value;
+    });
+    /// Find User By userId for change role
+    const user = await User.findOneAndUpdate({userId: userId}, {role:role}, {new: true})
+    res.send('Change role Successfully')
+  }
+  catch(error){
+    console.log('error', error.message)
+  }
+}
+
 module.exports = {
   loginLine,
   getUserData,
   updateUserData,
-  currentUser
+  currentUser,
+  changeRole
 };

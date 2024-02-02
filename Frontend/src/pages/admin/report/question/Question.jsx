@@ -198,30 +198,32 @@ export default function EnhancedTable() {
       };
     }
     
-  const getUserData = async () => {
+  const getQuestionsData = async () => {
+
     try {
-        const response = await axios.get("http://localhost:9999/api/form/get-questions");
-        const usersData = response.data;
-        console.log('usersdata', usersData)
+      console.log(import.meta.env.VITE_URL_API)
+        const response = await axios.get(`${import.meta.env.VITE_URL_API}/api/form/get-questions`);
+        const questionData = response.data;
+        // console.log('usersdata', questionData)
         // Map the response data to rows using createData function
-        const mappedRows = usersData.map((userData) =>
+        const mappedRows = questionData.map((questionData) =>
           createData(
-            userData.id,
-            userData.content,
+            Number(questionData.id),
+            questionData.content,
           )
         );
     
         // Replace the existing rows with the mappedRows
         setRows(mappedRows);
-        console.log('upasadfsadf', mappedRows)
+        // console.log('upasadfsadf', mappedRows)
       } catch (error) {
-        console.error("Error fetching user data:", error);
+        // console.error("Error fetching user data:", error);
       }
   };
 
   // console.log(users);
   useEffect(() => {
-    getUserData();
+    getQuestionsData();
   }, []);
 
   const handleRequestSort = (event, property) => {
