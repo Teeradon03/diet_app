@@ -32,65 +32,56 @@ import Choice from './components/Choice/Choice.jsx';
 import Choice2 from './components/Choice/Choice2.jsx';
 import BMR_calculator from './components/Bmr/BMR_calculator';
 
-import Table from './pages/report/user/Table.jsx';
-// import Product from './fate2/Products/Product.jsx';
-//import Nanox2 from './fate2/Products/Nanox2.jsx';
-//import Nanova from './fate2/Products/Nanova.jsx';
-import MainApp from './pages/report/MainApp';
-import QuestionReport from './pages/report/question/Question';
-import Questionnaires from './pages/report/questionnaires/Questionnaires';
-import Users from './pages/report/user/Users';
-import Report from "./pages/report/Report.jsx";
 
-
-import DataTable from "./pages/report/Table2.jsx";
+import MainApp from './pages/admin/report/MainApp';
+import QuestionReport from './pages/admin/report/question/Question';
+import Questionnaires from './pages/admin/report/questionnaires/Questionnaires';
+import Users from './pages/admin/report/user/Users';
+import Report from "./pages/admin/report/Report.jsx";
 
 import UserHomePage from "./pages/user/UserHomePage.jsx";
 import AdminRoute from "./routes/AdminRoute.jsx";
 import UserRoute from "./routes/UserRoute.jsx";
-import AdminHomePage  from "./pages/admin/AdminHomePage.jsx";
+import AdminHomePage from "./pages/admin/AdminHomePage.jsx";
 
 
 import { currentUser } from "./functions/auth.js";
 import { useDispatch } from "react-redux";
-import { login  } from "./store/userSlice.js";
+import { login } from "./store/userSlice.js";
 function App() {
 
   const disPatch = useDispatch()
 
   const userId = localStorage.getItem('userId')
-  console.log('userID', userId)
+  // console.log('userID', userId)
   currentUser(userId)
-  .then(response => {
-    console.log('asdasd',response)
-    disPatch(login({
-      userId: response.data.userId,
-      role: response.data.role,
-      name: response.data.line_username
-    }))
-  })  
-  .catch((error) => {
-    console.log('error', error)
-  })
+    .then(response => {
+      // console.log('asdasd',response)
+      disPatch(login({
+        userId: response.data.userId,
+        role: response.data.role,
+        name: response.data.line_username
+      }))
+    })
+    .catch((error) => {
+      console.error('error', error)
+
+    })
 
   return (
     <BrowserRouter>
 
-
-      {/* <CssBaseline /> */}
       <Routes>
         {/* PUBLIC */}
         <Route path="/login" element={<Login />} />
 
 
         {/* ADMIN */}
-
         <Route path="/admin/index" element={
           <AdminRoute>
             <AdminHomePage />
           </AdminRoute>
         } />
-
         <Route path="/report/users" element={
           <AdminRoute>
             <Users />
@@ -107,6 +98,12 @@ function App() {
           </AdminRoute>
         } />
 
+
+        {/* PUBLIC */}
+        <Route path="/login" element={<Login />} />
+        <Route path="/" element={<HomePage />} />
+        <Route path="*" element={<NotFound404 />} />
+
         {/* USER */}
 
         <Route path="/user/index" element={
@@ -115,26 +112,154 @@ function App() {
           </UserRoute>
         } />
 
-<Route path="/home" element={<Home />} />
-<Route path="/login" element={<Login />} />
-<Route path="/form" element={<Form />} />
 
-<Route path="*" element={<NotFound404 />} />
-        <Route path="/question" element={<Question />} />
-        <Route path="/ever" element={<Ever />} />
-        <Route path="/never" element={<Never />} />
-        <Route path="/customerkey" element={<CustomerKey />} />
-        <Route path='/Name' element={<Name/>}/>
+        <Route path="/home" element={
+          // <UserRoute>
+            <Home />
+          // </UserRoute>
+        } />
 
+        <Route path="/form" element={
+          <UserRoute>
+            <Form />
+          </UserRoute>
+
+        } />
+
+        <Route path="/question" element={
+          <UserRoute>
+            <Question />
+          </UserRoute>
+        } />
+
+        <Route path="/ever" element={
+          <UserRoute>
+            <Ever />
+          </UserRoute>
+        } />
+        <Route path="/never" element={
+          <UserRoute>
+            <Never />
+          </UserRoute>
+        } />
+        <Route path="/customerkey" element={
+          <UserRoute>
+            <CustomerKey />
+          </UserRoute>
+        } />
+        <Route path='/Name' element={
+          <UserRoute>
+            <Name />
+          </UserRoute>
+        } />
+        <Route path='/calendar_1' element={
+          <UserRoute>
+            <Calendar_1 />
+          </UserRoute>
+        } />
+
+        <Route path='/Target' element={
+          <UserRoute>
+            <Target />
+          </UserRoute>
+        } />
+
+        <Route path='/Height_show' element={
+          <UserRoute>
+            <Height_show />
+          </UserRoute>
+        } />
+        <Route path='/Weight_show' element={
+          <UserRoute>
+            <Weight_show />
+          </UserRoute>
+        } />
+
+
+        <Route path='/Advice_lowweight' element={
+          <UserRoute>
+            <Advice_lowweight />
+          </UserRoute>
+        } />
+        <Route path='/Advice_normalweight' element={
+          <UserRoute>
+            <Advice_normalweight />
+          </UserRoute>
+        } />
+        <Route path='/Advice_obesitylevel1' element={
+          <UserRoute>
+            <Advice_obesitylevel1 />
+          </UserRoute>
+        } />
+        <Route path='/Advice_obesitylevel2' element={
+          <UserRoute>
+            <Advice_obesitylevel2 />
+          </UserRoute>
+        } />
+        <Route path='/Advice_obesitylevel3' element={
+          <UserRoute>
+            <Advice_obesitylevel3 />
+          </UserRoute>
+        } />
+
+        <Route path='/BMI_calculator' element={
+          <UserRoute>
+            <BMI_calculator />
+          </UserRoute>
+        } />
+        <Route path='/Bmi_lowweight' element={
+          <UserRoute>
+            <Bmi_lowweight />
+          </UserRoute>} />
+        <Route path='/Bmi_normalweight' element={
+          <UserRoute>
+            <Bmi_normalweight />
+          </UserRoute>
+        } />
+        <Route path='/Bmi_obesitylevel1' element={
+          <UserRoute>
+            <Bmi_obesitylevel1 />
+          </UserRoute>
+        } />
+        <Route path='/Bmi_obesitylevel2' element={
+          <UserRoute>
+            <Bmi_obesitylevel2 />
+          </UserRoute>
+        } />
+        <Route path='/Bmi_obesitylevel3' element={
+          <UserRoute>
+            <Bmi_obesitylevel3 />
+          </UserRoute>
+        } />
+
+        <Route path='/BMR_calculator' element={
+          <UserRoute>
+            <BMR_calculator />
+          </UserRoute>
+        } />
+
+        <Route path="/Yesno" element={
+          <UserRoute>
+            <Yesno />
+          </UserRoute>
+        } />
+        <Route path="/Choice" element={
+          <UserRoute>
+            <Choice />
+          </UserRoute>
+        } />
+        <Route path="/Choice2" element={
+          <UserRoute>
+            <Choice2 />
+          </UserRoute>
+        } />
 
       </Routes>
 
 
-      {/* <Routes>
+      {/* <Routes>      
 
- 
-        <Route path="/" element={<HomePage />} />
-        <Route path='/user/index' element={<UserHomePage/>}/>
+        
 
       <Route path="/report" element={<Report/>}/>
         <Route path="/report/users" element={<Users />}/>
@@ -145,33 +270,9 @@ function App() {
 
 
 
-        <Route path='/calendar_1' element={<Calendar_1 />}/>
-       
-        <Route path='/Target' element={<Target />}/>
-
-        <Route path='/Height_show' element={<Height_show />}/>
-        <Route path='/Weight_show' element={<Weight_show />}/>
-
-        <Route path='/Advice_lowweight' element={<Advice_lowweight />}/>
-        <Route path='/Advice_normalweight' element={<Advice_normalweight />}/>
-        <Route path='/Advice_obesitylevel1' element={<Advice_obesitylevel1 />}/>
-        <Route path='/Advice_obesitylevel2' element={<Advice_obesitylevel2 />}/>
-        <Route path='/Advice_obesitylevel3' element={<Advice_obesitylevel3 />}/>
-
-        <Route path='/BMI_calculator' element={<BMI_calculator />}/>
-        <Route path='/Bmi_lowweight' element={<Bmi_lowweight />}/>
-        <Route path='/Bmi_normalweight' element={<Bmi_normalweight />}/>
-        <Route path='/Bmi_obesitylevel1' element={<Bmi_obesitylevel1 />}/>
-        <Route path='/Bmi_obesitylevel2' element={<Bmi_obesitylevel2 />}/>
-        <Route path='/Bmi_obesitylevel3' element={<Bmi_obesitylevel3 />}/>
-
-        <Route path='/BMR_calculator' element={<BMR_calculator />}/>
 
 
 
-        <Route path="/Yesno" element={<Yesno />} />
-        <Route path="/Choice" element={<Choice />} />
-        <Route path="/Choice2" element={<Choice2 />} />
 
         <Route path="/report/Table" element={<Table/>}/>
         

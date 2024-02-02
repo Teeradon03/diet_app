@@ -1,141 +1,184 @@
-import * as React from 'react';
-import PropTypes from 'prop-types';
-import AppBar from '@mui/material/AppBar';
-import Box from '@mui/material/Box';
-import CssBaseline from '@mui/material/CssBaseline';
-import Divider from '@mui/material/Divider';
-import Drawer from '@mui/material/Drawer';
-import IconButton from '@mui/material/IconButton';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import List from '@mui/material/List';
-import ListItem from '@mui/material/ListItem';
-import ListItemButton from '@mui/material/ListItemButton';
-import ListItemIcon from '@mui/material/ListItemIcon';
-import ListItemText from '@mui/material/ListItemText';
-import MailIcon from '@mui/icons-material/Mail';
-import MenuIcon from '@mui/icons-material/Menu';
-import Toolbar from '@mui/material/Toolbar';
-import Typography from '@mui/material/Typography';
+import React, { useState } from "react";
+import { Sidebar, Menu, MenuItem, SubMenu } from "react-pro-sidebar";
+import { Box, IconButton, Typography, useTheme, Badge } from "@mui/material";
+import { Link } from "react-router-dom";
+import HomeOutlinedIcon from "@mui/icons-material/HomeOutlined";
+import PeopleOutlinedIcon from "@mui/icons-material/PeopleOutlined";
+import ReceiptOutlinedIcon from "@mui/icons-material/ReceiptOutlined";
+import CalendarTodayOutlinedIcon from "@mui/icons-material/CalendarTodayOutlined";
+import BarChartOutlinedIcon from "@mui/icons-material/BarChartOutlined";
+import MenuOutlinedIcon from "@mui/icons-material/MenuOutlined";
+import MapOutlinedIcon from "@mui/icons-material/MapOutlined";
+import TableViewIcon from "@mui/icons-material/TableView";
+import Person from "@mui/icons-material/Person";
 
-const drawerWidth = 240;
+const SideBar = ({ isSidebar, updateSidebarData }) => {
+  const [isCollapsed, setisCollapsed] = useState(false);
+  const [toggled, setToggled] = useState(false);
+  const [broken, setBroken] = useState(false);
+  const [selectedMenuItem, setSelectedMenuItem] = React.useState(null);
 
-function ResponsiveDrawer(props) {
-  const { window } = props;
-  const [mobileOpen, setMobileOpen] = React.useState(false);
-  const [isClosing, setIsClosing] = React.useState(false);
+  // const handleClick = () => {
+  //   // Example: send data back to MainApp component
+  //   const newData = "New Data from SideBar";
+  //   updateSidebarData(newData);
+  // };
 
-  const handleDrawerClose = () => {
-    setIsClosing(true);
-    setMobileOpen(false);
+  const handleMenuItemClick = (menuItem) => {
+    setSelectedMenuItem(menuItem);
+    /// props
+    updateSidebarData(menuItem)
+
   };
 
-  const handleDrawerTransitionEnd = () => {
-    setIsClosing(false);
+  const renderComponent = () => {
+    console.log('sdas', selectedMenuItem)
+
   };
-
-  const handleDrawerToggle = () => {
-    if (!isClosing) {
-      setMobileOpen(!mobileOpen);
-    }
-  };
-
-  const drawer = (
-    <div>
-      <Toolbar />
-      <Divider />
-      <List>
-        {['Users', 'Questionnaires', 'Manage', 'Drafts'].map((text, index) => (
-          <ListItem key={text} disablePadding>
-            <ListItemButton>
-              <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
-              </ListItemIcon>
-              <ListItemText primary={text} />
-            </ListItemButton>
-          </ListItem>
-        ))}
-      </List>
-      <Divider />
-    </div>
-  );
-
-  // Remove this const when copying and pasting into your project.
-  const container = window !== undefined ? () => window().document.body : undefined;
 
   return (
-    <Box sx={{ display: 'flex' }}>
-      <CssBaseline />
-      <AppBar
-        position="fixed"
-        sx={{
-          width: { sm: `calc(100% - ${drawerWidth}px)` },
-          ml: { sm: `${drawerWidth}px` },
-        }}
+    <div
+      style={{
+        display: "flex",
+        height: "100%",
+      }}
+    >
+      <Sidebar
+        collapsed={isCollapsed}
+        toggled={toggled}
+        onBackdropClick={() => setToggled(false)}
+        onBreakPoint={setBroken}
+        image="/logo-nano.png"
+        breakPoint="md"
+        style={{ height: "100%" }}
       >
-        <Toolbar>
-          <IconButton
-            color="inherit"
-            aria-label="open drawer"
-            edge="start"
-            onClick={handleDrawerToggle}
-            sx={{ mr: 2, display: { sm: 'none' } }}
-          >
-            <MenuIcon />
-          </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Responsive drawer
-          </Typography>
-        </Toolbar>
-      </AppBar>
-      <Box
-        component="nav"
-        sx={{ width: { sm: drawerWidth }, flexShrink: { sm: 0 } }}
-        aria-label="mailbox folders"
-      >
-        {/* The implementation can be swapped with js to avoid SEO duplication of links. */}
-        <Drawer
-          container={container}
-          variant="temporary"
-          open={mobileOpen}
-          onTransitionEnd={handleDrawerTransitionEnd}
-          onClose={handleDrawerClose}
-          ModalProps={{
-            keepMounted: true, // Better open performance on mobile.
-          }}
-          sx={{
-            display: { xs: 'block', sm: 'none' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
+        <div
+          style={{ display: "flex", flexDirection: "column", height: "100%" }}
         >
-          {drawer}
-        </Drawer>
-        <Drawer
-          variant="permanent"
-          sx={{
-            display: { xs: 'none', sm: 'block' },
-            '& .MuiDrawer-paper': { boxSizing: 'border-box', width: drawerWidth },
-          }}
-          open
-        >
-          {drawer}
-        </Drawer>
-      </Box>
-      <Box
-        component="main"
-        sx={{ flexGrow: 1, p: 3, width: { sm: `calc(100% - ${drawerWidth}px)` } }}
-      >
-        <Toolbar />
-      </Box>
-    </Box>
+          <div style={{ flex: 1, marginBottom: "32px" }}>
+            <Menu iconShape="square">
+              {/* LOGO */}
+              <MenuItem
+                onClick={() => setisCollapsed(!isCollapsed)}
+                icon={isCollapsed ? <MenuOutlinedIcon /> : undefined}
+                style={{
+                  margin: "10px 0 20px 0",
+                }}
+              >
+                {!isCollapsed && (
+                  <Box
+                    display="flex"
+                    justifyContent="space-between"
+                    alignItems="center"
+                    ml="15px"
+                  >
+                    <Typography>NANOET</Typography>
+                    <IconButton onClick={() => setisCollapsed(!isCollapsed)}>
+                      <MenuOutlinedIcon />
+                    </IconButton>
+                  </Box>
+                )}
+              </MenuItem>
+              {!isCollapsed && (
+                <Box mb="25px">
+                  <Box
+                    display="flex"
+                    justifyContent="center"
+                    alignItems="center"
+                  >
+                    <img
+                      alt="profile-user"
+                      width="100px"
+                      height="100px"
+                      src={`/assets/user.jpg`}
+                      style={{ cursor: "pointer", borderRadius: "50%" }}
+                    />
+                  </Box>
+                  <Box textAlign="center">
+                    <Typography sx={{ m: "10px 0 0 0" }}>REPORT</Typography>
+
+                  </Box>
+                </Box>
+              )}
+
+              {/* <Link to="/admin" className="menu-bars"> */}
+              <MenuItem
+                icon={<HomeOutlinedIcon />}
+
+              >
+                Dashboard
+              </MenuItem>
+              {/* </Link> */}
+
+              <SubMenu icon={<MapOutlinedIcon />} label="ข้อมูล">
+
+                <Link to={"/report/question"} className="menu-bars">
+                  <MenuItem icon={<TableViewIcon />} > คำถาม</MenuItem>
+                </Link>
+
+
+                <Link to={"/report/questionnaires"} className="menu-bars">
+                  <MenuItem icon={<BarChartOutlinedIcon />}>
+                    {" "}
+                    แบบสอบถาม
+                  </MenuItem>
+                </Link>
+
+                <Link to={"/report/users"} className="menu-bars">
+                <MenuItem icon={<Person />}>
+                  {" "}
+                  ผู้ใช้งาน
+                </MenuItem>
+                </Link>
+              </SubMenu>
+
+              <SubMenu label="Manage" icon={<PeopleOutlinedIcon />}>
+                <Link to={"/admin/manage"} className="menu-bars">
+                  <MenuItem>User</MenuItem>
+                </Link>
+                <MenuItem> Admin</MenuItem>
+              </SubMenu>
+            </Menu>
+
+            <div
+              style={{
+                padding: "0 24px",
+                marginBottom: "8px",
+                marginTop: "32px",
+              }}
+            >
+              <Typography
+                variant="body2"
+                fontWeight={600}
+                style={{
+                  opacity: isCollapsed ? 0 : 0.5,
+                  letterSpacing: "0.5px",
+                }}
+              >
+                Extra
+              </Typography>
+            </div>
+
+            <Menu>
+              <MenuItem icon={<CalendarTodayOutlinedIcon />}>Calendar</MenuItem>
+              <MenuItem icon={<ReceiptOutlinedIcon />}>Documentation</MenuItem>
+            </Menu>
+          </div>
+        </div>
+      </Sidebar>
+      <main>
+        <div style={{ padding: "16px 2px ", color: "#44596e" }}>
+          <div style={{ marginBottom: "16px" }}>
+            {broken && (
+              <IconButton onClick={() => setToggled(!toggled)}>
+                <MenuOutlinedIcon />
+              </IconButton>
+            )}
+          </div>
+        </div>
+        {renderComponent()}
+      </main>
+    </div>
   );
-}
-
-ResponsiveDrawer.propTypes = {
-  /**
-   * Injected by the documentation to work in an iframe.
-   * Remove this when copying and pasting into your project.
-   */
-  window: PropTypes.func,
 };
-
-export default ResponsiveDrawer;
+export default SideBar;

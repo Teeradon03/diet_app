@@ -1,4 +1,4 @@
-import { useState } from "react";
+import react, { useState } from "react";
 import { Box, IconButton, Menu, MenuItem } from "@mui/material";
 import InputBase from "@mui/material/InputBase";
 import NotificationsOutlinedIcon from "@mui/icons-material/NotificationsOutlined";
@@ -35,8 +35,8 @@ const HeaderBar = () => {
         <IconButton>
           <SettingsOutlinedIcon />
         </IconButton>
-        <IconButton>
-          <PersonOutlinedIcon onClick={handleMenu} />
+        <IconButton  onClick={handleMenu}>
+          <PersonOutlinedIcon />
           <Menu
             id="menu-appbar"
             anchorEl={anchorEl}
