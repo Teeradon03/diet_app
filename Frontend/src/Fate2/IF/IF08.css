@@ -1,0 +1,203 @@
+a {
+    text-decoration: none;
+    /* ลบขีดเส้นใต้ข้อความ */
+    color: inherit;
+    /* ให้ลิงก์เป็นสีเดียวกับข้อความปกติ */
+}
+
+.font-family {
+    font-family: 'Noto Sans Thai', sans-serif;
+    /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+}
+
+.text-IF {
+    padding-top: 50px;
+    font-size: 50px;
+    font-weight: bold;
+}
+
+.row1 {
+    margin-top: 100px;
+    position: relative;
+    left: -90px;
+}
+
+.time {
+    height: 70px;
+    width: 200px;
+    left: 320px;
+    border-radius: 20px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+}
+
+.text-time {
+    font-size: 40px;
+    position: relative;
+    top: -25px;
+}
+
+
+.time-08 {
+    height: 70px;
+    width: 590px;
+    position: relative;
+    left: 560px;
+    top: -70px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+}
+
+.row2 {
+    position: relative;
+    left: -90px;
+    top: -35px;
+}
+
+.menu {
+    height: 70px;
+    width: 300px;
+    left: 320px;
+    font-size: 40px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+}
+
+.text-menu {
+    position: relative;
+    top: -25px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+}
+
+.food {
+    height: 70px;
+    width: 500px;
+    position: relative;
+    left: 650px;
+    top: -70px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+}
+ .raw-material {
+    position: relative;
+    left: 260px;
+    top: -70px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-size: large;
+    font-weight: bold;
+ }
+
+ .menu-item {
+    width: 830px;
+    height: 700px;
+    position: relative;
+    left: 230px;
+    top: -50px;
+    text-align: left;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+ }
+ 
+ .text-item {
+    font-size: 35px;
+    text-align: center;
+ }
+
+ .text-menu-item {
+    padding-top: 10px;
+    font-size: 30px;
+ }
+
+ .Cal {
+    height: 70px;
+    width: 300px;
+    left: 230px;
+    font-size: 40px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+ }
+
+ .text-Cal,
+ .text-KG-Cal {
+    position: relative;
+    top: -25px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+ }
+
+ .KG-Cal {
+    height: 70px;
+    width: 500px;
+    left: 560px;
+    top: -70px;
+    text-align: center;
+    font-size: 40px;
+    box-shadow: 4px 4px 3px 2px #b2b2b2;
+ }
+
+ .IF-Edit {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #ff0000;
+    border: 1px solid #ccc;
+    color: rgb(255, 255, 255);
+    border-radius: 30px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    top: 50px;
+    left: 200px;
+    font-family: 'Noto Sans Thai', sans-serif;
+}
+
+.IF-Edit:hover {
+    background-color: #ff0000;
+    color: #ffffff;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.IF-Edit:active {
+    box-shadow: none;
+    transform: translateY(10px);
+}
+
+ .IF-Save {
+    display: block;
+    width: 30%;
+    padding: 20px;
+    margin-bottom: 12px;
+    background-color: #2E8B57;
+    border: 1px solid #ccc;
+    color: #FFFF;
+    border-radius: 30px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 30px;
+    cursor: pointer;
+    text-align: center;
+    font-weight: bold;
+    position: relative;
+    left: 700px;
+    top: -50px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+}
+
+.IF-Save:hover {
+    background-color: #2E8B57;
+    color: #ffffff;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+}
+
+.IF-Save:active {
+    box-shadow: none;
+    transform: translateY(10px);
+}
+
+.contener-button {
+    padding-top: 100px;
+}

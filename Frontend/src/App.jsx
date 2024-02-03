@@ -44,6 +44,8 @@ import Chart from "./Fate2/Chart/Chart.jsx";
 import Home48 from "./Fate2/Home48.jsx";
 import Target15 from "./Fate2/Target/Target15.jsx";
 import CancelEdit from "./Fate2/Target/CancelEdit.jsx"
+import ChartTarget from "./Fate2/Target/ChartTarget/ChartTarget.jsx";
+import IF08 from "./Fate2/IF/IF08.jsx"
 
 
 
@@ -105,6 +107,8 @@ function App() {
         <Route path="/Home48" element={<Home48 />} />
         <Route path="/Target15" element={<Target15 />} />
         <Route path="/CancelEdit" element={<CancelEdit />} />
+        <Route path="/ChartTarget" element={<ChartTarget />} />
+        <Route path="/IF08" element={<IF08 />} />
 
 
       </Routes>
