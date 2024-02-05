@@ -11,10 +11,20 @@ function Exercise() {
       link: 'https://www.youtube.com/@nanoverse2023', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 1
     },
     {
-      title: 'ออกกำลังกาย',
-      imageUrl: '/public/10.jpg',
-      link: 'https://www.youtube.com/@nanoverse2023', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 2
-    },
+        title: 'ออกกำลังกาย', 
+        imageUrl: '/public/10.jpg',
+        link: 'https://www.youtube.com/@nanoverse2023', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 2
+      },
+      {
+        title: 'ออกกำลังกาย',
+        imageUrl: '/public/10.jpg',
+        link: 'https://www.youtube.com/@nanoverse2023', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 3
+      },
+      {
+        title: 'ออกกำลังกาย',
+        imageUrl: '/public/10.jpg',
+        link: 'https://www.youtube.com/@nanoverse2023', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 4
+      },
   ];
 
   const handleCardClick = (link) => {

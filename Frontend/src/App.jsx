@@ -27,12 +27,12 @@ import Bmi_normalweight from './components/Bmi/Bmi_normalweight';
 import Bmi_obesitylevel1 from './components/Bmi/Bmi_obesitylevel1';
 import Bmi_obesitylevel2 from './components/Bmi/Bmi_obesitylevel2';
 import Bmi_obesitylevel3 from './components/Bmi/Bmi_obesitylevel3';
-import Yesno from './components/Ynquiz/Yesno.jsx';
-import Choice from './components/Choice/Choice.jsx';
-import Choice2 from './components/Choice/Choice2.jsx';
+import Yesno from './components/Ynquiz/Yesno';
+import Choice from './components/Choice/Choice';
+import Choice2 from './components/Choice/Choice2';
 import BMR_calculator from './components/Bmr/BMR_calculator';
 
-import Table from './pages/report/user/Table.jsx';
+import Table from './pages/report/user/Table';
 
 import MainApp from './pages/report/MainApp';
 import QuestionReport from './pages/report/question/Question';
@@ -40,12 +40,18 @@ import Questionnaires from './pages/report/questionnaires/Questionnaires';
 import User from './pages/report/user/Users';
 
 //fate2
-import Product from './fate2/Products/Product.jsx';
-import Nanox2 from './fate2/Products/Nanox2.jsx';
-import Nanova from './fate2/Products/Nanova.jsx';
+import Product from './fate2/Products/Product';
+import Nanox2 from './fate2/Products/Nanox2';
+import Nanova from './fate2/Products/Nanova';
 
-import Exercise from './fate2/Exercise/Exercise.jsx';
+import Exercise from './fate2/Exercise/Exercise';
 
+import Program_IF from './fate2/Program_IF/Program_IF';
+import CardList from './fate2/Program_IF/CardList';
+import Menu from './fate2/Program_IF/Menu';
+import MenuItem from './fate2/Program_IF/MenuItem';
+import FoodDetails from './fate2/Program_IF/FoodDetails';
+import Menu15 from './fate2/Program_IF/Menu15';
 
 
 function App() {
@@ -99,16 +105,21 @@ function App() {
         <Route path="/report/questionnaires" element={<Questionnaires/>}/>
         <Route path="/report/user" element={<User/>}/>
 
-    
+    ////////////////////////////////////////////////////////////////////////////////fate2
         
         <Route path="/fate2/product" element={<Product/>}/>
         <Route path="/fate2/nanox2" element={<Nanox2/>}/>
         <Route path="/fate2/nanova" element={<Nanova/>}/>
 
-        <Route path="/fate2/exercise" element={<Exercise/>}/>
-      
+        <Route path="/fate2/exercise" element={<Exercise/>}/>  
+
+        <Route path="/fate2/program_IF" element={<Program_IF/>}/>
+        <Route path="/fate2/menu" element={<Menu/>}/>
+        <Route path="/fate2/menu15" element={<Menu15/>}/>
+        <Route path="/fate2/cardlist" element={<CardList/>}/>
+        <Route path="/fate2/menuItem" element={<MenuItem/>}/>
+        <Route path="/fate2/foodDetails" element={<FoodDetails/>}/>
        
-      
 
       </Routes>
     </BrowserRouter>

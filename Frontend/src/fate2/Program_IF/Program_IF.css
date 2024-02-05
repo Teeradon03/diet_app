@@ -1,0 +1,109 @@
+
+a {
+  text-decoration: none;
+  /* ลบขีดเส้นใต้ข้อความ */
+  color: inherit;
+  /* ให้ลิงก์เป็นสีเดียวกับข้อความปกติ */
+}
+
+.card{
+    width: 100%;
+    height: 250px;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+
+
+  .button-container {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 20px;
+  }
+  
+  .save-button {
+    display: block;
+    padding: 20px 40px;
+    font-size: 26px;
+    background-color: #0b9539;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 4px 8px 3px 5px #b2b2b2;
+    font-size: larger;
+    cursor: pointer;
+    text-align :center;
+    margin: 25px;
+    font-weight: bold;
+  }
+  
+  .save-button:active{
+    box-shadow: none;
+    transform: translateY(10px);
+  }
+  
+  .edit-button {
+    display: block;
+    padding: 20px 40px;
+    font-size: 26px;
+    background-color: #dfae4d;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 35px;
+    box-shadow: 4px 8px 3px 5px #b2b2b2;
+    font-size: larger;
+    cursor: pointer;
+    text-align :center;
+    margin: 25px;
+    font-weight: bold;
+  }
+  
+  .edit-button:active{
+    box-shadow: none;
+    transform: translateY(10px);
+  }
+  
+  
+  @media screen and (max-width: 400px) {
+    .button-container {
+      flex-direction: column; /* จัดวางปุ่มในคอลัมน์เมื่อหน้าจอมีขนาดน้อยกว่า 400px */
+      align-items: center; /* จัดให้ปุ่มอยู่ตรงกลาง */
+    }
+  }
+
+  /* Program_IF.css */
+  .container {
+    display: flex;
+    flex-wrap: wrap;
+  }
+  
+  .card {
+    width: 100%; /* ตั้งค่าความกว้างเริ่มต้นเป็น 100% */
+    height: 350px;
+    box-sizing: border-box;
+    margin: 10px;
+    font-size: 2rem;
+  }
+  
+  /* ในกรณีหน้าจอกว้างขึ้นไป ให้แสดง 2 card ต่อแถว */
+  @media (min-width: 1500px) {
+    .card {
+      width: calc(50% - 20px); /* 50% ของ container และลบ margin ที่ใส่เพื่อให้มี space ระหว่าง card */
+    }
+  }
+  
+  /* เพิ่ม style อื่น ๆ ตามต้องการ */
+  
+  /* Media queries เพื่อปรับขนาดของการ์ดในหน้าจอที่ขนาดต่าง ๆ */
+  @media (max-width: 768px) {
+    .card {
+      width: calc(50% - 20px); /* แสดง 2 ใน 1 ในหน้าจอขนาดเล็กกว่า 768px */
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .card {
+      width: calc(100% - 20px); /* แสดงเต็มหน้าจอในหน้าจอขนาดเล็กกว่า 480px */
+    }
+  }
+  
