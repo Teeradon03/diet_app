@@ -6,6 +6,23 @@ a {
   /* ให้ลิงก์เป็นสีเดียวกับข้อความปกติ */
 }
 
+.font-family {
+  font-family: 'Noto Sans Thai', sans-serif;
+  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
+}
+
+.text {
+  padding-top: 50px;
+  font-size: 50px;
+  font-weight: bold;
+}
+
+.text-card {
+  padding-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
 .card{
     width: 100%;
     height: 250px;
@@ -13,18 +30,16 @@ a {
     margin-bottom: 2rem;
 }
 
-
-
   .button-container {
     display: flex;
     justify-content: space-around;
-    margin-top: 20px;
+    margin-top: 30px;
   }
   
   .save-button {
     display: block;
-    padding: 20px 40px;
-    font-size: 26px;
+    padding: 25px 40px;
+    font-size: 36px;
     background-color: #0b9539;
     border: 1px solid #ccc;
     color: rgb(13, 13, 13);
@@ -44,8 +59,8 @@ a {
   
   .edit-button {
     display: block;
-    padding: 20px 40px;
-    font-size: 26px;
+    padding: 25px 40px;
+    font-size: 36px;
     background-color: #dfae4d;
     border: 1px solid #ccc;
     color: rgb(13, 13, 13);
@@ -64,13 +79,7 @@ a {
   }
   
   
-  @media screen and (max-width: 400px) {
-    .button-container {
-      flex-direction: column; /* จัดวางปุ่มในคอลัมน์เมื่อหน้าจอมีขนาดน้อยกว่า 400px */
-      align-items: center; /* จัดให้ปุ่มอยู่ตรงกลาง */
-    }
-  }
-
+ 
   /* Program_IF.css */
   .container {
     display: flex;
@@ -79,7 +88,7 @@ a {
   
   .card {
     width: 100%; /* ตั้งค่าความกว้างเริ่มต้นเป็น 100% */
-    height: 350px;
+    height: 450px;
     box-sizing: border-box;
     margin: 10px;
     font-size: 2rem;
@@ -97,13 +106,25 @@ a {
   /* Media queries เพื่อปรับขนาดของการ์ดในหน้าจอที่ขนาดต่าง ๆ */
   @media (max-width: 768px) {
     .card {
-      width: calc(50% - 20px); /* แสดง 2 ใน 1 ในหน้าจอขนาดเล็กกว่า 768px */
+      width: calc(100% - 20px); /* แสดง 2 ใน 1 ในหน้าจอขนาดเล็กกว่า 768px */
     }
   }
   
   @media (max-width: 480px) {
     .card {
       width: calc(100% - 20px); /* แสดงเต็มหน้าจอในหน้าจอขนาดเล็กกว่า 480px */
+      height: 350px;
+    }
+    .text{
+      font-size: 2rem;
+    }
+    .text-card{
+      font-size: 2rem;
+    }
+
+    .button-container {
+      flex-direction: column; /* จัดวางปุ่มในคอลัมน์เมื่อหน้าจอมีขนาดน้อยกว่า 400px */
+      align-items: center; /* จัดให้ปุ่มอยู่ตรงกลาง */
     }
   }
   

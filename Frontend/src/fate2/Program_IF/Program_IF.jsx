@@ -1,7 +1,8 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import Menu from "./Menu";
 import "./Program_IF.css";
+
+
 const Program_IF = () => {
   const [currentDay, setCurrentDay] = useState(1);
   const [selectedMenu, setSelectedMenu] = useState("");
@@ -22,29 +23,28 @@ const Program_IF = () => {
   };
 
   return (
-    <div>
+    <div className="font-family">
       <br />
       <br />
       <br />
-      <h1>การลดน้ำหนัก IF </h1>
+      <h1 className="text">การลดน้ำหนัก IF </h1>
       <br />
-      <h2> วันที่ {currentDay} </h2>
+      <h2 className="text"> วันที่ {currentDay} </h2>
       <br />
       <br />
+      {/* Card */}
       <div className="container ">
-        <Link className="card" to={"/fate2/menu"}>
-          <div>08.00
-            
-          </div>
+        <Link className="card" to={"/fate2/menu08"}>
+          <div className="text-card">08.00 </div>
         </Link>
-        <Link className="card" to="/a">
-          <div>12.00 น.</div>
+        <Link className="card" to={"/fate2/menu12"}>
+          <div className="text-card">12.00 น.</div>
         </Link>
-        <Link className="card" to="/a">
-          <div>14.00 น.</div>
+        <Link className="card" to={"/fate2/menu14"}>
+          <div className="text-card">14.00 น.</div>
         </Link>
-        <Link className="card" to="/a">
-          <div>15.00 น.</div>
+        <Link className="card" to={"/fate2/menu15"}>
+          <div className="text-card">15.00 น.</div>
         </Link>
       </div>
 

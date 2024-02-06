@@ -1,7 +1,7 @@
 // CardList.jsx
 import React from "react";
 import { Select, Card } from "antd";
-import "./CardList.css"; // Import CSS
+
 
 const CardList = () => {
   const options = [

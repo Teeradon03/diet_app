@@ -48,7 +48,9 @@ import Exercise from './fate2/Exercise/Exercise';
 
 import Program_IF from './fate2/Program_IF/Program_IF';
 import CardList from './fate2/Program_IF/CardList';
-import Menu from './fate2/Program_IF/Menu';
+import Menu08 from './fate2/Program_IF/Menu08.jsx';
+import Menu12 from './fate2/Program_IF/Menu12.jsx';
+import Menu14 from './fate2/Program_IF/Menu14.jsx';
 import MenuItem from './fate2/Program_IF/MenuItem';
 import FoodDetails from './fate2/Program_IF/FoodDetails';
 import Menu15 from './fate2/Program_IF/Menu15';
@@ -114,7 +116,9 @@ function App() {
         <Route path="/fate2/exercise" element={<Exercise/>}/>  
 
         <Route path="/fate2/program_IF" element={<Program_IF/>}/>
-        <Route path="/fate2/menu" element={<Menu/>}/>
+        <Route path="/fate2/menu08" element={<Menu08/>}/>
+        <Route path="/fate2/menu12" element={<Menu12/>}/>
+        <Route path="/fate2/menu14" element={<Menu14/>}/>
         <Route path="/fate2/menu15" element={<Menu15/>}/>
         <Route path="/fate2/cardlist" element={<CardList/>}/>
         <Route path="/fate2/menuItem" element={<MenuItem/>}/>
