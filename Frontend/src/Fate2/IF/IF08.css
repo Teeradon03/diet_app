@@ -1,172 +1,102 @@
 a {
     text-decoration: none;
-    /* ลบขีดเส้นใต้ข้อความ */
     color: inherit;
-    /* ให้ลิงก์เป็นสีเดียวกับข้อความปกติ */
-}
-
-.font-family {
+  }
+  
+  .font-family {
     font-family: 'Noto Sans Thai', sans-serif;
-    /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-}
-
-.text-IF {
-    padding-top: 50px;
-    font-size: 50px;
+    margin: 20px;
+  }
+  
+  .text-IF {
+    font-size: 24px;
     font-weight: bold;
-}
-
-.row1 {
-    margin-top: 100px;
-    position: relative;
-    left: -90px;
-}
-
-.time {
-    height: 70px;
-    width: 200px;
-    left: 320px;
-    border-radius: 20px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-weight: bold;
-}
-
-.text-time {
-    font-size: 40px;
-    position: relative;
-    top: -25px;
-}
-
-
-.time-08 {
-    height: 70px;
-    width: 590px;
-    position: relative;
-    left: 560px;
-    top: -70px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-}
-
-.row2 {
-    position: relative;
-    left: -90px;
-    top: -35px;
-}
-
-.menu {
-    height: 70px;
-    width: 300px;
-    left: 320px;
-    font-size: 40px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-}
-
-.text-menu {
-    position: relative;
-    top: -25px;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-weight: bold;
-}
-
-.food {
-    height: 70px;
-    width: 500px;
-    position: relative;
-    left: 650px;
-    top: -70px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-}
- .raw-material {
-    position: relative;
-    left: 260px;
-    top: -70px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-size: large;
-    font-weight: bold;
- }
-
- .menu-item {
-    width: 830px;
-    height: 700px;
-    position: relative;
-    left: 230px;
-    top: -50px;
-    text-align: left;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-weight: bold;
- }
- 
- .text-item {
-    font-size: 35px;
-    text-align: center;
- }
-
- .text-menu-item {
-    padding-top: 10px;
-    font-size: 30px;
- }
-
- .Cal {
-    height: 70px;
-    width: 300px;
-    left: 230px;
-    font-size: 40px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
- }
-
- .text-Cal,
- .text-KG-Cal {
-    position: relative;
-    top: -25px;
-    font-family: 'Noto Sans Thai', sans-serif;
-    font-weight: bold;
- }
-
- .KG-Cal {
-    height: 70px;
-    width: 500px;
-    left: 560px;
-    top: -70px;
-    text-align: center;
-    font-size: 40px;
-    box-shadow: 4px 4px 3px 2px #b2b2b2;
- }
-
- .IF-Edit {
-    display: block;
-    width: 30%;
-    padding: 20px;
-    margin-bottom: 12px;
-    background-color: #ff0000;
-    border: 1px solid #ccc;
-    color: rgb(255, 255, 255);
+  }
+  
+  .row1, .row2 {
+    margin-left: 0;
+  }
+  
+  /* Time styles */
+  .time {
+    width: 100%;
     border-radius: 30px;
-    box-shadow: 8px 12px 3px 5px #b2b2b2;
-    font-size: 30px;
-    cursor: pointer;
-    text-align: center;
-    font-weight: bold;
-    position: relative;
-    top: 50px;
-    left: 200px;
+  } 
+
+  .time-08 {
+    width: 100%;
+    border-radius: 30px;
     font-family: 'Noto Sans Thai', sans-serif;
-}
+    font-weight: bold;
+  }
+  
+  .text-time {
+    top: -10px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+  }
+  
+  /* Menu styles */
+  .menu {
+    width: 100%;
+    border-radius: 30px;
+  }
+  
+  .text-menu {
+    top: -10px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+  }
+  
+  .food {
+    width: 100%;
+  }
+  
+  .raw-material {
+    width: 100%;
+    border-radius: 30px;
+  }
 
-.IF-Edit:hover {
-    background-color: #ff0000;
-    color: #ffffff;
-    box-shadow: 8px 12px 3px 5px #b2b2b2;
-}
+  .material {
 
-.IF-Edit:active {
-    box-shadow: none;
-    transform: translateY(10px);
-}
-
- .IF-Save {
+  }
+  
+  /* Menu Item styles */
+  .menu-item {
+    width: 100%;
+    border-radius: 30px;
+  }
+  
+  .text-item {
+    text-align: center;
+    font-size: 40px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+  }
+  
+  .text-menu-item {
+    text-align: left;
+    padding-top: 10px;
+    font-size: 35px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+  }
+  
+  /* Calorie styles */
+  .Cal, .KG-Cal {
+    width: 100%;
+    border-radius: 30px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
+    background-color: #dcdcdd;
+  }
+  
+  .text-Cal, .text-KG-Cal {
+    top: -10px;
+  }
+  
+  /* IF-Edit and IF-Save styles */
+  .IF-Save {
     display: block;
     width: 30%;
     padding: 20px;
@@ -185,9 +115,9 @@ a {
     top: -50px;
     font-family: 'Noto Sans Thai', sans-serif;
     font-weight: bold;
-}
+  }
 
-.IF-Save:hover {
+  .IF-Save:hover {
     background-color: #2E8B57;
     color: #ffffff;
     box-shadow: 8px 12px 3px 5px #b2b2b2;
@@ -197,7 +127,1772 @@ a {
     box-shadow: none;
     transform: translateY(10px);
 }
+  
+  .contener-button {
+    padding-top: 50px;
+  }
+  
 
-.contener-button {
-    padding-top: 100px;
+  
+
+  
+
+@media screen and (max-width: 1600px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 650px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 550px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .raw-material {
+        width: 640px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .row1 {
+        position: relative;
+        left: -50px;
+    }
+    .row2 {
+        position: relative;
+        left: -50px;
+    }
+    .row3 {
+        position: relative;
+        left: -50px;
+    }
+    .material{
+        width: 580px;
+    }
+    .menu-item{
+        width: 1020px;
+        height: 800px;
+        left: 120px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 700px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 380px;
+    }
+}
+
+@media screen and (max-width: 1500px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 650px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 550px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .row1 {
+        position: relative;
+        left: -80px;
+    }
+    .row2 {
+        position: relative;
+        left: -80px;
+    }
+    .row3 {
+        position: relative;
+        left: -80px;
+    }
+    .raw-material {
+        width: 640px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 580px;
+        top: 0px;
+        left: 0px;
+    }
+    .menu-item{
+        width: 1020px;
+        height: 800px;
+        left: 100px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 700px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 380px;
+    }
+}
+
+@media screen and (max-width: 1400px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 650px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 550px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .raw-material {
+        width: 640px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 580px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -70px;
+    }
+    .row2{
+        position: relative;
+        left: -70px;
+    }
+    .row3 {
+        position: relative;
+        left: -70px;
+    }
+    .menu-item{
+        width: 1020px;
+        height: 800px;
+        left: 100px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 700px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 350px;
+    }
+}
+
+@media screen and (max-width: 1300px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 650px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 550px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .raw-material {
+        width: 640px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 580px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -120px;
+    }
+    .row2{
+        position: relative;
+        left: -120px;
+    }
+    .row3 {
+        position: relative;
+        left: -120px;
+    }
+    .menu-item{
+        width: 1020px;
+        height: 800px;
+        left: 60px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 700px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 320px;
+    }
+}
+
+@media screen and (max-width: 1200px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 580px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 550px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .raw-material {
+        width: 570px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 520px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -120px;
+    }
+    .row2{
+        position: relative;
+        left: -120px;
+    }
+    .row3 {
+        position: relative;
+        left: -120px;
+    }
+    .menu-item{
+        width: 930px;
+        height: 800px;
+        left: 50px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 600px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 300px;
+    }
+}
+
+@media screen and (max-width: 1100px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 300px;
+        height: 80px;
+        top: 50px;
+        left: 170px;
+    }
+    .time-08 {
+        width: 600px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 500px;
+    }
+    .menu {
+        width: 350px;
+        height: 80px;
+        left: 170px;
+    }
+    .raw-material {
+        width: 550px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 500px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -150px;
+    }
+    .row2{
+        position: relative;
+        left: -150px;
+    }
+    .row3 {
+        position: relative;
+        left: -150px;
+    }
+    .menu-item{
+        width: 920px;
+        height: 800px;
+        left: 30px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 300px;
+        height: 90px;
+        left: 170px;
+    }
+    .KG-Cal{
+        width: 600px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 260px;
+    }
+}
+
+@media screen and (max-width: 1025px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 250px;
+        height: 80px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 530px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 500px;
+    }
+    .menu {
+        width: 320px;
+        height: 80px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 480px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 420px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -160px;
+    }
+    .row2{
+        position: relative;
+        left: -160px;
+    }
+    .row3 {
+        position: relative;
+        left: -160px;
+    }
+    .menu-item{
+        width: 830px;
+        height: 800px;
+        left: 40px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 250px;
+        height: 90px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 540px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 210px;
+    }
+}
+
+@media screen and (max-width: 951px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 250px;
+        height: 80px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 530px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 500px;
+    }
+    .menu {
+        width: 320px;
+        height: 80px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 480px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 420px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -180px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 830px;
+        height: 800px;
+        left: 20px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 250px;
+        height: 90px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 500px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 190px;
+    }
+}
+
+@media screen and (max-width: 920px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2.5rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 250px;
+        height: 80px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 490px;
+        height: 80px;
+        position: relative;
+        top: -30px;
+        left: 500px;
+    }
+    .menu {
+        width: 320px;
+        height: 80px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 440px;
+        height: 80px;
+        top: -80px;
+        left: 550px;
+    }
+    .material{
+        width: 380px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -190px;
+    }
+    .row2{
+        position: relative;
+        left: -190px;
+    }
+    .row3 {
+        position: relative;
+        left: -190px;
+    }
+    .menu-item{
+        width: 780px;
+        height: 800px;
+        left: 10px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 250px;
+        height: 90px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 500px;
+        height: 90px;
+        top: -90px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 170px;
+    }
+}
+
+@media screen and (max-width: 855px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2rem;
+        position: relative;
+        top: -20px;
+    }
+    .time {
+        width: 200px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 480px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 430px;
+    }
+    .menu {
+        width: 230px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 450px;
+        height: 70px;
+        top: -70px;
+        left: 455px;
+    }
+    .material{
+        width: 400px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -190px;
+    }
+    .row2{
+        position: relative;
+        left: -190px;
+    }
+    .row3 {
+        position: relative;
+        left: -190px;
+    }
+    .menu-item{
+        width: 700px;
+        height: 800px;
+        left: 15px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 270px;
+        height: 70px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 410px;
+        height: 70px;
+        top: -70px;
+        left: 490px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 120px;
+    }
+}
+
+@media screen and (max-width: 800px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2rem;
+        position: relative;
+        top: -15px;
+    }
+    .time {
+        width: 180px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 400px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 430px;
+    }
+    .menu {
+        width: 200px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 400px;
+        height: 70px;
+        top: -70px;
+        left: 430px;
+    }
+    .material{
+        width: 350px;
+        left: 0px;
+        top: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -180px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 620px;
+        height: 800px;
+        left: 25px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 220px;
+        height: 70px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 350px;
+        height: 70px;
+        top: -70px;
+        left: 470px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 90px;
+    }
+}
+
+@media screen and (max-width: 755px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 3rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 2rem;
+        position: relative;
+        top: -15px;
+    }
+    .time {
+        width: 180px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 400px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 430px;
+    }
+    .menu {
+        width: 200px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 400px;
+        height: 70px;
+        top: -70px;
+        left: 430px;
+    }
+    .material{
+        width: 350px;
+        left: 0px;
+        top: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -180px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 620px;
+        height: 800px;
+        left: 25px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 220px;
+        height: 70px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 350px;
+        height: 70px;
+        top: -70px;
+        left: 470px;
+    }
+    .IF-Save {
+        width: 500px;
+        left: 90px;
+    }
+}
+
+@media screen and (max-width: 700px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2.5rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1.5rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1.5rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 150px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 350px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 380px;
+    }
+    .menu {
+        width: 180px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 320px;
+        height: 70px;
+        top: -70px;
+        left: 400px;
+    }
+    .material{
+        width: 270px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -180px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 530px;
+        height: 500px;
+        left: 10px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 180px;
+        height: 70px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 310px;
+        height: 70px;
+        top: -70px;
+        left: 400px;
+    }
+    .IF-Save {
+        width: 450px;
+        left: 50px;
+    }
+} 
+
+@media screen and (max-width: 655px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2.5rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1.5rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1.5rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 150px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 350px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 380px;
+    }
+    .menu {
+        width: 180px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 320px;
+        height: 70px;
+        top: -70px;
+        left: 400px;
+    }
+    .material{
+        width: 270px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -180px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 530px;
+        height: 500px;
+        left: 10px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 180px;
+        height: 70px;
+        left: 200px;
+    }
+    .KG-Cal{
+        width: 310px;
+        height: 70px;
+        top: -70px;
+        left: 400px;
+    }
+    .IF-Save {
+        width: 450px;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 599px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1.5rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1.5rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 120px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 320px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 350px;
+    }
+    .menu {
+        width: 150px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 70px;
+        top: -70px;
+        left: 370px;
+    }
+    .material{
+        width: 250px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -200px;
+    }
+    .row2{
+        position: relative;
+        left: -200px;
+    }
+    .row3 {
+        position: relative;
+        left: -200px;
+    }
+    .menu-item{
+        width: 470px;
+        height: 500px;
+        left: 0px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 160px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 270px;
+        height: 60px;
+        top: -60px;
+        left: 400px;
+    }
+    .IF-Save {
+        width: 400px;
+        height: 80px;
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 555px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1.5rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1.5rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 120px;
+        height: 70px;
+        top: 50px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 320px;
+        height: 70px;
+        position: relative;
+        top: -20px;
+        left: 350px;
+    }
+    .menu {
+        width: 150px;
+        height: 70px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 70px;
+        top: -70px;
+        left: 370px;
+    }
+    .material{
+        width: 250px;
+        left: 0px;
+    }
+    .row1{
+        position: relative;
+        left: -200px;
+    }
+    .row2{
+        position: relative;
+        left: -200px;
+    }
+    .row3 {
+        position: relative;
+        left: -200px;
+    }
+    .menu-item{
+        width: 470px;
+        height: 500px;
+        left: 0px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 160px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 270px;
+        height: 60px;
+        top: -60px;
+        left: 400px;
+    }
+    .IF-Save {
+        width: 400px;
+        height: 80px;
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 499px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 80px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 210px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 210px;
+    }
+    .material{
+        width: 210px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -160px;
+    }
+    .row2{
+        position: relative;
+        left: -170px;
+    }
+    .row3 {
+        position: relative;
+        left: -160px;
+    }
+    .menu-item{
+        width: 300px;
+        height: 500px;
+        left: 40px;
+        margin-top: 40px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 130px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 370px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 60px;
+    }
+}
+
+@media screen and (max-width: 455px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 80px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 210px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 210px;
+    }
+    .material{
+        width: 210px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -170px;
+    }
+    .row2{
+        position: relative;
+        left: -180px;
+    }
+    .row3 {
+        position: relative;
+        left: -180px;
+    }
+    .menu-item{
+        width: 300px;
+        height: 500px;
+        left: 30px;
+        margin-top: 40px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 130px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 370px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 50px;
+    }
+}
+
+@media screen and (max-width: 412px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 2rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 80px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 210px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 210px;
+    }
+    .material{
+        width: 210px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -190px;
+    }
+    .row2{
+        position: relative;
+        left: -190px;
+    }
+    .row3 {
+        position: relative;
+        left: -190px;
+    }
+    .menu-item{
+        width: 300px;
+        height: 500px;
+        margin-top: 40px;
+        left: 20px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 130px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 370px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 40px;
+    }
+}
+
+@media screen and (max-width: 399px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 1.5rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 90px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 200px;
+    }
+    .material{
+        width: 250px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -220px;
+    }
+    .row2{
+        position: relative;
+        left: -220px;
+    }
+    .row3 {
+        position: relative;
+        left: -220px;
+    }
+    .menu-item{
+        margin-top: 50px;
+        width: 290px;
+        height: 500px;
+        left: -15px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 120px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 340px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 5px;
+    }
+}
+
+@media screen and (max-width: 355px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 1.5rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 90px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 200px;
+    }
+    .material{
+        width: 250px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -220px;
+    }
+    .row2{
+        position: relative;
+        left: -220px;
+    }
+    .row3 {
+        position: relative;
+        left: -220px;
+    }
+    .menu-item{
+        margin-top: 50px;
+        width: 290px;
+        height: 500px;
+        left: -15px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 120px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 340px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 5px;
+    }
+}
+
+@media screen and (max-width: 300px) {
+    .text-IF {
+        padding-top: 50px;
+        font-size: 1.5rem;
+    }
+    .text-time,
+    .text-menu,
+    .text-Cal,
+    .text-KG-Cal {
+        font-size: 1rem;
+        position: relative;
+        top: -10px;
+    }
+    .text-item {
+        font-size: 1rem;
+    }
+    .text-menu-item {
+        font-size: 1rem;
+    }
+    .time {
+        width: 90px;
+        height: 50px;
+        top: 30px;
+        left: 200px;
+    }
+    .time-08 {
+        width: 200px;
+        height: 50px;
+        position: relative;
+        top: -20px;
+        left: 300px;
+    }
+    .menu {
+        width: 300px;
+        height: 50px;
+        left: 200px;
+    }
+    .raw-material {
+        width: 300px;
+        height: 50px;
+        top: 20px;
+        left: 200px;
+    }
+    .material{
+        width: 250px;
+        height: 50px;
+        top: -20px;
+        left: -5px;
+    }
+    .row1{
+        position: relative;
+        left: -220px;
+    }
+    .row2{
+        position: relative;
+        left: -220px;
+    }
+    .row3 {
+        position: relative;
+        left: -220px;
+    }
+    .menu-item{
+        margin-top: 50px;
+        width: 290px;
+        height: 500px;
+        left: -15px;
+    }
+    .Cal {
+        margin-top: 50px;
+        width: 120px;
+        height: 60px;
+        left: 210px;
+    }
+    .KG-Cal{
+        width: 150px;
+        height: 60px;
+        top: -60px;
+        left: 340px;
+    }
+    .IF-Save {
+        width: 250px;
+        height: 70px;
+        left: 5px;
+    }
 }

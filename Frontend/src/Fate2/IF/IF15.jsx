@@ -1,12 +1,12 @@
 import { Card, Select, Modal } from 'antd';
 import React, { useState } from 'react';
 import './IF08.css';
-import { menus } from './Menu08'; //meun 08.00
+import { menus } from './Menu15'; //meun 15.00
 
 
 
 const { Option } = Select;
-const IF = () => {
+const IF15 = () => {
   const [selectedMenu, setSelectedMenu] = useState('');
   const [selectedOptions, setSelectedOptions] = useState([]);
   const [isModalVisible, setIsModalVisible] = useState(false);
@@ -59,7 +59,7 @@ const IF = () => {
         </Card>
 
         <Card className='time-08'>
-          <p className='text-time'> 08:00 </p>
+          <p className='text-time'> 15:00 </p>
         </Card>
       </div>
 
@@ -117,4 +117,4 @@ const IF = () => {
   );
 };
 
-export default IF;
+export default IF15;
