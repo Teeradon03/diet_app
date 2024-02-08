@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Program_IF.css";
-
+ 
 
 const Program_IF = () => {
   const [currentDay, setCurrentDay] = useState(1);
@@ -26,7 +26,6 @@ const Program_IF = () => {
     <div className="font-family">
       <br />
       <br />
-      <br />
       <h1 className="text">การลดน้ำหนัก IF </h1>
       <br />
       <h2 className="text"> วันที่ {currentDay} </h2>
@@ -35,7 +34,7 @@ const Program_IF = () => {
       {/* Card */}
       <div className="container ">
         <Link className="card" to={"/fate2/menu08"}>
-          <div className="text-card">08.00 </div>
+          <div className="text-card">08.00 น.</div>
         </Link>
         <Link className="card" to={"/fate2/menu12"}>
           <div className="text-card">12.00 น.</div>
@@ -49,7 +48,7 @@ const Program_IF = () => {
       </div>
 
       <div className="button-container">
-        <button className="edit-button">แก้ไขข้อมูล</button>
+        <button className="edit-button" > แก้ไขข้อมูล </button>
         <button className="save-button" onClick={handleSaveButtonClick}>
           บันทึกข้อมูล
         </button>
@@ -57,5 +56,5 @@ const Program_IF = () => {
     </div>
   );
 };
-
+ 
 export default Program_IF;

@@ -1,0 +1,64 @@
+/* src/components/UserProfile.css */
+
+.user-profile {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  
+  .user-profile-header {
+    text-align: center;
+  }
+  
+  .user-profile-image {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 10px;
+  }
+  
+  .user-profile h2 {
+    margin: 0;
+  }
+  
+  .user-profile p {
+    color: #888;
+    margin: 0;
+  }
+
+  .contener-button {
+    padding-top: 100px;
+  }
+  
+  .button-user{
+    display: block;
+    width: 100%;
+    padding: 20px;
+    margin-bottom: 50px;
+    background-color: #FFFF;
+    border: 1px solid #ccc;
+    color: rgb(13, 13, 13);
+    border-radius: 25px;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+    font-size: 2rem;
+    cursor: pointer;
+    text-align :center; 
+    font-weight: bold;
+  }
+  
+  .button-user:hover{
+    background-color: #757575;;
+    color: #000000;
+    box-shadow: 8px 12px 3px 5px #b2b2b2;
+  }
+  
+  .button-user:active {
+    box-shadow: none;
+    transform: translateY(10px);
+  }
+  

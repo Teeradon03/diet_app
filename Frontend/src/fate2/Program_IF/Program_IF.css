@@ -39,13 +39,12 @@ a {
   .save-button {
     display: block;
     padding: 25px 40px;
-    font-size: 36px;
+    font-size: 2rem;
     background-color: #0b9539;
     border: 1px solid #ccc;
     color: rgb(13, 13, 13);
     border-radius: 35px;
     box-shadow: 4px 8px 3px 5px #b2b2b2;
-    font-size: larger;
     cursor: pointer;
     text-align :center;
     margin: 25px;
@@ -60,13 +59,12 @@ a {
   .edit-button {
     display: block;
     padding: 25px 40px;
-    font-size: 36px;
-    background-color: #dfae4d;
+    font-size: 2rem;
+    background-color: #d4a23f;
     border: 1px solid #ccc;
     color: rgb(13, 13, 13);
     border-radius: 35px;
     box-shadow: 4px 8px 3px 5px #b2b2b2;
-    font-size: larger;
     cursor: pointer;
     text-align :center;
     margin: 25px;
@@ -94,11 +92,14 @@ a {
     font-size: 2rem;
   }
   
+
+ 
   /* ในกรณีหน้าจอกว้างขึ้นไป ให้แสดง 2 card ต่อแถว */
   @media (min-width: 1500px) {
     .card {
       width: calc(50% - 20px); /* 50% ของ container และลบ margin ที่ใส่เพื่อให้มี space ระหว่าง card */
     }
+    
   }
   
   /* เพิ่ม style อื่น ๆ ตามต้องการ */

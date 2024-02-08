@@ -54,6 +54,9 @@ import Menu14 from './fate2/Program_IF/Menu14.jsx';
 import MenuItem from './fate2/Program_IF/MenuItem';
 import FoodDetails from './fate2/Program_IF/FoodDetails';
 import Menu15 from './fate2/Program_IF/Menu15';
+import User_Profile from './fate2/Profile/User_Profile';
+import Chang_Password from './fate2/Profile/Chang_Password';
+import Edit_User_Data from './fate2/Profile/Edit_User_Data.jsx';
 
 
 function App() {
@@ -107,7 +110,8 @@ function App() {
         <Route path="/report/questionnaires" element={<Questionnaires/>}/>
         <Route path="/report/user" element={<User/>}/>
 
-    ////////////////////////////////////////////////////////////////////////////////fate2
+    
+    {/*fate2*/}
         
         <Route path="/fate2/product" element={<Product/>}/>
         <Route path="/fate2/nanox2" element={<Nanox2/>}/>
@@ -123,7 +127,9 @@ function App() {
         <Route path="/fate2/cardlist" element={<CardList/>}/>
         <Route path="/fate2/menuItem" element={<MenuItem/>}/>
         <Route path="/fate2/foodDetails" element={<FoodDetails/>}/>
-       
+        <Route path="/fate2/profile" element={<User_Profile/>}/>
+        <Route path="/fate2/chang_password" element={<Chang_Password/>}/>
+        <Route path="/fate2/edit_data" element={<Edit_User_Data/>}/>
 
       </Routes>
     </BrowserRouter>

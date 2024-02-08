@@ -22,8 +22,8 @@ function nanox2() {
       <br />
       <br />
       <h1 className="text-if">เครื่องดื่มเพื่อสุขภาพ</h1>
-      <div className="image-box">
-        {cardData.map((card, index) => (
+      <div className="image">
+        {cardData.map((card, index) => ( 
           <Card className="card-box" key={index}>
             <Card.Img variant="top" src={card.imageUrl} />
           </Card>

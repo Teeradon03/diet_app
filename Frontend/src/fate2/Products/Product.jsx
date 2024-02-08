@@ -1,49 +1,65 @@
-import React from 'react';
-import Card from 'react-bootstrap/Card';
-import './Product.css';
+// นำเข้าโมดูลและคอมโพเนนต์ที่จำเป็น
+import React from "react";
+import Card from "react-bootstrap/Card"; // นำเข้าคอมโพเนนต์ Card จาก react-bootstrap
+import "./Product.css"; // นำเข้าไฟล์ CSS เพื่อให้สามารถใส่สไตล์
 
+// กำหนดคอมโพเนนต์ฟังก์ชันที่ชื่อ Product
 function Product() {
+  // อาร์เรย์ของอ็อบเจ็กต์ที่มีข้อมูลสำหรับแต่ละการ์ดสินค้า
   const cardData = [
     {
-      title: 'nanoX2',
-      imageUrl: '/product_img/nanox2.png',
-      link: '/fate2/Nanox2', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 1
+      title: "nanoX2",
+      imageUrl: "/product_img/nanox2.png",
+      link: "/fate2/Nanox2", // URL ที่จะนำไปเมื่อคลิกการ์ดที่ 1
     },
     {
-      title: 'nanoVA',
-      imageUrl: '/product_img/nanoVa.png',
-      link: '/fate2/Nanova', // URL ที่ต้องการนำไปหลังคลิกภาพที่ 2
+      title: "nanoVA",
+      imageUrl: "/product_img/nanoVa.png",
+      link: "/fate2/Nanova", // URL ที่จะนำไปเมื่อคลิกการ์ดที่ 2
     },
   ];
 
+  // ฟังก์ชันที่จะจัดการเหตุการณ์คลิกบนการ์ดโดยนำทางไปยังลิงก์ที่ระบุ
   const handleCardClick = (link) => {
     window.location.href = link;
   };
 
+  // แสดงคอมโพเนนต์
   return (
     <div>
-      <br/><br/><br/>
-      <h1 className='text-if'>เครื่องดื่มเพื่อสุขภาพ</h1> 
-      <br/>
-      <div className='image-box'>
+      {/* เพิ่มการขึ้นบรรทัดและหัวเรื่องสำหรับส่วนสินค้า */}
+      <br />
+      <br />
+      <br />
+      <h1 className="text-if">เครื่องดื่มเพื่อสุขภาพ</h1>
+      <br />
+      {/* แสดงการ์ดสินค้าในเครื่องหมายเหลี่ยมยืด */}
+      <div className="image-box">
         {cardData.map((card, index) => (
+          // สร้างคอมโพเนนต์ Card สำหรับแต่ละสินค้าพร้อมกับ key และตัวจัดการเหตุการณ์คลิก
           <Card
-            className='card-box'
+            className="card-box"
             key={index}
             onClick={() => handleCardClick(card.link)}
-            style={{ cursor: 'pointer' }}
+            style={{ cursor: "pointer", maxWidth: "300px" }}
           >
-            <Card.Img variant="top" src={card.imageUrl} />
+            {/* แสดงรูปภาพสินค้าภายในคอมโพเนนต์ Card */}
+            <Card.Img
+              variant="top"
+              src={card.imageUrl}
+              style={{ maxHeight: "200px", objectFit: "cover" }}
+            />
+            {/* แสดงชื่อสินค้าภายในคอมโพเนนต์ Card */}
             <Card.Body>
               <Card.Title>{card.title}</Card.Title>
-              {/* Card.Text หรือ Description ยังไม่ได้ถูกนิยามใน cardData */}
+              {/* Card.Text หรือ Description ไม่ได้ถูกกำหนดไว้ใน cardData */}
             </Card.Body>
           </Card>
-          
         ))}
-      </div> 
+      </div>
     </div>
   );
 }
 
+// ส่งออกคอมโพเนนต์ Product เพื่อทำให้สามารถใช้งานได้ในส่วนอื่น ๆ ของแอปพลิเคชัน
 export default Product;
