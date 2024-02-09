@@ -2,7 +2,7 @@
 import SlideButton from 'react-slide-button';
 import { useNavigate } from "react-router-dom";
 
-import styles from '../../components/login/Login.module.css'
+import styles from '../login/Login.module.css'
 function HomePage() {
     const linkTo = useNavigate()
 

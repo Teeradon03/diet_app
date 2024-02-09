@@ -7,9 +7,10 @@ const LineLoginButton = () => {
 
   const handleLineLogin = async () => {
     // console.log('in login func');
+
     try {
       await liff.init({
-        liffId: '2002961723-1mlX4q3q', // Use your own liffId
+        liffId: `${import.meta.env.VITE_LIIF_ID}`, // Use your own liffId
       });
       if (!liff.isLoggedIn()) {
         // console.log('before login');
@@ -19,7 +20,7 @@ const LineLoginButton = () => {
         window.location.replace('/home')
       }
     } catch (error) {
-      console.error('Error in Line login:', error);
+      console.error('Error in Line login:', error.message);
     }
   };
 

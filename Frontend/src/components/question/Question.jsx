@@ -209,7 +209,7 @@ const Question = () => {
   };
 
   return (
-    <div className="wrapper">
+    <div className="-wrapper">
       <Content style={{ padding: "0 50px" }}>
         <Col span={12} offset={6}>
           <Col span={24} style={{ textAlign: "center" }}>

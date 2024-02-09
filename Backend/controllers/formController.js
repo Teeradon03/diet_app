@@ -52,7 +52,6 @@ exports.createQuestion = async (req, res) => {
   idExists = await Question.findOne({ id: data.id });
   contentExists = await Question.findOne({ content: data.content });
   // console.log("id", idExists);
-
   try {
     /// check id must be number
     if (!/^\d+$/.test(data.id)) {

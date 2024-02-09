@@ -1,15 +1,37 @@
 import { useEffect } from "react";
 import liff from '@line/liff';
 import axios from 'axios';
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from 'react-redux'
+import { login as loginRedux } from "../../store/userSlice";
 
 const Home = () => {
+  const navi = useNavigate()
+  const disPatch = useDispatch()
+
   useEffect(() => {
-    liff.init({ liffId: '2002961723-1mlX4q3q' })
+    liff.init({ liffId: `${import.meta.env.VITE_LIIF_ID}` })
       .then(() => {
         /// something 
         handleLineLogin()
+
+        // roleRedirect(response.data.role)
       })
   })
+  const roleRedirect = (role) => {
+    // console.log('role in role redirect', role)
+    if (role === 'user'){
+      setTimeout(() => navi('/form'), 3000)
+      // setTimeout(() => navi('/user/index'), 3000)
+      // navi('/user/index')
+    }
+    else{
+      setTimeout(() => navi('/admin/index'), 3000)
+      
+    }
+
+  }
+
   const handleLineLogin = async () => {
     try {
       // const userProfile = await liff.getProfile();
@@ -18,18 +40,37 @@ const Home = () => {
       // console.log('access token: ' + accessToken)
       // console.log('idToken', idToken);
       // console.log('user profile', userProfile);
-      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken,
+      const response =  axios.post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken,
         {
           withCredentials: true
         }
+        
+      ).then((response) => {
+        // console.log('response data from home',response.data.user)
+        disPatch(loginRedux({
+          userId: response.data.user.userId,
+          role: response.data.user.role,
+          name: response.data.user.name
+        }))
+        localStorage.setItem('userId',response.data.user.userId)
+        roleRedirect(response.data.user.role)
+     
+      }).catch((error) => {
+        // console.log('error', error.message)
+      }
       )
-      // console.log(response.data)
+
+
     }
     catch (error) {
       console.log(error)
     }
   }
-   setTimeout(() => window.location.replace('/form'), 3000); // Set a timeout of 3 seconds (3000 milliseconds)
+  
+
+
+
+
 
   return (
     <div className="container text-center">

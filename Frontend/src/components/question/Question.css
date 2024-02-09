@@ -1,19 +1,15 @@
-.font-family {
-  font-family: 'Noto Sans Thai', sans-serif;
-  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-
-}
 
 .quiz-card {
   padding: 100px;
   background-color: #BCCEFB;
   border-radius: 5px;  
 }
-.wrap {
+.-wrap {
   align-items: normal!important;
   box-sizing: border-box;
   display: flex;
-  flex-wrap: wrap!important
+  flex-wrap: wrap!important;
+  justify-content: center;
 }
 .question {
   font-size: 18px;
