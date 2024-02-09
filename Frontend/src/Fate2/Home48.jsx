@@ -8,40 +8,9 @@ import { Link } from 'react-router-dom';
 
 
 
-const dates = [
-  { id: 56, question: "1" },
-  { id: 57, question: "2" },
-  { id: 58, question: "3" },
-  { id: 59, question: "4" },
-  { id: 60, question: "5" },
-  { id: 61, question: "6" },
-  { id: 62, question: "7" },
-  { id: 63, question: "8" },
-  { id: 64, question: "9" },
-  { id: 65, question: "10" },
-  { id: 66, question: "11" },
-  { id: 67, question: "12" },
-  { id: 68, question: "13" },
-  { id: 69, question: "14" },
-  { id: 70, question: "15" },
-  { id: 71, question: "16" },
-  { id: 72, question: "17" },
-  { id: 73, question: "18" },
-  { id: 74, question: "19" },
-  { id: 75, question: "20" },
-  { id: 76, question: "21" },
-  { id: 77, question: "22" },
-  { id: 78, question: "23" },
-  { id: 79, question: "24" },
-  { id: 80, question: "25" },
-  { id: 81, question: "26" },
-  { id: 82, question: "27" },
-  { id: 83, question: "28" },
-  { id: 84, question: "29" },
-  { id: 85, question: "30" },
-];
 
 const Home48 = () => {
+  const dates = Array.from({ length: 31 }, (_, index) => index + 1);
   const [visibleDates, setVisibleDates] = useState(dates.slice(0, 5));
   const [startIndex, setStartIndex] = useState(0);
 
@@ -61,7 +30,7 @@ const Home48 = () => {
 
   return (
     <div className='font-family'>
-      <div >
+      <div>
         <p className='text48'>โปรแกรมลดน้ำหนัก</p>
         <Card className='Card'>
           <div className="chart-container">
@@ -75,9 +44,9 @@ const Home48 = () => {
             </button>
 
             <Link to="/Target15">
-            <button className='target'>
-              <img className='img' src='/public/target.png' alt='Target' />
-            </button>
+              <button className='target'>
+                <img className='img' src='/public/target.png' alt='Target' />
+              </button>
             </Link>
 
             <button className='video'>
@@ -90,33 +59,43 @@ const Home48 = () => {
         </Card>
         <Card className='Card3'>
           <div className="chart3">
-              <VscChevronLeft className='iconleft' onClick={handleLeftArrowClick} />
-              <div className='date'>
-              {visibleDates.map((date) => (
-                <Card key={date.id} className={`date${date.id}`}>
-                  <p className='test'>{date.question}</p>
-                </Card>
-              ))}
-              </div>
-              <VscChevronRight className='iconright' onClick={handleRightArrowClick} />
+            <VscChevronLeft className='iconleft' onClick={handleLeftArrowClick} />
+            <div className="date-container">
+              <Card className='date1'>
+              {visibleDates[0]}
+              </Card>
+              <Card className='date2'>
+              {visibleDates[1]}
+              </Card>
+              <Card className='date3'>
+              {visibleDates[2]}
+              </Card>
+              <Card className='date4'>
+              {visibleDates[3]}
+              </Card>
+              <Card className='date5'>
+              {visibleDates[4]}
+              </Card>
+            </div>
+            <VscChevronRight className='iconright' onClick={handleRightArrowClick} />
           </div>
         </Card>
         <p className='text-food'> การลดน้ำหนักทั่วไป (อาหาร)</p>
         <Card className='Card4'>
           <div className="chart4">
-              <Card className='date-food'>
-                <p className='text-time'> วันที่ </p>
-              </Card>
+            <Card className='date-food'>
+              <p className='text-time'> วันที่ </p>
+            </Card>
 
-              <Card className='time-food'>
-                <p className='text-time'> 08:00 น.</p>
-              </Card><Card className='time-food'>
-                <p className='text-time'> 12:00 น.</p>
-              </Card><Card className='time-food'>
-                <p className='text-time'> 14:00 น.</p>
-              </Card><Card className='time-food'>
-                <p className='text-time'> 15:00 น.</p>
-              </Card>
+            <Card className='time-food'>
+              <p className='text-time'> 08:00 น.</p>
+            </Card><Card className='time-food'>
+              <p className='text-time'> 12:00 น.</p>
+            </Card><Card className='time-food'>
+              <p className='text-time'> 14:00 น.</p>
+            </Card><Card className='time-food'>
+              <p className='text-time'> 15:00 น.</p>
+            </Card>
           </div>
         </Card>
       </div>

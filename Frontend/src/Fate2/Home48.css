@@ -137,7 +137,11 @@
     margin-bottom: 10px;
 }
 
-.date {
+.date-container {
+    margin-right: 20px;
+}
+
+.date1 {
     display: flex;
     align-items: center;
     justify-content: space-between;
@@ -145,8 +149,68 @@
     height: 80px;
     font-size: 40px;
     position: relative;
-    left:50px;
+    left: 40px;
     top: -65px;
+    border: 2px solid #A9A9A9;
+    border-radius: 80px;
+    margin-right: 10px;
+}
+
+.date2 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    position: relative;
+    left:140px;
+    top: -145px;
+    border: 2px solid #A9A9A9;
+    border-radius: 80px;
+    margin-right: 10px;
+}
+
+.date3 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    position: relative;
+    left:240px;
+    top: -225px;
+    border: 2px solid #A9A9A9;
+    border-radius: 80px;
+    margin-right: 10px;
+}
+
+.date4 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    position: relative;
+    left:340px;
+    top: -305px;
+    border: 2px solid #A9A9A9;
+    border-radius: 80px;
+    margin-right: 10px;
+}
+
+.date5 {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 80px;
+    height: 80px;
+    font-size: 40px;
+    position: relative;
+    left:440px;
+    top: -385px;
     border: 2px solid #A9A9A9;
     border-radius: 80px;
     margin-right: 10px;
