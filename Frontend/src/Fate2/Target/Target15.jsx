@@ -2,7 +2,12 @@ import React, { useState } from 'react';
 import { Card, notification } from 'antd';
 import "./Target15.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { VscChevronLeft } from "react-icons/vsc";
 import { Link } from 'react-router-dom';
+
+
+
+
 
 const Target15 = () => {
     const [formData, setFormData] = useState({
@@ -77,19 +82,29 @@ const Target15 = () => {
         setSaveCount(0);
     };
 
+
+    const buttonStyle = {
+        fontWeight: 900, // แก้ตามที่ต้องการ
+        // เพิ่มสไตล์อื่นๆ ตามต้องการ
+    };
+
+
+
     return (
         <div>
             <p className='text-head'> เป้าหมายที่คุณต้องการ</p>
             <Card className='target1'>
                 <p className='text-target1'> น้ำหนักปัจจุบัน </p>
             </Card>
+
             <Card className='target2'>
                 <p className='text-target2'> น้ำหนักที่ต้องการ </p>
             </Card>
+
             <div className='contenner'>
                 <div className="targetWeight1">
                     <input
-                        type="text"
+                        type="number"
                         placeholder="น้ำหนักปัจจุบัน"
                         value={formData.Weight}
                         onChange={(e) => handleInputChange('Weight', e.target.value)}
@@ -98,13 +113,30 @@ const Target15 = () => {
 
                 <div className='targetWeight2'>
                     <input
-                        type="text"
+                        type="number"
                         placeholder="น้ำหนักที่ต้องการ"
                         value={formData.TargetWeight}
                         onChange={(e) => handleInputChange('TargetWeight', e.target.value)}
                     />
                 </div>
+                <Link to="/ChartTarget">
+                    <Card className='target3'>
+                        <p className='text-target3'> กราฟน้ำหนัก </p>
+                    </Card>
+                </Link>
+                <Link to="/Home48">
+                    <button
+                        className="chevron-icon"
+                        style={buttonStyle}
+                    // ไม่ต้องมี handlePreviousClick หรืออื่น ๆ ที่เกี่ยวข้อง
+                    >
+                        <VscChevronLeft />
+                        {/* ไอคอนย้อนกลับ */}
+                    </button>
+                </Link>
             </div>
+
+
 
             {!originalData && (
                 <Link to="/CancelEdit">

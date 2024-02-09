@@ -81,6 +81,8 @@ const Home48 = () => {
           </div>
         </Card>
         <p className='text-food'> การลดน้ำหนักทั่วไป (อาหาร)</p>
+
+        <Link to='Program_IF'>
         <Card className='Card4'>
           <div className="chart4">
             <Card className='date-food'>
@@ -98,6 +100,7 @@ const Home48 = () => {
             </Card>
           </div>
         </Card>
+        </Link>
       </div>
     </div>
   );

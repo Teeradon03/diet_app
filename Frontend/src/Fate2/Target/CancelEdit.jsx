@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Card, notification } from 'antd';
 import "./Target15.css";
 import 'bootstrap/dist/css/bootstrap.min.css';
+import { VscChevronLeft } from "react-icons/vsc";
 import { Link } from 'react-router-dom';
 
 const CancelEdit = () => {
@@ -13,8 +14,9 @@ const CancelEdit = () => {
     const [originalData, setOriginalData] = useState(null);
     const [isSaveClicked, setIsSaveClicked] = useState(false);
     const [validationError, setValidationError] = useState(false);
-    const [isEditing, setIsEditing] = useState(false); 
-    const [saveCount, setSaveCount] = useState(0); 
+    const [isEditing, setIsEditing] = useState(false);
+    const [saveCount, setSaveCount] = useState(0);
+
     const handleInputChange = (field, value) => {
         setFormData({
             ...formData,
@@ -77,6 +79,10 @@ const CancelEdit = () => {
         setIsEditing(false);
     };
 
+    const buttonStyle = {
+        fontWeight: 900,
+        // เพิ่มสไตล์อื่นๆ ตามต้องการ
+    };
 
     return (
         <div>
@@ -105,6 +111,21 @@ const CancelEdit = () => {
                         onChange={(e) => handleInputChange('TargetWeight', e.target.value)}
                     />
                 </div>
+
+                <Card className='target3'>
+                    <p className='text-target3'> กราฟน้ำหนัก </p>
+                </Card>
+                
+                <Link to="/Home48">
+                    <button
+                        className="chevron-icon"
+                        style={buttonStyle}
+                    // ไม่ต้องมี handlePreviousClick หรืออื่น ๆ ที่เกี่ยวข้อง
+                    >
+                        <VscChevronLeft />
+                        {/* ไอคอนย้อนกลับ */}
+                    </button>
+                </Link>
             </div>
 
             {!originalData && (
@@ -122,9 +143,9 @@ const CancelEdit = () => {
             )}
             {!originalData && (
                 <Link to="/Target15">
-                <button className='save' onClick={handleSave} disabled={validationError}>
-                    บันทึกข้อมูล
-                </button>
+                    <button className='save' onClick={handleSave} disabled={validationError}>
+                        บันทึกข้อมูล
+                    </button>
                 </Link>
             )}
 

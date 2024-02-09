@@ -21,23 +21,28 @@ a {
 }
 
 .target3 {
-    width: 500px;
+    width: 400px;
     height: 100px;
     border-radius: 35px;
     box-shadow: 8px 12px 3px 5px #b2b2b2;
-    left: 400px;
-    top: -150px;
+    left: 450px;
+    top: -200px;
 }
 
 .text-head {
+    font-family: 'Noto Sans Thai', sans-serif;
     padding-top: 30px;
     font-size: 70px;
+    font-weight: bold;
 }
 
 .text-target1,
 .text-target2,
+.text-target3,
 .maybe-target {
     font-size: 40px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
 }
 
 
@@ -91,6 +96,8 @@ a {
     font-weight: bold;
     position: relative;
     left: 200px;
+    top: 50px;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .edit:hover {
@@ -119,7 +126,9 @@ a {
     text-align: center;
     font-weight: bold;
     position: relative;
+    top: 50px;
     left: 200px;
+    font-family: 'Noto Sans Thai', sans-serif;
 }
 
 .edit-cancel:hover {
@@ -177,7 +186,9 @@ a {
     font-weight: bold;
     position: relative;
     left: 700px;
-    top: -95px;
+    top: -50px;
+    font-family: 'Noto Sans Thai', sans-serif;
+    font-weight: bold;
 }
 
 .save:hover {
@@ -196,7 +207,30 @@ a {
     grid-template-columns: repeat(auto-fit, minmax(400px, 1fr));
 }
 
+.icon-Target {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    border: none;
+    background-color: #ffffff;
+    color: #757575;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    outline: none;
+    position: relative;
+    left: 300px;
+    top: 30px;
+  }
+
+
+
 @media (max-width: 1400px) {
+    .text-head {
+        padding-top: 100px;
+    }
+
     .target1,
     .target2,
     .target3 {
@@ -212,7 +246,8 @@ a {
         left: 300px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 40%;
         font-size: 2.5rem;
         position: relative;
@@ -243,7 +278,8 @@ a {
         left: 200px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 40%;
         font-size: 2.5rem;
         position: relative;
@@ -275,7 +311,8 @@ a {
         left: 100px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 40%;
         font-size: 2.5rem;
         position: relative;
@@ -307,7 +344,8 @@ a {
         top: 10px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 40%;
         font-size: 2.5rem;
         position: relative;
@@ -343,7 +381,8 @@ a {
         top: 10px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 30%;
         font-size: 2.5rem;
         position: relative;
@@ -379,7 +418,8 @@ a {
         top: 10px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 30%;
         font-size: 2.5rem;
         position: relative;
@@ -419,7 +459,8 @@ a {
         top: 10px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 35%;
         font-size: 2rem;
         position: relative;
@@ -462,7 +503,8 @@ a {
         margin-bottom:200px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 80%;
         font-size: 2rem;
         position: relative;
@@ -488,7 +530,7 @@ a {
     .target2 {
         width: 300px; 
         position: relative;
-        left: 120px;
+        left: 100px;
         margin-bottom: 200px;
     }
 
@@ -501,16 +543,17 @@ a {
     .targetWeight2 {
         max-width: 450px; 
         position: relative;
-        left: -300px;
+        left: -320px;
         top: -130px;
         margin-bottom:200px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 80%;
         font-size: 2rem;
         position: relative;
-        left: 70px;
+        left: 60px;
         top: -400px;
     }
 
@@ -518,7 +561,7 @@ a {
         width: 80%;
         font-size: 2rem;
         position: relative;
-        left: 70px;
+        left: 60px;
         top: -370px;
     }
 }
@@ -550,7 +593,8 @@ a {
         margin-bottom:200px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 80%;
         font-size: 2rem;
         position: relative;
@@ -602,7 +646,8 @@ a {
         margin-bottom:200px;
     }
 
-    .edit {
+    .edit,
+    .edit-cancel {
         width: 80%;
         font-size: 2rem;
         position: relative;

@@ -7,7 +7,6 @@
 }
 .text-box{
   width: 80%;
-
   font-size: 22px;
 }
 .texe {
@@ -89,13 +88,6 @@
     left: 300px;
   }
 }
-
-/*เพิ่ม CSS นี้ไปยังไฟล์ CSS หรือ Styled Component ของคุณ*/
-.ant-select-selection-search-input {
-  caret-color: transparent; /* ทำให้เคอร์เซอร์เป็นสีที่透ว */
-  cursor: none; /* ซ่อนเคอร์เซอร์ */
-}
-
 
 
 @media screen and (max-width: 1400px) {

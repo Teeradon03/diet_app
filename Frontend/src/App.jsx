@@ -46,7 +46,12 @@ import Target15 from "./Fate2/Target/Target15.jsx";
 import CancelEdit from "./Fate2/Target/CancelEdit.jsx"
 import ChartTarget from "./Fate2/Target/ChartTarget/ChartTarget.jsx";
 import IF08 from "./Fate2/IF/IF08.jsx"
-
+import IF12 from "./Fate2/IF/IF12.jsx"
+import IF14 from "./Fate2/IF/IF14.jsx"
+import IF15 from "./Fate2/IF/IF15.jsx"
+import FoodDetails from "./Fate2/IF/FoodDetails.jsx";
+import CardList from "./Fate2/IF/CardList.jsx";
+import Program_IF from "./Fate2/IF/Program_IF.jsx";
 
 
 function App() {
@@ -109,6 +114,14 @@ function App() {
         <Route path="/CancelEdit" element={<CancelEdit />} />
         <Route path="/ChartTarget" element={<ChartTarget />} />
         <Route path="/IF08" element={<IF08 />} />
+        <Route path="/IF12" element={<IF12 />} />
+        <Route path="/IF14" element={<IF14 />} />
+        <Route path="/IF15" element={<IF15 />} />
+        <Route path="/Home48/Program_IF" element={<Program_IF />} />
+        <Route path="/Program_IF" element={<Program_IF />} />
+        <Route path="/CardList" element={<CardList />} />
+        <Route path="/FoodDetails" element={<FoodDetails />} />
+
 
 
       </Routes>

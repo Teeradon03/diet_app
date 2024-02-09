@@ -1,6 +1,6 @@
 import React from "react";
 import { Pie } from "react-chartjs-2";
-import { Chart as ChartJS } from "chart.js/auto";
+
 
 function PieChart({ chartData }) {
   const options = {
@@ -16,6 +16,9 @@ function PieChart({ chartData }) {
       tooltips: {
         callbacks: {
           label: (tooltipItem, data) => {
+
+
+            
             const dataset = data.datasets[tooltipItem.datasetIndex];
             const total = dataset.data.reduce((previousValue, currentValue) => previousValue + currentValue);
             const currentValue = dataset.data[tooltipItem.index];

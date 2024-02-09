@@ -3,6 +3,10 @@ import "./Yesno.css";
 import { VscChevronLeft } from "react-icons/vsc";
 import axios from "axios";
 
+
+
+
+
 const yesno = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [currentQuestionIndex, setCurrentQuestionIndex] = useState(0);
