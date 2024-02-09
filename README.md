@@ -1,3 +1,5 @@
-##### Internship Project 
+# Internship Project 
 
-Diet App 
+### Diet App  
+
+## MERN STACK 
