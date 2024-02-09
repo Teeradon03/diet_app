@@ -217,13 +217,26 @@
 
 .date-food {
     width: 500px;
-    height: 60px;
+    height: 70px;
+    border-radius: 30px;
+    text-align: left; 
     position: relative;
-    top: -220px;
+    top: -10px;
 }
 
+.time-food {
+    margin-bottom: 30px;
+    width: 500px;
+    height: 70px;
+    border-radius: 30px;
+    text-align: left;
+    position: relative;
+    top: 40px;
+}
 
-
+.text-time {
+    font-size: 25px;
+}
 
 
 

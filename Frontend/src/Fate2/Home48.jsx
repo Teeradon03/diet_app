@@ -104,9 +104,19 @@ const Home48 = () => {
         <p className='text-food'> การลดน้ำหนักทั่วไป (อาหาร)</p>
         <Card className='Card4'>
           <div className="chart4">
-            <Card className='date-food'>
-              <p> วันที่ </p>
-            </Card>
+              <Card className='date-food'>
+                <p className='text-time'> วันที่ </p>
+              </Card>
+
+              <Card className='time-food'>
+                <p className='text-time'> 08:00 น.</p>
+              </Card><Card className='time-food'>
+                <p className='text-time'> 12:00 น.</p>
+              </Card><Card className='time-food'>
+                <p className='text-time'> 14:00 น.</p>
+              </Card><Card className='time-food'>
+                <p className='text-time'> 15:00 น.</p>
+              </Card>
           </div>
         </Card>
       </div>
