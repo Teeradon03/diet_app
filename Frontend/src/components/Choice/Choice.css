@@ -1,7 +1,4 @@
-.font-family {
-  font-family: 'Noto Sans Thai', sans-serif;
-  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
-}
+
 .ant-select-selection {
   width: 0;
   font-size: 50px;
@@ -11,6 +8,8 @@
   width: 80%;
   height: auto;
   font-size: 30px;
+  justify-content: center;
+  
 }
 .texe {
   padding-top: 20px;
@@ -213,6 +212,7 @@
     padding: 50px;
   }
 
+
   .next-list {
     font-size: 1rem;
     width: 30vw !important;
@@ -232,6 +232,9 @@
 @media screen and (max-width: 350px) {
   .text {
     padding-top: 100px;
+  }
+  .text-box{
+    left: 200px;
   }
 
   .next-list {

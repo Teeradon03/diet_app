@@ -1,5 +1,4 @@
-import react, { useState } from "react";
-import { Routes, Route } from "react-router-dom";
+import  { useState } from "react";
 import HeaderBar from "../../../layouts/headbar/Headerbar";
 import { CssBaseline, Box } from "@mui/material";
 import SideBar from "../../../layouts/sidebar/Sidebar";
@@ -21,6 +20,7 @@ function MainApp() {
 
   return (
     <>
+
       <CssBaseline />
       <div className="MainApp">
          <SideBar isSidebar={isSidebar} updateSidebarData={updateSidebarData} />
@@ -35,6 +35,7 @@ function MainApp() {
           </div>
         </main>
       </div>
+
     </>
   );
 }

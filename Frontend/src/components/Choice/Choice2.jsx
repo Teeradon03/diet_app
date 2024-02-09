@@ -163,8 +163,8 @@ const Choice2 = () => {
 
 
   return (
-    <div>
-      <div>
+    <div className='container mx-auto'>
+      <div >
       <br/><br/>
         <h1 className='text' style={buttonStyle} > ข้อจำกัดด้านการทานอาหาร (เลือกได้มากกว่า 1 ข้อ)</h1>
       </div>

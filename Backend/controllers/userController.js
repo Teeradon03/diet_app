@@ -38,9 +38,6 @@ const loginLine = async (req, res) => {
       return `${randomBase36}${timestampBase36}`;
     };
 
-
-
-
     let user = await User.findOne({ line_user_id: decode.data.sub });
     if (user) {
       // Update the existing user data without changing the userId

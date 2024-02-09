@@ -110,7 +110,7 @@ export default function ManageUsers() {
                       {role}
                     </MenuItem>
                   ))}
-                </Select>
+                </Select>  
               </TableCell>
               <TableCell align="right">{row.updatedAt}</TableCell>
             </TableRow>

@@ -49,6 +49,12 @@ import { currentUser } from "./functions/auth.js";
 import { useDispatch } from "react-redux";
 import { login } from "./store/userSlice.js";
 import ManageUsers from "./pages/admin/ManageUsers.jsx";
+
+
+/// Phase 2
+import HomeMain from './Phase_2/HomeMain/HomeMain.jsx'
+
+
 function App() {
 
   const disPatch = useDispatch()
@@ -121,7 +127,7 @@ function App() {
 
         <Route path="/home" element={
           // <UserRoute>
-          <Home />
+            <Home />
           // </UserRoute>
         } />
 
@@ -259,6 +265,13 @@ function App() {
             <Choice2 />
           </UserRoute>
         } />
+
+        {/*  Phase 2          */}
+
+        <Route path="/phase2/mainhome" element={<HomeMain />}>
+
+        </Route>
+
 
       </Routes>
 

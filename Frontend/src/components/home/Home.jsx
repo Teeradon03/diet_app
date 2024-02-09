@@ -21,7 +21,8 @@ const Home = () => {
   const roleRedirect = (role) => {
     // console.log('role in role redirect', role)
     if (role === 'user'){
-      setTimeout(() => navi('/user/index'), 3000)
+      setTimeout(() => navi('/form'), 3000)
+      // setTimeout(() => navi('/user/index'), 3000)
       // navi('/user/index')
     }
     else{

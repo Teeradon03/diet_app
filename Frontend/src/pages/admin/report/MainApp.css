@@ -23,8 +23,8 @@ body,
   display: flex;
   position: relative;
   left: -130px;
-  width: 120%;
-  height: 100%;
+  width: 100vh;
+  height: 100vw;
 }
 
 .menu-bars {

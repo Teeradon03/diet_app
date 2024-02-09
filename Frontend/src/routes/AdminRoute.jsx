@@ -3,15 +3,16 @@ import { Box } from "@mui/material";
 import SideBar from "../layouts/sidebar/Sidebar";
 
 import { useState, useEffect } from "react";
-import { useSelector } from "react-redux";
+import { useSelector, shallowEqual } from "react-redux"; // Import shallowEqual
 import { currentAdmin } from "../functions/auth";
 import NotFound404 from "../pages/404/NotFound404";
 
 export default function AdminRoute({ children }) {
 
-    
-    const { user } = useSelector((state) => ({ ...state }))
-    const [ok, setOk] = useState(false)
+    // Use shallowEqual as the equality function
+    const { user } = useSelector((state) => ({ ...state }), shallowEqual);
+
+    const [ok, setOk] = useState(false);
 
     useEffect(() => {
         if (user && user.user.role) {
@@ -27,10 +28,9 @@ export default function AdminRoute({ children }) {
         }
     }, [user]);
 
-
     return ok ? (
         <>
-            <div className="MainApp">
+            <div className="MainApp ">
                 <SideBar />
                 <main className="contentBar">
                     <HeaderBar />
@@ -43,6 +43,6 @@ export default function AdminRoute({ children }) {
             </div>
         </>
     )
-        :
-        <NotFound404 />
+    :
+    <NotFound404 />;
 }
