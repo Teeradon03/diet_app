@@ -71,12 +71,12 @@ const HomeMain = () => {
         <Card className='Card2'>
           <div className="chart2">
             <button className='exercise'>
-              <img className='img' src='/public/exercise.png' alt='Exercise' />
+              <img className='img' src='/exercise.png' alt='Exercise' />
             </button>
 
             <Link to="/Target15">
             <button className='target'>
-              <img className='img' src='/public/target.png' alt='Target' />
+              <img className='img' src='/target.png' alt='Target' />
             </button>
             </Link>
 

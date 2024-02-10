@@ -83,7 +83,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
     );
     // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
   } catch (error) {
-    console.error("Error:", error);
+    // console.error("Error:", error);
   }
 };
 
@@ -130,7 +130,7 @@ const Choice = () => {
       <Select
         mode="multiple"
         allowClear
-        className="text-box"
+        className="-text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}
         optionLabelProp="label"
