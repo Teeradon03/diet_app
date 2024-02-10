@@ -278,25 +278,14 @@ function App() {
 
       {/* <Routes>      
 
-        
-
+  
       <Route path="/report" element={<Report/>}/>
         <Route path="/report/users" element={<Users />}/>
         <Route path="/report/questionnaires" element={<Questionnaires />}/>
         <Route path="/report/test" element={<QuestionReport/>}/>
         <Route path="/report/test2" element={<DataTable/>}/>
-
-
-
-
-
-
-
-
         <Route path="/report/Table" element={<Table/>}/>
-        
       
-
         <Route path="/report/MainApp" element={<MainApp/>}/>
         <Route path="/report/question" element={<QuestionReport/>}/>
         <Route path="/report/questionnaires" element={<Questionnaires/>}/>

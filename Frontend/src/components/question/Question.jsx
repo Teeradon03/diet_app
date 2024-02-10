@@ -229,7 +229,7 @@ const Question = () => {
                 <Col></Col>
               </Row>
             ) : (
-              <div>
+              <div >
                 <div>
                   <div className="question" >
                     <div className="font-family">
@@ -240,11 +240,11 @@ const Question = () => {
                   </div>
                 </div>
                 <Col span={24}>
-                  <div className="answer">
+                  <div className="-answer">
                     <div className="font-family">
                       {questions[currentQuestion].options.map(
                         (option, index) => (
-                          <div key={index}>
+                          <div key={index} >
                             <button
                               type="button"
                               className={`answerbutton ${
@@ -279,6 +279,7 @@ const Question = () => {
         </Col>
       </Content>
     </div>
+    
   );
 };
 

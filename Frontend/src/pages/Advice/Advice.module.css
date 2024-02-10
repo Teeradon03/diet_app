@@ -252,8 +252,11 @@
 
 }
 
-
-
+@media screen and (min-width: 1600px) {
+  .Bmi1 {
+    font-size: 2.5rem;
+  }
+}
 
 @media screen and (max-width: 1600px) {
   .Bmi1 {
@@ -405,7 +408,7 @@
 
 @media screen and (max-width: 576px) {
   .Bmi1 {
-    font-size: 1.7rem;
+    font-size: 1.5rem;
   }
 
   .childbmi,
@@ -436,7 +439,7 @@
 
   @media screen and (max-width: 450px) {
     .Bmi1 {
-      font-size: 1.7rem;
+      font-size: 1.5rem;
     }
 
     .childbmi,

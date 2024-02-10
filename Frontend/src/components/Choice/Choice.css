@@ -4,14 +4,13 @@
   font-size: 50px;
 }
 
-.text-box{
+.-text-box{
   width: 70%;
   height: auto;
   font-size: 30px;
-  justify-content: center;
 }
-.texe {
-  padding-top: 20px;
+.text {
+  padding-top: 10px;
 }
 
 .question {
@@ -70,6 +69,32 @@
   top: 30px;
 }
 
+
+@media screen and (min-width: 1600px) {
+  .text{
+    padding-top: 100px;
+  }
+  .next-list{
+    font-size: 1.8rem;
+    width: 15vw !important;
+    left: 510px
+  }
+
+  .-text-box{
+    width: 50%;
+    height: auto;
+    font-size: 30px;
+  }
+
+  .chevron-list {
+    font-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    left: 300px;
+  }
+}
+
 @media screen and (max-width: 1600px) {
   .text{
     padding-top: 100px;
@@ -77,8 +102,13 @@
   .next-list{
     font-size: 1.8rem;
     width: 15vw !important;
-    /* position: relative; */
     left: 510px
+  }
+
+  .-text-box{
+    width: 50%;
+    height: auto;
+    font-size: 30px;
   }
 
   .chevron-list {
@@ -102,12 +132,16 @@
   .text {
     padding-top: 100px;
   }
-
+  .-text-box{
+    width: 60%;
+    height: auto;
+    font-size: 30px;
+  }
   .next-list {
     font-size:  1.5rem;
-    width: 15vw !important;
+    width: 20vw !important;
     position: absolute;
-    left: 490px
+    left: 500px
   }
 
   .chevron-list {
@@ -124,11 +158,17 @@
     padding-top: 100px;
   }
   
+  .-text-box{
+    width: 50%;
+    height: auto;
+    font-size: 30px;
+  }
+  
   .next-list {
     font-size:  1.5rem;
-    width: 15vw !important;
+    width: 20vw !important;
     position: absolute;
-    left: 450px
+    left: 410px
   }
 
   .chevron-list {

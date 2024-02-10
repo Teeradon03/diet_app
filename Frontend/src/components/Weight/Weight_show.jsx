@@ -54,7 +54,7 @@ function Weight_show(props) {
       </div>
       <br />
 
-      <p>โปรดป้อนค่าตั้งต้นตั้งแต่ 25 กก. ถึง 300 กก.</p>
+      <p>โปรดป้อนค่าตั้งแต่  &nbsp;  25 กก. ถึง 300 กก.</p>
 
       <Image className={styles['ant-image-img']} src="/bmi_img/weight.jpg" alt='weight image'/>
       <div>
