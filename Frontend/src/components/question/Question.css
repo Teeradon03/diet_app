@@ -113,7 +113,7 @@
 }
 
 
-@media screen and (max-width: 2000px) {
+@media screen and (min-width: 1600px) {
   .quiznum{
     position: relative;
     left: -10px;
@@ -141,7 +141,7 @@
     font-size: 2rem;
     width: 30vw !important;
     position: absolute;
-    left: 110px;
+    left: 120px;
   }
   .chevron-icon {
     font-size: 40vw;

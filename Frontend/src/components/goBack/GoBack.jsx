@@ -1,11 +1,11 @@
 
 import { VscChevronLeft } from 'react-icons/vsc';
-
+import { useNavigate } from 'react-router-dom';
 export default function GoBack() {
-
+  const navi = useNavigate()
   const handlePreviousClick = () => {
     // ทำการกลับไปหน้าก่อนหน้านี้
-    window.location.href = 'form';
+    navi('/form')
   };
 
   const buttonStyle = {
