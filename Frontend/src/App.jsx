@@ -58,7 +58,6 @@ import HomeMain from './Phase_2/HomeMain/HomeMain.jsx'
 function App() {
 
   const disPatch = useDispatch()
-
   const userId = localStorage.getItem('userId')
   // console.log('userID', userId)
   currentUser(userId)
@@ -78,9 +77,6 @@ function App() {
     <BrowserRouter>
 
       <Routes>
-        {/* PUBLIC */}
-        <Route path="/login" element={<Login />} />
-
 
         {/* ADMIN */}
         <Route path="/admin/index" element={

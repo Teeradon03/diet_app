@@ -10,10 +10,10 @@ function Bmi_lowweight() {
         <div>
             <div className={styles.Bmi1}>
             <br/>
-            <p> ค่าดัชนีมวลกาย (BMI) </p>
+            <h1> ค่าดัชนีมวลกาย (BMI) </h1>
             <br/>
             < Image className='ant-image-img'
-              width="80%"
+              width="50%"
               src="/bmi_img/lowweight.jpg"
               alt='bmi_low_weight'
             />
@@ -37,7 +37,6 @@ function Bmi_lowweight() {
       <Link to="/BMI_calculator">
         <button
           className={styles.chevronicon}
-          onClick={() => (window.location.href = "BMI_calculator"())}
         >
           <VscChevronLeft />
         </button>

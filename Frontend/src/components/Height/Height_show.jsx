@@ -1,6 +1,6 @@
 import  { useState } from 'react';
 import { Image, Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from '../Bmi/Bmi.module.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -8,7 +8,7 @@ import axios from 'axios';
 
 function Height_show() {
   const [height, setHeight] = useState('');
-  const questionId = '44';
+  const navi = useNavigate()
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -21,7 +21,7 @@ function Height_show() {
     } else {
       // console.log('Height:', height);
       handleSubmit(); // Call the handleSubmit function to send data to the server
-      window.location.href = '/Target';
+      navi('/Target')
     }
   };
   
@@ -35,16 +35,16 @@ function Height_show() {
 
     try {
       await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
-      console.log('Data sent successfully');
+      // console.log('Data sent successfully');
     } catch (error) {
-      console.error(error);
+      // console.error(error);
     }
   };
 
   return (
     <div className={styles.Bmi1}>
       <br/>
-      <p>ส่วนสูงของคุณเท่าไหร่</p>
+      <h1 className='fw-bold'>ส่วนสูงของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input className={styles.inputlabel}
@@ -56,7 +56,7 @@ function Height_show() {
       </div>
       <br />
 
-      <p>โปรดป้อนค่าตั้งแต่ &nbsp; 100 ซม. ถึง 300 ซม.</p>
+      <h2>โปรดป้อนค่าตั้งแต่ &nbsp; 100 ซม. ถึง 300 ซม.</h2>
 
       <Image className={styles['ant-image-img']} src="/bmi_img/hight.jpg" alt='height image'/>
       <div>
@@ -67,7 +67,7 @@ function Height_show() {
       <Link to="/Weight_show">
         <button 
         className={styles.chevronicon} 
-        onClick={() => window.location.href = "Weight_show"()}>
+        onClick={() => navi("/Weight_show")}>
           <VscChevronLeft />
         </button>
       </Link>

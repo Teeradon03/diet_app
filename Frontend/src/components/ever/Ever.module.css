@@ -58,17 +58,32 @@
   color: rgb(255, 255, 255);
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 1600px) {
   .everButton {
     font-size: 2.5rem;
     position: relative;
-    left: -150px;
+    left: -100px;
     width: 40vw;
   }
   .everNext {
     font-size: 1.6rem;
     position: relative;
-    left: -50px;
+    left: 10px;
+    width: 30vw;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+  .everButton {
+    font-size: 2.5rem;
+    position: relative;
+    left: -70px;
+    width: 40vw;
+  }
+  .everNext {
+    font-size: 1.6rem;
+    position: relative;
+    left: 10px;
     width: 30vw;
   }
 }

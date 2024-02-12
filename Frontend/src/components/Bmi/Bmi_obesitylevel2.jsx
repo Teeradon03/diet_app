@@ -36,7 +36,6 @@ function Bmi_obesitylevel2() {
       <Link to="/BMI_calculator">
         <button
           className={styles.chevronicon}
-          onClick={() => (window.location.href = "BMI_calculator"())}
         >
           <VscChevronLeft />
         </button>

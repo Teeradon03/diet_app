@@ -19,8 +19,7 @@ const userSchema = mongoose.Schema({
         required: true,
     },
     createdAt: { type: Date, default: Date.now },
-    updatedAt: { type: Date, default: Date.now },
-    ///// user data from line 
+    updatedAt: { type: Date },
     line_user_id : { type: String, required: true},
     line_username: String,
     line_picture_url: String,

@@ -18,7 +18,7 @@ function Weight(props) {
   return (
     <div className={styles.Bmi1}>
       
-      <p>น้ำหนักตัว (กก.)</p>
+      <h3 className='fw-bold'>น้ำหนักตัว (กก.)</h3>
       <input className={styles.inputlabel}
         type="number"
         value={weight}
