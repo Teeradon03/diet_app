@@ -52,7 +52,7 @@ function Target() {
       </div>
       <br />
 
-      <p>โปรดป้อนค่าตั้งแต่ &nbsp; 25 กก. ถึง 300 กก.</p>
+      <h2>โปรดป้อนค่าตั้งแต่ &nbsp; 25 กก. ถึง 300 กก.</h2>
       <br />
 
       <Image className={styles['ant-image-img']} src="/bmi_img/taget.jpg" alt='target_weight'/>

@@ -47,7 +47,7 @@ function BMI_calculator() {
       
         <div className={styles.Bmi1}>
           <br />
-            <p>คำนวณค่าดัชนีมวลกาย (BMI)</p>
+            <h1 className={styles.Bmi1}>คำนวณค่าดัชนีมวลกาย (BMI)</h1>
           <Weight onWeightChange={(value) => setWeight(value)} />
           <br />
           <Height onHeightChange={(value) => setHeight(value)} />

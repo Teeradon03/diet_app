@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
 import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
@@ -42,7 +42,7 @@ function Weight_show(props) {
   return (
     <div className={styles.Bmi1}>
       <br/>
-      <p>น้ำหนักของคุณเท่าไหร่</p>
+      <h1 className={styles.Bmi1}>น้ำหนักของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input className={styles.inputlabel}
@@ -54,7 +54,7 @@ function Weight_show(props) {
       </div>
       <br />
 
-      <p>โปรดป้อนค่าตั้งแต่  &nbsp;  25 กก. ถึง 300 กก.</p>
+      <h2>โปรดป้อนค่าตั้งแต่  &nbsp;  25 กก. ถึง 300 กก.</h2>
 
       <Image className={styles['ant-image-img']} src="/bmi_img/weight.jpg" alt='weight image'/>
       <div>

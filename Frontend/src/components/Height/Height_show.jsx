@@ -44,7 +44,7 @@ function Height_show() {
   return (
     <div className={styles.Bmi1}>
       <br/>
-      <p>ส่วนสูงของคุณเท่าไหร่</p>
+      <h1 className='fw-bold'>ส่วนสูงของคุณเท่าไหร่</h1>
       <br />
       <div className={styles.inputlabel}>
         <input className={styles.inputlabel}
@@ -56,7 +56,7 @@ function Height_show() {
       </div>
       <br />
 
-      <p>โปรดป้อนค่าตั้งแต่ &nbsp; 100 ซม. ถึง 300 ซม.</p>
+      <h2>โปรดป้อนค่าตั้งแต่ &nbsp; 100 ซม. ถึง 300 ซม.</h2>
 
       <Image className={styles['ant-image-img']} src="/bmi_img/hight.jpg" alt='height image'/>
       <div>
