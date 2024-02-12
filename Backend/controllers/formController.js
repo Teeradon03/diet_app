@@ -7,7 +7,7 @@ const { User } = require("../models/user");
 exports.getQuestions = async (req, res) => {
   try {
     const listForm = await Question.find({}).exec();
-    console.log("Get data successfully");
+    // console.log("Get data successfully");
     res.json(listForm);
   } catch (error) {
     console.log(error);
@@ -44,7 +44,7 @@ exports.getQuestionById = async (req, res) => {
   }
 };
 exports.createQuestion = async (req, res) => {
-  console.log("req.session.userId in questionnnnn", req.session.userId);
+  // console.log("req.session.userId in questionnnnn", req.session.userId);
   const data = req.body;
   //   console.log("the data from create question", data);
   //   console.log('data contenttttttttttt',data.content)
@@ -93,41 +93,20 @@ exports.createQuestion = async (req, res) => {
 
 /// Questionnnaires
 exports.createQuestionnaires = async (req, res) => {
-  console.log("UserId Session in form", req.session.userId);
-
   const data = req.body;
-  console.log(data);
 
   try {
-    console.log("data questionId", data.questionId);
     const questionIdAlreadyExists = await Questionnaire.findOne({
       questionId: data.questionId, userId: req.session.userId
     });
-    // console.log("userId in query", userId.userId);
-    console.log("questionIdAlreadyExists", questionIdAlreadyExists);
-    /// User change the choice or answer
-
-    // console.log('question from query : ' , questionIdAlreadyExists.questionId)
-    console.log("qeustionId :", data.questionId);
-
-    // console.log('userId from query : ', questionIdAlreadyExists.userId )
-    console.log("req.session.userId :", req.session.userId);
     const dateTime = new Date();
-    // console.log(' condition ', questionIdAlreadyExists !== null)
-    // console.log('test', questionIdAlreadyExists.userId != req.session.userId)
-    // console.log('test2', questionIdAlreadyExists === null)
-
     if (questionIdAlreadyExists === null ) {
-      console.log(" questionnaires is not exists");
-
       const newQuestionnaires = new Questionnaire({
         ...data,
         dateTime: dateTime,
         userId: req.session.userId,
       });
-      console.log("newQuestion", newQuestionnaires);
       await newQuestionnaires.save();
-      console.log("Created Questoinnaires Successfully");
       res.json(newQuestionnaires);
     } else if (
       questionIdAlreadyExists.userId == req.session.userId &&
@@ -138,8 +117,7 @@ exports.createQuestionnaires = async (req, res) => {
         { $set: { ...data} },
         { new: true }
       );
-      console.log('updateeqad', updateQuestionnaires)
-      console.log("updated file sucessfully");
+      console.log('updated', updateQuestionnaires)
       res.send('updated')
     } else {
       console.log("This questionId already exists");
@@ -158,7 +136,6 @@ exports.createQuestionnaires = async (req, res) => {
 exports.getQuestionnaire = async (req, res) => {
   try {
     const getQuestionnaire = await Questionnaire.find({});
-    console.log("Here's your this Questionnaire", getQuestionnaire);
     res.json(getQuestionnaire);
   } catch (error) {
     console.log("Error: " + error);
@@ -171,7 +148,6 @@ exports.getQuestionnaire = async (req, res) => {
 exports.getQuestionnaireByUserId = async (req, res) => {
   try {
     const { userId } = req.params;
-    console.log("userId", userId);
     // Check if ID is a number but in string format
     if (!/^\d+$/.test(userId)) {
       res.json({
@@ -186,17 +162,10 @@ exports.getQuestionnaireByUserId = async (req, res) => {
       return;
     }
 
-    // Find questionnaires by user ID
     const getQuestionnaire = await Questionnaire.find({ userId });
-    // console.log("getQuestionnaire", getQuestionnaire)
 
-    // Check if questionnaires already exist
     if (getQuestionnaire.length > 0) {
-      console.log(
-        "Here's your Questionnaire for user ID:",
-        userId,
-        getQuestionnaire
-      );
+
       res.json(getQuestionnaire);
     } else {
       console.log("No Questionnaire found for user ID:", userId);
