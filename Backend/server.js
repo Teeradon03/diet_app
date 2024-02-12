@@ -1,5 +1,7 @@
 const express = require("express");
 const app = express();
+const RateLimit = require('express-rate-limit');
+
 // middleware
 const cors = require("cors");
 const bodyParser = require("body-parser");
@@ -13,6 +15,7 @@ const connectDB = require("./db/db");
 // route
 const user = require('./routes/userRoute')
 
+
 const form = require('./routes/formRoute');
 const http = require('http')
 app.use(express.json());
@@ -25,6 +28,11 @@ app.use(
   }),
 );
 
+const limiter = RateLimit({
+  windowMs: 15 * 60 * 1000, // 15 minutes
+  max: 100, // max 100 requests per windowMs
+});
+
 
 app.use(session({
   secret: 'Hoiyaaaaaa',  
@@ -33,6 +41,8 @@ app.use(session({
 }));
 
 connectDB();
+
+app.use(limiter);
 
 app.use('/api/user', user);
 

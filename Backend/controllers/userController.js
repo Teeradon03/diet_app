@@ -112,7 +112,8 @@ const getUserData = async (req, res) => {
 
 const currentUser = async (req, res) => {
   try {
-    const currentUser = await User.findOne({ userId: req.body.userId });
+    const userId = req.body.userId
+    const currentUser = await User.findOne({ userId});
     res.send(currentUser);
   } catch (error) {
     console.log("error", error.message);
@@ -128,8 +129,8 @@ const changeRole = async (req, res) => {
       role = value;
     });
     const user = await User.findOneAndUpdate(
-      { userId: userId },
-      { role: role },
+      { userId },
+      { role },
       { new: true }
     );
     res.send("Change role Successfully");
