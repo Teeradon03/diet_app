@@ -73,7 +73,7 @@ const CustomerKey = () => {
       <Link to="/ever">
         <button 
         className={styles.chevronicon} 
-        onClick={() => window.location.href = "ever"()}>
+       >
           <VscChevronLeft />
         </button>
       </Link>

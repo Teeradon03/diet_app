@@ -1,13 +1,13 @@
 import  { useState } from 'react';
 import { Image, Button } from 'antd';
-import { Link } from 'react-router-dom';
+import { Link, useNavigate } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from "../Bmi/Bmi.module.css";
 import axios from "axios";
 
 function Weight_show(props) {
   const [weight, setWeight] = useState('');
-  const questionId = '45'; // Change the questionId accordingly
+  const navi = useNavigate()
 
   const handleInputChange = (e) => {
     const value = e.target.value;
@@ -20,7 +20,7 @@ function Weight_show(props) {
     } else {
       // console.log('Weight:', weight);
       handleSubmit(); // Call the handleSubmit function to send data to the server
-      window.location.href = '/Height_show';
+      navi('/Height_show')
     }
   };
 
@@ -35,7 +35,7 @@ function Weight_show(props) {
       await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true });
       // console.log('Data sent successfully');
     } catch (error) {
-      console.log(error);
+      // console.log(error);
     }
   };
 
@@ -65,7 +65,7 @@ function Weight_show(props) {
       <Link to="/Calendar_1">
         <button 
         className={styles.chevronicon} 
-        onClick={() => window.location.href = "Calendar_1"()}>
+        onClick={() => navi("/Calendar_1")}>
           <VscChevronLeft />
         </button>
       </Link>

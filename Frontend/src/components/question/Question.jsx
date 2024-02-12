@@ -3,7 +3,7 @@ import { Row, Col } from "antd";
 import { Content } from "antd/es/layout/layout";
 import "./Question.css";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const Question = () => {
     const questions = [
         {
@@ -99,7 +99,7 @@ const Question = () => {
     const [selectedOption, setSelectedOption] = useState('');
     const [score, setScore] = useState(0);
     const [showScore, setShowScore] = useState(false);
-
+    const navi = useNavigate()
     const handleOptionSelect = (event, option) => {
       setSelectedOption(option.value); // Use option.label instead of option.value
       highlightButton(event.target); // Pass the button element to highlightButton
@@ -124,7 +124,7 @@ const Question = () => {
 
     if (questions[currentQuestion].id === 9) {
       setShowScore(true);
-      window.location.href = "/Choice2";
+      navi("/Choice2")
     } else if (nextQuestion < questions.length) {
       setCurrentQuestion(nextQuestion);
       setSelectedOption("");
@@ -159,9 +159,10 @@ const Question = () => {
         answer: selectedOption
       };
 
-      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,{
-          withCredentials: true
-        }
+      const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/form/create-questionnaires`, data,
+      {
+        withCredentials: true
+      }
       );
       // console.log(response.data); // พิมพ์ข้อความจาก server ที่ส่งกลับมา
     } catch (error) {

@@ -3,7 +3,7 @@ import { useState } from "react";
 import { VscChevronLeft } from "react-icons/vsc";
 import "./Choice.css";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const options = [
   {
     label: (
@@ -143,7 +143,7 @@ const sendToAPI = async (selectedOptions, questionId = 10) => {
 
 const Choice2 = () => {
   const [selectedOptions, setSelectedOptions, questionId] = useState([]);
-
+  const navi = useNavigate()
   const handleChange = (value) => {
     const selectedOptions = options.filter((option) =>
       value.includes(option.value)
@@ -159,14 +159,14 @@ const Choice2 = () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
       await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
-      window.location.href = "/Choice";
+      navi("/Choice")
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
 
   const handleBack = () => {
-    window.location.href = "/Question"; // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    navi("/Question") // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {

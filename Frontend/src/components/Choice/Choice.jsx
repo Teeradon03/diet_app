@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { VscChevronLeft } from "react-icons/vsc";
 import "./Choice.css";
 import axios from "axios";
-
+import { useNavigate } from "react-router-dom";
 const options = [
   {
     id: 1,
@@ -89,7 +89,7 @@ const sendToAPI = async (selectedOptions, selectedLabels) => {
 
 const Choice = () => {
   const [selectedOptions, setSelectedOptions, questionId] = useState([]);
-
+  const navi = useNavigate()
   const handleChange = (value) => {
     const selectedOptions = options.filter((option) =>
       value.includes(option.value)
@@ -105,14 +105,14 @@ const Choice = () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
       sendToAPI(selectedOptions, 11); // 11 คือ questionId ที่คุณกำหนด
-      window.location.href = "/Yesno"; // ต้องการ URL ของ Yesno ที่คุณกำหนด
+      navi("/Yesno") // ต้องการ URL ของ Yesno ที่คุณกำหนด
     } else {
       alert("กรุณาเลือกโรคประจำตัวอย่างน้อย 1 ข้อ");
     }
   };
 
   const handleBack = () => {
-    window.location.href = "/Choice2"; // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    navi("/Choice2") // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {

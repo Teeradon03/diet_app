@@ -13,11 +13,11 @@ function BMR_calculator() {
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
   const [gender, setGender] = useState('male');
-  const [bmr, setBmr] = useState(null); 
+  const [bmr, setBmr] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
   const [questionId, setUserId] = useState('47'); // Replace 'yourId' with the desired ID
 
-  
+
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
 
@@ -40,7 +40,7 @@ function BMR_calculator() {
       bmr: calculatedBmr,
     };
 
-    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend , { withCredentials: true })
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true })
 
   };
 
@@ -49,7 +49,7 @@ function BMR_calculator() {
   };
 
   const renderContent = () => {
-    
+
 
     return (
       <div className={styles.Bmr1}>
@@ -59,7 +59,7 @@ function BMR_calculator() {
         <Weight onWeightChange={(value) => setWeight(value)} />
 
         <Height onHeightChange={(value) => setHeight(value)} />
-        
+
 
         <p className={styles.age}>อายุ (ปี)</p>
         <div className={styles.inputbmr}>
@@ -86,20 +86,19 @@ function BMR_calculator() {
         <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
         <br />
         <div>
-        <Link to="/ever"className={styles.link}> {/* Changed the route for the "No" response */}
-          <button className={styles.nextbutton}>ถัดไป</button> 
-            </Link>
+          <Link to="/ever" className={styles.link}> {/* Changed the route for the "No" response */}
+            <button className={styles.nextbutton}>ถัดไป</button>
+          </Link>
         </div>
-         
-      <Link to="/BMI_calculator">
-        <button 
-        className={styles.chevronicon} 
-        onClick={() => window.location.href = "BMI_calculator"()}>
-          <VscChevronLeft />
-        </button>
-      </Link>
+
+        <Link to="/BMI_calculator">
+          <button
+            className={styles.chevronicon} >
+            <VscChevronLeft />
+          </button>
+        </Link>
       </div>
-      
+
     );
   };
 

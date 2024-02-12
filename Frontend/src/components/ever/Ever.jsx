@@ -2,10 +2,10 @@
 import styles from './Ever.module.css'
 import GoBack from "../goBack/GoBack"
 import React, { useState } from 'react';
-
+import { useNavigate } from 'react-router-dom';
 export default function Ever() {
 	const [selectedOption, setSelectedOption] = useState('');
-
+	const navi = useNavigate()
 	const handleOptionSelect = (option) => {
 		setSelectedOption(option);
 	};
@@ -13,7 +13,7 @@ export default function Ever() {
 	const handleNext = () => {
 		// ตรวจสอบ selectedOption เพื่อเปลี่ยนหน้าเมื่อคลิก "ดำเนินการต่อ"
 		if (selectedOption === 'มีรหัสลูกค้า') {
-			window.location.href = ('/customerkey');
+			navi('/customerkey');
 		}
 	};
 

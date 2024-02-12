@@ -1,7 +1,8 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import "./Yesno.css";
 import { VscChevronLeft } from "react-icons/vsc";
 import axios from "axios";
+import { useNavigate } from "react-router-dom";
 
 const yesno = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -163,6 +164,8 @@ const yesno = () => {
     },
   ]);
 
+  const navi = useNavigate()
+
   const sendToAPI = async (answer) => {
     try {
       const data = {
@@ -217,7 +220,7 @@ const yesno = () => {
         // console.log('fdgfdgdfg',questions[currentImageIndex].id === 41)
         // console.log('answer', questions[currentImageIndex].id)
         sendToAPI(answer);
-        window.location.href = "/Calendar_1";
+        navi("/Calendar_1")
         return;
       }
     }

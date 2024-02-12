@@ -37,7 +37,6 @@ function Bmi_lowweight() {
       <Link to="/BMI_calculator">
         <button
           className={styles.chevronicon}
-          onClick={() => (window.location.href = "BMI_calculator"())}
         >
           <VscChevronLeft />
         </button>

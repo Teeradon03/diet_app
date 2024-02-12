@@ -56,8 +56,7 @@ function BMI_calculator() {
         
     <Link to="/Target">
         <button 
-        className={styles.chevronicon} 
-        onClick={() => window.location.href = "Target"()}>
+        className={styles.chevronicon} >
           <VscChevronLeft />
         </button>
       </Link>
