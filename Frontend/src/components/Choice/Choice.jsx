@@ -119,7 +119,7 @@ const Choice = () => {
 
   const buttonStyle = {
     fontWeight: 900,
-    fontSize: '50px',
+    fontSize: '40px',
   };
 
 
@@ -148,7 +148,7 @@ const Choice = () => {
       <br />  
       <br />
       <div className="font-family">
-        <button className="next-list" onClick={handleNext} style={buttonStyle}>
+        <button className="-next-list" onClick={handleNext} style={buttonStyle}>
           ถัดไป
         </button>
       </div>
