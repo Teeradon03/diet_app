@@ -24,13 +24,13 @@ app.use(bodyParser.json({ limit: "10mb" }));
 app.use(
   cors({
     credentials: true,
-    origin: ["http://localhost:5173"],
+    origin: [`${process.env.ORIGIN_HOST}`],
   }),
 );
 
 const limiter = RateLimit({
   windowMs: 15 * 60 * 1000, // 15 minutes
-  max: 100, // max 100 requests per windowMs
+  max: 300, // max 100 requests per windowMs
 });
 
 

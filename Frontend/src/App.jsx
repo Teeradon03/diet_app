@@ -57,6 +57,7 @@ import HomeMain from './Phase_2/HomeMain/HomeMain.jsx'
 
 function App() {
 
+
   const disPatch = useDispatch()
   const userId = localStorage.getItem('userId')
   // console.log('userID', userId)
@@ -72,6 +73,12 @@ function App() {
     .catch((error) => {
       // console.error('error', error)
     })
+
+
+    const timeoutInMilliseconds = 5 * 60 * 1000; // 5 minutes in milliseconds
+    setTimeout(() => {
+      localStorage.removeItem('userId'); // Remove the item from localStorage after the timeout
+    }, timeoutInMilliseconds);
 
   return (
     <BrowserRouter>

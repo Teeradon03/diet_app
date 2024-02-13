@@ -250,7 +250,11 @@
     padding-top: 100px;
     padding: 50px;
   }
-
+ .-text-box{
+  background-color: green;
+  /* padding-left: 100px; */
+  width: 350px;
+}
 
   .next-list {
     font-size: 1rem;
