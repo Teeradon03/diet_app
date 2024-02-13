@@ -1,14 +1,19 @@
-#root {
-    height: 100vh;
-    width: 100vw;
-    text-align: center;
-    overflow:auto;
-}
 
 body {
     font-family: 'Kanit', sans-serif;
     background-color: #dcdcdc;
     color: black;
     height: 100%;
+    width: 100%;
     background-image: url(/CI-nanoverse.jpg);
+    overflow: hidden;
+}
+
+#root {
+    height: 100%;
+    width: 100%;
+    text-align: center;
+    overflow:auto;
+    
+    
 }

@@ -32,7 +32,7 @@ function Target() {
       targetWeight: targetWeight,
     };
 
-    const response = await axios.post('http://localhost:9999/api/user/update-user-data', dataToSend, { withCredentials: true})
+    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true})
 
   };
 
