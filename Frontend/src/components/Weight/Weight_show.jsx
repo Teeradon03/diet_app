@@ -41,9 +41,7 @@ function Weight_show(props) {
 
   return (
     <div className={styles.Bmi1}>
-      <br/>
       <h1 className={styles.Bmi1}>น้ำหนักของคุณเท่าไหร่</h1>
-      <br />
       <div className={styles.inputlabel}>
         <input className={styles.inputlabel}
           type="number"

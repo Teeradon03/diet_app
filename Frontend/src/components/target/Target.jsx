@@ -50,7 +50,6 @@ function Target() {
         <label htmlFor="target">&nbsp; กก.</label>
 
       </div>
-      <br />
 
       <h2>โปรดป้อนค่าตั้งแต่ &nbsp; 25 กก. ถึง 300 กก.</h2>
       <br />

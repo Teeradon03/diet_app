@@ -36,13 +36,13 @@ const CustomerKey = () => {
   };
 
   return (
-    <div className='Bmi1'>
+    <div className='Bmi1 mt-5'>
       <div className={styles.Bmi1}>
         <h1 className='fw-bold'>กรอกรหัสลูกค้า</h1>
         
         <div className='Bmi1 '>
           <br />
-          <h4>โปรดระบุรหัสที่ถูกต้อง</h4>
+          <h3>โปรดระบุรหัสที่ถูกต้อง</h3>
           <br />
           <div className={styles.inputv1}>
             <input

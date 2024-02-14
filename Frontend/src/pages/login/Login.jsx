@@ -16,8 +16,10 @@ function Login() {
           </div>
         
         <div className='row mt-5 pt-5'>
+          <div className='mt-5 pt-3'>
           <div className='col-12 mt-5 pt-5'>
             <LineLoginButton />
+          </div>
           </div>
         </div>
       </div>
