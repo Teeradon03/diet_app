@@ -14,10 +14,10 @@ function Advice_obesitylevel2() {
       <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
-        <Image className='ant-image-img'
-              width="35%"
-              src="/public/bmi_img/obesitylevel2.jpg">
-        </Image>
+        <img className={styles.ant_image_img}
+              
+              src="/bmi_img/obesitylevel2.jpg">
+        </img>
         <br />
 
         <br />

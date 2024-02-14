@@ -2,11 +2,10 @@
   text-decoration: none;
 }
 
-.ant-image-img {
-  width: 100%; /* หรือค่าที่ต้องการ */
+.ant_image_img {
+  width: 500px; /* หรือค่าที่ต้องการ */
   height: auto;
-  max-width: 400px; /* หรือค่าที่ต้องการ */
-  max-height: 400px; /* หรือค่าที่ต้องการ */
+
 }
 
 .advicebutton {
@@ -254,7 +253,31 @@
   
     }
     
-  
+    @media screen and (min-width: 1600px) {
+      .Bmi1 {
+        font-size: 2.5rem;
+      }
+      .advicebutton,
+      .nextbutton,
+      .backbutton,
+      .bmibutton {
+        width: 50vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+        
+      }
+      .chevronicon {
+        font-size: 40px;
+         width: 60px;
+         height: 60px;
+      }
+      .ant_image_img {
+        width: 1000px; /* หรือค่าที่ต้องการ */
+      }
+    }
     
    
     @media screen and (max-width: 1600px) {
@@ -277,6 +300,11 @@
         font-size: 40px;
          width: 60px;
          height: 60px;
+      }
+      .ant_image_img {
+        width: 550px; /* หรือค่าที่ต้องการ */
+        height: auto;
+        border-radius: 20px;
       }
     }
 
@@ -301,6 +329,11 @@
         width: 60px;
         height: 60px;
       }
+      .ant_image_img {
+        width: 500px; /* หรือค่าที่ต้องการ */
+        height: auto;
+        border-radius: 20px;
+      }
     }
     
   
@@ -324,6 +357,11 @@
           font-size: 40px;
           width: 60px;
           height: 60px;
+        }
+        .ant_image_img {
+          width: 500px; /* หรือค่าที่ต้องการ */
+          height: auto;
+          border-radius: 20px;
         }
       }
   
@@ -353,6 +391,11 @@
           width: 55px;
           height: 55px;
         }
+        .ant_image_img {
+          width: 450px; /* หรือค่าที่ต้องการ */
+          height: auto;
+          border-radius: 20px;
+        }
       }
   
       
@@ -380,6 +423,11 @@
           font-size: 30px;
           width: 45px;
           height: 45px;
+        }
+        .ant_image_img {
+          width: 400px; /* หรือค่าที่ต้องการ */
+          height: auto;
+          border-radius: 20px;
         }
       }
   
@@ -409,6 +457,12 @@
           width: 40px;
           height: 40px;
         }
+        .ant_image_img {
+          width: 350px; /* หรือค่าที่ต้องการ */
+          height: auto;
+          border-radius: 20px;
+        }
+
         @media screen and (max-width: 450px) {
           
           .childbmi,
@@ -433,6 +487,11 @@
             font-size: 20px;
             width: 30px;
             height: 30px;
+          }
+          .ant_image_img {
+            width: 300px; /* หรือค่าที่ต้องการ */
+            height: auto;
+            border-radius: 20px;
           }
       } 
       }

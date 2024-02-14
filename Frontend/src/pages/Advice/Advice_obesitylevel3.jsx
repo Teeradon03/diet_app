@@ -3,7 +3,6 @@ import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from './Advice.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Advice_obesitylevel3() {
   
@@ -14,10 +13,10 @@ function Advice_obesitylevel3() {
       <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
-        <Image className='ant-image-img'
-              width="35%"
-              src="/public/bmi_img/obesitylevel3.jpg">
-        </Image>
+        <img className={styles.ant_image_img} 
+              
+              src="/bmi_img/obesitylevel3.jpg">
+        </img>
         <br />
 
         <br />

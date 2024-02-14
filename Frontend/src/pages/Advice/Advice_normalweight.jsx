@@ -15,10 +15,10 @@ function Advice_normalweight() {
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
         <br />
-        <Image className='ant-image-img'
-              width="35%"
-              src="/public/bmi_img/lowweight.jpg">
-        </Image>
+        <img className={styles.ant_image_img}
+              
+              src="/bmi_img/lowweight.jpg">
+        </img>
         <br />
 
         <br />
