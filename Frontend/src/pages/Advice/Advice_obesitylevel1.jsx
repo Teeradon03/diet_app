@@ -1,5 +1,5 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from './Advice.module.css';
@@ -13,6 +13,12 @@ function Advice_obesitylevel1() {
       <div className={styles.Bmi1}>
       <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
+
+        <Image className='ant-image-img'
+              width="35%"
+              src="/public/bmi_img/obesitylevel1.jpg">
+        </Image>
+        <br />
 
         <br />
         <div className={styles.childadvice} >

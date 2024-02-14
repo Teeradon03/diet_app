@@ -14,6 +14,12 @@ function Advice_lowweight() {
         <p >คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
         <br />
+        <Image className='ant-image-img'
+              width="35%"
+              src="/public/bmi_img/lowweight.jpg">
+        </Image>
+        <br />
+
         <div className={styles.childadvice} >
           <p>1. ระวังเรื่องคุณภาพของอาหารที่กินเข้าไป</p>
           <p>2. เลือกกินอาหารให้หลากหลายครบ 5 หมู่ โดยเน้นอาหารที่มีโปรตีนเพื่อช่วยในการเสริมสร้างกล้ามเนื้อ</p>
