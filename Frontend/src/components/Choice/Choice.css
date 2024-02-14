@@ -1,14 +1,14 @@
-
 .ant-select-selection {
   width: 0;
   font-size: 50px;
 }
 
-.-text-box{
+.-text-box {
   width: 70%;
   height: auto;
   font-size: 30px;
 }
+
 .text {
   padding-top: 10px;
 }
@@ -71,16 +71,17 @@
 
 
 @media screen and (min-width: 1600px) {
-  .text{
+  .text {
     padding-top: 100px;
   }
-  .next-list{
+
+  .next-list {
     font-size: 1.8rem;
     width: 15vw !important;
     left: 510px
   }
 
-  .-text-box{
+  .-text-box {
     width: 50%;
     height: auto;
     font-size: 30px;
@@ -96,16 +97,17 @@
 }
 
 @media screen and (max-width: 1600px) {
-  .text{
+  .text {
     padding-top: 100px;
   }
-  .next-list{
+
+  .next-list {
     font-size: 1.8rem;
     width: 15vw !important;
     left: 510px
   }
 
-  .-text-box{
+  .-text-box {
     width: 50%;
     height: auto;
     font-size: 30px;
@@ -122,8 +124,10 @@
 
 /*เพิ่ม CSS นี้ไปยังไฟล์ CSS หรือ Styled Component ของคุณ*/
 .ant-select-selection-search-input {
-  caret-color: transparent; /* ทำให้เคอร์เซอร์เป็นสีที่透ว */
-  cursor: none; /* ซ่อนเคอร์เซอร์ */
+  caret-color: transparent;
+  /* ทำให้เคอร์เซอร์เป็นสีที่透ว */
+  cursor: none;
+  /* ซ่อนเคอร์เซอร์ */
 }
 
 
@@ -132,13 +136,15 @@
   .text {
     padding-top: 100px;
   }
-  .-text-box{
+
+  .-text-box {
     width: 60%;
     height: auto;
     font-size: 30px;
   }
+
   .next-list {
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     width: 20vw !important;
     position: absolute;
     left: 500px
@@ -157,15 +163,15 @@
   .text {
     padding-top: 100px;
   }
-  
-  .-text-box{
+
+  .-text-box {
     width: 50%;
     height: auto;
     font-size: 30px;
   }
-  
+
   .next-list {
-    font-size:  1.5rem;
+    font-size: 1.5rem;
     width: 20vw !important;
     position: absolute;
     left: 460px
@@ -250,11 +256,10 @@
     padding-top: 100px;
     padding: 50px;
   }
- .-text-box{
-  background-color: green;
-  /* padding-left: 100px; */
-  width: 350px;
-}
+
+  .-text-box {
+    width: 350px;
+  }
 
   .next-list {
     font-size: 1rem;
@@ -270,13 +275,14 @@
     position: absolute;
     left: 30px;
   }
-} 
+}
 
 @media screen and (max-width: 350px) {
   .text {
     padding-top: 100px;
   }
-  .text-box{
+
+  .text-box {
     left: 200px;
   }
 
@@ -294,4 +300,4 @@
     position: absolute;
     left: 30px;
   }
-} 
+}

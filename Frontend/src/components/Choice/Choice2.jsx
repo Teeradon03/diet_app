@@ -10,9 +10,7 @@ const options = [
       <span>
         โลว์คาร์บหรือคีโต
         <br />
-        <span style={{ fontSize: "smaller" }}>
-          (ทานอาหารคาร์โบไฮเดรตตํ่า <br/> รับประทานเนื้อสัตว์เป็นหลัก)
-        </span>
+        <span style={{ fontSize: "smaller" }}></span>
       </span>
     ),
     value: 1,
@@ -22,7 +20,7 @@ const options = [
       <span>
         มังสวิรัติ
         <br />
-        <span style={{ fontSize: "smaller" }}>(ไม่รับประทานเนื้อสัตว์)</span>
+        {/* <span style={{ fontSize: "smaller" }}>(ไม่รับประทานเนื้อสัตว์)</span> */}
       </span>
     ),
     value: 2,
@@ -32,9 +30,9 @@ const options = [
       <span>
         วีแกน
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ไม่รับประทานอาหารผลิตภัณฑ์จากสัตว์)
-        </span>
+        </span> */}
       </span>
     ),
     value: 3,
@@ -44,9 +42,9 @@ const options = [
       <span>
         ไม่มีแลคโตส
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ไม่รับประทานอาหารที่มีแลคโตส)
-        </span>
+        </span> */}
       </span>
     ),
     value: 4,
@@ -56,9 +54,9 @@ const options = [
       <span>
         ไม่มีกลูเตน
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ไม่รับประทานอาหารที่มีส่วนประกอบของกลูเตน)
-        </span>
+        </span> */}
       </span>
     ),
     value: 5,
@@ -68,9 +66,9 @@ const options = [
       <span>
         อาหารเพสคาทาเรียน
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ไม่รับประทานเนื้อสัตว์ แต่รับประทานปลาหรือหอย)
-        </span>
+        </span> */}
       </span>
     ),
     value: 6,
@@ -80,9 +78,9 @@ const options = [
       <span>
         พาเลโอไดเอท
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ทานอาหารแบบคาร์โบไฮเดรตตํ๋า ไม่ทานขนมหวาน)
-        </span>
+        </span> */}
       </span>
     ),
     value: 7,
@@ -92,9 +90,9 @@ const options = [
       <span>
         ไม่มีส่วนผสมของไข่
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (ไม่รับประทานอาหารที่มีไข่ หรือส่วนประกอบของไข่)
-        </span>
+        </span> */}
       </span>
     ),
     value: 8,
@@ -104,9 +102,9 @@ const options = [
       <span>
         ไม่รับประทานอาหารทะเล
         <br />
-        <span style={{ fontSize: "smaller" }}>
+        {/* <span style={{ fontSize: "smaller" }}>
           (รับประทานอาหารที่ไม่มีส่วนประกอบของอาหารทะเล)
-        </span>
+        </span> */}
       </span>
     ),
     value: 9,
@@ -116,7 +114,7 @@ const options = [
       <span>
         รับประทานอาหารได้แทบทุกชนิด
         <br />
-        <span style={{ fontSize: "smaller" }}></span>
+        {/* <span style={{ fontSize: "smaller" }}></span> */}
       </span>
     ),
     value: 10,
@@ -143,7 +141,7 @@ const sendToAPI = async (selectedOptions, questionId = 10) => {
 
 const Choice2 = () => {
   const [selectedOptions, setSelectedOptions, questionId] = useState([]);
-  const navi = useNavigate()
+  const navi = useNavigate();
   const handleChange = (value) => {
     const selectedOptions = options.filter((option) =>
       value.includes(option.value)
@@ -159,14 +157,14 @@ const Choice2 = () => {
     if (selectedOptions.length > 0) {
       // เรียกใช้ sendToAPI เพื่อส่งข้อมูลไปยัง API
       await sendToAPI(selectedOptions, questionId); // 10 คือ questionId ที่คุณกำหนด
-      navi("/Choice")
+      navi("/Choice");
     } else {
       alert("กรุณาเลือกข้อจำกัดด้านการทานอาหารตัวอย่างน้อย 1 ข้อ");
     }
   };
 
   const handleBack = () => {
-    navi("/Question") // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
+    navi("/Question"); // เปลี่ยน URL และโปรแกรมให้ตรงกับ URL ของ Choice2
   };
 
   const buttonStyle = {
@@ -177,10 +175,7 @@ const Choice2 = () => {
   return (
     <div>
       <div className="text">
-
-        <h1 style={buttonStyle}>
-          ทานอาหารอะไรเป็นประจำ
-        </h1>
+        <h1 style={buttonStyle}>ทานอาหารอะไรเป็นประจำ</h1>
         <h3>(เลือกได้มากกว่า 1 ข้อ)</h3>
       </div>
       <br />
@@ -192,8 +187,7 @@ const Choice2 = () => {
         onChange={handleChange}
         optionLabelProp="label"
         options={options.map((option) => ({
-          ...option,
-          label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
+          ...option, label: <span style={{ fontSize: "22px" }}>{option.label}</span>,
         }))}
         size="large"
       />

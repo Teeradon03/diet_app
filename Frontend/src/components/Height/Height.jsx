@@ -17,7 +17,7 @@ function Height(props) {
 
   return (
     <div className={styles.Bmi1}>
-      <h3  className='fw-bold'>ส่วนสูง (ซม.)</h3>
+      <h1 className='fw-bold '>ส่วนสูง (ซม.)</h1>
       <input className={styles.inputlabel}
         type="number"
         value={height}

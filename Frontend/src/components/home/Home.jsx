@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 import liff from "@line/liff";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+import { Route, useNavigate } from "react-router-dom";
 import { useDispatch } from "react-redux";
 import { login as loginRedux } from "../../store/userSlice";
 
@@ -11,42 +11,45 @@ const Home = () => {
 
   useEffect(() => {
     liff.init({ liffId: `${import.meta.env.VITE_LIIF_ID}` }).then(() => {
-      /// something
+
       handleLineLogin();
 
-      // roleRedirect(response.data.role)
     });
-  });
+  }, []);
   const roleRedirect = (role) => {
-    if (role === "user") {
-      setTimeout(() => navi("/form"), 3000);
-    } else {
-      setTimeout(() => navi("/admin/index"), 3000);
+    if (role) {
+      if (role === "user") {
+        setTimeout(() => navi("/form"), 3000);
+      } else {
+        setTimeout(() => navi("/admin/index"), 3000);
+      }
+    }
+    else {
+      alert('WHO ARE YOU')
     }
   };
 
   const handleLineLogin = async () => {
     try {
       const idToken = liff.getIDToken();
-      const response = axios
+      const response = await axios
         .post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken, {
           withCredentials: true,
         })
-        .then((response) => {
-          // console.log('response data from home',response.data.user)
-          disPatch(
-            loginRedux({
-              userId: response.data.user.userId,
-              role: response.data.user.role,
-              name: response.data.user.name,
-            })
-          );
-          localStorage.setItem("userId", response.data.user.userId);
-          roleRedirect(response.data.user.role);
-        })
-        .catch((error) => {
-          console.log('error', error.message)
-        });
+      if (response.status === 200) {
+        // console.log('response data ', response.data)
+        disPatch(
+          loginRedux({
+            userId: response.data.user.userId,
+            role: response.data.user.role,
+            name: response.data.user.name,
+          })
+        );
+        /// set userId in local storage for tracking user
+        localStorage.setItem("userId", response.data.user.userId);
+        /// call role redirect function and pass role in parameter
+        roleRedirect(response.data.user.role);
+      }
     } catch (error) {
       console.log(error);
     }

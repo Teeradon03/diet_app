@@ -1,6 +1,6 @@
-import React, { useState } from 'react';
-import { Button } from 'antd';
-import { Link } from 'react-router-dom';
+import React, { useState } from "react";
+import { Button } from "antd";
+import { Link } from "react-router-dom";
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from "../Bmr/Bmr.module.css";
 import Weight from "../Weight/Weight";
@@ -12,11 +12,10 @@ function BMR_calculator() {
   const [weight, setWeight] = useState(0);
   const [height, setHeight] = useState(0);
   const [age, setAge] = useState(0);
-  const [gender, setGender] = useState('male');
+  const [gender, setGender] = useState("male");
   const [bmr, setBmr] = useState(null);
   const [currentPage, setCurrentPage] = useState(0);
-  const [questionId, setUserId] = useState('47'); // Replace 'yourId' with the desired ID
-
+  const [questionId, setUserId] = useState("47"); // Replace 'yourId' with the desired ID
 
   const calculateBmr = async () => {
     let bmrConstant, genderFactor;
@@ -40,8 +39,11 @@ function BMR_calculator() {
       bmr: calculatedBmr,
     };
 
-    const response = await axios.post(`${import.meta.env.VITE_URL_API}/api/user/update-user-data`, dataToSend, { withCredentials: true })
-
+    const response = await axios.post(
+      `${import.meta.env.VITE_URL_API}/api/user/update-user-data`,
+      dataToSend,
+      { withCredentials: true }
+    );
   };
 
   const determinePage = (calculatedBmr) => {
@@ -49,28 +51,23 @@ function BMR_calculator() {
   };
 
   const renderContent = () => {
-
-
     return (
       <div className={styles.Bmr1}>
         <br />
         <p className={styles.Bmr1}>คำนวณแคลอรี่ (BMR)</p>
-
         <Weight onWeightChange={(value) => setWeight(value)} />
-
         <Height onHeightChange={(value) => setHeight(value)} />
-
-
-        <p className={styles.age}>อายุ (ปี)</p>
+        <h1 className="fw-bold">อายุ (ปี)</h1>
         <div className={styles.inputbmr}>
-          <input className={styles.inputlabel}
+          <input
+            className={styles.inputlabel}
             type="number"
             value={age}
             onChange={(e) => setAge(e.target.value)}
           />
         </div>
 
-        <p className={styles.genderv1}>เพศ</p>
+        <h1 className="fw-bold">เพศ</h1>
         <div className={styles.gender}>
           <select value={gender} onChange={(e) => setGender(e.target.value)}>
             <option value="male">ชาย</option>
@@ -79,26 +76,26 @@ function BMR_calculator() {
         </div>
         {bmr !== null && (
           <div>
-            <br />
             <p>ค่า BMR ของคุณคือ: {bmr.toFixed(2)}</p>
           </div>
         )}
-        <button className={styles.bmrbutton} onClick={calculateBmr}>คำนวณ BMR</button>
-        <br />
-        <div>
-          <Link to="/ever" className={styles.link}> {/* Changed the route for the "No" response */}
+        <button className={styles.bmrbutton} onClick={calculateBmr}>
+          คำนวณ BMR
+        </button>
+        <div className="mt-3 mb-5">
+          <Link to="/ever" className={styles.link}>
+            {" "}
+            {/* Changed the route for the "No" response */}
             <button className={styles.nextbutton}>ถัดไป</button>
           </Link>
         </div>
 
         <Link to="/BMI_calculator">
-          <button
-            className={styles.chevronicon} >
+          <button className={styles.chevronicon}>
             <VscChevronLeft />
           </button>
         </Link>
       </div>
-
     );
   };
 
