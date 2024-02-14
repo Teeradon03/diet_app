@@ -114,8 +114,7 @@
 }
 
 .Bmi1 {
-
-  padding: 30px;
+  padding: 30px 30px;
   display: flex;
   margin: 20px;
   flex-direction: column;
