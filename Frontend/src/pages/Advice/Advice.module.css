@@ -3,7 +3,8 @@
 }
 
 .ant_image_img {
-  width: 550px; /* หรือค่าที่ต้องการ */
+  width: 550px;
+  /* หรือค่าที่ต้องการ */
   height: auto;
   border-radius: 20px;
 }
@@ -257,7 +258,8 @@
   }
 
   .ant_image_img {
-    width: 650px; /* หรือค่าที่ต้องการ */
+    width: 650px;
+    /* หรือค่าที่ต้องการ */
     height: auto;
     border-radius: 20px;
   }
@@ -287,8 +289,10 @@
     width: 10px;
     height: 10px;
   }
+
   .ant_image_img {
-    width: 550px; /* หรือค่าที่ต้องการ */
+    width: 550px;
+    /* หรือค่าที่ต้องการ */
     height: auto;
     border-radius: 20px;
   }
@@ -318,8 +322,10 @@
     width: 10px;
     height: 10px;
   }
+
   .ant_image_img {
-    width: 500px; /* หรือค่าที่ต้องการ */
+    width: 500px;
+    /* หรือค่าที่ต้องการ */
     height: auto;
     border-radius: 20px;
   }
@@ -352,8 +358,10 @@
     width: 10px;
     height: 10px;
   }
+
   .ant_image_img {
-    width: 500px; /* หรือค่าที่ต้องการ */
+    width: 500px;
+    /* หรือค่าที่ต้องการ */
     height: auto;
     border-radius: 20px;
   }
@@ -390,6 +398,13 @@
     width: 10px;
     height: 10px;
   }
+
+  .ant_image_img {
+    width: 500px;
+    /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
+  }
 }
 
 
@@ -422,6 +437,13 @@
     font-size: 16px;
     width: 10px;
     height: 10px;
+  }
+
+  .ant_image_img {
+    width: 450px;
+    /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
   }
 }
 
@@ -457,35 +479,49 @@
     height: 10px;
   }
 
-  @media screen and (max-width: 450px) {
-    .Bmi1 {
-      font-size: 1.5rem;
-    }
+  .ant_image_img {
+    width: 400px;
+    /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
+  }
+}
 
-    .childbmi,
-    .childadvice {
-      width: 60vw;
-    }
+@media screen and (max-width: 450px) {
+  .Bmi1 {
+    font-size: 1.5rem;
+  }
 
-    input,
-    .gender,
-    .bmibutton,
-    .advicebutton,
-    .nextbutton,
-    .backbutton {
-      width: 60vw;
-      margin: 0 auto;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      margin-bottom: 1em;
-    }
+  .childbmi,
+  .childadvice {
+    width: 60vw;
+  }
 
-    .chevronicon {
-     
-      font-size: 16px;
-      width: 10px;
-      height: 10px;
-    }
+  input,
+  .gender,
+  .bmibutton,
+  .advicebutton,
+  .nextbutton,
+  .backbutton {
+    width: 60vw;
+    margin: 0 auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 1em;
+  }
+
+  .chevronicon {
+
+    font-size: 16px;
+    width: 10px;
+    height: 10px;
+  }
+
+  .ant_image_img {
+    width: 350px;
+    /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
   }
 }
