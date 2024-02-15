@@ -327,6 +327,7 @@ label {
     font-size: 40px;
     width: 60px;
     height: 60px;
+    left: 100px;
   }
 }
 
@@ -351,6 +352,7 @@ label {
     font-size: 40px;
     width: 60px;
     height: 60px;
+    left: 10%;
   }
 }
 
@@ -381,6 +383,7 @@ label {
     font-size: 40px;
     width: 55px;
     height: 55px;
+    left: 10%;
   }
 }
 
@@ -411,6 +414,7 @@ label {
     font-size: 30px;
     width: 45px;
     height: 45px;
+    left: 10%;
   }
 }
 
@@ -441,6 +445,7 @@ label {
     font-size: 30px;
     width: 40px;
     height: 40px;
+    left: 10%;
   }
 
   @media screen and (max-width: 450px) {
@@ -468,7 +473,7 @@ label {
       font-size: 20px;
       width: 40px;
       height: 40px;
-      left: 30px;
+      left: 10%;
     }
   }
 }

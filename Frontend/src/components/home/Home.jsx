@@ -31,14 +31,19 @@ const Home = () => {
 
   const handleLineLogin = async () => {
     try {
+
       const idToken = liff.getIDToken();
       const response = await axios
         .post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken, {
           withCredentials: true,
         })
-        // console.log('response data', response)
-      if (response.status === 200) {
-        // console.log('response data ', response.data)
+      if (response.status === 200 && !response.data) {
+
+        // console.log('Are you stuck in if condition')
+          return liff.logout()
+          // navi('/login')
+      }
+      else{
         disPatch(
           loginRedux({
             userId: response.data.user.userId,
@@ -46,10 +51,11 @@ const Home = () => {
             name: response.data.user.name,
           })
         );
-        /// set userId in local storage for tracking user
         localStorage.setItem("userId", response.data.user.userId);
+
         /// call role redirect function and pass role in parameter
         roleRedirect(response.data.user.role);
+
       }
     } catch (error) {
       console.log(error);

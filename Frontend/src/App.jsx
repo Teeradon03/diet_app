@@ -73,7 +73,7 @@ function App() {
     })
 
 
-    const timeoutInMilliseconds = 30 * 60 * 1000; // 5 minutes in milliseconds
+    const timeoutInMilliseconds = 30 * 60 * 1000; // 30 minutes in milliseconds
     setTimeout(() => {
       localStorage.removeItem('userId'); // Remove the item from localStorage after the timeout
     }, timeoutInMilliseconds);
