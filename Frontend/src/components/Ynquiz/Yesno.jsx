@@ -191,11 +191,26 @@ const yesno = () => {
     }
   };
 
+  const getRandomColor = () => {
+    const letters = '0123456789ABCDEF';
+    let color = '#';
+    for (let i = 0; i < 6; i++) {
+      color += letters[Math.floor(Math.random() * 16)];
+    }
+    return color;
+  };
+
+  const [yesButtonColor, setYesButtonColor] = useState('#ffffff');
+  const [noButtonColor, setNoButtonColor] = useState('#ffffff');
+
+
   const handleYesClick = () => {
     const newIndex = currentImageIndex + 1;
     const answer = 1; // Yes เป็น 1
 
     updateIndicesAndSendToAPI(newIndex, answer);
+    setYesButtonColor(getRandomColor()); // เรียกฟังก์ชันเพื่อสร้างสีสุ่ม
+    setNoButtonColor('#ffffff'); // กำหนดให้สีของปุ่ม No เป็นสีขาว
   };
 
   const handleNoClick = () => {
@@ -203,6 +218,8 @@ const yesno = () => {
     const answer = 0; // No เป็น 0
 
     updateIndicesAndSendToAPI(newIndex, answer);
+    setNoButtonColor(getRandomColor()); // เรียกฟังก์ชันเพื่อสร้างสีสุ่ม
+    setYesButtonColor('#ffffff'); // กำหนดให้สีของปุ่ม Yes เป็นสีขาว
   };
 
   const updateIndicesAndSendToAPI = (newIndex, answer) => {
@@ -278,36 +295,39 @@ const yesno = () => {
     height: 400
   }
 
+
+
+
   return (
     <div className="Ynquiztion">
       <div className="font-family">
-      <br/>
+        <br />
         <p className="questionyesno">
           {questions[currentQuestionIndex].question}
         </p>
-        <br/>
+        <br />
         <img
           className="imgmedia"
           src={images[currentImageIndex]}
           alt={`Image ${currentImageIndex + 1}`}
-          //style={imageStyle}
+        //style={imageStyle}
         />
       </div>
-      <br/>
+      <br />
       <div className="button-container">
-        <button
+      <button
           className="no-button"
-          style={buttonStyle}
+          style={{ ...buttonStyle, backgroundColor: noButtonColor }}
           onClick={handleNoClick}
         >
           ไม่
         </button>
-        <h1 className="and" ><br/>
-        &nbsp; หรือ &nbsp;
+        <h1 className="and" ><br />
+          &nbsp; หรือ &nbsp;
         </h1>
         <button
           className="yes-button"
-          style={buttonStyle}
+          style={{ ...buttonStyle, backgroundColor: yesButtonColor }}
           onClick={handleYesClick}
         >
           ใช่
