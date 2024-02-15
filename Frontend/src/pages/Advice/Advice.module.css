@@ -2,11 +2,10 @@
   text-decoration: none;
 }
 
-.ant-image-img {
-  width: 100%; /* หรือค่าที่ต้องการ */
+.ant_image_img {
+  width: 550px; /* หรือค่าที่ต้องการ */
   height: auto;
-  max-width: 400px; /* หรือค่าที่ต้องการ */
-  max-height: 400px; /* หรือค่าที่ต้องการ */
+  border-radius: 20px;
 }
 
 .advicebutton {
@@ -256,6 +255,12 @@
   .Bmi1 {
     font-size: 2.5rem;
   }
+
+  .ant_image_img {
+    width: 650px; /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
+  }
 }
 
 @media screen and (max-width: 1600px) {
@@ -282,6 +287,11 @@
     width: 10px;
     height: 10px;
   }
+  .ant_image_img {
+    width: 550px; /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
+  }
 }
 
 @media screen and (max-width: 1400px) {
@@ -307,6 +317,11 @@
     font-size: 16px;
     width: 10px;
     height: 10px;
+  }
+  .ant_image_img {
+    width: 500px; /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
   }
 }
 
@@ -336,6 +351,11 @@
     font-size: 16px;
     width: 10px;
     height: 10px;
+  }
+  .ant_image_img {
+    width: 500px; /* หรือค่าที่ต้องการ */
+    height: auto;
+    border-radius: 20px;
   }
 }
 

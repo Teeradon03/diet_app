@@ -36,7 +36,7 @@ const Home = () => {
         .post(`${import.meta.env.VITE_URL_API}/api/user/user-login`, idToken, {
           withCredentials: true,
         })
-        console.log('response data', response)
+        // console.log('response data', response)
       if (response.status === 200) {
         // console.log('response data ', response.data)
         disPatch(
@@ -53,6 +53,7 @@ const Home = () => {
       }
     } catch (error) {
       console.log(error);
+      
     }
   };
 

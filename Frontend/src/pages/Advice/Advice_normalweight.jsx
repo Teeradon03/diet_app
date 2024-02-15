@@ -1,9 +1,9 @@
 import React from 'react';
-import { Button } from 'antd';
+import { Image, Button } from 'antd';
 import { Link } from 'react-router-dom';
 import { VscChevronLeft } from "react-icons/vsc";
 import styles from './Advice.module.css';
-import 'bootstrap/dist/css/bootstrap.min.css';
+
 
 function Advice_normalweight() {
 
@@ -11,33 +11,40 @@ function Advice_normalweight() {
   return (
     <div>
       <div className={styles.Bmi1}>
-        <br />
+        <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
 
         <br />
+        <img className={styles.ant_image_img}
+              width="35%"
+              src="/bmi_img/lowweight.jpg">
+        </img>
+        <br />
+
+        <br />
         <div className={styles.childadvice}>
-          <p>1. ระวังเรื่องคุณภาพของอาหาร ที่กินเข้าไปด้วย เลือกกินอาหารที่ดีมีประโยชน์</p>
-          <p>2. เลือกกินอาหารให้หลากหลายครบ 5 หมู่ โดยเน้นอาหารที่มีโปรตีนเพื่อช่วยในการเสริมสร้างกล้าม </p>
-          <p>3. ออกกำลังกายสม่ำเสมอ โดยเลือกกิจกรรมการออกกำลังกายที่ชื่นชอบ</p>
+          <p>1. ระวังเรื่องคุณภาพของอาหารที่กินเข้าไปด้วย เลือกกินอาหารที่ดี มีประโยชน์ </p>
+          <p>2. เลือกกินอาหารให้หลากหลายครบ 5 หมู่ โดยเน้นอาหารที่มีโปรตีนเพื่อช่วยในการ เสริมสร้างกล้ามเนื้อ</p>
+          <p>3. ออกกำลังกายสม่ำเสมอโดยเลือก กิจกรรมการออกกำลังกายที่ชื่นชอบ</p>
         </div>
         <br />
 
         <div>
-          <Link to="/Bmi_normalweight" className={styles.link} >
+          <Link to="/Bmi_normalweight"className={styles.link} >
             <button className={styles.backbutton}>ย้อนกลับ </button>
           </Link>
         </div>
       </div>
-
+      
       <Link to="/Bmi_normalweight">
-        <div className={styles.chevronicon}>
-          <Button
-            className={styles.button}
-            shape="circle"
-            icon={<VscChevronLeft />}
-          />
-        </div>
-      </Link>
+         <div className={styles.chevronicon}>
+        <Button
+          className={styles.button}
+          shape="circle"
+          icon={<VscChevronLeft />}
+        />
+       </div>
+    </Link>
     </div>
   );
 }
