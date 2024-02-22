@@ -31,27 +31,27 @@ function Product() {
       <br />
       <br />
       <br />
-      <h1 className="text-if">เครื่องดื่มเพื่อสุขภาพ</h1>
+      <h1 className="text-pro">เครื่องดื่มเพื่อสุขภาพ</h1>
       <br />
       {/* แสดงการ์ดสินค้าในเครื่องหมายเหลี่ยมยืด */}
-      <div className="image-box">
+      <div className="image-box-pro">
         {cardData.map((card, index) => (
           // สร้างคอมโพเนนต์ Card สำหรับแต่ละสินค้าพร้อมกับ key และตัวจัดการเหตุการณ์คลิก
           <Card
-            className="card-box"
+            className="card-box-pro"
             key={index}
             onClick={() => handleCardClick(card.link)}
-            style={{ cursor: "pointer", maxWidth: "300px" }}
+            style={{ cursor: "pointer", maxWidth: "500px",height:"300px" }}
           >
             {/* แสดงรูปภาพสินค้าภายในคอมโพเนนต์ Card */}
             <Card.Img
-              variant="top"
+              variant="center"
               src={card.imageUrl}
               style={{ maxHeight: "200px", objectFit: "cover" }}
             />
             {/* แสดงชื่อสินค้าภายในคอมโพเนนต์ Card */}
             <Card.Body>
-              <Card.Title>{card.title}</Card.Title>
+              <Card.Title className="name-pro">{card.title}</Card.Title>
               {/* Card.Text หรือ Description ไม่ได้ถูกกำหนดไว้ใน cardData */}
             </Card.Body>
           </Card>

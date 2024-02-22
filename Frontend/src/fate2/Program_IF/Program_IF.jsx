@@ -26,9 +26,9 @@ const Program_IF = () => {
     <div className="font-family">
       <br />
       <br />
-      <h1 className="text">การลดน้ำหนัก IF </h1>
+      <h1 className="text-IF2">การลดน้ำหนัก IF </h1>
       <br />
-      <h2 className="text"> วันที่ {currentDay} </h2>
+      <h1 className="text-date-IF"> วันที่ {currentDay} </h1>
       <br />
       <br />
       {/* Card */}

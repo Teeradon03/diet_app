@@ -284,11 +284,11 @@ const yesno = () => {
         <br/>
         <img
           className="imgmedia"
-          src={images[currentImageIndex]}
+          src={images[currentImageIndex]}  
           alt={`Image ${currentImageIndex + 1}`}
           //style={imageStyle}
         />
-      </div>
+      </div> 
       <br/>
       <div className="button-container">
         <button

@@ -16,6 +16,7 @@
   position: relative;
 }
 
+
 .everButton:active {
   background-color: #757575;
   color: rgb(255, 255, 255);
@@ -58,6 +59,29 @@
   color: rgb(255, 255, 255);
 }
 
+@media screen and (min-width: 1600px) {
+  .pass {
+    text-align: center;
+  }
+
+  .everButton {
+    font-size: 2.5rem;
+    position: relative;
+    left: -300px;
+    width: 40vw;
+  }
+
+  .everNext {
+    font-size: 1.6rem;
+    position: relative;
+    left: 0px;
+    width: 20vw;
+  }
+
+}
+
+
+
 @media screen and (max-width: 1600px) {
   .everButton {
     font-size: 2.5rem;
@@ -65,6 +89,7 @@
     left: -150px;
     width: 40vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
@@ -80,6 +105,7 @@
     left: -90px;
     width: 40vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
@@ -95,6 +121,7 @@
     left: -90px;
     width: 40vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
@@ -110,6 +137,7 @@
     left: -30px;
     width: 40vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
@@ -125,6 +153,7 @@
     left: -40px;
     width: 40vw;
   }
+
   .everNext {
     font-size: 1.8rem;
     position: relative;
@@ -134,13 +163,14 @@
 }
 
 @media screen and (max-width: 767px) {
-  
+
   .everButton {
     font-size: 2.2rem;
     position: relative;
     left: -20px;
     width: 45vw;
   }
+
   .everNext {
     font-size: 1.8rem;
     position: relative;
@@ -153,13 +183,14 @@
   .everButton {
     font-size: 2.2rem;
     position: relative;
-    left: 0px;
+    left: 100px;
     width: 50vw;
   }
+
   .everNext {
     font-size: 1.8rem;
     position: relative;
-    left: 0px;
+    left: 100px;
     width: 35vw;
   }
 }
@@ -168,13 +199,14 @@
   .everButton {
     font-size: 2rem;
     position: relative;
-    left: -30px;
+    left: -15px;
     width: 65vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
-    left: -10px;
+    left: 70px;
     width: 45vw;
   }
 }
@@ -183,13 +215,14 @@
   .everButton {
     font-size: 2rem;
     position: relative;
-    left: -40px;
+    left: -20px;
     width: 65vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
-    left: -10px;
+    left: 60px;
     width: 45vw;
   }
 }
@@ -201,10 +234,11 @@
     left: -30px;
     width: 65vw;
   }
+
   .everNext {
     font-size: 1.6rem;
     position: relative;
-    left: -5px;
+    left: 50px;
     width: 45vw;
   }
 }

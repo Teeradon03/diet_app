@@ -199,7 +199,7 @@
       line-height: 1.5;
       display: block;
       width: 100%;
-      max-width: 300px;
+      max-width: 300px; /* ความยาวปุ่ม */
       padding: 15px;
       position: relative; 
       top: 100px; 
@@ -208,7 +208,7 @@
       border: 1px solid #ccc;
       color: rgb(13, 13, 13);
       border-radius: 35px;
-      box-shadow: 10px 10px 8px 6px #b2b2b2;
+      box-shadow: 10px 10px 8px 6px #b2b2b2; /* แก้เงาปุ่ม */
       font-size: 35px;
       cursor: pointer;
       text-align :center;
@@ -229,7 +229,7 @@
     .inputlabel {
       display: flex;
       align-items: center;
-      font-size: 1.8rem;
+      font-size: 1.8rem; /* ขนาดข้อความ */
     }
     
     input {
@@ -250,6 +250,30 @@
       margin-bottom: 0;
     }
   
+    @media screen and (min-width: 1600px) {
+      .Bmi1 {
+        font-size: 2.5rem;
+      }
+      .advicebutton,
+      .nextbutton,
+      .backbutton,
+      .bmibutton {
+        width: 50vw;
+        margin: 0 auto;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-bottom: 1em;
+        
+      }
+      .chevronicon {
+        font-size: 40px;
+        width: 60px;
+        height: 60px;
+        left: 300px;
+      }
+    }
+
     @media screen and (max-width: 1600px) {
       .Bmi1 {
         font-size: 2.5rem;

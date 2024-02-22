@@ -40,19 +40,19 @@ function Exercise() {
   return (
     <div>
       <br/><br/><br/>
-      <h1 className='text-if'>ออกกำลังกาย</h1> 
+      <h1 className='text-exer'>ออกกำลังกาย</h1> 
       <br/>
-      <div className='image-box'>
+      <div className='image-box-ex'>
         {cardData.map((card, index) => (
           <Card
-            className='card-box'
+            className='card-box-ex'
             key={index}
             onClick={() => handleCardClick(card.link)}
             style={{ cursor: 'pointer' }}
           >
-            <Card.Img variant="top" src={card.imageUrl} />
+            <Card.Img className='img-ex' variant="top" src={card.imageUrl} />
             <Card.Body>
-              <Card.Title>{card.title}</Card.Title>
+              <Card.Title className=' '>{card.title}</Card.Title>
               {/* Card.Text หรือ Description ยังไม่ได้ถูกนิยามใน cardData */}
             </Card.Body>
           </Card>

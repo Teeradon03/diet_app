@@ -30,7 +30,7 @@ function Advice_lowweight() {
       <Link to="/Bmi_lowweight">
          <div className={styles.chevronicon}>
         <Button
-          className={styles.button}
+          className={styles.button} 
           shape="circle"
           icon={<VscChevronLeft />}
         />

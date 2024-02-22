@@ -129,7 +129,7 @@ const Choice = () => {
       <br />
       <Select
         mode="multiple"
-        allowClear
+        allowClea
         className="text-box"
         placeholder="กรุณาเลือกโรคประจำตัว"
         onChange={handleChange}

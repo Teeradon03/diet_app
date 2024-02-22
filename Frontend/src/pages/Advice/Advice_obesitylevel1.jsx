@@ -13,7 +13,7 @@ function Advice_obesitylevel1() {
       <div className={styles.Bmi1}>
       <br/>
         <p>คำแนะนำค่าดัชนีมวลกาย (BMI)</p>
-
+  
         <br />
         <div className={styles.childadvice} >
           <p>1. รับประทานอาหารในปริมาณที่เหมาะสม และหลีกเลี่ยงการบริโภคอาหารใน ปริมาณมากเกินไป</p>

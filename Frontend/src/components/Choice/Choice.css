@@ -12,7 +12,7 @@
   height: auto;
   font-size: 30px;
 }
-.texe {
+.text {
   padding-top: 20px;
 }
 
@@ -71,6 +71,28 @@
   left: -70px;
   top: 30px;
 }
+
+@media screen and (min-width: 1600px) {
+  .text{
+    padding-top: 100px;
+  }
+  .next-list{
+    font-size: 1.8rem;
+    width: 15vw !important;
+    position: relative;
+    left: 510px
+  }
+
+  .chevron-list {
+    font-size: 3vw;
+    width: 3vw;
+    height: 3vw;
+    position: absolute;
+    left: 300px;
+  }
+}
+
+/*เพิ่ม CSS นี้ไปยังไฟล์ CSS หรือ Styled Component ของคุณ*/
 
 @media screen and (max-width: 1600px) {
   .text{

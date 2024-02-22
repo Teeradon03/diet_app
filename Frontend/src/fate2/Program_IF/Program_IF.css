@@ -8,12 +8,17 @@ a {
 
 .font-family {
   font-family: 'Noto Sans Thai', sans-serif;
-  /* ส่วนอื่น ๆ ของ CSS ของคุณ */
 }
 
-.text {
+.text-IF2 {
   padding-top: 50px;
-  font-size: 50px;
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.text-date-IF {
+  padding-top: 50px;
+  font-size: 3rem;
   font-weight: bold;
 }
 
@@ -116,9 +121,14 @@ a {
       width: calc(100% - 20px); /* แสดงเต็มหน้าจอในหน้าจอขนาดเล็กกว่า 480px */
       height: 350px;
     }
-    .text{
-      font-size: 2rem;
+    .text-IF2 {
+      font-size: 2.5rem;
     }
+
+    .text-date-IF{
+      font-size: 2.5rem;
+    }
+
     .text-card{
       font-size: 2rem;
     }

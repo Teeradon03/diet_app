@@ -22,10 +22,10 @@ function nanova() {
       <br />
       <br />
       <h1 className="text-if">เครื่องดื่มเพื่อสุขภาพ</h1>
-      <div className="image">
+      <div className="image-nano">
         {cardData.map((card, index) => (
-          <Card className="card-box" key={index}>
-            <Card.Img variant="top" src={card.imageUrl} />
+          <Card className="card-box-nano" style={{ width: 500, height: 500 }} key={index}>
+            <Card.Img variant="top" src={card.imageUrl}/>
           </Card>
         ))}
       </div>
@@ -34,7 +34,7 @@ function nanova() {
         <h2>nanoVA</h2>
         <h3>กาแฟปรุงสำเร็จชนิดผง nanoVA</h3>
         <br />
-        <h4>กาแฟปรุงสําเร็จชนิดผง </h4>
+        <h4>กาแฟปรุงสําเร็จชนิดผง   </h4>
         <h4>nanoVAส่งต่อความสวยและเริ่มต้นหุ่นใหม่กับกาแฟนาโนวา  หอม กลมกล่อม เข้มข้น</h4>
         <h4>เมล็ดกาแฟอาราบิก้าแท้จากประเทศมาเลเซีย ให้คุณสัมผัสรสชาติเข้ม เต็มรสกาแฟ และกลิ่นหอมกรุ่น ด้วยรสชาดกาแฟแท้…</h4>
         <h4>1 ซองพลังงานแค่ 70 กิโลแคลอรี</h4>
@@ -44,7 +44,7 @@ function nanova() {
         <h4>- เหมาะกับผู้ที่ชอบดื่มกาแฟเป็นประจำ</h4>
         <h4>- รสชาติกลมกล่อม</h4>
         <h4>- ผิวลื่น อ่อนวัยสุขภาพดีจากคอลลาเจน</h4>
-        <h4>- มีไฟเบอร์สูงช่วยในการขับถ่าย</h4>
+        <h4>- มีไฟเบอร์สูงช่วยในการขับ ถ่าย</h4>
         <h4>- เร่งระบบเผาผลาญไขมัน คุมหิว อิ่มนาน</h4>
         <br/>
         <h2>วิธีรับประทาน</h2>

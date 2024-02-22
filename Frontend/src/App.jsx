@@ -12,7 +12,7 @@ import Ever from './components/ever/Ever';
 import Never from './components/never/Never';
 import CustomerKey from './components/customerKey/CustomerKey';
 import Calendar_1 from './components/Calendar/Calendar_1';
-import Target from './components/target/Target.jsx';
+import Target from './pages/target/Target';
 import Name from './components/Name/Name';
 import Height_show from './components/Height/Height_show';
 import Weight_show from './components/Weight/Weight_show';
@@ -57,6 +57,7 @@ import Menu15 from './fate2/Program_IF/Menu15';
 import User_Profile from './fate2/Profile/User_Profile';
 import Chang_Password from './fate2/Profile/Chang_Password';
 import Edit_User_Data from './fate2/Profile/Edit_User_Data.jsx';
+import Language from './fate2/Profile/Language.jsx';
 
 
 function App() {
@@ -96,7 +97,6 @@ function App() {
 
         <Route path='/BMR_calculator' element={<BMR_calculator />}/>
 
-
         <Route path='/Name' element={<Name/>}/>
 
         <Route path="/Yesno" element={<Yesno />} />
@@ -113,6 +113,7 @@ function App() {
     
     {/*fate2*/}
         
+
         <Route path="/fate2/product" element={<Product/>}/>
         <Route path="/fate2/nanox2" element={<Nanox2/>}/>
         <Route path="/fate2/nanova" element={<Nanova/>}/>
@@ -127,9 +128,11 @@ function App() {
         <Route path="/fate2/cardlist" element={<CardList/>}/>
         <Route path="/fate2/menuItem" element={<MenuItem/>}/>
         <Route path="/fate2/foodDetails" element={<FoodDetails/>}/>
+
         <Route path="/fate2/profile" element={<User_Profile/>}/>
         <Route path="/fate2/chang_password" element={<Chang_Password/>}/>
         <Route path="/fate2/edit_data" element={<Edit_User_Data/>}/>
+        <Route path="/fate2/language" element={<Language/>}/>
 
       </Routes>
     </BrowserRouter>

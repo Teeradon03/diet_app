@@ -1,27 +1,38 @@
-.chevron-icon {
-  width: 50px;
-  height: 50px;
-  border-radius: 50%;
-  border: none;
-  background-color: #ffffff;
-  color: #757575;
+/* Nano.css */
+
+/* Default styles for larger screens */
+.image-nano {
   display: flex;
   justify-content: center;
-  align-items: center;
-  cursor: pointer;
-
- 
-  top: 30px;
-  left: 30px; /* ตำแหน่งตามที่คุณต้องการ */
+  margin: 20px;
 }
 
-@media screen and (min-width: 400px) {
-  .chevron-icon {
-    font-size: 40px;
-    width: 50px;
-    height: 50px;
-   
-    top: 30px;
-    left: 30px; /* ตำแหน่งตามที่คุณต้องการ */
+.card-box-nano {
+  width: 300px; /* Adjust as needed for your design */
+  height: 300px;
+}
+
+.text {
+  max-width: 600px; /* Adjust as needed for your design */
+  margin: 0 auto;
+}
+
+
+/* Additional styles for smaller screens using media queries */
+@media (max-width: 768px) {
+  .image-nano {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .card-box-nano {
+    width: 500px;
+    height: 200px;
+  }
+
+  .text {
+    padding: 0 20px;
   }
 }
+
+/* Add more media queries as needed for other screen sizes */
